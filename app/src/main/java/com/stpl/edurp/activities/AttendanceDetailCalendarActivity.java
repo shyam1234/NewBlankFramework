@@ -36,7 +36,7 @@ import java.util.Map;
  * Created by 23508 on 2/7/2017.
  */
 
-public class AttendanceDetailCalendarActivity extends AppCompatActivity implements View.OnClickListener {
+public class AttendanceDetailCalendarActivity extends BaseActivity implements View.OnClickListener {
     private String TAG = "AttendanceDetailCalendarActivity";
     private TableAttendanceDetailsDataModel mTableStudentAttendanceDetailListDataModel;
     private TextView mTextViewCourse;

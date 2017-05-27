@@ -26,7 +26,7 @@ public class TestParseResponse extends Activity {
     }
 
     private void loadData() {
-        WSRequest.getInstance().request(WSRequest.GET, url, TAG , new IWSRequest() {
+       /* WSRequest.getInstance().request(WSRequest.GET, url, TAG , new IWSRequest() {
             @Override
             public void onResponse(String response) {
                 mTextView.setText(response);
@@ -36,7 +36,7 @@ public class TestParseResponse extends Activity {
             public void onErrorResponse(VolleyError response) {
 
             }
-        });
+        });*/
     }
 
     private void initView() {

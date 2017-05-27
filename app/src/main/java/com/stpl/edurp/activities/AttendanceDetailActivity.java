@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
  * Created by Admin on 24-12-2016.
  */
 
-public class AttendanceDetailActivity extends Activity implements View.OnClickListener {
+public class AttendanceDetailActivity extends BaseActivity implements View.OnClickListener {
     public final static String TAG = "AttendanceDetailActivity";
     private RecyclerView mRecycleViewAttendance;
     private TextView mTextViewCourse;

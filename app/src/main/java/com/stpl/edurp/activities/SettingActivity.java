@@ -14,7 +14,7 @@ import com.stpl.edurp.utils.Utils;
  * Created by Admin on 24-12-2016.
  */
 
-public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mImageViewBack;
     private TextView mTextViewTitle;

@@ -56,7 +56,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
  * Created by 23508 on 2/7/2017.
  */
 
-public class NewsDetails extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
+public class NewsDetails extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private static final java.lang.String TAG = "NewsDetails";
     private TableNewsMasterDataModel mNewsMasterDataModel;
@@ -441,8 +441,6 @@ public class NewsDetails extends AppCompatActivity implements View.OnClickListen
 
     private void fetchCommentDataFromServer(final int type) {
         if (Utils.isInternetConnected(this)) {
-
-
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

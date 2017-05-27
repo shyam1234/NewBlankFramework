@@ -28,7 +28,7 @@ import com.roughike.bottombar.OnTabSelectListener;
  * Created by Admin on 24-12-2016.
  */
 
-public class DashboardActivity extends AppCompatActivity implements OnTabSelectListener, ViewPager.OnPageChangeListener {
+public class DashboardActivity extends BaseActivity implements OnTabSelectListener, ViewPager.OnPageChangeListener {
     private static final java.lang.String TAG = "DashboardActivity";
     //private FrameLayout mContainer;
     public static Handler mHandler;

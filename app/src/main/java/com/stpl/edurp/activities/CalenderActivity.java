@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 
-public class CalenderActivity extends AppCompatActivity
+public class CalenderActivity extends BaseActivity
 {
 
 

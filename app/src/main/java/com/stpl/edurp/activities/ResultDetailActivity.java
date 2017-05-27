@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * Created by 23508 on 2/7/2017.
  */
-public class ResultDetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class ResultDetailActivity extends BaseActivity implements View.OnClickListener {
     private static final java.lang.String TAG = "ResultDetailActivity";
     private RecyclerView mRecycleViewResultList;
     private ResultDetailsAdapter mResultDetailsAdapter;

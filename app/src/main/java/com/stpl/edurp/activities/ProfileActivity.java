@@ -15,7 +15,7 @@ import com.stpl.edurp.utils.Utils;
  * Created by Admin on 24-12-2016.
  */
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mImageViewBack;
     private ImageView mImageViewProfile;
