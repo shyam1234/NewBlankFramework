@@ -38,33 +38,13 @@ public class WSRequest {
         return mInstance;
     }
 
-    public synchronized void request(int method, String url, String TAG, final IWSRequest pWSRequest) {
-        StringRequest request = new StringRequest(method, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                pWSRequest.onResponse(response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                pWSRequest.onErrorResponse(error);
-            }
-        });
-        if (TAG == null) {
-            MyApplication.getInstance().addToRequestQueue(request, "");
-        } else {
-            MyApplication.getInstance().addToRequestQueue(request, TAG);
-        }
-
-        //code for timeout
-        //do
-    }
 
     public synchronized void requestWithParam(int method, String url, final Map<String, String> pHeader, final Map<String, String> pParam, final String TAG, final IWSRequest pWSRequest) {
         AppLog.networkLog(TAG, "---------------------------------------" + TAG + "-----------------------------------------");
         AppLog.networkLog(TAG, "URL: " + url);
         AppLog.networkLog(TAG, "Header: " + pHeader);
         AppLog.networkLog(TAG, "Request: " + pParam);
+
         switch (method) {
             case GET:
                 AppLog.networkLog(TAG, "method: GET " + method);
@@ -107,8 +87,8 @@ public class WSRequest {
                             break;*/
                         default:
                             if (error.networkResponse.statusCode == WSContant.TAG_UNAUTHORIZED_CODE) {
-                                Toast.makeText(MyApplication.getInstance().getApplicationContext(), MyApplication.getInstance().getApplicationContext().getResources().getString(R.string.msg_session_exp), Toast.LENGTH_SHORT).show();
-                                UserInfo.logout();
+                                Toast.makeText(MyApplication.getInstance().getApplicationContext(), MyApplication.getInstance().getApplicationContext().getResources().getString(R.string.msg_unauthorized), Toast.LENGTH_SHORT).show();
+                                UserInfo.logout(false);
                             }
                     }
                 }
@@ -116,10 +96,11 @@ public class WSRequest {
 
 
                 //-------------------------------------------------------
-                Toast.makeText(MyApplication.getInstance().getApplicationContext(), MyApplication.getInstance().getApplicationContext().getString(R.string.msg_network_prob) + error.getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MyApplication.getInstance().getApplicationContext(), MyApplication.getInstance().getApplicationContext().getString(R.string.msg_network_prob) + error.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
-        }) {
+        })
+        {
 
             @Override
             public Map<String, String> getParams() {
@@ -170,7 +151,6 @@ public class WSRequest {
         } else {
             MyApplication.getInstance().addToRequestQueue(request, TAG);
         }
-
     }
 
 //    private String parseData(byte[] response) {

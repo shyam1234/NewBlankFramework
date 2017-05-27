@@ -17,6 +17,9 @@ public interface Constant {
     String TAG_NEWS = "NEW";
     String TAG_TIMETABLE = "TMT";
     String TAG_RESULT = "RES";
+    String TAG_TAX_REPORTS = "TAX";
+    String TAG_PAYSLIP = "PAY";
+    String TAG_TRANSPORT = "TMS";
     String TAG_HOLDER = "holder";
     String TAG_POSITION = "position";
     //Karthik: Not require

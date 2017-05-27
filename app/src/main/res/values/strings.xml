@@ -53,6 +53,7 @@
     <string name="msg_network_prob">Something went wrong with server. Please try again later.</string>
     <string name="please_wait">Please wait...</string>
     <string name="msg_session_exp">Session Expired</string>
+    <string name="msg_unauthorized">Unauthorized Credential</string>
     <string name="msg_class">Class</string>
     <string name="msg_class_teacher">Class Teacher</string>
     <string name="msg_class_teacher_phone">Class Teacher Phone</string>

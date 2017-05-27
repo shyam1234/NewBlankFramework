@@ -98,7 +98,7 @@ public class OptionsFragment extends Fragment implements View.OnClickListener {
                 navigateToNextPage(SettingActivity.class);
                 break;
             case R.id.rel_options_logout:
-                UserInfo.logout();
+                UserInfo.logout(true);
                 break;
             case R.id.rel_options_profile:
                 navigateToNextPage(ProfileActivity.class);

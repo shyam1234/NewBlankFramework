@@ -648,6 +648,7 @@ public class Utils {
     }
 
 
+
     public static String getCurrTimeYYYYMMDD(String string) {
         String time = "";
         try {
@@ -664,6 +665,24 @@ public class Utils {
             return time;
         }
     }
+
+
+    //2017-05-27T08:36:19
+    public static boolean getTimeDiffFromCurrTime( String TokenExpiresOn ) {
+        long timeDiff = 1;
+        try {
+            if (TokenExpiresOn != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                Date dateTokenIssuedOn = new Date();
+                Date dateTokenExpiresOn = formatter.parse(TokenExpiresOn);
+                return dateTokenExpiresOn.before(dateTokenIssuedOn);
+            }
+        } catch (Exception e) {
+            AppLog.errLog("getTimeDiff from Utils", e.getMessage());
+        }
+        return false;
+    }
+
 
     public static String getCurrTimeYYYYMMDD() {
         String time = "";

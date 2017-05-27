@@ -47,7 +47,7 @@ public class UserInfo {
 
     }
 
-    public static void logout() {
+    public static void logout(boolean isShowToast) {
         clearUSerInfo();
         SharedPreferencesApp.getInstance().removeAll();
         Activity activity =null;
@@ -58,12 +58,14 @@ public class UserInfo {
         }
 
         if(activity!=null) {
-            Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_logout,Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(activity, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            activity.startActivity(intent);
-            activity.finish();
-            Utils.animLeftToRight(activity);
+            if(isShowToast) {
+                Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_logout, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(activity, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                activity.startActivity(intent);
+                activity.finish();
+                Utils.animLeftToRight(activity);
+            }
         }
 
 

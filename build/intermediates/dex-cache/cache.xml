@@ -3,336 +3,237 @@
 
     <item
         is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.0.1_105a07fb4f341ccd5934f099a07a925210699c3a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_b23cb1e95dfb310461e8332cfcb1f4852eaedb3e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.roughike\bottom-bar\2.0.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="32534a05122d0c535cc8b885e45b1e7ce3b0f03e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.roughike-bottom-bar-2.0.2_b6236b7400e5c77d5e4129b4eb1abe6b7550b33e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.1_698eb283e6891cee22512a79b549da78c4cc9614.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_b5424ceb164c96ec5a6bb0a8a3dce105e7ad4750.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_207b49ced992d517b20c379d7d1596c86a8c4114.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_735230e8728c4862b39d78c433ffc11e9a14865b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.5\442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375\universal-image-loader-1.9.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_bb2751eed4855bf0a73b4881d4582c1a0ae9e673.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.1_dec95a760780f7b2989cd24e75405dcb21f6d859.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.0.1_1fb38deb16060ed9020292b74191823dd5df33ef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_6c058a07a46b0cb07091046e75e2c33e907a278b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.1_37a956d0be7aac95d96f29988cd36bf775e02422.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.0.1_105a07fb4f341ccd5934f099a07a925210699c3a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.mikhaellopez\circularprogressbar\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="a66d97cc99478e8080ac20a666c8333022032857">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.mikhaellopez-circularprogressbar-1.0.0_bebdbd392dbd649cce65d881b7bb50364e691495.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_84a99698620209864d91ae70b3b4019e9871237d.jar" />
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_c181af2c37b94d497f7646534feec96e986d947a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_735230e8728c4862b39d78c433ffc11e9a14865b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.1_dec95a760780f7b2989cd24e75405dcb21f6d859.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_6c058a07a46b0cb07091046e75e2c33e907a278b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\gson-2.4_a5694ab313733b9cae310b00e0b009923bd30b07.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.mikhaellopez\circularprogressbar\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a66d97cc99478e8080ac20a666c8333022032857">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.mikhaellopez-circularprogressbar-1.0.0_bebdbd392dbd649cce65d881b7bb50364e691495.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_40890bfa00a64cd9d135935cc89b7165a522d79e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_0106b233c3843c483def242fd517775a317ad78e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_864aa0a51f2d1a4a9317599906d095ad6919013b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_8a9a760266b8c9acf1904514ce9759e78ab0a686.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_0fa5e3c747e7f7f270ef63d03c6bc87fc50e3b9a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\BlankFramework\jiecaovideoplayer-5.5\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="2d1f5279623a785b3a31539763b55ee1e415dfae">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\BlankFramework-jiecaovideoplayer-5.5-unspecified_7d2796b1bd2fbaf50bbf56cac3d164c931ce1576.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_8db79f9480dd32e199fab160376d22e6ff77355c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_d1086bf4e0e4af5bc627dcd21c32c963204cdae6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_3b1259baa58f39881becb91f088f661dc8b10aa7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.roughike\bottom-bar\2.0.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="32534a05122d0c535cc8b885e45b1e7ce3b0f03e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.roughike-bottom-bar-2.0.2_b6236b7400e5c77d5e4129b4eb1abe6b7550b33e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\gson-2.4_a5694ab313733b9cae310b00e0b009923bd30b07.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_3621c7f6294c2ffb11cd504bdf2917d72ea61f0b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.5\442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375\universal-image-loader-1.9.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_bb2751eed4855bf0a73b4881d4582c1a0ae9e673.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\BlankFramework\jiecaovideoplayer-5.5\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d1f5279623a785b3a31539763b55ee1e415dfae">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\BlankFramework-jiecaovideoplayer-5.5-unspecified_7d2796b1bd2fbaf50bbf56cac3d164c931ce1576.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_271e6110b67acb02fe54f331a83f6700fa0141eb.jar" />
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_559934d961032a58f996f4d3dd6ea254e1f86ae0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jar="C:\Users\Admin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_2ce93d4f8ccf52bb66831f7494155696e8205e04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.1_3adc4b7f22af31273133187eede408ac4e2dcf4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_b2f4d8a14d377046dca9778e6a5e0f39514b38ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.1_f8ac31d70be3b0a95f3548ada32f98e571c6e87f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\gson-2.4_92ed388f6723280d35025875f026e7755deffda8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_c9776589601bba7f10efdf17dedd52f29d2cd341.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_ebb2dff6ce5b524b9274b2ad774ad3769f3836ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_2c9e3e4f09f96c5abe5c3332034d2b20c3563d28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_00383675da59b115b50df32d260d1a5746ef286e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.5\442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375\universal-image-loader-1.9.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_b20a9c5fc0340aa1751c37f5b562f567fa6f8af8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_5a7b2b5599e71a93bd1685ef5e1c85c2b401f3a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.mikhaellopez\circularprogressbar\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a66d97cc99478e8080ac20a666c8333022032857">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.mikhaellopez-circularprogressbar-1.0.0_a3633d5e2edf501133e22ccb70c74cf76934e38a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.1_e6776ea6da0af99baf48f45ca94ca6e171d9d76e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_f167c13936f2582d41da6d172a20fd2c769df734.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_d1086bf4e0e4af5bc627dcd21c32c963204cdae6.jar" />
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_22368cdf4e005ae56673dc222b14a85e132ad1b9.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
-        revision="24.0.2"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_7f710f1b42af09440f97ed22013d592cc56d3d4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_2a51052beb1c50b1c393c21950825b376ea6dc8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
         sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
-        <dex dex="D:\prafulla_malviya\rnd\android\BlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.0.1_1fb38deb16060ed9020292b74191823dd5df33ef.jar" />
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.0.1_2750938b60791dfc39903af65b31a65db38af21a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_5739fc3c822b2a641f5babb7c9dbe6187437b20b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_74ef7fa4976fe9499382921c0c3c76c5392430fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.roughike\bottom-bar\2.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="32534a05122d0c535cc8b885e45b1e7ce3b0f03e">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.roughike-bottom-bar-2.0.2_377b2ae5717747ec8517674a1f67ec3d3ac77e8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.0.1_9fe8b6b0bcb61ca90d63989df96907290e7a0d71.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\NewBlankFramework\jiecaovideoplayer-5.5\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2d1f5279623a785b3a31539763b55ee1e415dfae">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\NewBlankFramework-jiecaovideoplayer-5.5-unspecified_37e97b9056dab525a2dc8ee1c385a5b0a7c5e0d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_d20020510109cf3c2ecd16ff29637192f590ee5a.jar" />
     </item>
 
 </items>

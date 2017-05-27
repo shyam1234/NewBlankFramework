@@ -27,6 +27,7 @@ import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Admin on 24-12-2016.
@@ -34,14 +35,55 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     public static final String TAG = "HomeFramgent";
-    public static int[] mMenuColor = new int[]{R.color.colorGreen, R.color.colorDarkYellow, R.color.colorLightVallet,
-            R.color.colorSkyBlue, R.color.colorDarkPink, R.color.colorDarkblue,
-            R.color.colorLightParrot, R.color.colorDarkVal, R.color.colorLightOran,
-            R.color.colorLeaf, R.color.colorBlue, R.color.colorLighterMayrun};
-    public static int[] mMenuImage = new int[]{R.drawable.noticeboard, R.drawable.attendance, R.drawable.homework,
-            R.drawable.diary, R.drawable.messages, R.drawable.events,
-            R.drawable.gallery, R.drawable.feedback, R.drawable.fee,
-            R.drawable.dashboard_time_table, R.drawable.dashboard_news, R.drawable.dashboard_results};
+    public static HashMap<String, Integer > mMenuColor = new HashMap<>();
+    public static HashMap<String, Integer > mMenuImage = new HashMap<>();
+    static {
+        mMenuColor.put(Constant.TAG_NOTICEBOARD,R.color.colorGreen);
+        mMenuColor.put(Constant.TAG_ATTENDANCE,R.color.colorGreen);
+        mMenuColor.put(Constant.TAG_HOMEWORK,R.color.colorDarkYellow);
+        mMenuColor.put(Constant.TAG_DIARY,R.color.colorLightVallet);
+        mMenuColor.put(Constant.TAG_MESSAGE,R.color.colorSkyBlue);
+        mMenuColor.put(Constant.TAG_EVENTS,R.color.colorDarkPink);
+        mMenuColor.put(Constant.TAG_GALLERY,R.color.colorLightOran);
+        mMenuColor.put(Constant.TAG_FEEDBACK,R.color.colorLeaf);
+        mMenuColor.put(Constant.TAG_FEE,R.color.colorBlue);
+        mMenuColor.put(Constant.TAG_NEWS,R.color.colorLighterMayrun);
+        mMenuColor.put(Constant.TAG_TIMETABLE,R.color.colorDarkPink);
+        mMenuColor.put(Constant.TAG_RESULT,R.color.colorLightParrot);
+        mMenuColor.put(Constant.TAG_TAX_REPORTS,R.color.colorDarkVal);
+        mMenuColor.put(Constant.TAG_PAYSLIP,R.color.colorSkyBlue);
+        mMenuColor.put(Constant.TAG_TRANSPORT,R.color.colorLightOran);
+
+        ///////////////////////////////////////////////////////////////////
+        mMenuImage.put(Constant.TAG_NOTICEBOARD,R.drawable.noticeboard);
+        mMenuImage.put(Constant.TAG_ATTENDANCE,R.drawable.attendance);
+        mMenuImage.put(Constant.TAG_HOMEWORK,R.drawable.homework);
+        mMenuImage.put(Constant.TAG_DIARY,R.drawable.diary);
+        mMenuImage.put(Constant.TAG_MESSAGE,R.drawable.messages);
+        mMenuImage.put(Constant.TAG_EVENTS,R.drawable.events);
+        mMenuImage.put(Constant.TAG_GALLERY,R.drawable.gallery);
+        mMenuImage.put(Constant.TAG_FEEDBACK,R.drawable.feedback);
+        mMenuImage.put(Constant.TAG_FEE,R.drawable.fee);
+        mMenuImage.put(Constant.TAG_NEWS,R.drawable.dashboard_news);
+        mMenuImage.put(Constant.TAG_TIMETABLE,R.drawable.dashboard_time_table);
+        mMenuImage.put(Constant.TAG_RESULT,R.drawable.dashboard_results);
+        mMenuImage.put(Constant.TAG_TAX_REPORTS,R.drawable.tax_reports);
+        mMenuImage.put(Constant.TAG_PAYSLIP,R.drawable.payslip);
+        mMenuImage.put(Constant.TAG_TRANSPORT,R.drawable.transport_manag);
+    }
+
+//    public static int[] mMenuImage = new int[]{R.drawable.noticeboard, R.drawable.attendance, R.drawable.homework,
+//            R.drawable.diary, R.drawable.messages, R.drawable.events,
+//            R.drawable.gallery, R.drawable.feedback, R.drawable.fee,
+//            R.drawable.dashboard_time_table, R.drawable.dashboard_news, R.drawable.dashboard_results,
+//            R.drawable.payslip, R.drawable.tax_reports, R.drawable.transparent};
+
+
+//    public static int[] mMenuColor = new int[]{R.color.colorGreen, R.color.colorDarkYellow, R.color.colorLightVallet,
+//            R.color.colorSkyBlue, R.color.colorDarkPink, R.color.colorDarkblue,
+//            R.color.colorLightParrot, R.color.colorDarkVal, R.color.colorLightOran,
+//            R.color.colorLeaf, R.color.colorBlue, R.color.colorLighterMayrun,
+//            R.color.colorDarkPink, R.color.colorLightParrot, R.color.colorDarkVal};
 
     private ExpandableHeightGridView mGridViewCell;
     private HomeAdapter mAdapter;
@@ -189,8 +231,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                     case Constant.TAG_EVENTS:
-                       // Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                       //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
+                       Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                     case Constant.TAG_FEE:
                         Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);
@@ -209,6 +251,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         break;
                     case Constant.TAG_HOMEWORK:
                         //.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
+                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
+                    case Constant.TAG_PAYSLIP:
+                        Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
+                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
+                    case Constant.TAG_TAX_REPORTS:
+                        //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
+                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
+                    case Constant.TAG_TRANSPORT:
+                        //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
                         Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                 }

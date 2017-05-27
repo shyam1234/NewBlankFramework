@@ -46,24 +46,23 @@ public class TableParentStudentMenuDetails {
             + " FOREIGN KEY (" + COL_SUBCRIPTIONCODE + ") REFERENCES " + TableLanguage.TABLE_NAME + "(" + TableLanguage.CONVERSION_CODE + "));";
 
 
-
     public void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
-       // initDialog(pContext);
+        // initDialog(pContext);
     }
 
     private void initDialog(Context pContext) {
         dialog = new ProgressDialog(pContext);
-        dialog.getWindow().setBackgroundDrawable(new  ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setIndeterminate(true);
         dialog.setCancelable(true);
         dialog.show();
         dialog.setContentView(R.layout.my_progress);
     }
 
-    private void dismissedDialog(){
-        if(dialog!=null && dialog.isShowing()){
+    private void dismissedDialog() {
+        if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
     }
@@ -188,8 +187,14 @@ public class TableParentStudentMenuDetails {
                     do {
                         // get the data into array, or class variable
                         DashboardCellDataModel model = new DashboardCellDataModel();
-                        model.setColor(HomeFragment.mMenuColor[position]);
-                        model.setMenuImage(HomeFragment.mMenuImage[position]);
+                        try {
+                            model.setColor(HomeFragment.mMenuColor.get(cursor.getString(cursor.getColumnIndex(COL_SUBCRIPTIONCODE))));
+                            model.setMenuImage(HomeFragment.mMenuImage.get(cursor.getString(cursor.getColumnIndex(COL_SUBCRIPTIONCODE))));
+                        } catch (Exception e) {
+                            model.setColor(R.color.colorDarkPink);
+                            model.setMenuImage(R.drawable.attendance);
+                            AppLog.errLog("TableParentStudentMenuDetails",e.getMessage());
+                        }
                         model.setUniversity_id(cursor.getInt(cursor.getColumnIndex(TableUniversityMaster.COL_UNIVERSITY_ID)));
                         model.setUniversity_name(cursor.getString(cursor.getColumnIndex(TableUniversityMaster.COL_UNIVERSITY_NAME)));
                         model.setNotification(cursor.getInt(cursor.getColumnIndex(COL_COUNT)));
@@ -203,7 +208,7 @@ public class TableParentStudentMenuDetails {
                         AppLog.log("getHomeFragmentData parentId", "" + parentId);
                         AppLog.log("getHomeFragmentData studentId ", "" + studentId);
                         AppLog.log("getHomeFragmentData getMenu_code ", model.getMenu_code());
-                        AppLog.log("getHomeFragmentData getMenuImage ", ""+model.getMenuImage());
+                        AppLog.log("getHomeFragmentData getMenuImage ", "" + model.getMenuImage());
                         AppLog.log("getHomeFragmentData getUniversity_id", "" + model.getUniversity_id());
                         AppLog.log("getHomeFragmentData getUniversity_name ", model.getUniversity_name());
                         AppLog.log("getHomeFragmentData getUniversity_url ", model.getUniversity_url());
