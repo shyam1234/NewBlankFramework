@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayTransparent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/inc_title"
+        layout="@layout/inc_main_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
+
+    <LinearLayout
+        android:id="@+id/lin_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inc_title">
+
+        <include
+            android:id="@+id/inc_calendar"
+            layout="@layout/inc_timetable_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_resu"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/rel_results"
+        android:background="@color/colorMargin"></View>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_timetable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lin_calendar"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>

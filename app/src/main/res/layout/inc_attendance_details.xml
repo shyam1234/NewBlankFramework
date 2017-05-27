@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_term_course1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_term_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/course"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorTextHint" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_attend"
+            android:layout_width="0.1dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/lin_attendance_detail_holder_term_course"
+            android:layout_alignTop="@+id/lin_attendance_detail_holder_term_course"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/lin_attendance_detail_holder_term_course"
+            android:background="@color/colorMargin"></View>
+
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_term"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_attend"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/subject_semester"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorTextHint" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_attend_details"
+            android:layout_width="0.1dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/lin_attendance_detail_holder_term"
+            android:layout_alignTop="@+id/lin_attendance_detail_holder_term"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/lin_attendance_detail_holder_term"
+            android:background="@color/colorMargin"></View>
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_subject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_attend"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/subject"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorTextHint" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_term_course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_term_course_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:text="value"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorSkyBlue"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_attend1"
+            android:layout_width="0.1dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/lin_attendance_detail_holder_term_course"
+            android:layout_alignTop="@+id/lin_attendance_detail_holder_term_course"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/lin_attendance_detail_holder_term_course"
+            android:background="@color/colorMargin"></View>
+
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_term1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_attend"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_term_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:text="value"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorSkyBlue"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_attend_details1"
+            android:layout_width="0.1dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/lin_attendance_detail_holder_term"
+            android:layout_alignTop="@+id/lin_attendance_detail_holder_term"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/lin_attendance_detail_holder_term"
+            android:background="@color/colorMargin"></View>
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_detail_holder_subject1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_attend"
+            android:layout_weight="1"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_attendance_detail_holder_subject_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:text="value"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/colorSkyBlue"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+

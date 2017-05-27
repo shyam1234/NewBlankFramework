@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/inc_inner_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/comm_padding">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/comm_padding">
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:text="Forgot Password?"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
+                android:text="@string/we_just_need_your_registered_email_id_to_send_your_password_reset_instructions"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+
+            <EditText
+                android:id="@+id/edittext_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageview_logo"
+                android:layout_marginTop="80dp"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="20dp"
+                android:hint="Email"
+                android:maxLines="1"
+                android:padding="20dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:visibility="visible" />
+
+            <!--    <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/edittext_password"
+                    android:layout_marginTop="30dp"
+                    android:alpha="1.0"
+                    android:background="@color/colorWhite"
+                    android:text="@string/Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="18sp" />-->
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edittext_email"
+                android:layout_marginTop="30dp"
+                android:text="@string/Submit" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

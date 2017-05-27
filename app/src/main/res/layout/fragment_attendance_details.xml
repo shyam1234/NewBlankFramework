@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/inc_home_header"
+        layout="@layout/inc_main_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"></include>
+
+    <RelativeLayout
+        android:id="@+id/rel_attendance_holder_course_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_holder_course_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/course"
+                android:textColor="@color/colorTextHint"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/textview_attendance_course_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="value"
+                android:textColor="@color/colorSkyBlue"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_attend"
+            class="com.stpl.edurp.utils.MyGridView"
+            android:layout_width="0.1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/lin_attendance_holder_course_team"
+            android:layout_alignTop="@+id/lin_attendance_holder_course_team"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/lin_attendance_holder_course_team"
+            android:background="@color/colorMargin"></View>
+
+
+        <LinearLayout
+            android:id="@+id/lin_attendance_holder_course_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_attend"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/term"
+                android:textColor="@color/colorTextHint"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textview_attendance_term_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="value"
+                android:textColor="@color/colorSkyBlue"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/colorMargin"></View>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayTransparent"
+        android:padding="0dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

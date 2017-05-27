@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_cell_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:gravity="center"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:elevation="1dp"
+        android:id="@+id/rel_dashboard_cell_bg_holder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="2dp">
+
+        <RelativeLayout
+            android:id="@+id/rel_coutn_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/textview_dashboard_notifcation_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/filled_circle"
+                android:padding="4dp"
+                android:text="0"
+                android:textColor="@color/colorWhite"
+                android:textIsSelectable="true"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageview_dashboard_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/noticeboard" />
+
+            <TextView
+                android:id="@+id/textview_dashboard_cell_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imageview_dashboard_holder"
+                android:layout_alignRight="@+id/imageview_dashboard_holder"
+                android:layout_below="@+id/imageview_dashboard_holder"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Text"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

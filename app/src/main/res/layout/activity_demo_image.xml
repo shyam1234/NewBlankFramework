@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="How to load image by Picasso and UIL"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_show1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:padding="10dp"
+        android:text="Show Image by Picasso"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_show2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:padding="10dp"
+        android:text="Show Square Image by Picasso"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_show3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:padding="10dp"
+        android:text="Show Circle Image by Picasso"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_show4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:padding="10dp"
+        android:text="Show Image by UIL"
+        android:textAllCaps="false" />
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_show"
+        android:layout_gravity="center"
+        android:padding="20dp" />
+</LinearLayout>

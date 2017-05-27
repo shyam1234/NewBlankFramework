@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:id="@+id/rel_inc_like_comment_like_holder"
+        android:background="@drawable/rectangle_border_black_without_corners"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageview_bottom_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/comments_like_icon" />
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/textview_inc_bottom_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageview_bottom_like"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/like"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_inc_like_comment_comment_holder"
+        android:padding="12dp"
+        android:background="@drawable/rectangle_border_black_without_corners"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageview_bottom_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/comment_sm_icon" />
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/textview_inc_bottom_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageview_bottom_comment"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/comment"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button" />
+
+    </RelativeLayout>
+</LinearLayout>

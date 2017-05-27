@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rel_comment"
+    android:background="@color/colorGrayTransparent"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/edittext_send_comment_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/textview_send_comment_send"
+        android:hint="@string/type_comment"
+        android:padding="12dp"
+        android:text=""
+        android:maxLength="100"
+        android:maxLines="4"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColorHint="@color/colorLightGray" />
+
+    <TextView
+        android:id="@+id/textview_send_comment_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="12dp"
+        android:text="@string/send"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorBlue"
+        android:textStyle="bold" />
+</RelativeLayout>
