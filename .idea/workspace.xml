@@ -46,143 +46,31 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3597802f-1baa-4a50-be9d-b3b6f2f605b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_attendance_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_attendance_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_attendance_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_attendance_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/malviya/blankframework/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/stpl/edurp/ExampleInstrumentedTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/AttendanceDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/AttendanceDetailActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/AttendanceDetailCalendarActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/AttendanceDetailCalendarActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/CalenderActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/CalenderActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ChangePasswordtActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ChangePasswordtActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ChildProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ChildProfileActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/DashboardActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/DashboardActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ForgotActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ForgotActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ForgotPasswordSuccessActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ForgotPasswordSuccessActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/LoginActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/NewsDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/NewsDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/NewsScreenSliderPagerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/NewsScreenSliderPagerActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ProfileActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/ResultDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/ResultDetailActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/SettingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/SettingActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/SplashActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/SplashActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/TestImageLoad.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/TestImageLoad.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/TestMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/TestMainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/activities/TestParseResponse.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/TestParseResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/AttendanceAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/AttendanceAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/AttendanceDetailsActivityAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/AttendanceDetailsActivityAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/CustomPagerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/CustomPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/DashboardAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/DashboardAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/EventsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/EventsAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/FeeAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/FeeAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/HomeAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/HomeAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/NewsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/NewsAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/NewsDetailsCommentAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/NewsDetailsCommentAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/NewsDetailsLikeAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/NewsDetailsLikeAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/NoticeboardAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/NoticeboardAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/ResultAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/ResultAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/ResultDetailsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/ResultDetailsAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/ResultListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/ResultListAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/TimeTableAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/TimeTableAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/adapters/WardChildRowAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/adapters/WardChildRowAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/application/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/application/MyApplication.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/constant/Constant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/constant/Constant.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/constant/WSContant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/constant/WSContant.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/CommonInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/CommonInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/DatabaseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/DatabaseHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableAbsenseDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableAbsenseDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableAttendanceDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableAttendanceDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableCourseMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableCourseMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableDocumentMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableDocumentMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableLanguage.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableLanguage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableNewsMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableNewsMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableNoticeBoard.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableNoticeBoard.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableParentMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableParentMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableParentStudentAssociation.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableParentStudentAssociation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableParentStudentMenuDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableParentStudentMenuDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableResultDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableResultDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableStudentDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableStudentDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableStudentOverallFeeSummary.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableStudentOverallFeeSummary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableStudentOverallResultSummary.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableStudentOverallResultSummary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableTimeTableDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableTimeTableDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableUniversityMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableUniversityMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/database/TableUserMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/database/TableUserMaster.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/exceptions/ModelException.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/exceptions/ModelException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/AttendanceFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/AttendanceFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/DiaryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/DiaryFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/EventsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/EventsFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/FeeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/FeeFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/FeedbackFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/FeedbackFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/GalleryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/GalleryFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/HomeFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/HomeworkFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/HomeworkFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/MainHomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/MainHomeFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/MessageFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/MessageFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/NewsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/NewsFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/NoticeboardFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/NoticeboardFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/OptionsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/OptionsFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/ProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/ProfileFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/ResultFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/ResultFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/TimeTableFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/TimeTableFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/fragments/WardFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/fragments/WardFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/interfaces/ICallBack.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/interfaces/ICallBack.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/interfaces/IModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/interfaces/IModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/DashboardCellDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/DashboardCellDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/DiaryModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/DiaryModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/GetMobileAttendanceDetailDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/GetMobileAttendanceDetailDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/GetMobileDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/GetMobileDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/GetMobileHomeDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/GetMobileHomeDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/GetMobileMenuDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/GetMobileMenuDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/LanguageArrayDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/LanguageArrayDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/LoginDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/LoginDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/ModelFactory.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/ModelFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/NewsDetailsCommentLikeDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/NewsDetailsCommentLikeDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/ResultListDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/ResultListDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableAbsenseDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableAbsenseDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableAttendanceDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableAttendanceDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableCourseMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableCourseMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableDocumentMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableDocumentMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableFeeMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableFeeMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableLanguageDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableLanguageDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableMenuMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableMenuMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableNewsMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableNewsMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableNoticeBoardDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableNoticeBoardDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableParentMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableParentMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableParentStudentAssociationDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableParentStudentAssociationDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableParentStudentMenuDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableParentStudentMenuDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableResultDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableResultDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableResultMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableResultMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableStudentDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableStudentDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableTimeTableDetailsDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableTimeTableDetailsDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableUniversityMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableUniversityMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/models/TableUserMasterDataModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/models/TableUserMasterDataModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/network/IWSRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/network/IWSRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/network/WSRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/network/WSRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/parser/ParseResponse.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/parser/ParseResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/AppLog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/AppLog.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/CalendarView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/CalendarView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/ConnectivityReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/ConnectivityReceiver.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/CustomDialogbox.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/CustomDialogbox.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/DownloadFileAsync.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/DownloadFileAsync.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/ExpandableHeightGridView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/ExpandableHeightGridView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/GetPicassoImage.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/GetPicassoImage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/ImageTransform.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/ImageTransform.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/RenderImageByUIL.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/RenderImageByUIL.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/SharedPreferencesApp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/SharedPreferencesApp.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/SquareImageTransform.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/SquareImageTransform.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/UserInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/UserInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/Utils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/Utils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/malviya/blankframework/utils/ZoomOutPageTransformer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/utils/ZoomOutPageTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/test/java/com/malviya/blankframework/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/com/stpl/edurp/ExampleUnitTest.java" />
+    <list default="true" id="3597802f-1baa-4a50-be9d-b3b6f2f605b4" name="Default" comment="office">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BlankFramework.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/bottom_bar_2_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/bottom_bar_2_0_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/circularprogressbar_1_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/circularprogressbar_1_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jiecaovideoplayer_5_5_unspecified.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jiecaovideoplayer_5_5_unspecified.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/transition_25_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/transition_25_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
     </list>
     <ignored path="BlankFramework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -218,9 +106,15 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
+            <state relative-caret-position="714">
               <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3676#3677#0" expanded="false" />
+                <element signature="e#3709#3710#0" expanded="false" />
+                <element signature="e#7673#7674#0" expanded="false" />
+                <element signature="e#7720#7721#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -231,7 +125,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
+            <state relative-caret-position="85">
               <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
               <folding />
             </state>
@@ -322,7 +216,7 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="BlankFramework" />
+              <option name="name" value="NewBlankFramework" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
@@ -333,7 +227,7 @@
                 <option name="path" value="$PROJECT_DIR$/app" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="BlankFramework" />
+                <option name="name" value="NewBlankFramework" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -351,7 +245,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'BlankFramework'." />
+                <option name="description" value="Displays the sub-projects of root project 'NewBlankFramework'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -405,7 +299,7 @@
                 <option name="name" value="assembleDebugUnitTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'BlankFramework'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'NewBlankFramework'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -415,7 +309,7 @@
                 <option name="name" value="mockableAndroidJar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'BlankFramework' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'NewBlankFramework' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -438,7 +332,7 @@
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'BlankFramework'." />
+                <option name="description" value="Displays all dependencies declared in root project 'NewBlankFramework'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -502,7 +396,7 @@
                 <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'BlankFramework'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'NewBlankFramework'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -592,6 +486,11 @@
                 <option name="name" value="compileDebugAndroidTestSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare NewBlankFramework:jiecaovideoplayer-5.5:unspecified" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareNewBlankFrameworkJiecaovideoplayer55UnspecifiedLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-vector-drawable:25.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportSupportVectorDrawable2501Library" />
@@ -632,7 +531,7 @@
                 <option name="name" value="uninstallDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'BlankFramework'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'NewBlankFramework'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -758,11 +657,6 @@
                 <option name="description" value="Prepare com.android.support:recyclerview-v7:25.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportRecyclerviewV72501Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare BlankFramework:jiecaovideoplayer-5.5:unspecified" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareBlankFrameworkJiecaovideoplayer55UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-core-utils:25.0.1" />
@@ -941,7 +835,7 @@
                 <option name="name" value="generateDebugAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'BlankFramework'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'NewBlankFramework'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -1077,7 +971,7 @@
                 <option name="name" value="prepareComAndroidSupportSupportFragment2501Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'BlankFramework'." />
+                <option name="description" value="Displays the properties of root project 'NewBlankFramework'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -1324,6 +1218,11 @@
                 <option name="name" value="compileDebugAndroidTestSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare NewBlankFramework:jiecaovideoplayer-5.5:unspecified" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareNewBlankFrameworkJiecaovideoplayer55UnspecifiedLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-vector-drawable:25.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportSupportVectorDrawable2501Library" />
@@ -1485,11 +1384,6 @@
                 <option name="description" value="Prepare com.android.support:recyclerview-v7:25.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportRecyclerviewV72501Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare BlankFramework:jiecaovideoplayer-5.5:unspecified" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareBlankFrameworkJiecaovideoplayer55UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-core-utils:25.0.1" />
@@ -1867,6 +1761,7 @@
     </option>
     <option name="modificationStamps">
       <map>
+        <entry key="D:\prafulla_malviya\edurp\workspace\NewBlankFramework" value="5965846947101" />
         <entry key="D:\prafulla_malviya\rnd\android\BlankFramework" value="5965846947101" />
       </map>
     </option>
@@ -2210,116 +2105,24 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
+              <option name="myItemId" value="NewBlankFramework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
+              <option name="myItemId" value="NewBlankFramework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BlankFramework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="edurp" />
+              <option name="myItemId" value="NewBlankFramework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2339,6 +2142,7 @@
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2752,7 +2556,6 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5060514" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32108626" sideWeight="0.49394855" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2531746" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2772,6 +2575,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2531746" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3120,21 +2924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7021">
           <caret line="469" column="72" selection-start-line="469" selection-start-column="72" selection-end-line="469" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#8808#8809#0" expanded="false" />
-            <element signature="e#8866#8867#0" expanded="false" />
-            <element signature="e#10241#10242#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#12981#12982#0" expanded="false" />
-            <element signature="e#13011#13012#0" expanded="false" />
-            <element signature="e#21017#21018#0" expanded="false" />
-            <element signature="e#21083#21084#0" expanded="false" />
-            <element signature="e#24123#24124#0" expanded="false" />
-            <element signature="e#24181#24182#0" expanded="false" />
-            <element signature="e#26652#26653#0" expanded="false" />
-            <element signature="e#26718#26719#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3156,7 +2945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1972">
           <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3175,7 +2963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-343">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3189,9 +2976,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/stpl/edurp/activities/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
+        <state relative-caret-position="714">
           <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3676#3677#0" expanded="false" />
+            <element signature="e#3709#3710#0" expanded="false" />
+            <element signature="e#7673#7674#0" expanded="false" />
+            <element signature="e#7720#7721#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3213,7 +3006,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="85">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding />
         </state>

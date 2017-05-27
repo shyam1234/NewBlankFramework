@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BlankFramework.iml" filepath="$PROJECT_DIR$/BlankFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/BlankFramework1.iml" filepath="$PROJECT_DIR$/BlankFramework1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewBlankFramework.iml" filepath="$PROJECT_DIR$/NewBlankFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jiecaovideoplayer-5.5/jiecaovideoplayer-5.5.iml" filepath="$PROJECT_DIR$/jiecaovideoplayer-5.5/jiecaovideoplayer-5.5.iml" />
     </modules>
