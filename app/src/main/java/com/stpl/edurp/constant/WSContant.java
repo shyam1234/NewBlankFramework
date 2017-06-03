@@ -23,6 +23,10 @@ public interface WSContant {
     String URL_TIMETABLE = URL_BASE + "/mobile/GetMobileTimeTable";
     String URL_GETMOBILEATTENDANCEDETAIL = URL_BASE + "/mobile/GetMobileAttendanceDetail";
     String URL_GETMOBILEATTENDANCEABSENCEDETAIL = URL_BASE + "/mobile/GetMobileAttendanceAbsenceDetail";
+
+    String URL_GETPAYSLIPMONTHS = URL_BASE+"/mobile/GetPayslipMonths";
+    String URL_GETPAYSLIPMONTHSDOWNLOAD = URL_BASE+"/HR/TaxReport/PrintComputationSheet?";
+
     //String URL_REGISTRATION = URL_BASE + "/Account/Register";
     //-------------------------------------------------------------------------------------
     String DOWNLOAD_FOLDER = "Edurp_results";
@@ -117,7 +121,8 @@ public interface WSContant {
     String TAG_SEMESTER= "Semester";
     String TAG_SUBJECTNAME= "SubjectName";
     String TAG_SUBJECTID= "SubjectId";
-
+    String TAG_EMPLOYEEID ="EmployeeId";
+    String TAG_FACULY_PAYSLIP = "faculty_payslip_ws";
 }
 
 

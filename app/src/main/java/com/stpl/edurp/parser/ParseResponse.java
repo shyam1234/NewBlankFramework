@@ -10,6 +10,7 @@ import com.stpl.edurp.models.LanguageArrayDataModel;
 import com.stpl.edurp.models.LoginDataModel;
 import com.stpl.edurp.models.ModelFactory;
 import com.stpl.edurp.models.NewsDetailsCommentLikeDataModel;
+import com.stpl.edurp.models.PayslipDataModel;
 import com.stpl.edurp.models.TableAbsenseDetailsDataModel;
 import com.stpl.edurp.models.TableResultDetailsDataModel;
 import com.stpl.edurp.models.TableTimeTableDetailsDataModel;
@@ -79,6 +80,10 @@ public class ParseResponse {
                 break;
             case ModelFactory.MODEL_GETMOBILEATTDANCEABSENT:
                 mModel = mGson.fromJson(mRespose, TableAbsenseDetailsDataModel.class);
+                ModelFactory.getInstance().register(mKey, mModel);
+                break;
+            case ModelFactory.MODEL_PAYSLIPFACULTYDM:
+                mModel = mGson.fromJson(mRespose, PayslipDataModel.class);
                 ModelFactory.getInstance().register(mKey, mModel);
                 break;
             default:
