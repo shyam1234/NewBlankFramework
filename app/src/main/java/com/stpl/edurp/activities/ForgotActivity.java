@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
@@ -70,7 +71,8 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
         if (Utils.validateEmail(mEditTextUserName)) {
             mBtnSubmit.setText(getResources().getString(R.string.proceeding));
             mBtnSubmit.setEnabled(false);
-
+            mEditTextUserName.setFocusable(false);
+            mEditTextUserName.setEnabled(false);
             //call to WS and validate given credential----
 //            Map<String, String> param = new HashMap<>();
 //            param.put(WSContant.TAG_EMIALADDRESS, mEditTextEmail.getText().toString());
@@ -89,11 +91,12 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                             mBtnSubmit.setEnabled(false);
                             navigateToSuccessPage();
                         } else {
-                            mBtnSubmit.setText(getResources().getString(R.string.btn_submit));
-                            mBtnSubmit.setEnabled(false);
+                            reset();
+                            // {"Data":"Error: User Not exists"}
+                            Toast.makeText(ForgotActivity.this, jsonObject.getString("Data"), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                       AppLog.errLog(TAG,e.getMessage());
                     }
                     //--------------------------------------------------------------------
 
@@ -125,6 +128,10 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
     private void reset() {
         mBtnSubmit.setText(getResources().getString(R.string.btn_submit));
         mBtnSubmit.setEnabled(true);
+        mEditTextUserName.setFocusable(true);
+        mEditTextUserName.setEnabled(true);
+        mEditTextUserName.setFocusableInTouchMode(true);
+
     }
 
     public void setLangSelection() {

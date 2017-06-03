@@ -554,6 +554,10 @@ public class Utils {
      */
     public static void showDownloadFile(Activity pContext, String pFolderName, String pFileName) {
         verifyStoragePermissions(pContext);
+        File f = new File(Environment.getExternalStorageDirectory(),pFolderName);
+        if(!f.exists()){
+          f.mkdirs();
+        }
         File pdfFile = new File(Environment.getExternalStorageDirectory() + "/" + pFolderName + "/" + pFileName);  // -> filename = maven.pdf
         Uri path = Uri.fromFile(pdfFile);
         Intent pdfIntent = new Intent(Intent.ACTION_VIEW);

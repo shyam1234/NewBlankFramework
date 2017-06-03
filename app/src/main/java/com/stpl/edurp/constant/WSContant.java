@@ -26,6 +26,8 @@ public interface WSContant {
 
     String URL_GETPAYSLIPMONTHS = URL_BASE+"/mobile/GetPayslipMonths";
     String URL_GETPAYSLIPMONTHSDOWNLOAD = URL_BASE+"/HR/TaxReport/PrintComputationSheet?";
+    String URL_UPDATEPREFERENCE = URL_BASE+"/account/updatepreference";
+
 
     //String URL_REGISTRATION = URL_BASE + "/Account/Register";
     //-------------------------------------------------------------------------------------

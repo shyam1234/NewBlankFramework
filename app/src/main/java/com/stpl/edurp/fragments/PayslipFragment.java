@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -26,6 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.GetPicassoImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -90,7 +93,21 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initView() {
-
+        //--header----------------------------------
+        TextView mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
+        mTextViewTitle.setText(R.string.title_payslip);
+        ImageView mImgProfile = (ImageView)  getView().findViewById(R.id.imageview_profile);
+        mImgProfile.setVisibility(View.VISIBLE);
+        GetPicassoImage.setCircleImageByPicasso(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
+        ImageView mImgBack = (ImageView)  getView().findViewById(R.id.imageview_back);
+        mImgBack.setVisibility(View.VISIBLE);
+        mImgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+        //------------------------------------
     }
 
     private void initRecyclerView() {
@@ -165,7 +182,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void onResponse(String response) {
                     mPayslipDataModel.clear();
-                    ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_GETMOBILEMENU);
+                    ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_PAYSLIPFACULTYDM);
                     PayslipDataModel holder = ((PayslipDataModel) obj.getModel());
                     if (holder.getMessageResult().equalsIgnoreCase(WSContant.TAG_OK)) {
                         mPayslipDataModel = holder.getMessageBody();

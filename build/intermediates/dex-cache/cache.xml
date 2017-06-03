@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-10.0.1_925fbcec7db6d42f5d4928d55f2e9c7e4913e51c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Admin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
         jumboMode="false"
         optimize="true"
@@ -45,6 +54,15 @@
         revision="25.0.1"
         sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
         <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_b2f4d8a14d377046dca9778e6a5e0f39514b38ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.4_1fe3fe885f6b3fa62a5542d86f1d44cae55aadae.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,6 +102,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.4_bb3e87e32a93014545ade237bb00991cc0578291.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="29d9916bd9ad8406a53edbafbbce5e18943aa882">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-10.2.4_443d26a600ce383eeb8c6d00c6cbe0afcf3694f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -99,6 +135,15 @@
         revision="25.0.1"
         sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
         <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_00383675da59b115b50df32d260d1a5746ef286e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5cba8868595f6aaff54cf7d1798591108cf5611c">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-10.2.4_d5d6dba9ab2c2fa01317ca432832236ec18f6a6f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -201,6 +246,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\customtabs\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b24e0a6d84a759f2094cbb27afd5ac9cb30275c9">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-24.0.0_b0e38c82e51a31f8a48bb1e2f5230281e8798852.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.4_1b1c94e87b729b6ec136808b9520067d4f10e75d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.roughike\bottom-bar\2.0.2\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -234,6 +297,15 @@
         revision="25.0.1"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
         <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_d20020510109cf3c2ecd16ff29637192f590ee5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.onesignal\OneSignal\3.5.6\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fc006a0e3cffa83bbf4d8157cda67bc4ce3e9ca4">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.onesignal-OneSignal-3.5.6_c7f741e32f0cbb10564821ff038e436021766c45.jar" />
     </item>
 
 </items>

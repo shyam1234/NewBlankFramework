@@ -112,4 +112,5 @@
     <string name="subject">Subject</string>
     <string name="no_internet">No Internet</string>
     <string name="msg_exit">Do you want to exit from application?</string>
+    <string name="title_payslip">Payslip</string>
 </resources>

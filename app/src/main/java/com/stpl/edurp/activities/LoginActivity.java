@@ -3,12 +3,12 @@ package com.stpl.edurp.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private final String TAG = LoginActivity.class.getName();
     private TextView mTextViewForgotPassword;
     private Button mButtonLogin;
-    private EditText mEditTextUserName;
-    private EditText mEditTextPassword;
+    private TextInputEditText mEditTextUserName;
+    private TextInputEditText mEditTextPassword;
     private SwitchCompat mSwitchLang;
     private ScrollView mScrollView;
 
@@ -69,8 +69,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void initView() {
         mScrollView = (ScrollView) findViewById(R.id.scrollview);
-        mEditTextUserName = (EditText) findViewById(R.id.edittext_email);
-        mEditTextPassword = (EditText) findViewById(R.id.edittext_password);
+        mEditTextUserName = (TextInputEditText) findViewById(R.id.edittext_email);
+        mEditTextPassword = (TextInputEditText) findViewById(R.id.edittext_password);
         mTextViewForgotPassword = (TextView) findViewById(R.id.textview_forgot_password);
         mButtonLogin = (Button) findViewById(R.id.btnSignIn);
         mSwitchLang = (SwitchCompat) findViewById(R.id.switch_login_language);
@@ -116,11 +116,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Utils.animRightToLeft(LoginActivity.this);
                 break;
             case R.id.btnSignIn:
-                mScrollView.setEnabled(false);
-                mEditTextUserName.setFocusable(false);
-                mEditTextPassword.setFocusable(false);
-                mScrollView.setFocusable(false);
                 if (Utils.isInternetConnected(this)) {
+                    mScrollView.setEnabled(false);
+                    mEditTextUserName.setFocusable(false);
+                    mEditTextPassword.setFocusable(false);
+                    mScrollView.setFocusable(false);
                     doLogin();
                 }
                 break;
@@ -168,6 +168,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         AppLog.log(TAG, "++++++++++ load all the data+++++++++");
                     } else {
                         Toast.makeText(LoginActivity.this, R.string.msg_invalide_credential, Toast.LENGTH_SHORT).show();
+                        reset();
                     }
                 }
 
@@ -204,11 +205,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void reset() {
-        mScrollView.setFocusable(true);
-        mScrollView.setEnabled(true);
         mButtonLogin.setText(getResources().getString(R.string.sign_in));
         mButtonLogin.setEnabled(true);
+        mScrollView.setEnabled(true);
         mEditTextUserName.setFocusable(true);
+        mEditTextPassword.setFocusable(true);
+        mEditTextUserName.setFocusableInTouchMode(true);
+        mEditTextPassword.setFocusableInTouchMode(true);
+        mScrollView.setFocusable(true);
     }
 
     @Override

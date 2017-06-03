@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/inc_home_header"
+        layout="@layout/inc_main_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"></include>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_payslip"
         android:layout_width="match_parent"
