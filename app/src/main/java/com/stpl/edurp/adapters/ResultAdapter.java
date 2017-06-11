@@ -46,7 +46,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHold
         holder.textViewResult.setText(mList.get(position).getResult());
         holder.mTextViewSubject.setText(mList.get(position).getCourseName());
         holder.mTextViewPublishedByAndTime.setText(mList.get(position).getPublishedBy() + " : " + Utils.getTimeInYYYYMMDD(mList.get(position).getPublishedOn()));
-        holder.textViewResult.setText(mContext.getString(R.string.tab_fee));
+        //holder.textViewResult.setText(mContext.getString(R.string.tab_fee));
         holder.linearLayout.setOnClickListener(mListner);
         holder.linearLayout.setTag(position);
     }
