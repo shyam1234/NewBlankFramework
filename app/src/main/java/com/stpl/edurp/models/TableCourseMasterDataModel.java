@@ -15,7 +15,7 @@ public class TableCourseMasterDataModel  implements Serializable {
         "Course": "CSE-A",
         "Semester": "Semester 2",
         "ReferenceId": 2428
-        "LastRetrieved": 20170428
+            "LastRetrieved": 20170428
       }*/
     @SerializedName("StudentId")
     private int StudentId;

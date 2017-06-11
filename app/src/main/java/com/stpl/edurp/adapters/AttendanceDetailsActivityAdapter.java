@@ -39,6 +39,7 @@ public class AttendanceDetailsActivityAdapter extends RecyclerView.Adapter<Atten
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        holder.subject.setText(mList.get(position).getSubject());
         holder.subjectPercentage.setText(mList.get(position).getPercentage());
         holder.subjectPercentage.setTextColor(Color.parseColor(mList.get(position).getColor()));
         holder.totalValue.setText(mList.get(position).getTotal());
@@ -56,14 +57,16 @@ public class AttendanceDetailsActivityAdapter extends RecyclerView.Adapter<Atten
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView subjectPercentage;
+        public TextView subject;
         public TextView totalValue;
         public TextView absentValue;
         public LinearLayout holder;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            subjectPercentage = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject_value);
+            subject = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject_value1);
             totalValue = (TextView) itemView.findViewById(R.id.textview_attendance_row_total_value);
+            subjectPercentage = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject_value);
             absentValue = (TextView) itemView.findViewById(R.id.textview_attendance_row_absent_value);
             holder = (LinearLayout)itemView.findViewById(R.id.lin_attendance);
         }
