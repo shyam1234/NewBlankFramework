@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
 import com.stpl.edurp.activities.DashboardActivity;
+import com.stpl.edurp.activities.NewsDetails;
+import com.stpl.edurp.activities.ResultDetailActivity;
 import com.stpl.edurp.adapters.NoticeboardAdapter;
 import com.stpl.edurp.constant.Constant;
 import com.stpl.edurp.constant.WSContant;
@@ -98,7 +100,7 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
             public boolean handleMessage(Message msg) {
                 switch ((Integer) msg.what) {
                     case 1:
-                        Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
                         initView();
                         fetchDataFromServer();
@@ -160,7 +162,14 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
             case R.id.lin_noticeboard_news_row_holder:
                 UserInfo.menuCode = Constant.TAG_NEWS;
                 int position2 = (Integer) view.getTag();
-                Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
+                Intent i = new Intent(getActivity(), NewsDetails.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Bundle bundle = new Bundle();
+                bundle.putInt(Constant.TAG_HOLDER, ((TableNewsMasterDataModel)mCommonList.get(position2)).getReferenceId());
+                i.putExtras(bundle);
+                startActivity(i);
+                //Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
+                //Utils.animRightToLeft(getActivity());
                 break;
             case R.id.btn_view_pay_now:
                 int position3 = (Integer) view.getTag();
@@ -173,7 +182,12 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
             case R.id.lin_noticeboard_row_result_row_holder:
                 UserInfo.menuCode = Constant.TAG_RESULT;
                 int position5 = (Integer) view.getTag();
-                Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
+                Intent intent = new Intent(getContext(), ResultDetailActivity.class);
+                Bundle bundle1 = new Bundle();
+                bundle1.putSerializable(Constant.TAG_HOLDER, ((TableNewsMasterDataModel)mCommonList.get(position5)));
+                intent.putExtras(bundle1);
+                startActivity(intent);
+                //Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
                 break;
 
                /*

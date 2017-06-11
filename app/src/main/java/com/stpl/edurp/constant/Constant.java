@@ -5,6 +5,7 @@ package com.stpl.edurp.constant;
  */
 
 public interface Constant {
+    int DB_VERSION = 2;
     String TAG_NOTICEBOARD = "NOT";
     String TAG_ATTENDANCE = "ATT";
     String TAG_HOMEWORK = "HOM";

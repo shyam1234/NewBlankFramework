@@ -42,12 +42,12 @@ public class TableLanguage {
     //For Foreign key
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public synchronized  void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -55,7 +55,7 @@ public class TableLanguage {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public boolean insert(ArrayList<TableLanguageDataModel> list) {
+    public  synchronized boolean insert(ArrayList<TableLanguageDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableLanguageDataModel holder : list) {
@@ -83,7 +83,7 @@ public class TableLanguage {
         return false;
     }
 
-    private void deleteDataIfExist(int pUniversityId, int pConversionId) {
+    private  synchronized void deleteDataIfExist(int pUniversityId, int pConversionId) {
         try {
             String selectQuery = "DELETE FROM " + TABLE_NAME + " WHERE " + UNIVERSITY_ID + "=" + pUniversityId + " AND " + CONVERSION_ID + "=" + pConversionId;
             AppLog.log(TAG, "deleteDataIfExist +++selectQuery():" + selectQuery.toString());
@@ -93,7 +93,7 @@ public class TableLanguage {
         }
     }
 
-    public ArrayList<TableLanguageDataModel> read() {
+    public  synchronized ArrayList<TableLanguageDataModel> read() {
         try {
             ArrayList<TableLanguageDataModel> list = new ArrayList<>();
             if (mDB != null) {
@@ -124,7 +124,7 @@ public class TableLanguage {
     }
 
 
-    public ArrayList<TableLanguageDataModel> read(int pUniID) {
+    public  synchronized ArrayList<TableLanguageDataModel> read(int pUniID) {
         try {
             ArrayList<TableLanguageDataModel> list = new ArrayList<>();
             if (mDB != null) {
@@ -155,7 +155,7 @@ public class TableLanguage {
     }
 
 
-    public TableLanguageDataModel getValue(String pKey) {
+    public  synchronized TableLanguageDataModel getValue(String pKey) {
         try {
             TableLanguageDataModel model = new TableLanguageDataModel();
             if (mDB != null) {
@@ -186,7 +186,7 @@ public class TableLanguage {
     }
 
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE_DIARY);
@@ -198,7 +198,7 @@ public class TableLanguage {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE_DIARY);

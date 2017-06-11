@@ -47,12 +47,12 @@ public class TableAttendanceDetails {
     //For Foreign key
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -60,7 +60,7 @@ public class TableAttendanceDetails {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public boolean insert(ArrayList<TableAttendanceDetailsDataModel> list) {
+    public synchronized  boolean insert(ArrayList<TableAttendanceDetailsDataModel> list) {
         try {
             if(list.size()<= 0){
                 Toast.makeText(MyApplication.getInstance().getApplicationContext(), "StudentAttendanceDetailList is empty. Contact to DB", Toast.LENGTH_SHORT).show();
@@ -93,7 +93,7 @@ public class TableAttendanceDetails {
         return false;
     }
 
-    private void deleteDataIfExist(int pSubject, String pSemester, int pRefID) {
+    private  synchronized void deleteDataIfExist(int pSubject, String pSemester, int pRefID) {
         try {
             String selectQuery = "DELETE FROM " + TABLE_NAME + " WHERE " + SUBJECTID + "= '" + pSubject
                     + "'  AND " + REFENCEID + "= '" + pRefID + "'";
@@ -105,7 +105,7 @@ public class TableAttendanceDetails {
     }
 
 
-    public ArrayList<TableAttendanceDetailsDataModel> getValue(int pRefId) {
+    public  synchronized ArrayList<TableAttendanceDetailsDataModel> getValue(int pRefId) {
         try {
             ArrayList<TableAttendanceDetailsDataModel> holder = new ArrayList<TableAttendanceDetailsDataModel>();
 
@@ -142,7 +142,7 @@ public class TableAttendanceDetails {
     }
 
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -154,7 +154,7 @@ public class TableAttendanceDetails {
         }
     }
 
-    public void reset() {
+    public synchronized  void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE_DIARY);

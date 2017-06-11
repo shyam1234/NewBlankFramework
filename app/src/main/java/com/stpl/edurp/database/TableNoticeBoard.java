@@ -47,12 +47,12 @@ public class TableNoticeBoard {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -60,7 +60,7 @@ public class TableNoticeBoard {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -72,7 +72,7 @@ public class TableNoticeBoard {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -86,12 +86,13 @@ public class TableNoticeBoard {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableNoticeBoardDataModel> list) {
+    public  synchronized void insert(ArrayList<TableNoticeBoardDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableNoticeBoardDataModel holder : list) {
                     if (isExists(holder)) {
-                        deleteRecord(holder);
+                       // deleteRecord(holder);
+                        return;
                     }
                     //----------------------------------------
                     ContentValues value = new ContentValues();
@@ -112,7 +113,7 @@ public class TableNoticeBoard {
     }
 
 
-    public boolean isExists(TableNoticeBoardDataModel model) {
+    public  synchronized boolean isExists(TableNoticeBoardDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "
                     + COL_MENUCODE + " = '" + model.getMenuCode() + "' and "
@@ -133,7 +134,7 @@ public class TableNoticeBoard {
         return false;
     }
 
-    public boolean deleteRecord(TableNoticeBoardDataModel holder) {
+    public  synchronized boolean deleteRecord(TableNoticeBoardDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_PUBLISHEDON + "=? and " + COL_MENUCODE + "=? and " + COL_PARENTID + "=? and " + COL_STUDENTID + "=? and " + COL_REFERENCEID + "=?", new String[]{"" + holder.getPublishedOn(), "" + holder.getMenuCode(), "" + holder.getParentId(), "" + holder.getStudentId(), "" + holder.getRederenceId()});
@@ -150,7 +151,7 @@ public class TableNoticeBoard {
 
 
 
-    public ArrayList<TableNoticeBoardDataModel> getData(int parentId, int studentId) {
+    public  synchronized ArrayList<TableNoticeBoardDataModel> getData(int parentId, int studentId) {
         ArrayList<TableNoticeBoardDataModel> list = new ArrayList<>();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "

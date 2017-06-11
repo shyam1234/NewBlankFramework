@@ -50,7 +50,7 @@ public class TableAbsenseDetails {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public boolean insert(ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> list) {
+    public synchronized  boolean insert(ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> list) {
         try {
             if (mDB != null) {
                 deleteDataIfExist(list.get(0).getReferenceId(), list.get(0).getSubjectId());
@@ -72,7 +72,7 @@ public class TableAbsenseDetails {
         return false;
     }
 
-    private void deleteDataIfExist(int pRefID, String pSubId) {
+    private synchronized void deleteDataIfExist(int pRefID, String pSubId) {
         try {
             String selectQuery = "DELETE FROM " + TABLE_NAME + " WHERE "
                     + REFERENCE_ID + "= '" + pRefID + "'  AND "
@@ -85,7 +85,7 @@ public class TableAbsenseDetails {
     }
 
 
-    public ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValueBySem(String pCourse, String pSemseter) {
+    public synchronized ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValueBySem(String pCourse, String pSemseter) {
         try {
             ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> holder = new ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel>();
 
@@ -114,7 +114,7 @@ public class TableAbsenseDetails {
         }
     }
 
-    public ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValueByDate(String pAttendanceDate) {
+    public synchronized ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValueByDate(String pAttendanceDate) {
         try {
             ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> holder = new ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel>();
 
@@ -142,7 +142,7 @@ public class TableAbsenseDetails {
         }
     }
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -154,7 +154,7 @@ public class TableAbsenseDetails {
         }
     }
 
-    public void reset() {
+    public synchronized  void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE_DIARY);
@@ -167,7 +167,7 @@ public class TableAbsenseDetails {
     }
 
 
-    public ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValue(int studentId, int pRefID) {
+    public synchronized  ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> getValue(int studentId, int pRefID) {
         try {
             ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel> holder = new ArrayList<TableAbsenseDetailsDataModel.MessageBodyDataModel>();
 

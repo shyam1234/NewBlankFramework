@@ -35,7 +35,6 @@ public class MainHomeFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -43,7 +42,7 @@ public class MainHomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initView() {
-        Utils.navigateFragment(getFragmentManager(), new HomeFragment(), HomeFragment.TAG);
+        Utils.navigateFragmentMenu(getFragmentManager() , new HomeFragment(), HomeFragment.TAG);
     }
 
     @Override
@@ -52,7 +51,6 @@ public class MainHomeFragment extends Fragment implements View.OnClickListener {
 
         }
     }
-
 
     public void notifyFragment() {
         initView();

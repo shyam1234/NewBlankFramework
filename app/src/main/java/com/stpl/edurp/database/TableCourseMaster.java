@@ -41,12 +41,12 @@ public class TableCourseMaster {
     //For Foreign key
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -54,7 +54,7 @@ public class TableCourseMaster {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public boolean insert(ArrayList<TableCourseMasterDataModel> list) {
+    public  synchronized boolean insert(ArrayList<TableCourseMasterDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableCourseMasterDataModel holder : list) {
@@ -78,7 +78,7 @@ public class TableCourseMaster {
         return false;
     }
 
-    private void deleteDataIfExist(int pStudentId, String pSemester) {
+    private  synchronized void deleteDataIfExist(int pStudentId, String pSemester) {
         try {
             String selectQuery = "DELETE FROM " + TABLE_NAME + " WHERE " + STUDENTID + "= '" + pStudentId + "' AND " + SEMESTER + "= '" + pSemester+"'";
             AppLog.log(TAG, "deleteDataIfExist +++selectQuery():" + selectQuery.toString());
@@ -88,7 +88,7 @@ public class TableCourseMaster {
         }
     }
 
-    public ArrayList<TableCourseMasterDataModel> read() {
+    public  synchronized ArrayList<TableCourseMasterDataModel> read() {
         try {
             ArrayList<TableCourseMasterDataModel> list = new ArrayList<>();
             if (mDB != null) {
@@ -118,7 +118,7 @@ public class TableCourseMaster {
     }
 
 
-    public ArrayList<TableCourseMasterDataModel> read(int pStudentId) {
+    public synchronized  ArrayList<TableCourseMasterDataModel> read(int pStudentId) {
         try {
             ArrayList<TableCourseMasterDataModel> list = new ArrayList<>();
             if (mDB != null) {
@@ -148,7 +148,7 @@ public class TableCourseMaster {
     }
 
 
-    private void deleteDataIfExist(int pStudentId, String pSemester, int referenceId) {
+    private  synchronized void deleteDataIfExist(int pStudentId, String pSemester, int referenceId) {
         try {
             String selectQuery = "DELETE FROM " + TABLE_NAME + " WHERE " + STUDENTID + "= '" + pStudentId + "' AND " + REFERENCEID + "= '" + referenceId + "' AND " + SEMESTER + "= '" + pSemester + "'";
             AppLog.log(TAG, "deleteDataIfExist +++selectQuery():" + selectQuery.toString());
@@ -159,7 +159,7 @@ public class TableCourseMaster {
     }
 
 
-    public ArrayList<TableCourseMasterDataModel> getValueBySem() {
+    public  synchronized ArrayList<TableCourseMasterDataModel> getValueBySem() {
         try {
             ArrayList<TableCourseMasterDataModel> holder = new ArrayList<TableCourseMasterDataModel>();
 
@@ -189,7 +189,7 @@ public class TableCourseMaster {
     }
 
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -201,7 +201,7 @@ public class TableCourseMaster {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -215,7 +215,7 @@ public class TableCourseMaster {
 
 
 
-    public ArrayList<TableCourseMasterDataModel> getValueByStudent(int pStudentId) {
+    public synchronized  ArrayList<TableCourseMasterDataModel> getValueByStudent(int pStudentId) {
             try {
                 ArrayList<TableCourseMasterDataModel> holder = new ArrayList<TableCourseMasterDataModel>();
 

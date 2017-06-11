@@ -51,12 +51,12 @@ public class TableTimeTableDetails {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -64,7 +64,7 @@ public class TableTimeTableDetails {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -76,7 +76,7 @@ public class TableTimeTableDetails {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -90,7 +90,7 @@ public class TableTimeTableDetails {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel> list) {
+    public  synchronized void insert(ArrayList<TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel holder : list) {
@@ -118,7 +118,7 @@ public class TableTimeTableDetails {
     }
 
 
-    public boolean isExists(TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel model) {
+    public  synchronized boolean isExists(TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_MENUCODE + " = '" + model.getMenuCode() + "'"
                     + " and " + COL_REFERENCEDATE + " = '" + model.getReferenceDate() + "'"
@@ -137,7 +137,7 @@ public class TableTimeTableDetails {
         return false;
     }
 
-    public boolean deleteRecord(TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel holder) {
+    public  synchronized boolean deleteRecord(TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_SUBJECTNAME + "=? and " + COL_REFERENCEDATE + "=? " +
@@ -154,7 +154,7 @@ public class TableTimeTableDetails {
     }
 
 
-    public ArrayList<TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel> getData(int studentId, String refDate) {
+    public  synchronized ArrayList<TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel> getData(int studentId, String refDate) {
         ArrayList<TableTimeTableDetailsDataModel.InnerTimeTableDetailDataModel> list = new ArrayList<>();
 
         try {

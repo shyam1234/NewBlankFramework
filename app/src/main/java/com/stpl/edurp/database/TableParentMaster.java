@@ -44,12 +44,12 @@ public class TableParentMaster {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -57,7 +57,7 @@ public class TableParentMaster {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -69,7 +69,7 @@ public class TableParentMaster {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -83,7 +83,7 @@ public class TableParentMaster {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableParentMasterDataModel> list) {
+    public  synchronized void insert(ArrayList<TableParentMasterDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableParentMasterDataModel holder : list) {
@@ -107,7 +107,7 @@ public class TableParentMaster {
     }
 
 
-    public boolean isExists(TableParentMasterDataModel model) {
+    public  synchronized boolean isExists(TableParentMasterDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_PARENTID + " = '" + model.getParentid() + "'";
             Cursor cursor = mDB.rawQuery(selectQuery, null);
@@ -124,7 +124,7 @@ public class TableParentMaster {
         return false;
     }
 
-    public boolean deleteRecord(TableParentMasterDataModel holder) {
+    public  synchronized boolean deleteRecord(TableParentMasterDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_PARENTID + "=?", new String[]{"" + holder.getParentid()});

@@ -43,12 +43,12 @@ public class TableUserMaster {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -56,7 +56,7 @@ public class TableUserMaster {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -68,7 +68,7 @@ public class TableUserMaster {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -82,7 +82,7 @@ public class TableUserMaster {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableUserMasterDataModel> list) {
+    public synchronized  void insert(ArrayList<TableUserMasterDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableUserMasterDataModel holder : list) {
@@ -106,7 +106,7 @@ public class TableUserMaster {
     }
 
 
-    public boolean isExists(TableUserMasterDataModel model) {
+    public synchronized  boolean isExists(TableUserMasterDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_USERID + " = '" + model.getUserId() + "'";
             Cursor cursor = mDB.rawQuery(selectQuery, null);
@@ -123,7 +123,7 @@ public class TableUserMaster {
         return false;
     }
 
-    public boolean deleteRecord(TableUserMasterDataModel holder) {
+    public  synchronized boolean deleteRecord(TableUserMasterDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_USERID + "=?", new String[]{"" + holder.getUserId()});

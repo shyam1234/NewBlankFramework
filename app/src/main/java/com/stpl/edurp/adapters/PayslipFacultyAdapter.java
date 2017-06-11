@@ -43,6 +43,7 @@ public class PayslipFacultyAdapter extends RecyclerView.Adapter<PayslipFacultyAd
     public void onBindViewHolder(MyViewHolder pHolder, int position) {
         pHolder.download_icon.setId(R.id.imgview_payslip_download);
         pHolder.download_icon.setTag(position);
+        pHolder.month.setText(mPayslipList.get(position).getMonth());
         pHolder.download_icon.setOnClickListener(mListener);
         pHolder.rel_row_holder.setId(R.id.rel_payslip_holder);
         pHolder.rel_row_holder.setOnClickListener(mListener);

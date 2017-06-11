@@ -60,12 +60,12 @@ public class TableStudentOverallResultSummary {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -73,7 +73,7 @@ public class TableStudentOverallResultSummary {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public synchronized  void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -85,7 +85,7 @@ public class TableStudentOverallResultSummary {
         }
     }
 
-    public void reset() {
+    public synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -99,7 +99,7 @@ public class TableStudentOverallResultSummary {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableResultMasterDataModel> list) {
+    public  synchronized void insert(ArrayList<TableResultMasterDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableResultMasterDataModel holder : list) {
@@ -133,7 +133,7 @@ public class TableStudentOverallResultSummary {
     }
 
 
-    public boolean isExists(TableResultMasterDataModel model) {
+    public  synchronized boolean isExists(TableResultMasterDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "
                     + COL_MENUCODE + " = '" + model.getMenuCode() + "' and "
@@ -154,7 +154,7 @@ public class TableStudentOverallResultSummary {
         return false;
     }
 
-    public boolean deleteRecord(TableResultMasterDataModel holder) {
+    public  synchronized boolean deleteRecord(TableResultMasterDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_PUBLISHEDON + "=? and " + COL_MENUCODE + "=? and " + COL_PARENTID + "=? and " + COL_STUDENTID + "=? and " + COL_REFERENCEID + "=?", new String[]{"" + holder.getPublishedOn(), "" + holder.getMenuCode(), "" + holder.getParentId(), "" + holder.getStudentId(), "" + holder.getReferenceId()});
@@ -170,7 +170,7 @@ public class TableStudentOverallResultSummary {
     }
 
 
-    public TableResultMasterDataModel getData(String menuCode, String rederenceId) {
+    public synchronized  TableResultMasterDataModel getData(String menuCode, String rederenceId) {
         TableResultMasterDataModel holder = new TableResultMasterDataModel();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_MENUCODE + " = '" + menuCode + "' and " + COL_REFERENCEID + " = '" + rederenceId + "'";
@@ -203,7 +203,7 @@ public class TableStudentOverallResultSummary {
     }
 
 
-    public ArrayList<TableResultMasterDataModel> getData(String menuCode) {
+    public synchronized  ArrayList<TableResultMasterDataModel> getData(String menuCode) {
         ArrayList<TableResultMasterDataModel> list = new ArrayList<>();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_MENUCODE + " = '" + menuCode + "'";
@@ -237,7 +237,7 @@ public class TableStudentOverallResultSummary {
 
 
 
-    public ArrayList<TableResultMasterDataModel> getData(int parentId, int studentId) {
+    public  synchronized ArrayList<TableResultMasterDataModel> getData(int parentId, int studentId) {
         ArrayList<TableResultMasterDataModel> list = new ArrayList<>();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "
@@ -275,7 +275,7 @@ public class TableStudentOverallResultSummary {
     }
 
 
-    public ArrayList<TableResultMasterDataModel> getData(String menuCode, int studentId) {
+    public synchronized  ArrayList<TableResultMasterDataModel> getData(String menuCode, int studentId) {
         ArrayList<TableResultMasterDataModel> list = new ArrayList<>();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "

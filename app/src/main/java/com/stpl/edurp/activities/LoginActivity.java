@@ -172,7 +172,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 }
 
-                @Override
                 public void onErrorResponse(VolleyError response) {
                     reset();
                 }
@@ -198,9 +197,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void navigateToNextPage() {
         Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
-        finish();
         Utils.animRightToLeft(LoginActivity.this);
     }
 

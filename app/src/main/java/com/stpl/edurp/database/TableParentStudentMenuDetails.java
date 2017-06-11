@@ -46,13 +46,13 @@ public class TableParentStudentMenuDetails {
             + " FOREIGN KEY (" + COL_SUBCRIPTIONCODE + ") REFERENCES " + TableLanguage.TABLE_NAME + "(" + TableLanguage.CONVERSION_CODE + "));";
 
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
         // initDialog(pContext);
     }
 
-    private void initDialog(Context pContext) {
+    private  synchronized void initDialog(Context pContext) {
         dialog = new ProgressDialog(pContext);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setIndeterminate(true);
@@ -61,13 +61,13 @@ public class TableParentStudentMenuDetails {
         dialog.setContentView(R.layout.my_progress);
     }
 
-    private void dismissedDialog() {
+    private synchronized  void dismissedDialog() {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
     }
 
-    public void closeDB() {
+    public synchronized  void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -75,7 +75,7 @@ public class TableParentStudentMenuDetails {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -87,7 +87,7 @@ public class TableParentStudentMenuDetails {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 //mDB.execSQL(TRUNCATE_TABLE);
@@ -103,7 +103,7 @@ public class TableParentStudentMenuDetails {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableParentStudentMenuDetailsDataModel> list) {
+    public synchronized  void insert(ArrayList<TableParentStudentMenuDetailsDataModel> list) {
         try {
             //reset();
             if (mDB != null) {
@@ -130,7 +130,7 @@ public class TableParentStudentMenuDetails {
     }
 
 
-    public boolean isExists(TableParentStudentMenuDetailsDataModel model) {
+    public  synchronized boolean isExists(TableParentStudentMenuDetailsDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_SUBCRIPTIONCODE + " = '" + model.getMenu_code() + "'"
                     + " and " + COL_PARENTID + " = '" + model.getParent_id() + "'"
@@ -149,7 +149,7 @@ public class TableParentStudentMenuDetails {
         return false;
     }
 
-    public boolean deleteRecord(TableParentStudentMenuDetailsDataModel holder) {
+    public  synchronized boolean deleteRecord(TableParentStudentMenuDetailsDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_SUBCRIPTIONCODE + "=? and " + COL_PARENTID + "=? " +
@@ -167,7 +167,7 @@ public class TableParentStudentMenuDetails {
 
     private int position;
 
-    public ArrayList<DashboardCellDataModel> getHomeFragmentData(int parentId, int studentId) {
+    public  synchronized ArrayList<DashboardCellDataModel> getHomeFragmentData(int parentId, int studentId) {
         ArrayList<DashboardCellDataModel> list = new ArrayList<DashboardCellDataModel>();
         try {
             if (mDB != null) {

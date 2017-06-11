@@ -28,11 +28,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.stpl.edurp.R;
 import com.stpl.edurp.application.MyApplication;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.database.TableLanguage;
 import com.stpl.edurp.database.TableParentStudentMenuDetails;
+import com.stpl.edurp.fragments.HomeFragment;
+import com.stpl.edurp.fragments.NoticeboardFragment;
 import com.stpl.edurp.interfaces.ICallBack;
 import com.stpl.edurp.models.GetMobileHomeDataModel;
 import com.stpl.edurp.models.LoginDataModel;
@@ -41,7 +44,6 @@ import com.stpl.edurp.models.TableParentStudentMenuDetailsDataModel;
 import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
-import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -205,17 +207,17 @@ public class Utils {
     }
 
 
-    public static void navigateFragment(FragmentManager fragmentManager, Fragment fragment, String TAG) {
+   /* public static void navigateFragment(FragmentManager fragmentManager, Fragment fragment, String TAG) {
         try {
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.add(R.id.framelayout_holder, fragment);
             ft.addToBackStack(TAG);
-            ft.commit();
+            ft.commitAllowingStateLoss();
             ft.setCustomAnimations(R.anim.left, R.anim.right);
         } catch (Exception e) {
             AppLog.errLog("navigateFragment", e.getMessage());
         }
-    }
+    }*/
 
 
     public static void navigateFragmentMenu(FragmentManager fragmentManager, Fragment fragment, String TAG) {
@@ -224,11 +226,27 @@ public class Utils {
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.replace(R.id.framelayout_holder, fragment);
             ft.addToBackStack(TAG);
-            ft.commit();
+            ft.commitAllowingStateLoss();
             ft.setCustomAnimations(R.anim.left, R.anim.right);
         } catch (Exception e) {
             AppLog.errLog("navigateFragmentMenu", e.getMessage());
         }
+    }
+
+    public static void setAsRootFragmentMenu(String fragmentName, FragmentManager fragment) {
+        try {
+            fragment.popBackStack(fragmentName, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        } catch (Exception e) {
+            AppLog.errLog("navigateFragmentMenu", e.getMessage());
+        }
+    }
+
+
+    public static void removeAllFragments(FragmentManager fragmentManager) {
+        while (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStackImmediate();
+        }
+        navigateFragmentMenu(fragmentManager, new HomeFragment(), HomeFragment.TAG);
     }
 
 
@@ -241,7 +259,7 @@ public class Utils {
 //            } else {
 //                SharedPreferences.Editor editor = sp.edit();
 //                editor.putString(WSContant.TAG_SHAREDPREF_GET_LAST_TIME, lastRetrivedTime);
-//                editor.commit();
+//                editor.commitAllowingStateLoss();
 //            }
 //            return lastRetrivedTime;
 //        } catch (Exception e) {
@@ -747,4 +765,6 @@ public class Utils {
             return "20170301000000";//time  //cheat code
         }
     }
+
+
 }

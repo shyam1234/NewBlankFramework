@@ -592,7 +592,8 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     }
 
     public void setLangSelection() {
-        Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_NEWS, WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
+        Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
+       //Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_NEWS, WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
         //Utils.langConversion(NewsDetails.this, ((TextView) findViewById(R.id.textview_inc_bottom_like)), new String[]{WSContant.TAG_LANG_LIKE}, getString(R.string.like), UserInfo.lang_pref);
         Utils.langConversion(NewsDetails.this, ((TextView) findViewById(R.id.textview_inc_bottom_comment)), new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
 

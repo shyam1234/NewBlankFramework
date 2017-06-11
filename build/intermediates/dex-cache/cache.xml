@@ -48,6 +48,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.onesignal\OneSignal\3.5.7\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bfeba9e17614c43b87b9dbef4d9014d66de49b34">
+        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.onesignal-OneSignal-3.5.7_dfd3b2edef4504a50aea4fec7dda3399960f25eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -297,15 +306,6 @@
         revision="25.0.1"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
         <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_d20020510109cf3c2ecd16ff29637192f590ee5a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.onesignal\OneSignal\3.5.6\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="fc006a0e3cffa83bbf4d8157cda67bc4ce3e9ca4">
-        <dex dex="D:\office\projects\EduRP\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.onesignal-OneSignal-3.5.6_c7f741e32f0cbb10564821ff038e436021766c45.jar" />
     </item>
 
 </items>

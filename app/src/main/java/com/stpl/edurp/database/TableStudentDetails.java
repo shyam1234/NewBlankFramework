@@ -48,12 +48,12 @@ public class TableStudentDetails {
     //For Foreign key
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
-    public void openDB(Context pContext) {
+    public  synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public void closeDB() {
+    public  synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -61,7 +61,7 @@ public class TableStudentDetails {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public void dropTable() {
+    public  synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -73,7 +73,7 @@ public class TableStudentDetails {
         }
     }
 
-    public void reset() {
+    public  synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -88,7 +88,7 @@ public class TableStudentDetails {
 
     //---------------------------------------------------------------------------------------
 
-    public void insert(ArrayList<TableStudentDetailsDataModel> list) {
+    public synchronized  void insert(ArrayList<TableStudentDetailsDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableStudentDetailsDataModel holder : list) {
@@ -116,7 +116,7 @@ public class TableStudentDetails {
     }
 
 
-    public boolean isExists(TableStudentDetailsDataModel model) {
+    public  synchronized boolean isExists(TableStudentDetailsDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_STUDENT_ID + " = '" + model.getStudent_id() + "'";
             Cursor cursor = mDB.rawQuery(selectQuery, null);
@@ -133,7 +133,7 @@ public class TableStudentDetails {
         return false;
     }
 
-    public boolean deleteRecord(TableStudentDetailsDataModel holder) {
+    public  synchronized boolean deleteRecord(TableStudentDetailsDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, COL_STUDENT_ID + "=?", new String[]{""+holder.getStudent_id()});
@@ -149,7 +149,7 @@ public class TableStudentDetails {
     }
 
 
-    public ArrayList<TableStudentDetailsDataModel> getStudentInfo(String studentId) {
+    public  synchronized ArrayList<TableStudentDetailsDataModel> getStudentInfo(String studentId) {
         ArrayList<TableStudentDetailsDataModel> list = new ArrayList<TableStudentDetailsDataModel>();
         try {
             AppLog.log("getStudentInfo++++++", "");

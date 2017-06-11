@@ -81,7 +81,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
             public boolean handleMessage(Message msg) {
                 switch ((Integer) msg.what) {
                     case 1:
-                        Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
                         initView();
                         //             fetchDataFromServer();
@@ -162,7 +162,9 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                     });
                 }
                 //?EmployeeId=319&financialyearmonthId=457&Language="B"
-            }).execute(WSContant.URL_GETPAYSLIPMONTHSDOWNLOAD, "EmployeeId=" + UserInfo.userId + "&financialyearmonthId=" + mFinancialYearMonthId + "&Language=" + UserInfo.lang_pref);
+            }).execute(WSContant.URL_GETPAYSLIPMONTHSDOWNLOAD, "EmployeeId=" + UserInfo.userId + "&financialyearmonthId=" + mFinancialYearMonthId + "&Language=" + UserInfo.lang_pref, ""+mFinancialYearMonthId);
+        }else{
+            showDownloadedPDF(position);
         }
     }
 
@@ -175,7 +177,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
             header.put(WSContant.TAG_UNIVERSITYID, "" + UserInfo.univercityId);
             //-Utils-for body
             Map<String, String> body = new HashMap<>();
-            body.put(WSContant.TAG_EMPLOYEEID, "" + UserInfo.userId);
+            body.put(WSContant.TAG_EMPLOYEEID, "" + UserInfo.studentId);
             Utils.showProgressBar(getContext());
 
             WSRequest.getInstance().requestWithParam(WSRequest.POST, WSContant.URL_GETPAYSLIPMONTHS, header, body, WSContant.TAG_FACULY_PAYSLIP, new IWSRequest() {

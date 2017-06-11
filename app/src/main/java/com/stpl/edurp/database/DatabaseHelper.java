@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.stpl.edurp.R;
+import com.stpl.edurp.constant.Constant;
 
 /**
  * Created by Admin on 26-11-2016.
@@ -15,7 +16,7 @@ import com.stpl.edurp.R;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
     //    private static final String DB_NAME = "db_edurp";
-    private static final int DB_VERSION = 2;
+
     private static DatabaseHelper mInstance;
 
     public static DatabaseHelper getInstance(Context context) {
@@ -27,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     private DatabaseHelper(Context context) {
-        super(context, context.getString(R.string.app_name)+"_db", null, DB_VERSION);
+        super(context, context.getString(R.string.app_name)+"_db", null, Constant.DB_VERSION);
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.stpl.edurp.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.stpl.edurp.R;
@@ -50,11 +52,11 @@ public class UserInfo {
     public static void logout(boolean isShowToast) {
         clearUSerInfo();
         SharedPreferencesApp.getInstance().removeAll();
-        Activity activity =null;
+        AppCompatActivity activity =null;
         if (SplashActivity.mContext != null) {
-            activity = (Activity) SplashActivity.mContext;
+            activity = (AppCompatActivity) SplashActivity.mContext;
         }else if (DashboardActivity.mContext != null) {
-            activity = (Activity) DashboardActivity.mContext;
+            activity = (AppCompatActivity) DashboardActivity.mContext;
         }
 
         if(activity!=null) {
@@ -66,9 +68,11 @@ public class UserInfo {
                 activity.finish();
                 Utils.animLeftToRight(activity);
             }
+            //Utils.removeAllFragments(activity.getSupportFragmentManager());
         }
-
-
     }
+
+
+
 }
 

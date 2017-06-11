@@ -84,7 +84,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
             public boolean handleMessage(Message msg) {
                 switch ((Integer) msg.what) {
                     case 1:
-                        Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
                         initView();
                         fetchDataFromServer();

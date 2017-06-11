@@ -54,8 +54,13 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
+        String mFileName ="";
         String fileUrl = strings[0] + strings[1];   // -> http://maven.apache.org/maven-1.x/maven.pdf
-        String mFileName = strings[1] + ".pdf";  // -> maven.pdf
+        if(strings[2]==null) {
+            mFileName = strings[1] + ".pdf";  // -> maven.pdf
+        }else{
+            mFileName = strings[2] + ".pdf";  // -> maven.pdf
+        }
         try {
             File mFolder = new File(Environment.getExternalStorageDirectory().toString(), mFolderName);
             mFolder.mkdir();
