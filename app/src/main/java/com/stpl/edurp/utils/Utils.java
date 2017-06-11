@@ -452,6 +452,30 @@ public class Utils {
 
 
     /**
+     * dd-MM-yyyy HH:mm:ss
+     * @param yyyyMMddHHmmss
+     * @return
+     */
+    public static String getTimeInDayDateMonthYear1(String yyyyMMddHHmmss) {
+        String time = "";
+        try {
+            if (yyyyMMddHHmmss != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                SimpleDateFormat formatter1 = new SimpleDateFormat("EEE, MMMM d, yyyy");
+                Date date = formatter.parse(yyyyMMddHHmmss);
+                time = formatter1.format(date);
+                AppLog.log("Time: " + time);
+            }
+        } catch (Exception e) {
+            AppLog.errLog("getTimeInDDMMYYYY 333  from Utils", e.getMessage());
+        } finally {
+            return time;
+        }
+
+    }
+
+
+    /**
      * Firday, 19th March 2017 (today)
      *
      * @param yyyyMMdd

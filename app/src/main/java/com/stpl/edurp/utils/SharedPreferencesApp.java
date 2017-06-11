@@ -462,14 +462,17 @@ public class SharedPreferencesApp {
                     case WSContant.TAG_WS_TIMETABLE:
                         SharedPreferences.Editor data = sharePref.edit();
                         data.putString(pTAG, time);
+                        data.commit();
                         break;
                     case WSContant.TAG_MOBILEATTENDANCEDETAIL:
                         SharedPreferences.Editor data1 = sharePref.edit();
                         data1.putString(pTAG, time);
+                        data1.commit();
                         break;
                     default:
                         SharedPreferences.Editor data2 = sharePref.edit();
                         data2.putString(pTAG, time);
+                        data2.commit();
                         break;
                 }
             } else {

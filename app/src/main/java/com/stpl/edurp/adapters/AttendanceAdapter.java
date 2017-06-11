@@ -9,7 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stpl.edurp.R;
+import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.TableCourseMasterDataModel;
+import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
@@ -42,7 +44,8 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.textViewSubject.setText(mList.get(position).getCourse());
         holder.textViewSemester.setText(mList.get(position).getSemester());
-        holder.textViewLastSyncDate.setText(Utils.getTimeInDayDateMonthYear(mList.get(position).getLastRetrieved()));
+        holder.textViewLastSyncDate.setText(Utils.getTimeInDayDateMonthYear1(SharedPreferencesApp.getInstance().getLastRetrieveTime(WSContant.TAG_MOBILEATTENDANCEDETAIL)));
+        //holder.textViewLastSyncDate.setText(Utils.getTimeInDayDateMonthYear(mList.get(position).getLastRetrieved()));
         holder.linearLayout.setOnClickListener(mListner);
         holder.linearLayout.setTag(position);
     }
