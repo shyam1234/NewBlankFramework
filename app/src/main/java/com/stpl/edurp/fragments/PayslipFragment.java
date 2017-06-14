@@ -162,7 +162,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                     });
                 }
                 //?EmployeeId=319&financialyearmonthId=457&Language="B"
-            }).execute(WSContant.URL_GETPAYSLIPMONTHSDOWNLOAD, "EmployeeId=" + UserInfo.userId + "&financialyearmonthId=" + mFinancialYearMonthId + "&Language=" + UserInfo.lang_pref, ""+mFinancialYearMonthId);
+            }).execute(WSContant.URL_GETPAYSLIPMONTHSDOWNLOAD, WSContant.TAG_EMPLOYEEID+"=" + UserInfo.userId + "&"+WSContant.TAG_FINANCIALYEARMONTHID+"=" + mFinancialYearMonthId + "&"+WSContant.TAG_LANGUAGE+"=" + UserInfo.lang_pref, "" + mFinancialYearMonthId);
         }else{
             showDownloadedPDF(position);
         }

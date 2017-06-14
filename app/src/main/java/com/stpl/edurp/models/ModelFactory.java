@@ -24,6 +24,7 @@ public class ModelFactory {
     public static final String MODEL_GETMOBILEATTDANCEDETAIL = "GetMobileAttendanceDetail";
     public static final String MODEL_GETMOBILEATTDANCEABSENT = "GetMobileAttendancAbsent";
     public static final String MODEL_PAYSLIPFACULTYDM = "PayslipFacultyDataModel";
+    public static final String MODEL_GETTAXFINANCIALYEAR = "GetTaxFinancialYearDataModel";
     private volatile static ModelFactory mInstance;
     private HashMap<String, IModel> mHashMapMode;
 
