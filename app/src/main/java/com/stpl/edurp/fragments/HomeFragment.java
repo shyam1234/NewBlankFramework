@@ -22,7 +22,7 @@ import com.stpl.edurp.database.TableParentStudentMenuDetails;
 import com.stpl.edurp.models.DashboardCellDataModel;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.ExpandableHeightGridView;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -188,10 +188,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mImageViewUnivercityLogo = (ImageView) getView().findViewById(R.id.imgview_uni_logo);
         if (mCellList.size() > 0) {
             UserInfo.selectedStudentImageURL = mCellList.get(0).getStudentProfileImage();
-            GetPicassoImage.setCircleImageByPicasso(getContext(), mCellList.get(0).getUniversity_url(), mImageViewUnivercityLogo);
-            GetPicassoImage.setCircleImageByPicasso(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
+            GetUILImage.getInstance().setCircleImage(getContext(), mCellList.get(0).getUniversity_url(), mImageViewUnivercityLogo);
+            GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
         }
-        //RenderImageByUIL.getInstance(getContext()).setImageByURL(UserInfo.university_logo_url, mImageViewUnivercityLogo, R.drawable.logo, R.drawable.loader);
+        //GetUILImage.getInstance(getContext()).setImageByURL(UserInfo.university_logo_url, mImageViewUnivercityLogo, R.drawable.logo, R.drawable.loader);
         mTextViewUnivercityText = (TextView) getView().findViewById(R.id.textview_uni_header_name);
     }
 

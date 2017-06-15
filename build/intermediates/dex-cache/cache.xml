@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="29d9916bd9ad8406a53edbafbbce5e18943aa882">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-10.2.4_45641a385ccecd08714c1f3a26132bea709c085d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -57,6 +66,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.4_88b3994f6b97f22708aab7f7566eeaddc2e7f708.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -75,6 +93,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\okio-1.4.0_28fe3cb5ac271edd7f48f0d6594fd667ce0aa3ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\23508\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0_62fabf360ac41555ae7897d26fe453493e11cbaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -84,12 +120,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\customtabs\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b24e0a6d84a759f2094cbb27afd5ac9cb30275c9">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-24.0.0_38f0a19c8b53345ac8bf17284bb6856de82e71fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
         <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.1_1b9819ff0ace481f346cee3d62d584e0f6803a59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_e0338ce7a48372a55549009ee6870babdc50d3c0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,75 +183,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\NewBlankFramework\jiecaovideoplayer-5.5\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d1f5279623a785b3a31539763b55ee1e415dfae">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\NewBlankFramework-jiecaovideoplayer-5.5-unspecified_efbdf83eb1f57a3a84b9b650a94bbd7c939635ee.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_235bc17947624605ad86c7576f2005c2dd538ae5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_7109875d050091c4efa7e70c1ded457253a35b51.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="29d9916bd9ad8406a53edbafbbce5e18943aa882">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-10.2.4_45641a385ccecd08714c1f3a26132bea709c085d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.4_88b3994f6b97f22708aab7f7566eeaddc2e7f708.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\customtabs\24.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b24e0a6d84a759f2094cbb27afd5ac9cb30275c9">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-customtabs-24.0.0_38f0a19c8b53345ac8bf17284bb6856de82e71fb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_e0338ce7a48372a55549009ee6870babdc50d3c0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="44a694d4095be84c2888764b1f7256b385c030ad">
         <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-10.0.1_2c9d22049d628ea05ac4f963e833f3eff7a6a704.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\NewBlankFramework\jiecaovideoplayer-5.5\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2d1f5279623a785b3a31539763b55ee1e415dfae">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\NewBlankFramework-jiecaovideoplayer-5.5-unspecified_efbdf83eb1f57a3a84b9b650a94bbd7c939635ee.jar" />
     </item>
     <item
         is-multidex="false"
@@ -216,6 +216,15 @@
         revision="25.0.1"
         sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
         <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\gson-2.4_a5694ab313733b9cae310b00e0b009923bd30b07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_235bc17947624605ad86c7576f2005c2dd538ae5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -270,6 +279,15 @@
         revision="25.0.1"
         sha1="a66d97cc99478e8080ac20a666c8333022032857">
         <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.mikhaellopez-circularprogressbar-1.0.0_a77bc334643ca75495921122c58fab49e42bb284.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.1_7109875d050091c4efa7e70c1ded457253a35b51.jar" />
     </item>
     <item
         is-multidex="false"

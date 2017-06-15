@@ -28,7 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -99,7 +99,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         mTextViewTitle.setText(R.string.title_taxreport);
         ImageView mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
-        GetPicassoImage.setCircleImageByPicasso(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
+        GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
         ImageView mImgBack = (ImageView) getView().findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(new View.OnClickListener() {

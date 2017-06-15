@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.TableDocumentMasterDataModel;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 
 import java.util.ArrayList;
 
@@ -56,13 +56,13 @@ public class CustomPagerAdapter extends PagerAdapter {
         imageView.setVisibility(View.GONE);
         video.setVisibility(View.GONE);
         if(mResources.get(position).getMediatype().equalsIgnoreCase(WSContant.TAG_VIDEO)) {
-            GetPicassoImage.getImage(mContext, "", imageView);
+            GetUILImage.getInstance().setImage(mContext, "", imageView);
             video.setVisibility(View.VISIBLE);
             video.setUp(mResources.get(position).getFileURL(), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,mResources.get(position).getDocumentname());
             //video.setUp(TEST_URL, JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,mResources.get(position).getDocumentname());
-            GetPicassoImage.getImage(mContext,"http://steveladdmusic.com/wp-content/themes/americanaura/assets/images/default-video-thumbnail.jpg", video.thumbImageView);
+            GetUILImage.getInstance().setImage(mContext,"http://steveladdmusic.com/wp-content/themes/americanaura/assets/images/default-video-thumbnail.jpg", video.thumbImageView);
         }else if(mResources.get(position).getMediatype().equalsIgnoreCase(WSContant.TAG_IMAGE)) {
-            GetPicassoImage.getImage(mContext, mResources.get(position).getFileURL(), imageView);
+            GetUILImage.getInstance().setImage(mContext, mResources.get(position).getFileURL(), imageView);
             imageView.setVisibility(View.VISIBLE);
         }
 

@@ -13,7 +13,7 @@ import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.TableNewsMasterDataModel;
 import com.stpl.edurp.utils.AppLog;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -47,8 +47,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     public void onBindViewHolder(MyViewHolder holder, int position) {
         AppLog.log(TAG," +++ onBindViewHolder ++++ ");
         //String url ="https://edurpstorage.blob.core.windows.net/edurpcontainer/DEV/1/61/103?sv=2015-12-11&sr=b&sig=kPNs9zkQw0v1bqiNnvBkpjRY40ve6qm0%2BDak3zl26Xk%3D&se=2017-03-04T14%3A27%3A34Z&sp=rwl&rscd=attachment%3B%20filename%3Dimages.jpg";
-       // GetPicassoImage.getImage(mContext,url,holder.imageViewRhumbnil);
-        GetPicassoImage.getImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
+       // GetPicassoImage.setImage(mContext,url,holder.imageViewRhumbnil);
+        GetUILImage.getInstance().setImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
         holder.textViewPublishBy.setText(mList.get(position).getPublishedBy());
         holder.textViewRefTitle.setText(mList.get(position).getReferenceTitle());
         holder.textViewPublishedTime.setText(mList.get(position).getPublishedOn());

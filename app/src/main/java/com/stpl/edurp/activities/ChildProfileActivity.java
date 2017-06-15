@@ -2,7 +2,6 @@ package com.stpl.edurp.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,7 +9,7 @@ import android.widget.Toast;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.models.TableStudentDetailsDataModel;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -50,7 +49,7 @@ public class ChildProfileActivity extends BaseActivity implements View.OnClickLi
         mImageEdit = (ImageView) findViewById(R.id.imageView_edit);
         mImageEdit.setVisibility(View.VISIBLE);
         mImageEdit.setOnClickListener(this);
-        GetPicassoImage.setCircleImageByPicasso(this, UserInfo.selectedStudentImageURL, mImageViewProfile);
+        GetUILImage.getInstance().setCircleImage(this, UserInfo.selectedStudentImageURL, mImageViewProfile);
         setDefaultStudentProfileInHeader();
     }
 
@@ -61,7 +60,7 @@ public class ChildProfileActivity extends BaseActivity implements View.OnClickLi
             ((ImageView) findViewById(R.id.imageview_profile_eye)).setVisibility(View.GONE);
             TextView childname = (TextView) findViewById(R.id.textview_profile_header_name);
             TextView childlocation = (TextView) findViewById(R.id.textview_profile_header_location);
-            GetPicassoImage.setCircleImageByPicasso(this, mModelTableStudentDetailsDataModel.getImageurl(), childImage);
+            GetUILImage.getInstance().setCircleImage(this, mModelTableStudentDetailsDataModel.getImageurl(), childImage);
             childname.setText(mModelTableStudentDetailsDataModel.getFullName());
             childlocation.setText(mModelTableStudentDetailsDataModel.getCourseCode());
         }

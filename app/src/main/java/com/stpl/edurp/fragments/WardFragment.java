@@ -22,7 +22,7 @@ import com.stpl.edurp.database.CommonInfo;
 import com.stpl.edurp.interfaces.ICallBack;
 import com.stpl.edurp.models.TableStudentDetailsDataModel;
 import com.stpl.edurp.utils.AppLog;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -112,10 +112,10 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
     private void setDefaultStudentProfileInHeader(boolean isClicked, final int position) {
         mPosition = position;
-        GetPicassoImage.setCircleImageByPicasso(getContext(), mListChildInfoHolder.get(position).getImageurl(), mProfileImage);
+        GetUILImage.getInstance().setCircleImage(getContext(), mListChildInfoHolder.get(position).getImageurl(), mProfileImage);
         mTextViewProfileHeaderName.setText(mListChildInfoHolder.get(position).getFullName());
         mProfileHeaderLocation.setText(mListChildInfoHolder.get(position).getUnversity_name());
-        GetPicassoImage.setCircleImageByPicasso(getContext(), mListChildInfoHolder.get(position).getImageurl(), mImageViewStudentTitleImg);
+        GetUILImage.getInstance().setCircleImage(getContext(), mListChildInfoHolder.get(position).getImageurl(), mImageViewStudentTitleImg);
 
         AppLog.log("setDefaultStudentProfileInHeader getFullName ", mListChildInfoHolder.get(position).getFullName());
         //save user default child selection
