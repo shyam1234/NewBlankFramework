@@ -25,10 +25,11 @@ public interface WSContant {
     String URL_GETMOBILEATTENDANCEABSENCEDETAIL = URL_BASE + "/mobile/GetMobileAttendanceAbsenceDetail";
 
     String URL_GETPAYSLIPMONTHS = URL_BASE + "/mobile/GetPayslipMonths";
-    String URL_GETPAYSLIPMONTHSDOWNLOAD = URL_BASE + "/HR/TaxReport/PrintComputationSheet?";
+    String URL_PRINTEMPPAYSLIP = URL_BASE + "/HR/PayrollDetails/PrintEmpPayslip?";//employeeId=319&financialyearmonthId=466&Language=B
     String URL_UPDATEPREFERENCE = URL_BASE + "/account/updatepreference";
     String URL_GETTAXFINANCIALYEAR = URL_BASE + "/mobile/GetTaxFinancialYear";
     String URL_PRINTTAXREPORT = URL_BASE + "/HR/TaxReport/PrintTaxReport?";
+    String URL_PRINTCOMPUTATIONSHEET = URL_BASE + "/HR/TaxReport/PrintComputationSheet?";
     //String URL_REGISTRATION = URL_BASE + "/Account/Register";
     //-------------------------------------------------------------------------------------
     String DOWNLOAD_FOLDER = "Edurp_results";
@@ -88,8 +89,8 @@ public interface WSContant {
     String TAG_MOBILENOTICEBOARD = "GetMobileNoticeBoard";
     String TAG_REFERENCEDATE = "ReferenceDate";
     String TAG_VALUE_NOT_PAID = "Not Paid";
-    String TAG_ENG = "eng";
-    String TAG_BHASHA = "bhasha";
+    String TAG_ENG = "E";//"eng";
+    String TAG_BHASHA = "B";//"bhasha";
 
     String TAG_LANG_LOGIN = "lblLogin";
     String TAG_LANG_USERNAME = "lblUserName";
@@ -124,9 +125,11 @@ public interface WSContant {
     String TAG_SUBJECTNAME = "SubjectName";
     String TAG_SUBJECTID = "SubjectId";
     String TAG_EMPLOYEEID = "EmployeeId";
+    String TAG_eMPLOYEEID = "employeeId";
     String TAG_FACULY_PAYSLIP = "faculty_payslip_ws";
     String TAG_TAXREPORT = "taxreport_ws";
-    String TAG_FINANCIALYEARMONTHID="financialyearmonthId";
+    String TAG_FINANCIALYEARID ="financialYearId";
+    String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
     String TAG_LANGUAGE="Language";
 }
 

@@ -3,17 +3,20 @@
     android:id="@+id/rel_payslip_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
     android:background="@color/colorWhite"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="12dp">
 
     <TextView
         android:id="@+id/textview_payslip_month"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/imgview_payslip_download"
         android:text="Month"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:textColor="@color/colorBlack"
         android:textStyle="bold" />
 
@@ -22,6 +25,20 @@
         android:id="@+id/imgview_payslip_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="0dp"
         android:src="@drawable/download" />
+
+    <ImageView
+        android:id="@+id/imgview_payslip_downloaded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="0dp"
+        android:src="@android:drawable/ic_delete"
+        android:visibility="gone" />
 </RelativeLayout>

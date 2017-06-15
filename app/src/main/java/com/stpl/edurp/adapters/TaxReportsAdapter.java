@@ -44,15 +44,19 @@ public class TaxReportsAdapter extends RecyclerView.Adapter<TaxReportsAdapter.My
     public void onBindViewHolder(MyViewHolder pHolder, int position) {
         pHolder.download_icon.setId(R.id.imgview_payslip_download);
         pHolder.download_icon.setTag(position);
+        pHolder.delete_icon.setTag(position);
         pHolder.month.setText(mPayslipList.get(position).getFinancialYearCode());
         pHolder.download_icon.setOnClickListener(mListener);
+        pHolder.delete_icon.setOnClickListener(mListener);
         pHolder.rel_row_holder.setId(R.id.rel_payslip_holder);
         pHolder.rel_row_holder.setOnClickListener(mListener);
         pHolder.rel_row_holder.setTag(position);
         if (!Utils.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearId() + ".pdf")) {
-            pHolder.download_icon.setImageResource(R.drawable.download);
+            pHolder.delete_icon.setVisibility(View.GONE);
+            pHolder.download_icon.setVisibility(View.VISIBLE);
         }else{
-            pHolder.download_icon.setImageResource(android.R.drawable.btn_minus);
+            pHolder.delete_icon.setVisibility(View.VISIBLE);
+            pHolder.download_icon.setVisibility(View.GONE);
         }
     }
 
@@ -65,11 +69,13 @@ public class TaxReportsAdapter extends RecyclerView.Adapter<TaxReportsAdapter.My
         private final TextView month;
         private final ImageView download_icon;
         private final RelativeLayout rel_row_holder;
+        private final ImageView delete_icon;
 
         public MyViewHolder(View view) {
             super(view);
             month = (TextView) view.findViewById(R.id.textview_payslip_month);
             download_icon = (ImageView) view.findViewById(R.id.imgview_payslip_download);
+            delete_icon = (ImageView) view.findViewById(R.id.imgview_payslip_downloaded);
             rel_row_holder = (RelativeLayout)view.findViewById(R.id.rel_payslip_holder);
         }
     }

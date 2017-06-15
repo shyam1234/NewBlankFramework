@@ -1,6 +1,7 @@
 package com.stpl.edurp.utils;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -56,6 +57,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
     protected String doInBackground(String... strings) {
         String mFileName ="";
         String fileUrl = strings[0] + strings[1];   // -> http://maven.apache.org/maven-1.x/maven.pdf
+        AppLog.networkLog(TAG,"fileUrl: "+fileUrl);
         if(strings[2]==null) {
             mFileName = strings[1] + ".pdf";  // -> maven.pdf
         }else{
@@ -68,12 +70,15 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
             try {
                 pdfFile.createNewFile();
             } catch (IOException e) {
-                AppLog.errLog(TAG, e.getMessage());
+                AppLog.errLog(TAG, "createNewFile"+e.getMessage());
             }
-            FileDownloader.downloadFile(fileUrl, pdfFile);
+            if(!FileDownloader.downloadFile(fileUrl, pdfFile)){
+                mFileName = "";
+            }
             Utils.dismissProgressBar();
         } catch (Exception e) {
-            e.printStackTrace();
+
+            AppLog.errLog(TAG,"doInBackground"+ e.getMessage());
         }
         return mFileName;
     }
@@ -81,7 +86,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
     private static class FileDownloader {
         private static final int MEGABYTE = 1024 * 1024;
 
-        public static void downloadFile(String fileUrl, File directory) {
+        public static boolean downloadFile(String fileUrl, File directory) {
             try {
                 URL url = new URL(fileUrl);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -92,6 +97,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
                 InputStream inputStream = urlConnection.getInputStream();
                 FileOutputStream fileOutputStream = new FileOutputStream(directory);
                 int totalSize = urlConnection.getContentLength();
+                AppLog.networkLog(TAG,"totalSize: "+totalSize);
                 //-----------------------------------
                 byte[] buffer = new byte[MEGABYTE];
                 int bufferLength = 0;
@@ -99,13 +105,21 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
                     fileOutputStream.write(buffer, 0, bufferLength);
                 }
                 fileOutputStream.close();
+                return true;
             } catch (FileNotFoundException e) {
-                AppLog.errLog(TAG, e.getMessage());
+                AppLog.errLog(TAG, "downloadFile11 "+e.getMessage());
+                directory.delete();
             } catch (MalformedURLException e) {
-                AppLog.errLog(TAG, e.getMessage());
+                AppLog.errLog(TAG, "downloadFile22 "+e.getMessage());
+                directory.delete();
             } catch (IOException e) {
-                AppLog.errLog(TAG, e.getMessage());
+                AppLog.errLog(TAG, "downloadFile333 "+e.getMessage());
+                directory.delete();
+            }catch (Exception e){
+                AppLog.errLog(TAG, "downloadFile4444"+e.getMessage());
+                directory.delete();
             }
+            return false;
         }
     }
 }
