@@ -21,7 +21,7 @@ public class ResultDetailsAdapter extends RecyclerView.Adapter<ResultDetailsAdap
     private ArrayList<TableResultDetailsDataModel.InnerResultDetails> mList;
     private View.OnClickListener mClickListener;
 
-    public ResultDetailsAdapter(Context context, ArrayList<TableResultDetailsDataModel.InnerResultDetails>  pList, View.OnClickListener pClickListener) {
+    public ResultDetailsAdapter(Context context, ArrayList<TableResultDetailsDataModel.InnerResultDetails> pList, View.OnClickListener pClickListener) {
         mContext = context;
         mList = pList;
         mClickListener = pClickListener;
@@ -41,6 +41,7 @@ public class ResultDetailsAdapter extends RecyclerView.Adapter<ResultDetailsAdap
         //holder.textview_credits.setText(mList.get(position).getCredits());
         holder.textview_grade.setText(mList.get(position).getGrade());
         holder.textview_result.setText(mList.get(position).getResult());
+        holder.textview_sem.setText(mList.get(position).getCredits());
     }
 
 
@@ -52,16 +53,17 @@ public class ResultDetailsAdapter extends RecyclerView.Adapter<ResultDetailsAdap
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private final TextView textview_subject;
-       // private final TextView textview_credits;
+        // private final TextView textview_credits;
         private final TextView textview_grade;
         private final TextView textview_result;
+        private final TextView textview_sem;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            textview_subject = (TextView) itemView.findViewById(R.id.textview_results_sem_value);
-           // textview_credits = (TextView) itemView.findViewById(R.id.textview_result_details_credits);
-            textview_grade = (TextView) itemView.findViewById(R.id.textview_result_row_grade_value);
-            textview_result = (TextView) itemView.findViewById(R.id.textview_result_row_result_value);
+            textview_subject = (TextView) itemView.findViewById(R.id.textview_result_del_subject);
+            textview_sem = (TextView) itemView.findViewById(R.id.textview_result_del_sem);
+            textview_grade = (TextView) itemView.findViewById(R.id.textview_result_details_grade);
+            textview_result = (TextView) itemView.findViewById(R.id.textview_result_details_result);
         }
     }
 }

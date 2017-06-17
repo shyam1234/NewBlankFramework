@@ -41,11 +41,14 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
     private RecyclerView mRecycleViewResultList;
     private ResultDetailsAdapter mResultDetailsAdapter;
     private TableResultMasterDataModel mResultDataModel;
-   // private TableResultDetailsDataModel mMobileDetailsHolder;
+    // private TableResultDetailsDataModel mMobileDetailsHolder;
     private Button mBtnDownload;
     private Button mBtnDelete;
     private Button mBtnView;
     private ArrayList<TableResultDetailsDataModel.InnerResultDetails> mMobileDetailsHolder;
+    private TextView mTextViewSubject;
+    private TextView mTextViewAchievement;
+    private TextView mTextViewResult;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,6 +81,14 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(this);
         //------------------------------------
+        mTextViewSubject = (TextView) findViewById(R.id.textview_resultdetail_sem);
+        mTextViewResult = (TextView) findViewById(R.id.textview_results_value);
+        mTextViewAchievement = (TextView) findViewById(R.id.textview_achievement_value);
+        mTextViewSubject.setText(mResultDataModel.getCourseName() + "-" + mResultDataModel.getSemesterName());
+        mTextViewResult.setText(mResultDataModel.getResult());
+        mTextViewResult.setTextColor(getApplicationContext().getResources().getColor(R.color.colorBlue));
+        mTextViewAchievement.setText(mResultDataModel.getAchievementIndex());
+        //------------------------------------
         mBtnDownload = (Button) findViewById(R.id.btn_results_download);
         mBtnDownload.setOnClickListener(this);
         //-------------------------------------
@@ -106,6 +117,8 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mRecycleViewResultList.setLayoutManager(manager);
         mResultDetailsAdapter = new ResultDetailsAdapter(ResultDetailActivity.this, mMobileDetailsHolder, this);
         mRecycleViewResultList.setAdapter(mResultDetailsAdapter);
+        //---------------------------------------------------------------
+
     }
 
 
@@ -192,7 +205,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 @Override
                 public void onResponse(String response) {
                     ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_RESULTDETAILS);
-                    mMobileDetailsHolder =  ((TableResultDetailsDataModel)obj.getModel()).getMessageBody();
+                    mMobileDetailsHolder = ((TableResultDetailsDataModel) obj.getModel()).getMessageBody();
                     saveIntoDatabase();
                     Utils.dismissProgressBar();
                     initRecyclerView();
