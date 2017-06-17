@@ -8,8 +8,8 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.display.*;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.stpl.edurp.R;
 import com.stpl.edurp.application.MyApplication;
 
@@ -67,7 +67,7 @@ public class GetUILImage {
                         .showImageOnLoading(R.drawable.logo).build();
                 //download and display image from url
                 imageLoader.displayImage(imgURL, imageView, options);
-            }else{
+            } else {
                 imageView.setImageResource(R.drawable.logo);
             }
         } catch (Exception e) {
@@ -97,7 +97,7 @@ public class GetUILImage {
                         .showImageOnLoading(R.drawable.avater).build();
                 //download and display image from url
                 imageLoader.displayImage(imgURL, imageView, options);
-            }else{
+            } else {
                 imageView.setImageResource(R.drawable.avater);
             }
         } catch (Exception e) {
@@ -126,7 +126,7 @@ public class GetUILImage {
                         .showImageOnLoading(R.drawable.avater).build();
                 //download and display image from url
                 imageLoader.displayImage(imgURL, imageView, options);
-            }else{
+            } else {
                 imageView.setImageResource(R.drawable.avater);
             }
         } catch (Exception e) {
