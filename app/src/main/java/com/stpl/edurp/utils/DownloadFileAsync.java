@@ -107,7 +107,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
                 fileOutputStream.close();
                 return true;
             } catch (FileNotFoundException e) {
-                AppLog.errLog(TAG, "downloadFile11 "+e.getMessage());
+                AppLog.errLog(TAG, "downloadFile11 FileNotFoundException "+e.getMessage());
                 directory.delete();
             } catch (MalformedURLException e) {
                 AppLog.errLog(TAG, "downloadFile22 "+e.getMessage());
