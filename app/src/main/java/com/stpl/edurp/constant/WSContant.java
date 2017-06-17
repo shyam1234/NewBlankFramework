@@ -131,6 +131,7 @@ public interface WSContant {
     String TAG_FINANCIALYEARID ="financialYearId";
     String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
     String TAG_LANGUAGE="Language";
+    String TAG_FACULTY_ID = "FacultyId";
 }
 
 

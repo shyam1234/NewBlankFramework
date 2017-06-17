@@ -88,7 +88,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             public boolean handleMessage(Message msg) {
                 switch ((Integer) msg.what) {
                     case 1:
-                       // Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
                         initView();
                         fetchDataFromServer();
@@ -189,12 +189,23 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);
-            header.put(WSContant.TAG_DATELASTRETRIEVED, SharedPreferencesApp.getInstance().getLastRetrieveTime(WSContant.TAG_WS_TIMETABLE));
+            header.put(WSContant.TAG_DATELASTRETRIEVED, Utils.getCurrTimeYYYYMMDD());//SharedPreferencesApp.getInstance().getLastRetrieveTime(WSContant.TAG_WS_TIMETABLE));
             header.put(WSContant.TAG_NEW, Utils.getCurrTimeYYYYMMDD());
             header.put(WSContant.TAG_UNIVERSITYID, "" + UserInfo.univercityId);
             //-Utils-for body
             Map<String, String> body = new HashMap<>();
-            body.put(WSContant.TAG_STUDENTID, "" + UserInfo.studentId);
+            switch (UserInfo.currUserType) {
+                case WSContant.TAG_USERTYPE_PARENT:
+                    body.put(WSContant.TAG_STUDENTID, "" + UserInfo.studentId);
+                    body.put(WSContant.TAG_FACULTY_ID,"0");
+                    break;
+                default:
+                    body.put(WSContant.TAG_FACULTY_ID, "" + UserInfo.studentId);
+                    body.put(WSContant.TAG_STUDENTID,"0");
+                    break;
+            }
+
+
             body.put(WSContant.TAG_TIMETABLEDATE, Utils.getCurrTimeYYYYMMDD(mTextViewDate.getText().toString()));
             Utils.showProgressBar(getContext());
             WSRequest.getInstance().requestWithParam(WSRequest.POST, WSContant.URL_TIMETABLE, header, body, WSContant.TAG_WS_TIMETABLE, new IWSRequest() {
