@@ -28,7 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -98,7 +98,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
         mTextViewTitle.setText(R.string.title_payslip);
         ImageView mImgProfile = (ImageView)  getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
-        GetPicassoImage.setCircleImageByPicasso(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
+        GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
         ImageView mImgBack = (ImageView)  getView().findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +132,29 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                 int positn = (int) view.getTag();
                 showDownloadedPDF(positn);
                 break;
+            case R.id.imgview_payslip_downloaded:
+                int position1 = (int) view.getTag();
+                deletePDF(position1);
+                break;
         }
+    }
+
+    private void deletePDF(int position1) {
+        mFinancialYearMonthId = mPayslipDataModel.get(position1).getFinancialYearMonthId();
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Utils.showProgressBar(getContext());
+                Utils.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearMonthId + ".pdf", new ICallBack() {
+                    @Override
+                    public void callBack() {
+                        Utils.dismissProgressBar();
+                        mPayslipAdapter.notifyDataSetChanged();
+                    }
+                });
+
+            }
+        });
     }
 
     private void showDownloadedPDF(int positn) {
@@ -157,12 +179,13 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            mPayslipAdapter.notifyDataSetChanged();
                             Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf");
                         }
                     });
                 }
                 //?EmployeeId=319&financialyearmonthId=457&Language="B"
-            }).execute(WSContant.URL_GETPAYSLIPMONTHSDOWNLOAD, "EmployeeId=" + UserInfo.userId + "&financialyearmonthId=" + mFinancialYearMonthId + "&Language=" + UserInfo.lang_pref, ""+mFinancialYearMonthId);
+            }).execute(WSContant.URL_PRINTEMPPAYSLIP, WSContant.TAG_eMPLOYEEID+"=" + UserInfo.studentId/*UserInfo.userId */+ "&"+WSContant.TAG_FINANCIALYEARMONTHID +"=" + mFinancialYearMonthId + "&"+WSContant.TAG_LANGUAGE+"=" + UserInfo.lang_pref, "" + mFinancialYearMonthId);
         }else{
             showDownloadedPDF(position);
         }

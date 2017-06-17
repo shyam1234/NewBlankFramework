@@ -1,10 +1,8 @@
 package com.stpl.edurp.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,7 +15,7 @@ import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.database.TableAttendanceDetails;
 import com.stpl.edurp.models.TableAttendanceDetailsDataModel;
 import com.stpl.edurp.models.TableCourseMasterDataModel;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -65,7 +63,7 @@ public class AttendanceDetailActivity extends BaseActivity implements View.OnCli
         mTextViewTitle.setText(R.string.tab_attendance);
         ImageView mImgProfile = (ImageView) findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
-        GetPicassoImage.setCircleImageByPicasso(AttendanceDetailActivity.this, UserInfo.selectedStudentImageURL, mImgProfile);
+        GetUILImage.getInstance().setCircleImage(AttendanceDetailActivity.this, UserInfo.selectedStudentImageURL, mImgProfile);
         ImageView mImgBack = (ImageView) findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(this);

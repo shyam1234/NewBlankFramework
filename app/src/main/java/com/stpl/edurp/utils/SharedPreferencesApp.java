@@ -436,8 +436,10 @@ public class SharedPreferencesApp {
             AppLog.errLog(" removeSelectedLangPref", e.getMessage());
         }
     }
-    //-----------------------------------------------------------
 
+
+
+    //--using currently to save and retrieve time ---------------------------------------------------------
     public String getLastRetrieveTime(String pTAG) {
         String mCurrTime = "";
         try {
@@ -458,23 +460,9 @@ public class SharedPreferencesApp {
         try {
             SharedPreferences sharePref = MyApplication.getInstance().getSharedPreferences(DEFAULT_SHAREPREF, Context.MODE_PRIVATE);
             if (sharePref != null) {
-                switch (pTAG) {
-                    case WSContant.TAG_WS_TIMETABLE:
-                        SharedPreferences.Editor data = sharePref.edit();
-                        data.putString(pTAG, time);
-                        data.commit();
-                        break;
-                    case WSContant.TAG_MOBILEATTENDANCEDETAIL:
-                        SharedPreferences.Editor data1 = sharePref.edit();
-                        data1.putString(pTAG, time);
-                        data1.commit();
-                        break;
-                    default:
-                        SharedPreferences.Editor data2 = sharePref.edit();
-                        data2.putString(pTAG, time);
-                        data2.commit();
-                        break;
-                }
+                SharedPreferences.Editor data = sharePref.edit();
+                data.putString(pTAG, time);
+                data.commit();
             } else {
                 AppLog.log("setLastRetrieveTime", "there is not setLastRetrieveTime ");
             }
@@ -483,4 +471,5 @@ public class SharedPreferencesApp {
             AppLog.errLog("sharePreferenceApp : setLastRetrieveTime", e.getMessage());
         }
     }
+    //-----------------------------------------------------------------------------------------------
 }

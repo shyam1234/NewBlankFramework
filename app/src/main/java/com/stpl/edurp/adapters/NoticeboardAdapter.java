@@ -18,7 +18,7 @@ import com.stpl.edurp.models.TableFeeMasterDataModel;
 import com.stpl.edurp.models.TableNewsMasterDataModel;
 import com.stpl.edurp.models.TableResultMasterDataModel;
 import com.stpl.edurp.utils.AppLog;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class NoticeboardAdapter extends RecyclerView.Adapter<NoticeboardAdapter.
             TableNewsMaster newsTable = new TableNewsMaster();
             newsTable.openDB(mContext);
             //TableNewsMasterDataModel newsHolder = newsTable.getData(((TableNewsMasterDataModel) mList.get(position)).getMenuCode(), "" + ((TableNewsMasterDataModel) mList.get(position)).getReferenceId());
-            GetPicassoImage.getImage(mContext, ((TableNewsMasterDataModel) mList.get(position)).getThumbNailPath(), holder.imageViewRhumbnil);
+            GetUILImage.getInstance().setImage(mContext, ((TableNewsMasterDataModel) mList.get(position)).getThumbNailPath(), holder.imageViewRhumbnil);
             holder.imageViewRhumbnil.setVisibility(View.VISIBLE);
             holder.textViewLike.setVisibility(View.VISIBLE);
             holder.textViewComment.setVisibility(View.VISIBLE);
@@ -156,7 +156,7 @@ public class NoticeboardAdapter extends RecyclerView.Adapter<NoticeboardAdapter.
                 TableStudentOverallResultSummary resultTable = new TableStudentOverallResultSummary();
                 resultTable.openDB(mContext);
                 TableResultMasterDataModel resultHolder = resultTable.getData(mList.get(position).getMenuCode(), mList.get(position).getRederenceId());
-                //GetPicassoImage.getImage(mContext, resultHolder.getThumbNailPath(), holder.imageViewRhumbnil);
+                //GetPicassoImage.setImage(mContext, resultHolder.getThumbNailPath(), holder.imageViewRhumbnil);
                 holder.textViewPublishBy.setText(resultHolder.getPublishedBy());
                 holder.textViewRefTitle.setText(resultHolder.getCourseName());
                 //holder.textViewPublishedTime.setText(resultHolder.getPublishedOn());

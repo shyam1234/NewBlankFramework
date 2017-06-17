@@ -185,6 +185,9 @@ public class Utils {
     }
 
 
+    /**
+     * @return yyyy-MM-dd HH:mm:ss
+     */
     public static String getCurrTime() {
         Calendar c = Calendar.getInstance();
 //      SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");

@@ -14,6 +14,7 @@ import com.stpl.edurp.models.PayslipDataModel;
 import com.stpl.edurp.models.TableAbsenseDetailsDataModel;
 import com.stpl.edurp.models.TableResultDetailsDataModel;
 import com.stpl.edurp.models.TableTimeTableDetailsDataModel;
+import com.stpl.edurp.models.TaxReportsDataModel;
 
 /**
  * Created by Admin on 30-12-2016.
@@ -84,6 +85,10 @@ public class ParseResponse {
                 break;
             case ModelFactory.MODEL_PAYSLIPFACULTYDM:
                 mModel = mGson.fromJson(mRespose, PayslipDataModel.class);
+                ModelFactory.getInstance().register(mKey, mModel);
+                break;
+            case ModelFactory.MODEL_GETTAXFINANCIALYEAR:
+                mModel = mGson.fromJson(mRespose, TaxReportsDataModel.class);
                 ModelFactory.getInstance().register(mKey, mModel);
                 break;
             default:

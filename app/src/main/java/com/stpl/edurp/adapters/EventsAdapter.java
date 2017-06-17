@@ -43,8 +43,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, int position) {
         AppLog.log(TAG," +++ onBindViewHolder ++++ ");
 //        //String url ="https://edurpstorage.blob.core.windows.net/edurpcontainer/DEV/1/61/103?sv=2015-12-11&sr=b&sig=kPNs9zkQw0v1bqiNnvBkpjRY40ve6qm0%2BDak3zl26Xk%3D&se=2017-03-04T14%3A27%3A34Z&sp=rwl&rscd=attachment%3B%20filename%3Dimages.jpg";
-//       // GetPicassoImage.getImage(mContext,url,holder.imageViewRhumbnil);
-//        GetPicassoImage.getImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
+//       // GetPicassoImage.setImage(mContext,url,holder.imageViewRhumbnil);
+//        GetPicassoImage.setImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
 //        holder.textViewPublishBy.setText(mList.get(position).getPublishedBy());
 //        holder.textViewRefTitle.setText(mList.get(position).getReferenceTitle());
 //        holder.textViewPublishedTime.setText(mList.get(position).getPublishedOn());

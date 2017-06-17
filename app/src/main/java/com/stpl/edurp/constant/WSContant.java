@@ -24,11 +24,12 @@ public interface WSContant {
     String URL_GETMOBILEATTENDANCEDETAIL = URL_BASE + "/mobile/GetMobileAttendanceDetail";
     String URL_GETMOBILEATTENDANCEABSENCEDETAIL = URL_BASE + "/mobile/GetMobileAttendanceAbsenceDetail";
 
-    String URL_GETPAYSLIPMONTHS = URL_BASE+"/mobile/GetPayslipMonths";
-    String URL_GETPAYSLIPMONTHSDOWNLOAD = URL_BASE+"/HR/TaxReport/PrintComputationSheet?";
-    String URL_UPDATEPREFERENCE = URL_BASE+"/account/updatepreference";
-
-
+    String URL_GETPAYSLIPMONTHS = URL_BASE + "/mobile/GetPayslipMonths";
+    String URL_PRINTEMPPAYSLIP = URL_BASE + "/HR/PayrollDetails/PrintEmpPayslip?";//employeeId=319&financialyearmonthId=466&Language=B
+    String URL_UPDATEPREFERENCE = URL_BASE + "/account/updatepreference";
+    String URL_GETTAXFINANCIALYEAR = URL_BASE + "/mobile/GetTaxFinancialYear";
+    String URL_PRINTTAXREPORT = URL_BASE + "/HR/TaxReport/PrintTaxReport?";
+    String URL_PRINTCOMPUTATIONSHEET = URL_BASE + "/HR/TaxReport/PrintComputationSheet?";
     //String URL_REGISTRATION = URL_BASE + "/Account/Register";
     //-------------------------------------------------------------------------------------
     String DOWNLOAD_FOLDER = "Edurp_results";
@@ -88,8 +89,8 @@ public interface WSContant {
     String TAG_MOBILENOTICEBOARD = "GetMobileNoticeBoard";
     String TAG_REFERENCEDATE = "ReferenceDate";
     String TAG_VALUE_NOT_PAID = "Not Paid";
-    String TAG_ENG = "eng";
-    String TAG_BHASHA = "bhasha";
+    String TAG_ENG = "E";//"eng";
+    String TAG_BHASHA = "B";//"bhasha";
 
     String TAG_LANG_LOGIN = "lblLogin";
     String TAG_LANG_USERNAME = "lblUserName";
@@ -99,32 +100,37 @@ public interface WSContant {
     String TAG_LANG_PROCESSDING = "lblProceseding";
     String TAG_LANG_FORGOTPASSWORDTITLE = "lblForgotPasswordTittle";
     String TAG_LANG_WELCOME = "bnrWelcome";
-    String TAG_LANG_EMAIL="lblEmail";
-    String TAG_LANG_SUBMIT="lblSubmit";
+    String TAG_LANG_EMAIL = "lblEmail";
+    String TAG_LANG_SUBMIT = "lblSubmit";
     String TAG_LANG_NEWS = "NEW";
     String TAG_LANG_DETAILS = "lblDetails";
     String TAG_LANG_COMMENTS = "lblComments";
-    String TAG_LANG_LIKE="lblLike"; //pending
+    String TAG_LANG_LIKE = "lblLike"; //pending
     String TAG_LANG_HOME = "lblHome";//pending
-    String TAG_LANG_NOTICEBOARD="lblNoticeboard"; //pending
-    String TAG_LANG_SEND="lblSend";
-    String TAG_LANG_TYPE ="lblType";
+    String TAG_LANG_NOTICEBOARD = "lblNoticeboard"; //pending
+    String TAG_LANG_SEND = "lblSend";
+    String TAG_LANG_TYPE = "lblType";
     String TAG_LANG_MYPREFERENCE = "lblMyPreference";
     String TAG_LANG_SHARE_THIS_APP = "lblShareThisApp";//pending
     String TAG_LANG_OPTIONS = "lblOptions";//pending
-    String TAG_LANG_SETTING="lblSettings";
-    String TAG_LANG_LOGOUT="lblLogout";
-    String TAG_TIMETABLEDATE="TimeTableDate";
+    String TAG_LANG_SETTING = "lblSettings";
+    String TAG_LANG_LOGOUT = "lblLogout";
+    String TAG_TIMETABLEDATE = "TimeTableDate";
     String TAG_WS_TIMETABLE = "ws_timetable";
     String TAG_NR = "NR";
     String TAG_MOBILEATTENDANCEDETAIL = "ws_GetMobileAttendanceDetail";
-    String TAG_MOBILEATTENDANCE_ABSENT= "ws_GetMobileAttendanceAbsent";
+    String TAG_MOBILEATTENDANCE_ABSENT = "ws_GetMobileAttendanceAbsent";
     String TAG_COURSE = "Course";
-    String TAG_SEMESTER= "Semester";
-    String TAG_SUBJECTNAME= "SubjectName";
-    String TAG_SUBJECTID= "SubjectId";
-    String TAG_EMPLOYEEID ="EmployeeId";
+    String TAG_SEMESTER = "Semester";
+    String TAG_SUBJECTNAME = "SubjectName";
+    String TAG_SUBJECTID = "SubjectId";
+    String TAG_EMPLOYEEID = "EmployeeId";
+    String TAG_eMPLOYEEID = "employeeId";
     String TAG_FACULY_PAYSLIP = "faculty_payslip_ws";
+    String TAG_TAXREPORT = "taxreport_ws";
+    String TAG_FINANCIALYEARID ="financialYearId";
+    String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
+    String TAG_LANGUAGE="Language";
 }
 
 

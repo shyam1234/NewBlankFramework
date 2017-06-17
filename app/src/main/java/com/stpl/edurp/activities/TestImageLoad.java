@@ -7,8 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.stpl.edurp.R;
-import com.stpl.edurp.utils.GetPicassoImage;
-import com.stpl.edurp.utils.RenderImageByUIL;
+import com.stpl.edurp.utils.GetUILImage;
 
 public class TestImageLoad extends AppCompatActivity implements View.OnClickListener{
 
@@ -41,16 +40,16 @@ public class TestImageLoad extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
          switch (view.getId()){
              case R.id.btn_show1:
-                 GetPicassoImage.getImage(TestImageLoad.this,url, imageHolder);
+                 GetUILImage.getInstance().setImage(TestImageLoad.this,url, imageHolder);
                  break;
              case R.id.btn_show2:
-                 GetPicassoImage.setCircleImageByPicasso(TestImageLoad.this,url, imageHolder);
+                 GetUILImage.getInstance().setCircleImage(TestImageLoad.this,url, imageHolder);
                  break;
              case R.id.btn_show3:
-                 GetPicassoImage.setSquareImageByPicasso(TestImageLoad.this,url, imageHolder);
+                 //GetPicassoImage.getInstance().setSquareImageByPicasso(TestImageLoad.this,url, imageHolder);
                  break;
              case R.id.btn_show4:
-                 RenderImageByUIL.getInstance(TestImageLoad.this).setImageByURL(url,imageHolder,R.mipmap.ic_launcher,R.drawable.loader);
+                // GetUILImage.getInstance(TestImageLoad.this).setImageByURL(url,imageHolder,R.mipmap.ic_launcher,R.drawable.loader);
                  break;
 
          }

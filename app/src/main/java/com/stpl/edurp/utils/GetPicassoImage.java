@@ -3,41 +3,28 @@ package com.stpl.edurp.utils;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.stpl.edurp.R;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
+import com.stpl.edurp.R;
 
 /**
  * Created by Admin on 26-11-2016.
  */
 
 public class GetPicassoImage {
-    private static final String TAG = "GetPicassoImage";
-    /**
-     * this method uses to render image by Picasso
-     *
-     * @param pContext
-     * @param imgURL
-     * @param imageView
-     * @param placeHolder
-     * @param errorHolder
-     * @param resize
-     */
-//    public static void getImage(Context pContext, String imgURL, ImageView imageView, int placeHolder, int errorHolder, int resize) {
-//        if (resize == 0) {
-//            resize = 50; //default resize size
-//        }
-//        if (imgURL != null) {
-//            Picasso.with(pContext)
-//                    .load(imgURL)
-//                    .resize(resize, resize)
-//                    .centerCrop()
-//                    .placeholder(placeHolder)
-//                    .error(errorHolder)
-//                    .into(imageView);
-//        } else {
-//            imageView.setImageResource(R.drawable.logo);
-//        }
-//    }
+    private final String TAG = "GetPicassoImage";
+    private static GetPicassoImage mInstance;
+
+    private GetPicassoImage() {
+    }
+
+    public synchronized static GetPicassoImage getInstance() {
+        if (mInstance == null) {
+            mInstance = new GetPicassoImage();
+        }
+        return mInstance;
+    }
+
 
     /**
      * this method uses to render image by Picasso
@@ -46,11 +33,11 @@ public class GetPicassoImage {
      * @param imgURL
      * @param imageView
      */
-    public static void getImage(Context pContext, String imgURL, ImageView imageView) {
+    public synchronized void setImage(Context pContext, String imgURL, ImageView imageView) {
         try {
-            AppLog.log(" getImage Picasso: ", imgURL);
+            AppLog.log(" setImage Picasso: ", imgURL);
             if (imgURL != null) {
-                Picasso.with(pContext)
+                PicassoCache.getPicassoInstance(pContext).with(pContext)
                         .load(imgURL)
                         .placeholder(R.drawable.logo)
                         .error(R.drawable.logo)
@@ -58,8 +45,8 @@ public class GetPicassoImage {
             } else {
                 imageView.setImageResource(R.drawable.logo);
             }
-        }catch (Exception e){
-            AppLog.errLog(TAG,"getImage : "+e.getMessage());
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setImage Picasso : " + e.getMessage());
         }
     }
 
@@ -71,11 +58,11 @@ public class GetPicassoImage {
      * @param url
      * @param imageView
      */
-    public static void setCircleImageByPicasso(Context pContext, String url, ImageView imageView) {
+    public synchronized void setCircleImage(Context pContext, String url, ImageView imageView) {
         try {
-            AppLog.log("setCircleImageByPicasso: ", url);
+            AppLog.log("setCircleImage: Picasso ", url);
             if (url != null) {
-                Picasso.with(pContext)
+                 PicassoCache.getPicassoInstance(pContext).with(pContext)
                         .load(url)
                         .fit()
                         .error(R.drawable.avater)
@@ -85,8 +72,8 @@ public class GetPicassoImage {
             } else {
                 imageView.setImageResource(R.drawable.avater);
             }
-        }catch (Exception e){
-            AppLog.errLog(TAG,"setCircleImageByPicasso : "+e.getMessage());
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setCircleImage Picasso : " + e.getMessage());
         }
     }
 
@@ -97,11 +84,11 @@ public class GetPicassoImage {
      * @param imgURL
      * @param imageView
      */
-    public static void setSquareImageByPicasso(Context pContext, String imgURL, ImageView imageView) {
+    public synchronized void setSquareImage(Context pContext, String imgURL, ImageView imageView) {
         try {
-            AppLog.log(" setSquareImageByPicasso Picasso: ", imgURL);
+            AppLog.log(" setSquareImage Picasso: ", imgURL);
             if (imgURL != null) {
-                Picasso.with(pContext)
+                 PicassoCache.getPicassoInstance(pContext).with(pContext)
                         .load(imgURL)
                         .fit()
                         .transform(new SquareImageTransform())
@@ -109,8 +96,8 @@ public class GetPicassoImage {
             } else {
                 imageView.setImageResource(R.drawable.logo);
             }
-        }catch (Exception e){
-            AppLog.errLog(TAG,"setSquareImageByPicasso : "+e.getMessage());
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setSquareImage Picasso: " + e.getMessage());
         }
     }
 

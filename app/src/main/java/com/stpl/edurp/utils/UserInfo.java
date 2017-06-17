@@ -49,7 +49,7 @@ public class UserInfo {
 
     }
 
-    public static void logout(boolean isShowToast) {
+    public static void logout(boolean isShowToastAndNavigateToLogin) {
         clearUSerInfo();
         SharedPreferencesApp.getInstance().removeAll();
         AppCompatActivity activity =null;
@@ -60,7 +60,7 @@ public class UserInfo {
         }
 
         if(activity!=null) {
-            if(isShowToast) {
+            if(isShowToastAndNavigateToLogin) {
                 Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_logout, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);

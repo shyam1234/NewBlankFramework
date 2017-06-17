@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.models.TableStudentDetailsDataModel;
-import com.stpl.edurp.utils.GetPicassoImage;
+import com.stpl.edurp.utils.GetUILImage;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class WardChildRowAdapter extends RecyclerView.Adapter<WardChildRowAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.mTextViewName.setText(mListHolder.get(position).getFullName());
         holder.mTextViewAddress.setText(mListHolder.get(position).getUnversity_name());
-        GetPicassoImage.setCircleImageByPicasso(mContext,mListHolder.get(position).getImageurl(), holder.mImageViewChildIcon);
+        GetUILImage.getInstance().setCircleImage(mContext,mListHolder.get(position).getImageurl(), holder.mImageViewChildIcon);
         holder.mRelHolder.setOnClickListener(mListener);
         holder.mRelHolder.setTag(position);
     }
