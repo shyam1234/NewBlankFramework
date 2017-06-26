@@ -98,7 +98,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mBtnView.setOnClickListener(this);
         mBtnDelete.setOnClickListener(this);
         //-------------------------------------
-        if (FileManager.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf")) {
+        if (FileManager.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName()+ ".pdf")) {
             mBtnDownload.setVisibility(View.GONE);
             mBtnView.setVisibility(View.VISIBLE);
             mBtnDelete.setVisibility(View.VISIBLE);
@@ -162,10 +162,11 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                             }
                         });
                     }
-                }).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId);
+                //}).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
+                }).execute(WSContant.URL_PRINT_SEM_RESULTS, "StudentId=" + UserInfo.studentId+"&SSAssociationId="+mResultDataModel.getReferenceId()+"&Language="+UserInfo.lang_pref, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
                 break;
             case R.id.btn_results_delete:
-                FileManager.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName() + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         if (mBtnDelete != null) {
@@ -177,7 +178,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 });
                 break;
             case R.id.btn_results_view:
-                FileManager.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf");
+                FileManager.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+ mResultDataModel.getSemesterName()+ ".pdf");
                 break;
         }
     }
