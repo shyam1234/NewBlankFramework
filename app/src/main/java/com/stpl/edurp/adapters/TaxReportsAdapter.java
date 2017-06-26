@@ -13,6 +13,7 @@ import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.fragments.TaxReportsFragment;
 import com.stpl.edurp.models.TaxReportsDataModel;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
@@ -59,14 +60,14 @@ public class TaxReportsAdapter extends RecyclerView.Adapter<TaxReportsAdapter.My
         pHolder.text_form.setTag(position);
         pHolder.text_computation.setTag(position);
 
-        if (!Utils.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearId() + ".pdf")) {
+        if (!FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearId() + ".pdf")) {
             pHolder.delete_form_icon.setVisibility(View.GONE);
             pHolder.download_form_icon.setVisibility(View.VISIBLE);
         } else {
             pHolder.delete_form_icon.setVisibility(View.VISIBLE);
             pHolder.download_form_icon.setVisibility(View.GONE);
         }
-        if (!Utils.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearId() + TaxReportsFragment.TAG_COMPUTATION + ".pdf")) {
+        if (!FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearId() + TaxReportsFragment.TAG_COMPUTATION + ".pdf")) {
             pHolder.delete_computation_icon.setVisibility(View.GONE);
             pHolder.download_computation_icon.setVisibility(View.VISIBLE);
         } else {

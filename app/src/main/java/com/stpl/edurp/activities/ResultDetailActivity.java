@@ -25,6 +25,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -97,7 +98,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mBtnView.setOnClickListener(this);
         mBtnDelete.setOnClickListener(this);
         //-------------------------------------
-        if (Utils.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf")) {
+        if (FileManager.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf")) {
             mBtnDownload.setVisibility(View.GONE);
             mBtnView.setVisibility(View.VISIBLE);
             mBtnDelete.setVisibility(View.VISIBLE);
@@ -164,7 +165,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 }).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId);
                 break;
             case R.id.btn_results_delete:
-                Utils.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         if (mBtnDelete != null) {
@@ -176,7 +177,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 });
                 break;
             case R.id.btn_results_view:
-                Utils.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf");
+                FileManager.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf");
                 break;
         }
     }

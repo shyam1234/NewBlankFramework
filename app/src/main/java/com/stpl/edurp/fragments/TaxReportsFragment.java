@@ -28,6 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
@@ -163,7 +164,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
             @Override
             public void run() {
                 Utils.showProgressBar(getContext());
-                Utils.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, key + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, key + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         Utils.dismissProgressBar();
@@ -177,11 +178,11 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
 
     private void showDownloadedForm16PDF(int positn) {
         mFinancialYearId = mTaxReportDataModel.get(positn).getFinancialYearId();
-        if (Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
+        if (FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + ".pdf");
+                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + ".pdf");
                     Utils.dismissProgressBar();
 
                 }
@@ -191,7 +192,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
 
     private void downloadPDFForForm16(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
-        if (!Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
+        if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
             new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                 @Override
                 public void callBack() {
@@ -199,7 +200,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
                         @Override
                         public void run() {
                             mPayslipAdapter.notifyDataSetChanged();
-                            Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
 
                         }
                     });
@@ -263,7 +264,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     //for Computation sheet
     private void downloadPDFForComputation(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
-        if (!Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
+        if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
             new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                 @Override
                 public void callBack() {
@@ -271,7 +272,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
                         @Override
                         public void run() {
                             mPayslipAdapter.notifyDataSetChanged();
-                            Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf");
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf");
 
                         }
                     });
@@ -284,11 +285,11 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
 
     private void showDownloadedComputation(int positn) {
         mFinancialYearId = mTaxReportDataModel.get(positn).getFinancialYearId();
-        if (Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
+        if (FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + TAG_COMPUTATION + ".pdf");
+                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + TAG_COMPUTATION + ".pdf");
                     Utils.dismissProgressBar();
 
                 }

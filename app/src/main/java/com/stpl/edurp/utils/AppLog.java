@@ -7,7 +7,7 @@ import android.util.Log;
  */
 
 public class AppLog {
-    private static boolean FLAG_LOG = false;
+    private static boolean FLAG_LOG = true;
     private static boolean FLAG_ERR_LOG = true;
     private static final String TAG_LOG = "debug_log";
     private static final String TAG_NET_LOG = "net_log";

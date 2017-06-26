@@ -31,6 +31,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
@@ -142,14 +143,14 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                 AppLog.log(TAG, "btn_download_details");
                 final String sfAssociationId = ""+mFeeList.get(posi).getReferenceId();//"436";
 
-                if (!Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER,sfAssociationId + ".pdf")) {
+                if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER,sfAssociationId + ".pdf")) {
                     new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                         @Override
                         public void callBack() {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, sfAssociationId + ".pdf");
+                                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, sfAssociationId + ".pdf");
                                 }
                             });
                         }
@@ -158,7 +159,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + sfAssociationId + ".pdf");
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + sfAssociationId + ".pdf");
                             Utils.dismissProgressBar();
                         }
                     });

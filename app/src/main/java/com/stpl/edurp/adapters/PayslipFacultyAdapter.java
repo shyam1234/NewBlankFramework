@@ -13,6 +13,7 @@ import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.PayslipDataModel;
 import com.stpl.edurp.models.TaxReportsDataModel;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class PayslipFacultyAdapter extends RecyclerView.Adapter<PayslipFacultyAd
         pHolder.rel_row_holder.setId(R.id.rel_payslip_holder);
         pHolder.rel_row_holder.setOnClickListener(mListener);
         pHolder.rel_row_holder.setTag(position);
-        if (!Utils.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearMonthId() + ".pdf")) {
+        if (!FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mPayslipList.get(position).getFinancialYearMonthId() + ".pdf")) {
             pHolder.delete_icon.setVisibility(View.GONE);
             pHolder.download_icon.setVisibility(View.VISIBLE);
         }else{

@@ -32,7 +32,7 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
         mContext = pContext;
         mFolderName = pFolderName;
         mCallback = pCallback;
-        Utils.verifyStoragePermissions(pContext);
+        FileManager.verifyStoragePermissions(pContext);
     }
 
     @Override

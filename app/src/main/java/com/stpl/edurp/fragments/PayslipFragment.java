@@ -28,6 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -145,7 +146,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
             @Override
             public void run() {
                 Utils.showProgressBar(getContext());
-                Utils.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearMonthId + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearMonthId + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         Utils.dismissProgressBar();
@@ -159,11 +160,11 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
 
     private void showDownloadedPDF(int positn) {
         mFinancialYearMonthId = mPayslipDataModel.get(positn).getFinancialYearMonthId();
-        if (Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
+        if (FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearMonthId + ".pdf");
+                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearMonthId + ".pdf");
                     Utils.dismissProgressBar();
                 }
             });
@@ -172,7 +173,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
 
     private void downloadPDF(int position) {
         mFinancialYearMonthId = mPayslipDataModel.get(position).getFinancialYearMonthId();
-        if (!Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
+        if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
             new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                 @Override
                 public void callBack() {
@@ -180,7 +181,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
                         @Override
                         public void run() {
                             mPayslipAdapter.notifyDataSetChanged();
-                            Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf");
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf");
                         }
                     });
                 }
