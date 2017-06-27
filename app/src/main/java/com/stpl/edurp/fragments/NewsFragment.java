@@ -180,7 +180,7 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
                         //update UI and save data to table ---------------------
                         AppLog.log(TAG, "fetchDataFromServe1r " + mNewsList.size());
                         mNewsList = holder.getMessageBody().getNewsMasterMenuList();
-                        Collections.sort(mNewsList, Collections.<TableNewsMasterDataModel>reverseOrder());
+                        Collections.sort(mNewsList);//, Collections.<TableNewsMasterDataModel>reverseOrder());
                         AppLog.log(TAG, "fetchDataFromServe2r " + mNewsList.size());
                         saveDataIntoTable(holder);
                         getNewsMasterDataModel();
