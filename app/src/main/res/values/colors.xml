@@ -3,7 +3,7 @@
     <color name="colorPrimary">#0075c7</color>
     <color name="colorPrimaryDark">#0085f8</color>
     <color name="colorAccent">#fc6150</color>
-    
+
     <color name="black">#000000</color>
     <color name="light_black">#88000000</color>
     <color name="colorWhite">#ffffff</color>
@@ -29,7 +29,7 @@
 
     <color name="progressBarColor">#3fa5b5</color>
     <color name="backgroundProgressBarColor">#309f60</color>
-    <color name="colorMargin">#88000000</color>
+    <color name="colorMargin">#d6d6d6</color>
     <color name="colorDarkblue">#2093CC</color>
     <color name="colorLightParrot">#01BFA5</color>
     <color name="colorDarkVal">#9574CD</color>
@@ -37,7 +37,6 @@
     <color name="colorLeaf">#7DB955</color>
     <color name="colorLighterMayrun">#67A78C</color>
     <color name="colorTextHint">#ABAAB0</color>
-
 
     <color name="today">#4b82ff</color>
     <color name="greyed_out">#c7c7c7</color>

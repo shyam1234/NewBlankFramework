@@ -166,7 +166,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/imageview_result_row_tag"
-                android:text="Tag Value"
+                android:text="@string/result"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorLightGray" />
         </RelativeLayout>

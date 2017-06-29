@@ -18,6 +18,7 @@ public interface WSContant {
     String URL_SAVELIKENCOMMENT = URL_BASE + "/mobile/SaveLikeNComment";
     String URL_GETMOBILECOMMENTSNLIKES = URL_BASE + "/mobile/GetMobileCommentsnLikes";
     String URL_PRINT_OVERALL_RESULT = URL_BASE + "/StudentPortal/OverallResult/PrintOverallResult?StudentId=";
+    String URL_PRINT_SEM_RESULTS = URL_BASE +"/StudentSemesterResult/PrintSemesterResult?";
     String URL_PRINT_RECEIPT = URL_BASE + "/Fee/FeeCollection/PrintReceipt?sfAssociationId=";
 
     String URL_TIMETABLE = URL_BASE + "/mobile/GetMobileTimeTable";
@@ -131,6 +132,7 @@ public interface WSContant {
     String TAG_FINANCIALYEARID ="financialYearId";
     String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
     String TAG_LANGUAGE="Language";
+    String TAG_FACULTY_ID = "FacultyId";
 }
 
 

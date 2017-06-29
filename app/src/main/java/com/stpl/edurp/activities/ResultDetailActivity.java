@@ -25,6 +25,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -41,11 +42,14 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
     private RecyclerView mRecycleViewResultList;
     private ResultDetailsAdapter mResultDetailsAdapter;
     private TableResultMasterDataModel mResultDataModel;
-   // private TableResultDetailsDataModel mMobileDetailsHolder;
+    // private TableResultDetailsDataModel mMobileDetailsHolder;
     private Button mBtnDownload;
     private Button mBtnDelete;
     private Button mBtnView;
     private ArrayList<TableResultDetailsDataModel.InnerResultDetails> mMobileDetailsHolder;
+    private TextView mTextViewSubject;
+    private TextView mTextViewAchievement;
+    private TextView mTextViewResult;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,6 +82,14 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(this);
         //------------------------------------
+        mTextViewSubject = (TextView) findViewById(R.id.textview_resultdetail_sem);
+        mTextViewResult = (TextView) findViewById(R.id.textview_results_value);
+        mTextViewAchievement = (TextView) findViewById(R.id.textview_achievement_value);
+        mTextViewSubject.setText(mResultDataModel.getCourseName() + "-" + mResultDataModel.getSemesterName());
+        mTextViewResult.setText(mResultDataModel.getResult());
+        mTextViewResult.setTextColor(getApplicationContext().getResources().getColor(R.color.colorBlue));
+        mTextViewAchievement.setText(mResultDataModel.getAchievementIndex());
+        //------------------------------------
         mBtnDownload = (Button) findViewById(R.id.btn_results_download);
         mBtnDownload.setOnClickListener(this);
         //-------------------------------------
@@ -86,7 +98,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mBtnView.setOnClickListener(this);
         mBtnDelete.setOnClickListener(this);
         //-------------------------------------
-        if (Utils.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf")) {
+        if (FileManager.isFileDownloaded(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName()+ ".pdf")) {
             mBtnDownload.setVisibility(View.GONE);
             mBtnView.setVisibility(View.VISIBLE);
             mBtnDelete.setVisibility(View.VISIBLE);
@@ -106,6 +118,8 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         mRecycleViewResultList.setLayoutManager(manager);
         mResultDetailsAdapter = new ResultDetailsAdapter(ResultDetailActivity.this, mMobileDetailsHolder, this);
         mRecycleViewResultList.setAdapter(mResultDetailsAdapter);
+        //---------------------------------------------------------------
+
     }
 
 
@@ -148,10 +162,11 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                             }
                         });
                     }
-                }).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId);
+                //}).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
+                }).execute(WSContant.URL_PRINT_SEM_RESULTS, "StudentId=" + UserInfo.studentId+"&SSAssociationId="+mResultDataModel.getReferenceId()+"&Language="+UserInfo.lang_pref, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
                 break;
             case R.id.btn_results_delete:
-                Utils.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName() + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         if (mBtnDelete != null) {
@@ -163,7 +178,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 });
                 break;
             case R.id.btn_results_view:
-                Utils.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId + ".pdf");
+                FileManager.showDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+ mResultDataModel.getSemesterName()+ ".pdf");
                 break;
         }
     }
@@ -192,7 +207,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 @Override
                 public void onResponse(String response) {
                     ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_RESULTDETAILS);
-                    mMobileDetailsHolder =  ((TableResultDetailsDataModel)obj.getModel()).getMessageBody();
+                    mMobileDetailsHolder = ((TableResultDetailsDataModel) obj.getModel()).getMessageBody();
                     saveIntoDatabase();
                     Utils.dismissProgressBar();
                     initRecyclerView();

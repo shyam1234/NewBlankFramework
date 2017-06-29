@@ -69,7 +69,7 @@
     <string name="tab_attendance">Attendance</string>
     <string name="total_score">Total Score</string>
     <string name="achievement_index">Achievement Index</string>
-    <string name="download">Download</string>
+    <string name="download">Download Result</string>
     <string name="grade">Grade</string>
     <string name="result">Result</string>
     <string name="tab_result">Result</string>
@@ -115,4 +115,8 @@
     <string name="title_payslip">Payslip</string>
     <string name="percentage">Percentage</string>
     <string name="title_taxreport">Tax Report</string>
+    <string name="form_16">Form 16</string>
+    <string name="computation_sheet">Computation Sheet</string>
+    <string name="financial_year">Financial Year</string>
+    <string name="results">Results</string>
 </resources>

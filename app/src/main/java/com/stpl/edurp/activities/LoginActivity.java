@@ -45,7 +45,7 @@ import java.util.Map;
  */
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
-    private final String TAG = LoginActivity.class.getName();
+    private static final String TAG = LoginActivity.class.getName();
     private TextView mTextViewForgotPassword;
     private Button mButtonLogin;
     private TextInputEditText mEditTextUserName;
@@ -85,13 +85,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         //----------------------------------------------------
         setListner();
-        //cheat code
+        //cheat code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ++
         /*For parent*/
         //mEditTextUserName.setText("divyaparent1@gmail.com");
         //mEditTextPassword.setText("login@123");
         /*For employee*/
-        mEditTextUserName.setText("divyaemp1@gmail.com");
-        mEditTextPassword.setText("89156");
+//        mEditTextUserName.setText("divyaemp1@gmail.com");
+//        mEditTextPassword.setText("89156");
+
+        mEditTextUserName.setText("divyaparent1@gmail.com");
+        mEditTextPassword.setText("login@123");
+
+//        mEditTextUserName.setText("harshaparent@gmail.com");
+//        mEditTextPassword.setText("96968");
     }
 
 
@@ -178,28 +184,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             });
             //------------------------------------------------
 
-        }else{
+        } else {
             reset();
         }
     }
 
-    private void savedDataOnSharedPrefences(LoginDataModel holder) {
+    public static void savedDataOnSharedPrefences(LoginDataModel holder) {
         AppLog.log(TAG, "getPhoneNumber: " + holder.data.PhoneNumber);
         AppLog.log(TAG, "parentId: " + holder.data.UserId);
         AppLog.log(TAG, "parentName: " + holder.data.UserName);
-        UserInfo.userId = holder.data.UserId;
-        UserInfo.parentName = holder.data.UserName;
-        UserInfo.parentId = UserInfo.userId;
-        UserInfo.currUserType = holder.data.UserType;
-        SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
-        SharedPreferencesApp.getInstance().saveLastLoginTime(Utils.getCurrTime());
-        SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" + holder.data.UniversityId);
+        AppLog.log(TAG, "currUserType: " + holder.data.UserType);
+        if (holder.data.UserType != null && holder.data.PhoneNumber != null && holder.data.UserName != null) {
+            UserInfo.userId = holder.data.UserId;
+            UserInfo.parentName = holder.data.UserName;
+            UserInfo.parentId = UserInfo.userId;
+            UserInfo.currUserType = holder.data.UserType;
+            SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
+            SharedPreferencesApp.getInstance().saveLastLoginTime(Utils.getCurrTime());
+            SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" + holder.data.UniversityId);
+        }
     }
 
 
     private void navigateToNextPage() {
         Intent i = new Intent(LoginActivity.this, DashboardActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         Utils.animRightToLeft(LoginActivity.this);
     }

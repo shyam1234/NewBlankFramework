@@ -28,6 +28,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
+import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
@@ -43,6 +44,7 @@ import java.util.Map;
 
 public class TaxReportsFragment extends Fragment implements View.OnClickListener {
     public final static String TAG = "TaxReportsFragment";
+    public static final String TAG_COMPUTATION = "_computation";
     private RecyclerView mRecyclerView;
     private TaxReportsAdapter mPayslipAdapter;
     private ArrayList<TaxReportsDataModel.TaxReportsArray> mTaxReportDataModel;
@@ -123,30 +125,46 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.imgview_payslip_download:
+            case R.id.imgview_download_form_16:
                 //download payslip
                 int position = (int) view.getTag();
-                downloadPDF(position);
+                downloadPDFForForm16(position);
                 break;
-            case R.id.imgview_payslip_downloaded:
+            case R.id.imgview_taxreports_form_downloaded:
                 int position1 = (int) view.getTag();
-                deletePDF(position1);
+                deletePDF(position1, "" + mTaxReportDataModel.get(position1).getFinancialYearId());
                 break;
-            case R.id.rel_payslip_holder:
+            case R.id.textview_download_form_16:
                 //if download payslip then show
                 int positn = (int) view.getTag();
-                showDownloadedPDF(positn);
+                showDownloadedForm16PDF(positn);
                 break;
+
+            case R.id.imgview_download_computationsheet:
+                //download payslip
+                int position4 = (int) view.getTag();
+                downloadPDFForComputation(position4);
+                break;
+            case R.id.imgview_taxreports_downloaded1:
+                int position5 = (int) view.getTag();
+                deletePDF(position5, "" + mTaxReportDataModel.get(position5).getFinancialYearId() + TAG_COMPUTATION);
+                break;
+            case R.id.textview_download_computationsheet:
+                //if download payslip then show
+                int positn6 = (int) view.getTag();
+                showDownloadedComputation(positn6);
+                break;
+
         }
     }
 
-    private void deletePDF(int positn) {
-        mFinancialYearId = mTaxReportDataModel.get(positn).getFinancialYearId();
+    private void deletePDF(int positn, final String key) {
+
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Utils.showProgressBar(getContext());
-                Utils.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + ".pdf", new ICallBack() {
+                FileManager.deleteDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, key + ".pdf", new ICallBack() {
                     @Override
                     public void callBack() {
                         Utils.dismissProgressBar();
@@ -158,13 +176,13 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         });
     }
 
-    private void showDownloadedPDF(int positn) {
+    private void showDownloadedForm16PDF(int positn) {
         mFinancialYearId = mTaxReportDataModel.get(positn).getFinancialYearId();
-        if (Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
+        if (FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + ".pdf");
+                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + ".pdf");
                     Utils.dismissProgressBar();
 
                 }
@@ -172,9 +190,9 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         }
     }
 
-    private void downloadPDF(int position) {
+    private void downloadPDFForForm16(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
-        if (!Utils.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
+        if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
             new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                 @Override
                 public void callBack() {
@@ -182,14 +200,14 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
                         @Override
                         public void run() {
                             mPayslipAdapter.notifyDataSetChanged();
-                            Utils.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
 
                         }
                     });
                 }
             }).execute(WSContant.URL_PRINTTAXREPORT, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.userId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId);
         } else {
-            showDownloadedPDF(position);
+            showDownloadedForm16PDF(position);
         }
     }
 
@@ -243,5 +261,39 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         Utils.animRightToLeft(getActivity());
     }
 
+    //for Computation sheet
+    private void downloadPDFForComputation(int position) {
+        mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
+        if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
+            new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                @Override
+                public void callBack() {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mPayslipAdapter.notifyDataSetChanged();
+                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf");
 
+                        }
+                    });
+                }
+            }).execute(WSContant.URL_PRINTCOMPUTATIONSHEET, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.studentId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId + TAG_COMPUTATION);
+        } else {
+            showDownloadedComputation(position);
+        }
+    }
+
+    private void showDownloadedComputation(int positn) {
+        mFinancialYearId = mTaxReportDataModel.get(positn).getFinancialYearId();
+        if (FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, "" + mFinancialYearId + TAG_COMPUTATION + ".pdf");
+                    Utils.dismissProgressBar();
+
+                }
+            });
+        }
+    }
 }

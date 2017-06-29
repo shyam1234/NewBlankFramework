@@ -25,6 +25,8 @@ import java.util.Map;
  */
 
 public class BaseActivity extends AppCompatActivity {
+    private static final String TAG = "BaseActivity";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,11 +71,13 @@ public class BaseActivity extends AppCompatActivity {
                         ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_LOGIN);
                         LoginDataModel holder = ((LoginDataModel) obj.getModel());
                         if (holder.Status) {
-                            SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
+                            LoginActivity.savedDataOnSharedPrefences(holder);
+                            // SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
                         } else {
                             Toast.makeText(BaseActivity.this, R.string.msg_invalide_credential, Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onErrorResponse(VolleyError response) {
                     }

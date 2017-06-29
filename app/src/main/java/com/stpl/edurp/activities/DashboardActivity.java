@@ -6,10 +6,12 @@ import android.os.Handler;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 import com.stpl.edurp.R;
 import com.stpl.edurp.adapters.DashboardAdapter;
 import com.stpl.edurp.constant.WSContant;
@@ -20,8 +22,6 @@ import com.stpl.edurp.utils.CustomDialogbox;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
 
 
 /**
@@ -52,26 +52,31 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
         TableParentStudentAssociation table = new TableParentStudentAssociation();
         table.openDB(DashboardActivity.this);
         AppLog.log("ITC", "UserInfo.currUserType: " + UserInfo.currUserType);
-        switch (UserInfo.currUserType) {
-            case WSContant.TAG_USERTYPE_PARENT:
-                UserInfo.parentId = UserInfo.userId;
-                //UserInfo.studentId = table.getStudentIDWRTParentID(UserInfo.parentId).getStudentid();
-                if (SharedPreferencesApp.getInstance().getDefaultChildSelection() != -1) {
-                    UserInfo.studentId = SharedPreferencesApp.getInstance().getDefaultChildSelection();
-                    AppLog.log(TAG,"default studentId 11 "+UserInfo.studentId);
-                }else{
-                    UserInfo.studentId = table.getStudentIDWRTParentID(UserInfo.parentId).getStudentid();
-                    AppLog.log(TAG,"default studentId 22 "+UserInfo.studentId);
-                }
-                break;
-            case WSContant.TAG_USERTYPE_STUDENT:
-                UserInfo.studentId = UserInfo.userId;
-                UserInfo.parentId = table.getParentIDWRTStudentId(UserInfo.studentId).getParent_id();
-                break;
+        if (UserInfo.currUserType != null) {
+            switch (UserInfo.currUserType) {
+                case WSContant.TAG_USERTYPE_PARENT:
+                    UserInfo.parentId = UserInfo.userId;
+                    //UserInfo.studentId = table.getStudentIDWRTParentID(UserInfo.parentId).getStudentid();
+                    if (SharedPreferencesApp.getInstance().getDefaultChildSelection() != -1) {
+                        UserInfo.studentId = SharedPreferencesApp.getInstance().getDefaultChildSelection();
+                        AppLog.log(TAG, "default studentId 11 " + UserInfo.studentId);
+                    } else {
+                        UserInfo.studentId = table.getStudentIDWRTParentID(UserInfo.parentId).getStudentid();
+                        AppLog.log(TAG, "default studentId 22 " + UserInfo.studentId);
+                    }
+                    break;
+                case WSContant.TAG_USERTYPE_STUDENT:
+                    UserInfo.studentId = UserInfo.userId;
+                    UserInfo.parentId = table.getParentIDWRTStudentId(UserInfo.studentId).getParent_id();
+                    break;
+            }
+        }else{
+            Toast.makeText(mContext, "UserInfo.currUserType is null", Toast.LENGTH_SHORT).show();
+            AppLog.log(TAG, "UserInfo.currUserType is: " + UserInfo.currUserType);
         }
         table.closeDB();
-        AppLog.log("ITC", "Dashboard UserInfo.parentId: " + UserInfo.parentId);
-        AppLog.log("ITC", "Dashboard UserInfo.studentId: " + UserInfo.studentId);
+        AppLog.log(TAG, "Dashboard UserInfo.parentId: " + UserInfo.parentId);
+        AppLog.log(TAG, "Dashboard UserInfo.studentId: " + UserInfo.studentId);
     }
 
 
@@ -171,7 +176,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
      */
     private void popupCloseAppAcknowledge() {
         // getSupportFragmentManager().popBackStack(HomeFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        final CustomDialogbox dialogbox = new CustomDialogbox(this,CustomDialogbox.TYPE_YES_NO);
+        final CustomDialogbox dialogbox = new CustomDialogbox(this, CustomDialogbox.TYPE_YES_NO);
         dialogbox.setTitle(getResources().getString(R.string.msg_exit));
         dialogbox.show();
         dialogbox.getBtnYes().setOnClickListener(new View.OnClickListener() {
