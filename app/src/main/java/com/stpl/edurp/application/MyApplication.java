@@ -2,6 +2,8 @@ package com.stpl.edurp.application;
 
 import android.app.Application;
 import android.content.res.Configuration;
+import android.os.Build;
+import android.os.StrictMode;
 import android.text.TextUtils;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -30,6 +32,13 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //--for solving android.os.FileUriExposedException: file download and open
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            builder.detectFileUriExposure();
+        }
+        //--------------------------------------------------------------------
         mInstance = this;
         SharedPreferencesApp.getInstance();
         initOneSignalNotification();

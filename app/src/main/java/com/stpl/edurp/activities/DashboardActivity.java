@@ -95,24 +95,22 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
                 //lFragmentTransaction.replace(R.id.contentContainer, new HomeFragment());
                 mViewPage.setCurrentItem(0);
                 // mTextViewTitle.setText(getResources().getString(R.string.tab_home));
-                if (mHandler != null)
-                    mHandler.sendMessage(mHandler.obtainMessage(1, 0));
+             /*   if (mHandler != null)
+                    mHandler.sendMessage(mHandler.obtainMessage(1, 0));*/
                 break;
             case R.id.tab_ward:
                 mViewPage.setCurrentItem(1);
                 // mTextViewTitle.setText(getResources().getString(R.string.tab_wards));
-                if (mHandler != null)
-                    mHandler.sendMessage(mHandler.obtainMessage(0, 1));
+                /*if (mHandler != null)
+                    mHandler.sendMessage(mHandler.obtainMessage(0, 1));*/
                 break;
             case R.id.tab_setting:
                 mViewPage.setCurrentItem(2);
                 //  mTextViewTitle.setText(getResources().getString(R.string.tab_options));
-                if (mHandler != null)
-                    mHandler.sendMessage(mHandler.obtainMessage(0, 2));
+               /* if (mHandler != null)
+                    mHandler.sendMessage(mHandler.obtainMessage(0, 2));*/
                 break;
-
         }
-
     }
 
 

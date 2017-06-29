@@ -2,7 +2,7 @@
     <tab
         icon="@drawable/home_menu"
         id="@+id/tab_home"
-        title="@string/tab_home" />
+        title="" />
     <tab
         icon="@drawable/my_wards"
         id="@+id/tab_ward"
