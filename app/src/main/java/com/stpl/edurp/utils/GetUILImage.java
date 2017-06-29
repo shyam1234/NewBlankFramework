@@ -76,6 +76,28 @@ public class GetUILImage {
     }
 
 
+    public synchronized void setGallaryImage(Context pContext, String imgURL, ImageView imageView) {
+        try {
+            AppLog.log(" setImage from UIL: ", imgURL);
+            if (imgURL != null) {
+                ImageLoader imageLoader = ImageLoader.getInstance();
+                DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
+                        .cacheOnDisc(true).resetViewBeforeLoading(false)
+                        .showImageForEmptyUri(android.R.drawable.ic_menu_gallery)
+                        .showImageOnFail(android.R.drawable.ic_menu_gallery)
+                        .cacheInMemory(true)
+                        .showImageOnLoading(android.R.drawable.ic_menu_gallery).build();
+                //download and display image from url
+                imageLoader.displayImage(imgURL, imageView, options);
+            } else {
+                imageView.setImageResource(android.R.drawable.ic_menu_gallery);
+            }
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setImage : " + e.getMessage());
+        }
+    }
+
+
     /**
      * this method renders circle image by using picasso
      *

@@ -23,9 +23,10 @@
             android:id="@+id/imageview_news_row_thumbnil"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/rectangle_border_black_with_corners"
-            android:src="@android:drawable/ic_menu_gallery" />
-
+            android:scaleType="fitXY"
+             android:src="@android:drawable/ic_menu_gallery" />
+<!-- android:background="@drawable/rectangle_border_black_with_corners"
+          -->
         <TextView
             android:id="@+id/textview_news_row_reference_title"
             android:layout_width="match_parent"
