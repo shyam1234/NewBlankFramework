@@ -109,6 +109,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     }
 
     private void init() {
+        mNewsDetailsCommentLikeDataModel = new NewsDetailsCommentLikeDataModel();
         mTableDocumentMesgList = new ArrayList<>();
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -322,11 +323,11 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 // React to state change
                 if (newState == BottomSheetBehavior.STATE_EXPANDED) {
-                    ((LinearLayout) findViewById(R.id.lin_main_content)).setEnabled(false);
-                    ((LinearLayout) findViewById(R.id.lin_main_content)).setVisibility(View.GONE);
+                    findViewById(R.id.lin_main_content).setEnabled(false);
+                    findViewById(R.id.lin_main_content).setVisibility(View.GONE);
                 } else {
-                    ((LinearLayout) findViewById(R.id.lin_main_content)).setEnabled(true);
-                    ((LinearLayout) findViewById(R.id.lin_main_content)).setVisibility(View.VISIBLE);
+                    findViewById(R.id.lin_main_content).setEnabled(true);
+                    findViewById(R.id.lin_main_content).setVisibility(View.VISIBLE);
                 }
             }
 
@@ -456,9 +457,10 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
                 public void onResponse(String response) {
                     ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_NEWS_DETAILS_COMMENTS_LIKE);
                     mNewsDetailsCommentLikeDataModel = ((NewsDetailsCommentLikeDataModel) obj.getModel());
-                    mRecycleViewCommentLike.setAdapter(mNewsDetailsCommentAdapter);
+
                     if ((type == 2) && mNewsDetailsCommentAdapter != null) {
                         getComments();
+                        mRecycleViewCommentLike.setAdapter(mNewsDetailsCommentAdapter);
                       //  mRecycleViewCommentLike.smoothScrollToPosition(mNewsDetailsCommentLikeDataModel.getCommentMaster().size() - 1);
                         mRecycleViewCommentLike.smoothScrollToPosition(0);
                     } else if ((type == 1) && mNewsDetailsLikeAdapter != null) {
@@ -594,7 +596,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
        //Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_NEWS, WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
         //Utils.langConversion(NewsDetails.this, ((TextView) findViewById(R.id.textview_inc_bottom_like)), new String[]{WSContant.TAG_LANG_LIKE}, getString(R.string.like), UserInfo.lang_pref);
-        Utils.langConversion(NewsDetails.this, ((TextView) findViewById(R.id.textview_inc_bottom_comment)), new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
+        Utils.langConversion(NewsDetails.this, findViewById(R.id.textview_inc_bottom_comment), new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
 
         Utils.langConversion(NewsDetails.this, mTextViewCommentTab, new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
         Utils.langConversion(NewsDetails.this, mTextViewLikeTab, new String[]{WSContant.TAG_LANG_LIKE}, getString(R.string.like), UserInfo.lang_pref);
