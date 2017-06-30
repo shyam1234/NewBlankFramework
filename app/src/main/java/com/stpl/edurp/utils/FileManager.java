@@ -21,8 +21,8 @@ import java.io.File;
  */
 
 public class FileManager {
-    private static File sd = Environment.getExternalStorageDirectory();
-    private static File data = sd;// Environment.getExternalFilesDir();
+//   private static File sd = Environment.getExternalStorageDirectory();
+//    private static File data = sd;// Environment.getExternalFilesDir();
 
 
     /**
@@ -75,7 +75,7 @@ public class FileManager {
             pdfFile = FileManager.getAbsoluteFile(pFolderName,pContext);
             AppLog.log("isFileDownloaded)))  +++ getAbsolutePath ", ""+pdfFile.getAbsolutePath());
             File file[] = pdfFile.listFiles();
-            AppLog.log("isFileDownloaded +++ length ", ""+file.length);
+            //AppLog.log("isFileDownloaded +++ length ", ""+file.length);
             if (file!=null) {
               //  for (int i = 0; i < file.length; i++) {
                     File fileList = pdfFile.getAbsoluteFile();
