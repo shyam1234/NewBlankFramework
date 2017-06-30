@@ -1,169 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/inc_profile_header"
-        layout="@layout/inc_profile_header"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        <include
+            android:id="@+id/inc_profile_header"
+            layout="@layout/inc_profile_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textview_name_key"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-        <TextView
-            android:id="@+id/textview_name_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="right"
-            android:text="value"
-            android:textAlignment="gravity"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorMargin"></View>
-
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/textview_email_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/email"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-
-        <TextView
-            android:id="@+id/textview_email_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="right"
-            android:text="value"
-            android:textAlignment="gravity"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorMargin"></View>
-
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/textview_phone_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-
-        <TextView
-            android:id="@+id/textview_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="right"
-            android:text="value"
-            android:textAlignment="gravity"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorMargin"></View>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:id="@+id/textview_lang_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="Language"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/dashboardTextColor" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-
-            <include
-                android:id="@+id/rel_radio_btn"
-                layout="@layout/inc_language"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textview_name_key"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageview_logo"
-                android:gravity="center_horizontal"></include>
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorMargin"></View>
-</LinearLayout>
+            <TextView
+                android:id="@+id/textview_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:text="value"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorMargin"></View>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/textview_email_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/email"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+
+            <TextView
+                android:id="@+id/textview_email_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:text="value"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorMargin"></View>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/textview_phone_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+
+            <TextView
+                android:id="@+id/textview_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:text="value"
+                android:textAlignment="gravity"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorMargin"></View>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/textview_lang_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="Language"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dashboardTextColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/rel_radio_btn"
+                    layout="@layout/inc_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageview_logo"
+                    android:gravity="center_horizontal"></include>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorMargin"></View>
+    </LinearLayout>
+</ScrollView>

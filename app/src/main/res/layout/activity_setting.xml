@@ -1,130 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include
-        layout="@layout/inc_main_header"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></include>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
+        <include
+            layout="@layout/inc_main_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
 
-        <TextView
-            android:id="@+id/textview_setting_download_offline_coontent_key"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/download_offline_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/dashboardTextColor" />
+            android:padding="15dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_download_offline_content"
+            <TextView
+                android:id="@+id/textview_setting_download_offline_coontent_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/textview1"
-                android:gravity="center_horizontal" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/download_offline_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/dashboardTextColor" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorMargin"></View>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
-
-        <TextView
-            android:id="@+id/textview_setting_download_wifi_connect_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/download_only_when_wifi_connected"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/dashboardTextColor" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_download_offline_wifi_connect"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/textview1"
-                android:gravity="center_horizontal" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
 
-    <View
-        android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorMargin"></View>
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_download_offline_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textview1"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorMargin"></View>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
-
-        <TextView
-            android:id="@+id/textview_setting_allow_puch_notification"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/download_offline_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/dashboardTextColor" />
+            android:padding="15dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_allow_push_notification"
+            <TextView
+                android:id="@+id/textview_setting_download_wifi_connect_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/textview1"
-                android:gravity="center_horizontal" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/download_only_when_wifi_connected"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/dashboardTextColor" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorMargin"></View>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_download_offline_wifi_connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textview1"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorMargin"></View>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/textview_setting_allow_puch_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/download_offline_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/dashboardTextColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_allow_push_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textview1"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorMargin"></View>
+    </LinearLayout>
+</ScrollView>

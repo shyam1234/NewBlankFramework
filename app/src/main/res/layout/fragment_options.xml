@@ -1,140 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/inc_home_header"
-        layout="@layout/inc_main_header"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"></include>
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rel_options_share_app"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:padding="@dimen/padding_option">
-
-        <ImageView
-            android:id="@+id/imageview_options_share_title"
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/inc_home_header"
+            layout="@layout/inc_main_header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/share" />
+            android:visibility="visible"></include>
 
-        <TextView
-            android:id="@+id/textview_options_share_title"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/rel_options_share_app"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/imageview_options_share_title"
-            android:src="@drawable/share"
-            android:text="@string/share_this_app"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
-    </RelativeLayout>
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_option">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/light_black" />
+            <ImageView
+                android:id="@+id/imageview_options_share_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/share" />
 
-    <RelativeLayout
-        android:id="@+id/rel_options_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="@dimen/padding_option">
+            <TextView
+                android:id="@+id/textview_options_share_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imageview_options_share_title"
+                android:src="@drawable/share"
+                android:text="@string/share_this_app"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black" />
+        </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imageview_options_profile"
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/light_black" />
+
+        <RelativeLayout
+            android:id="@+id/rel_options_profile"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/setting" />
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_option">
 
-        <TextView
-            android:id="@+id/textview_options_profile"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageview_options_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/setting" />
+
+            <TextView
+                android:id="@+id/textview_options_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imageview_options_profile"
+                android:src="@drawable/share"
+                android:text="@string/tab_profile"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/light_black" />
+
+        <RelativeLayout
+            android:id="@+id/rel_options_setting"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/imageview_options_profile"
-            android:src="@drawable/share"
-            android:text="@string/tab_profile"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
-    </RelativeLayout>
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_option">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/light_black" />
+            <ImageView
+                android:id="@+id/imageview_options_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/setting" />
 
-    <RelativeLayout
-        android:id="@+id/rel_options_setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="@dimen/padding_option">
+            <TextView
+                android:id="@+id/textview_options_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imageview_options_setting"
+                android:src="@drawable/share"
+                android:text="@string/setting"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black" />
+        </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imageview_options_setting"
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/light_black" />
+
+        <RelativeLayout
+            android:id="@+id/rel_options_logout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/setting" />
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_option"
+            android:visibility="visible">
 
-        <TextView
-            android:id="@+id/textview_options_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/imageview_options_setting"
-            android:src="@drawable/share"
-            android:text="@string/setting"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/imageview_options_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logout" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/light_black" />
+            <TextView
+                android:id="@+id/textview_options_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imageview_options_logout"
+                android:src="@drawable/share"
+                android:text="@string/logout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/rel_options_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="@dimen/padding_option"
-        android:visibility="visible">
-
-        <ImageView
-            android:id="@+id/imageview_options_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/logout" />
-
-        <TextView
-            android:id="@+id/textview_options_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/imageview_options_logout"
-            android:src="@drawable/share"
-            android:text="@string/logout"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
-    </RelativeLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -18,8 +18,8 @@
 
         <LinearLayout
             android:id="@+id/lin_comment_like_page"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/rectangle_border_white_without_corners"
             android:gravity="center"
@@ -34,9 +34,9 @@
                 android:layout_weight="0.5"
                 android:background="@color/colorWhite"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:text="@string/comment"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorGreen" />
 
 
@@ -47,9 +47,9 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.5"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:text="@string/like"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
 
@@ -57,12 +57,12 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:background="@color/colorGrayTransparent"
         android:id="@+id/recyclerview_comment_like_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/lin_comment_like_page_holder"
         android:layout_below="@+id/rel_comment_like_page"
+        android:background="@color/colorGrayTransparent"
         android:padding="12dp"></android.support.v7.widget.RecyclerView>
 
 
