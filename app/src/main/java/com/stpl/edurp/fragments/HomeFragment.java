@@ -128,11 +128,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initView();
         fetchDataFromTable();
         setLangSelection();
-        AppLog.log(TAG, "UserInfo.normal -++ :" + UserInfo.studentId);;
+        AppLog.log(TAG, "UserInfo.normal -++ :" + UserInfo.studentId);
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         initView();
                         fetchDataFromTable();
@@ -198,8 +198,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public void setLangSelection() {
         if(getContext()!=null){
-            Utils.langConversion(getContext(), mTextViewTitle, WSContant.TAG_LANG_HOME, getString(R.string.tab_home), UserInfo.lang_pref);
-            Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_welcome_to)), WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to), UserInfo.lang_pref);
+            mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_HOME, getString(R.string.tab_home),UserInfo.lang_pref));
+            ((TextView) getView().findViewById(R.id.textview_welcome_to)).setText(Utils.getLangConversion(WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to),UserInfo.lang_pref));
+
+//            Utils.langConversion(getContext(), mTextViewTitle, WSContant.TAG_LANG_HOME, getString(R.string.tab_home), UserInfo.lang_pref);
+//            Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_welcome_to)), WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to), UserInfo.lang_pref);
         }
     }
 

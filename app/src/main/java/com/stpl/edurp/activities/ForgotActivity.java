@@ -60,7 +60,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                 onBackPressed();
                 break;
             case R.id.btnSubmit:
-                if(Utils.isInternetConnected(this)) {
+                if (Utils.isInternetConnected(this)) {
                     doForgotPassword();
                 }
                 break;
@@ -96,7 +96,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                             Toast.makeText(ForgotActivity.this, jsonObject.getString("Data"), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
-                       AppLog.errLog(TAG,e.getMessage());
+                        AppLog.errLog(TAG, e.getMessage());
                     }
                     //--------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
 
     private void navigateToSuccessPage() {
         Intent i = new Intent(ForgotActivity.this, ForgotPasswordSuccessActivity.class);
-       // i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        // i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
         finish();
         Utils.animRightToLeft(ForgotActivity.this);
@@ -135,9 +135,14 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void setLangSelection() {
-        Utils.langConversion(ForgotActivity.this, mTextViewTitle, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);
-        Utils.langConversion(ForgotActivity.this, ((TextView)findViewById(R.id.textview1)), WSContant.TAG_LANG_FORGOTPASSWORDTITLE, getString(R.string.title_forgot_password), UserInfo.lang_pref);
-        Utils.langConversion(ForgotActivity.this, mEditTextUserName, WSContant.TAG_LANG_EMAIL, getString(R.string.email), UserInfo.lang_pref);
-        Utils.langConversion(ForgotActivity.this, mBtnSubmit, WSContant.TAG_LANG_SUBMIT, getString(R.string.btn_submit), UserInfo.lang_pref);
+        mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref));
+        ((TextView) findViewById(R.id.textview1)).setText(Utils.getLangConversion(WSContant.TAG_LANG_FORGOTPASSWORDTITLE, getString(R.string.title_forgot_password), UserInfo.lang_pref));
+        mEditTextUserName.setText(Utils.getLangConversion(WSContant.TAG_LANG_EMAIL, getString(R.string.email), UserInfo.lang_pref));
+        mBtnSubmit.setText(Utils.getLangConversion(WSContant.TAG_LANG_SUBMIT, getString(R.string.btn_submit), UserInfo.lang_pref));
+
+//        Utils.langConversion(ForgotActivity.this, mTextViewTitle, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);
+//        Utils.langConversion(ForgotActivity.this, ((TextView)findViewById(R.id.textview1)), WSContant.TAG_LANG_FORGOTPASSWORDTITLE, getString(R.string.title_forgot_password), UserInfo.lang_pref);
+//        Utils.langConversion(ForgotActivity.this, mEditTextUserName, WSContant.TAG_LANG_EMAIL, getString(R.string.email), UserInfo.lang_pref);
+//        Utils.langConversion(ForgotActivity.this, mBtnSubmit, WSContant.TAG_LANG_SUBMIT, getString(R.string.btn_submit), UserInfo.lang_pref);
     }
 }

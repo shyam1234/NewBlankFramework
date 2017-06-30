@@ -1,17 +1,10 @@
 package com.stpl.edurp.utils;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
-import android.net.Uri;
-import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -35,7 +28,6 @@ import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.database.TableLanguage;
 import com.stpl.edurp.database.TableParentStudentMenuDetails;
 import com.stpl.edurp.fragments.HomeFragment;
-import com.stpl.edurp.fragments.NoticeboardFragment;
 import com.stpl.edurp.interfaces.ICallBack;
 import com.stpl.edurp.models.GetMobileHomeDataModel;
 import com.stpl.edurp.models.LoginDataModel;
@@ -45,7 +37,6 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -512,37 +503,60 @@ public class Utils {
      * @param defaultString
      * @param langPref
      */
-    public static void langConversion(Context pContext, Object obj, String pConversionCode, String defaultString, String langPref) {
+//    public static void langConversion(Context pContext, Object obj, String pConversionCode, String defaultString, String langPref) {
+//        TableLanguage holder = new TableLanguage();
+//        try {
+//            AppLog.log(TAG, "Lang pref " + langPref);
+//            holder.openDB(pContext);
+//            langPref = (langPref != null ? langPref : WSContant.TAG_ENG);
+//            switch (langPref) {
+//                case WSContant.TAG_ENG:
+//                    if (obj instanceof Button) {
+//                        ((Button) obj).setText(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
+//                    } else if (obj instanceof EditText) {
+//                        ((EditText) obj).setHint(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
+//                    } else if (obj instanceof TextView) {
+//                        ((TextView) obj).setText(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
+//                    }
+//                    break;
+//                case WSContant.TAG_BHASHA:
+//                    if (obj instanceof Button) {
+//                        ((Button) obj).setText(holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
+//                    } else if (obj instanceof EditText) {
+//                        ((EditText) obj).setHint(holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
+//                    } else if (obj instanceof TextView) {
+//                        ((TextView) obj).setText((holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString));
+//                    }
+//                    break;
+//            }
+//        } catch (Exception e) {
+//            AppLog.errLog(TAG, e.getMessage());
+//        } finally {
+//            holder.closeDB();
+//        }
+//    }
+
+
+    public static String getLangConversion(String pConversionCode, String defaultString, String langPref) {
         TableLanguage holder = new TableLanguage();
         try {
-            AppLog.log(TAG, "Lang pref " + langPref);
-            holder.openDB(pContext);
+            AppLog.log(TAG, "getLangConversion ++++ Lang pref " + langPref);
+            holder.openDB(MyApplication.getInstance().getApplicationContext());
             langPref = (langPref != null ? langPref : WSContant.TAG_ENG);
             switch (langPref) {
                 case WSContant.TAG_ENG:
-                    if (obj instanceof Button) {
-                        ((Button) obj).setText(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
-                    } else if (obj instanceof EditText) {
-                        ((EditText) obj).setHint(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
-                    } else if (obj instanceof TextView) {
-                        ((TextView) obj).setText(holder.getValue(pConversionCode).getEnglishVersion() != null ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
-                    }
-                    break;
+                    return (( holder.getValue(pConversionCode).getEnglishVersion() != null )? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
+
                 case WSContant.TAG_BHASHA:
-                    if (obj instanceof Button) {
-                        ((Button) obj).setText(holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
-                    } else if (obj instanceof EditText) {
-                        ((EditText) obj).setHint(holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
-                    } else if (obj instanceof TextView) {
-                        ((TextView) obj).setText((holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString));
-                    }
-                    break;
+                    return (holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
+
             }
         } catch (Exception e) {
             AppLog.errLog(TAG, e.getMessage());
         } finally {
             holder.closeDB();
         }
+        return defaultString;
     }
 
 

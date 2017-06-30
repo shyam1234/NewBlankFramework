@@ -78,7 +78,7 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = null;
-        view = inflater.inflate(R.layout.fragment_news, null);
+        view = inflater.inflate(R.layout.fragment_news, container,false);
         return view;
     }
 
@@ -92,7 +92,7 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -244,7 +244,9 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
 
 
     public void setLangSelection() {
-        Utils.langConversion(getContext(), mTextViewTitle, WSContant.TAG_LANG_NEWS, getString(R.string.tab_news), UserInfo.lang_pref);
+        mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_NEWS, getString(R.string.tab_news),UserInfo.lang_pref));
+
+       // Utils.langConversion(getContext(), mTextViewTitle, WSContant.TAG_LANG_NEWS, getString(R.string.tab_news), UserInfo.lang_pref);
         //Utils.langConversion(getContext(), ((TextView)getView().findViewById(R.id.textview_welcome_to)), WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to), UserInfo.lang_pref);
     }
 

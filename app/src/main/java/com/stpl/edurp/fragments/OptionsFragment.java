@@ -116,11 +116,17 @@ public class OptionsFragment extends Fragment implements View.OnClickListener {
 
 
     public void setLangSelection() {
-        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_title)), WSContant.TAG_LANG_OPTIONS, getString(R.string.tab_options), UserInfo.lang_pref);
-        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_share_title)), WSContant.TAG_LANG_SHARE_THIS_APP, getString(R.string.share_this_app), UserInfo.lang_pref);
-        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_profile)), WSContant.TAG_LANG_MYPREFERENCE, getString(R.string.tab_profile), UserInfo.lang_pref);
-        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_setting)), WSContant.TAG_LANG_SETTING, getString(R.string.setting), UserInfo.lang_pref);
-        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_logout)), WSContant.TAG_LANG_LOGOUT, getString(R.string.logout), UserInfo.lang_pref);
+        ((TextView) getView().findViewById(R.id.textview_title)).setText(Utils.getLangConversion(WSContant.TAG_LANG_OPTIONS, getString(R.string.tab_options), UserInfo.lang_pref));
+        ((TextView) getView().findViewById(R.id.textview_options_share_title)).setText(Utils.getLangConversion(WSContant.TAG_LANG_SHARE_THIS_APP, getString(R.string.share_this_app), UserInfo.lang_pref));
+        ((TextView) getView().findViewById(R.id.textview_options_profile)).setText(Utils.getLangConversion( WSContant.TAG_LANG_MYPREFERENCE, getString(R.string.tab_profile),  UserInfo.lang_pref));
+        ((TextView) getView().findViewById(R.id.textview_options_setting)).setText(Utils.getLangConversion(WSContant.TAG_LANG_SETTING, getString(R.string.setting),  UserInfo.lang_pref));
+        ((TextView) getView().findViewById(R.id.textview_options_logout)).setText(Utils.getLangConversion(WSContant.TAG_LANG_LOGOUT, getString(R.string.logout),UserInfo.lang_pref));
+
+//        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_title)), WSContant.TAG_LANG_OPTIONS, getString(R.string.tab_options), UserInfo.lang_pref);
+//        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_share_title)), WSContant.TAG_LANG_SHARE_THIS_APP, getString(R.string.share_this_app), UserInfo.lang_pref);
+//        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_profile)), WSContant.TAG_LANG_MYPREFERENCE, getString(R.string.tab_profile), UserInfo.lang_pref);
+//        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_setting)), WSContant.TAG_LANG_SETTING, getString(R.string.setting), UserInfo.lang_pref);
+//        Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_options_logout)), WSContant.TAG_LANG_LOGOUT, getString(R.string.logout), UserInfo.lang_pref);
     }
 
 }

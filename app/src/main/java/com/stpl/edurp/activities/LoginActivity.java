@@ -90,11 +90,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //mEditTextUserName.setText("divyaparent1@gmail.com");
         //mEditTextPassword.setText("login@123");
         /*For employee*/
-        mEditTextUserName.setText("divyaemp1@gmail.com");
-        mEditTextPassword.setText("89156");
+//        mEditTextUserName.setText("divyaemp1@gmail.com");
+//        mEditTextPassword.setText("89156");
 
-//        mEditTextUserName.setText("divyaparent1@gmail.com");
-//        mEditTextPassword.setText("login@123");
+        mEditTextUserName.setText("divyaparent1@gmail.com");
+        mEditTextPassword.setText("login@123");
 
 //        mEditTextUserName.setText("harshaparent@gmail.com");
 //        mEditTextPassword.setText("96968");
@@ -138,7 +138,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (Utils.validateUserName(mEditTextUserName) &&
                 Utils.validatePassword(mEditTextPassword)) {
 
-            Utils.langConversion(this, mButtonLogin, WSContant.TAG_LANG_PROCESSDING, getString(R.string.proceeding), UserInfo.lang_pref);
+            mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_PROCESSDING,getString(R.string.proceeding),UserInfo.lang_pref));
+            //Utils.langConversion(this, mButtonLogin, WSContant.TAG_LANG_PROCESSDING, getString(R.string.proceeding), UserInfo.lang_pref);
             //mButtonLogin.setText(getResources().getString(R.string.proceeding));
             mButtonLogin.setEnabled(false);
             //call to WS and validate given credential----
@@ -167,7 +168,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         bindDataWithParentStudentMenuDetailsDataModel(holder);
                         //--------------------------------------------------------------------
                         //mButtonLogin.setText(getResources().getString(R.string.success));
-                        Utils.langConversion(LoginActivity.this, mButtonLogin, WSContant.TAG_LANG_SUCCESS, getString(R.string.success), UserInfo.lang_pref);
+                        //Utils.langConversion(LoginActivity.this, mButtonLogin, WSContant.TAG_LANG_SUCCESS, getString(R.string.success), UserInfo.lang_pref);
+                        mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_SUCCESS,getString(R.string.success),UserInfo.lang_pref));
                         mButtonLogin.setEnabled(false);
                         navigateToNextPage();
 
@@ -366,19 +368,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_BHASHA);
-            setLangSelection();
         } else {
             SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_ENG);
-            setLangSelection();
         }
+        setLangSelection();
     }
 
 
     public void setLangSelection() {
-        Utils.langConversion(this, mButtonLogin, WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref);
+        mButtonLogin.setText(Utils.getLangConversion( WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref));
+        mEditTextUserName.setText(Utils.getLangConversion( WSContant.TAG_LANG_USERNAME, getString(R.string.user_name), UserInfo.lang_pref));
+        mEditTextPassword.setText(Utils.getLangConversion( WSContant.TAG_LANG_PASSWORD, getString(R.string.password), UserInfo.lang_pref));
+        mTextViewForgotPassword.setText(Utils.getLangConversion( WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref));
+
+       /* Utils.langConversion(this, mButtonLogin, WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref);
         Utils.langConversion(this, mEditTextUserName, WSContant.TAG_LANG_USERNAME, getString(R.string.user_name), UserInfo.lang_pref);
         Utils.langConversion(this, mEditTextPassword, WSContant.TAG_LANG_PASSWORD, getString(R.string.password), UserInfo.lang_pref);
-        Utils.langConversion(this, mTextViewForgotPassword, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);
+        Utils.langConversion(this, mTextViewForgotPassword, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);*/
     }
 
 }

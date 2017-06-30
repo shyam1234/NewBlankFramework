@@ -92,7 +92,7 @@ public interface WSContant {
     String TAG_VALUE_NOT_PAID = "Not Paid";
     String TAG_ENG = "E";//"eng";
     String TAG_BHASHA = "B";//"bhasha";
-
+    //---for lang conversion--------------------------------------
     String TAG_LANG_LOGIN = "lblLogin";
     String TAG_LANG_USERNAME = "lblUserName";
     String TAG_LANG_PASSWORD = "lblPassword";
@@ -116,6 +116,13 @@ public interface WSContant {
     String TAG_LANG_OPTIONS = "lblOptions";//pending
     String TAG_LANG_SETTING = "lblSettings";
     String TAG_LANG_LOGOUT = "lblLogout";
+    String TAG_LANG_VIEW = "lblview";
+    String TAG_LANG_DOWNLOAD_RECEIPT = "lblDownloadReceipt";
+    String TAG_LANG_VIEW_DETAILS = "lblViewDetails";
+    String TAG_LANG_PAY_NOW = "lblPayNow";
+    String TAG_LANG_PART_PAYMENT = "lblPartPayment";
+    String TAG_LANG_DUE_DATE = "lblDueDate";
+    //---------------------------------------------------------------------
     String TAG_TIMETABLEDATE = "TimeTableDate";
     String TAG_WS_TIMETABLE = "ws_timetable";
     String TAG_NR = "NR";
@@ -133,6 +140,9 @@ public interface WSContant {
     String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
     String TAG_LANGUAGE="Language";
     String TAG_FACULTY_ID = "FacultyId";
+
+
+
 }
 
 

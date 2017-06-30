@@ -83,7 +83,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -98,7 +98,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
 
     private void initView() {
         //------------------------------------
-        View inc = (View) getView().findViewById(R.id.inc_results);
+        View inc = getView().findViewById(R.id.inc_results);
         inc.setVisibility(View.VISIBLE);
         TextView mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
         mTextViewTitle.setText(R.string.tab_fee);
@@ -139,6 +139,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                 //paid
                 break;
             case R.id.btn_download_details:
+            case R.id.btn_download_details1:
                 int posi = (int)view.getTag();
                 AppLog.log(TAG, "btn_download_details");
                 final String sfAssociationId = ""+mFeeList.get(posi).getReferenceId();//"436";
@@ -151,6 +152,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                                 @Override
                                 public void run() {
                                     FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, sfAssociationId + ".pdf");
+                                    mFeeAdapter.notifyDataSetChanged();
                                 }
                             });
                         }
