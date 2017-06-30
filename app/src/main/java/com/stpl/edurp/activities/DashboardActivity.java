@@ -137,7 +137,9 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     @Override
     public void onBackPressed() {
         try {
-            if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            String name11 = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
+            AppLog.log(TAG,"onBackPressed Navigation+++ "+name11+" mBottomBar.getCurrentTabPosition() "+mBottomBar.getCurrentTabPosition());
+            if (getSupportFragmentManager().getBackStackEntryCount() >= 1) {
                 String name = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
                 switch (mBottomBar.getCurrentTabPosition()) {
                     case 0:
@@ -161,8 +163,6 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
                 AppLog.log("onBackPressed", "" + getSupportFragmentManager().getBackStackEntryCount());
                 AppLog.log("onBackPressed", "name " + name);
             } else if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
-//                finish();
-//                Utils.animLeftToRight(DashboardActivity.this);
                 popupCloseAppAcknowledge();
                 AppLog.log("onBackPressed", "finish ");
             }
