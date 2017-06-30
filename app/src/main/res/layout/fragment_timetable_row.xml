@@ -24,7 +24,7 @@
                 android:layout_centerVertical="true"
                 android:layout_gravity="left"
                 android:text="0:00 am to 0:00 pm"
-                android:textColor="@color/colorTextHint"
+                android:textColor="@color/colorBlue"
                 android:textSize="16sp"
                 android:textStyle="normal" />
 
