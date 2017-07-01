@@ -127,6 +127,8 @@ public interface WSContant {
     String TAG_TIMETABLEDATE = "TimeTableDate";
     String TAG_WS_TIMETABLE = "ws_timetable";
     String TAG_NR = "NR";
+    String TAG_PRESENT = "Present";
+    String TAG_ABSENT = "Absent";
     String TAG_MOBILEATTENDANCEDETAIL = "ws_GetMobileAttendanceDetail";
     String TAG_MOBILEATTENDANCE_ABSENT = "ws_GetMobileAttendanceAbsent";
     String TAG_COURSE = "Course";
