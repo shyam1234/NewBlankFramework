@@ -62,7 +62,7 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
             mProfileName.setText(UserInfo.currUserName);
         }
         if (UserInfo.currUserLoc == null) {
-            mProfileLocation.setText("");
+            mProfileLocation.setVisibility(View.INVISIBLE);
         } else {
             mProfileLocation.setText(UserInfo.currUserLoc);
         }

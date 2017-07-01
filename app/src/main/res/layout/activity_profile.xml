@@ -78,7 +78,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="@string/email"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/dashboardTextColor" />
 
                 <TextView
@@ -90,7 +90,7 @@
                     android:gravity="right"
                     android:text="value"
                     android:textAlignment="gravity"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/dashboardTextColor" />
             </RelativeLayout>
 
@@ -115,7 +115,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="@string/phone"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/dashboardTextColor" />
 
                 <TextView
@@ -127,7 +127,7 @@
                     android:gravity="right"
                     android:text="value"
                     android:textAlignment="gravity"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/dashboardTextColor" />
             </RelativeLayout>
 
@@ -151,7 +151,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="Language"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/dashboardTextColor" />
 
                 <LinearLayout
