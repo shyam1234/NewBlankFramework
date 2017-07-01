@@ -30,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textview_name_key"
@@ -60,7 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorMargin"></View>
+                android:background="@color/colorMargin"
+                android:visibility="gone"></View>
 
 
             <RelativeLayout
@@ -112,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="@string/name"
+                    android:text="@string/phone"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/dashboardTextColor" />
 
