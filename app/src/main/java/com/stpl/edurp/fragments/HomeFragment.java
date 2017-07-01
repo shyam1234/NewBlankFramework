@@ -105,6 +105,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         init();
         AppLog.log("HomeFragment", "onCreate");
+
     }
 
     private void init() {

@@ -41,6 +41,12 @@ public class MainHomeFragment extends Fragment implements View.OnClickListener {
         initView();
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
     private void initView() {
         Utils.navigateFragmentMenu(getFragmentManager() , new HomeFragment(), HomeFragment.TAG);
     }

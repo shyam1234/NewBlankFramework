@@ -84,6 +84,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
         mBottomBar = (BottomBar) findViewById(R.id.bottomBar);
         mViewPage = (ViewPager) findViewById(R.id.vpPager);
         mViewPage.addOnPageChangeListener(this);
+
     }
 
 
@@ -97,8 +98,8 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     public void onTabSelected(@IdRes int tabId) {
         switch (tabId) {
             case R.id.tab_home:
-                //lFragmentTransaction.replace(R.id.contentContainer, new HomeFragment());
                 mViewPage.setCurrentItem(0);
+               // Utils.navigateFragmentMenu(getSupportFragmentManager(), new HomeFragment(), HomeFragment.TAG);
                 // mTextViewTitle.setText(getResources().getString(R.string.tab_home));
              /*   if (mHandler != null)
                     mHandler.sendMessage(mHandler.obtainMessage(1, 0));*/
@@ -119,14 +120,23 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     }
 
 
+    private int temp_posi = 0;
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         //Toast.makeText(DashboardActivity.this, "Selected page position: " + position, Toast.LENGTH_SHORT).show();
+        if(temp_posi!=position){
+            temp_posi = position;
+            if(position==0)
+            Utils.navigateFragmentMenu(getSupportFragmentManager(),new HomeFragment(),HomeFragment.TAG);
+        }
     }
 
     @Override
     public void onPageSelected(int position) {
         mBottomBar.selectTabAtPosition(position);
+        if(position==0){
+            Utils.navigateFragmentMenu(getSupportFragmentManager(),new HomeFragment(),HomeFragment.TAG);
+        }
     }
 
     @Override
