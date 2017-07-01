@@ -75,6 +75,7 @@ public class SplashActivity extends AppCompatActivity {
             4.0 - xxxhdpi
         */
         AppLog.log(TAG, "density+++ " + getResources().getDisplayMetrics().density);
+        if(AppLog.FLAG_LOG)
         Toast.makeText(mContext, "dpi: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
     }
 
