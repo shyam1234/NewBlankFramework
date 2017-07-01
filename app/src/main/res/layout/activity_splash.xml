@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_lay"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/lin_lay"
     android:background="@drawable/splash">
 
     <ImageView
@@ -19,7 +19,8 @@
         android:layout_height="50dp"
         android:layout_below="@+id/imgview_logo"
         android:layout_centerVertical="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:indeterminateDrawable="@drawable/myprogress_style" />
 
     <TextView
         android:layout_width="match_parent"

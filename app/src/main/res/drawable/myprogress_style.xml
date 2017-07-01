@@ -12,7 +12,7 @@ android:toDegrees="360">
     android:useLevel="false">
 
     <gradient
-        android:centerColor="@color/colorPrimary"
+        android:centerColor="@color/colorAccent"
         android:centerY="0.50"
         android:endColor="@color/colorPrimaryDark"
         android:startColor="@color/colorPrimaryDark"
