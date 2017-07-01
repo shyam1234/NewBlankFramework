@@ -67,7 +67,8 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkDPI() {
-        /*  0.75 - ldpi
+        /*
+            0.75 - ldpi
             1.0 - mdpi
             1.5 - hdpi
             2.0 - xhdpi
