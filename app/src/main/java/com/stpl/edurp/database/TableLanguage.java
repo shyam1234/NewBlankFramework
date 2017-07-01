@@ -27,7 +27,7 @@ public class TableLanguage {
     public static final String BAHASA_VERSION = "BahasaVersion";
     public static final String DATE_MODIFIED = "DateModified";
     //-------------------------------------------------------------------------
-    public static final String DROP_TABLE_DIARY = "Drop table if exists " + TABLE_NAME;
+    public static final String DROP_TABLE = "Drop table if exists " + TABLE_NAME;
     public static final String TRUNCATE_TABLE_DIARY = "TRUNCATE TABLE " + TABLE_NAME;
 
 
@@ -189,7 +189,7 @@ public class TableLanguage {
     public  synchronized void dropTable() {
         try {
             if (mDB != null) {
-                mDB.execSQL(DROP_TABLE_DIARY);
+                mDB.execSQL(DROP_TABLE);
             } else {
                 Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Need to open DB", Toast.LENGTH_SHORT).show();
             }

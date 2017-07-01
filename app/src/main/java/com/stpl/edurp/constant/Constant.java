@@ -3,8 +3,8 @@ package com.stpl.edurp.constant;
 /**
  * Created by Admin on 26-11-2016.
  */
-
 public interface Constant {
+    //make a note: please do not downgrade the DB version
     int DB_VERSION = 3;
     String TAG_NOTICEBOARD = "NOT";
     String TAG_ATTENDANCE = "ATT";

@@ -213,6 +213,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         Utils.animRightToLeft(LoginActivity.this);
+        finish();
     }
 
     private void reset() {

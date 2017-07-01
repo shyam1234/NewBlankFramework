@@ -120,4 +120,5 @@
     <string name="financial_year">Financial Year</string>
     <string name="results">Results</string>
     <string name="view">View</string>
+    <string name="db_updated">Database Updated</string>
 </resources>

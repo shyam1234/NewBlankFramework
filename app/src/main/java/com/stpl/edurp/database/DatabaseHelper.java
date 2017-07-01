@@ -3,9 +3,15 @@ package com.stpl.edurp.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import com.stpl.edurp.R;
+import com.stpl.edurp.application.MyApplication;
 import com.stpl.edurp.constant.Constant;
+import com.stpl.edurp.constant.WSContant;
+import com.stpl.edurp.utils.SharedPreferencesApp;
+import com.stpl.edurp.utils.UserInfo;
+import com.stpl.edurp.utils.Utils;
 
 /**
  * Created by Admin on 26-11-2016.
@@ -25,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return mInstance;
     }
+
 
 
     private DatabaseHelper(Context context) {
@@ -59,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //modify table if version changes
         if (old_version < new_version) {
             db.execSQL(TableCourseMaster.DROP_TABLE);
-            db.execSQL(TableLanguage.DROP_TABLE_DIARY);
+            db.execSQL(TableLanguage.DROP_TABLE);
             db.execSQL(TableParentStudentMenuDetails.DROP_TABLE);
             db.execSQL(TableParentMaster.DROP_TABLE);
             db.execSQL(TableParentStudentAssociation.DROP_TABLE);
@@ -76,6 +83,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(TableAttendanceDetails.DROP_TABLE);
             db.execSQL(TableAbsenseDetails.DROP_TABLE);
             onCreate(db);
+            //then need to reload all data from WS and need to store into corresponding tables
+            Toast.makeText(MyApplication.getInstance().getApplicationContext(),Utils.getLangConversion(WSContant.TAG_LANG_DB_UPDATE,MyApplication.getInstance().getString(R.string.db_updated),UserInfo.lang_pref), Toast.LENGTH_SHORT).show();
+            UserInfo.clearUSerInfo();
+            SharedPreferencesApp.getInstance().removeAllAlongWithLang();
+
         }
     }
 }

@@ -82,6 +82,11 @@ public class SharedPreferencesApp {
         savedDefaultChildSelection(-1);
     }
 
+    public void removeAllAlongWithLang() {
+        removeLastLangSync();
+        removeAll();
+    }
+
 
     //-----------------------------------------------------------
 
@@ -219,6 +224,7 @@ public class SharedPreferencesApp {
                 UserInfo.userId = sharePref.getInt(WSContant.TAG_SAVED_USERID, -1);
                 //UserInfo.studentId = sharePref.getInt(WSContant.TAG_DEFAULT_CHILD, -1);
                 UserInfo.authToken = sharePref.getString(WSContant.TAG_AUTHTOKEN, null);
+                UserInfo.lang_pref = sharePref.getString(WSContant.TAG_LANG, WSContant.TAG_ENG);
                 UserInfo.currUserType = sharePref.getString(WSContant.TAG_USER_TYPE, null);
                 UserInfo.parentId = UserInfo.userId;
                 AppLog.log("getAllStoreData", " UserInfo.userId: " + UserInfo.userId);
@@ -438,7 +444,6 @@ public class SharedPreferencesApp {
     }
 
 
-
     //--using currently to save and retrieve time ---------------------------------------------------------
     public String getLastRetrieveTime(String pTAG) {
         String mCurrTime = "";
@@ -456,6 +461,7 @@ public class SharedPreferencesApp {
             return mCurrTime;
         }
     }
+
     public void setLastRetrieveTime(String pTAG, String time) {
         try {
             SharedPreferences sharePref = MyApplication.getInstance().getSharedPreferences(DEFAULT_SHAREPREF, Context.MODE_PRIVATE);

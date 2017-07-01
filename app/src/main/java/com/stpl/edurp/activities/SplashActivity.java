@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
+import com.stpl.edurp.database.DatabaseHelper;
 import com.stpl.edurp.database.TableLanguage;
 import com.stpl.edurp.interfaces.ICallBack;
 import com.stpl.edurp.models.LanguageArrayDataModel;
@@ -37,16 +38,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.stpl.edurp.constant.Constant.DB_VERSION;
+
 /**
  * Created by Admin on 11-12-2016.
  */
 public class SplashActivity extends AppCompatActivity {
     private final String TAG = SplashActivity.class.getName();
     private static final long TIME_DELAY = 2000;
-    private Handler mHandler;
-    private Runnable mRunnable;
+    private static Handler mHandler;
+    private static Runnable mRunnable;
     public static Context mContext;
-   // CircularProgressBar mCircularProgressBar;
+    // CircularProgressBar mCircularProgressBar;
     ArrayList<TableLanguageDataModel> list;
 
     @Override
@@ -54,11 +57,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Utils.animRightToLeft(SplashActivity.this);
+        //needUpgrade forcefully call to onUpgrade method to check is db need to upgrade.
+        DatabaseHelper.getInstance(getApplicationContext()).getReadableDatabase().needUpgrade(DB_VERSION);
         init();
         initView();
         checkDPI();
 
-       // Utils.showProgressBar(100, mCircularProgressBar);
+        // Utils.showProgressBar(100, mCircularProgressBar);
     }
 
     private void checkDPI() {
@@ -69,13 +74,17 @@ public class SplashActivity extends AppCompatActivity {
             3.0 - xxhdpi
             4.0 - xxxhdpi
         */
-        AppLog.log(TAG,"density+++ "+getResources().getDisplayMetrics().density);
-        Toast.makeText(mContext, "dpi: "+getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
+        AppLog.log(TAG, "density+++ " + getResources().getDisplayMetrics().density);
+        Toast.makeText(mContext, "dpi: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
     }
 
 
     private void init() {
         mContext = this;
+        //for check database version number if less then new one then delete all tables and update again
+        SharedPreferencesApp.getInstance();
+        DatabaseHelper.getInstance(this);
+        //---------------------------------------
         mHandler = new Handler();
         mRunnable = new Runnable() {
             @Override
@@ -92,14 +101,14 @@ public class SplashActivity extends AppCompatActivity {
 
     private void initView() {
         //mCircularProgressBar = (CircularProgressBar) findViewById(R.id.progressBar);
-        ImageView logo = (ImageView)findViewById(R.id.imgview_logo);
+        ImageView logo = (ImageView) findViewById(R.id.imgview_logo);
 //        Animation an2= AnimationUtils.loadAnimation(this,R.anim.bounce);
 //        logo.startAnimation(an2);
 
 
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
-        RelativeLayout l=(RelativeLayout) findViewById(R.id.lin_lay);
+        RelativeLayout l = (RelativeLayout) findViewById(R.id.lin_lay);
         l.clearAnimation();
         l.startAnimation(anim);
 
@@ -145,16 +154,16 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkOfflineData(ArrayList<TableLanguageDataModel> lLangList) {
-         if(lLangList.size()>0){
-             Toast.makeText(mContext, "Offline Activated", Toast.LENGTH_SHORT).show();
-             if (UserInfo.authToken != null && (UserInfo.parentId != -1 && UserInfo.studentId != -1)) {
-                 navigateToNextPage(DashboardActivity.class);
-             } else {
-                 navigateToNextPage(LoginActivity.class);
-             }
-         }else{
-             showErrorDialog();
-         }
+        if (lLangList.size() > 0) {
+            Toast.makeText(mContext, "Offline Activated", Toast.LENGTH_SHORT).show();
+            if (UserInfo.authToken != null && (UserInfo.parentId != -1 && UserInfo.studentId != -1)) {
+                navigateToNextPage(DashboardActivity.class);
+            } else {
+                navigateToNextPage(LoginActivity.class);
+            }
+        } else {
+            showErrorDialog();
+        }
     }
 
     private void showErrorDialog() {
@@ -235,14 +244,14 @@ public class SplashActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(LanguageArrayDataModel... holder) {
-            return  bindDataWithLanguageDataModel(holder[0]);
+            return bindDataWithLanguageDataModel(holder[0]);
         }
 
         @Override
         protected void onPostExecute(Boolean b) {
             super.onPostExecute(b);
             try {
-                if(!b){
+                if (!b) {
                     return;
                 }
                 //saving into database
@@ -261,15 +270,16 @@ public class SplashActivity extends AppCompatActivity {
                     Utils.getHomeFragmentItems(new ICallBack() {
                         @Override
                         public void callBack() {
-                           navigateToNextPage(DashboardActivity.class);
+                            navigateToNextPage(DashboardActivity.class);
                         }
                     });
                 } else {
-                           navigateToNextPage(LoginActivity.class);
+                    navigateToNextPage(LoginActivity.class);
                 }
             } catch (Exception e) {
                 AppLog.errLog(TAG, e.getMessage());
             }
         }
     }
+
 }

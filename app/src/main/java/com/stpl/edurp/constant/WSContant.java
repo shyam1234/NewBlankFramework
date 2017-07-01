@@ -122,6 +122,7 @@ public interface WSContant {
     String TAG_LANG_PAY_NOW = "lblPayNow";
     String TAG_LANG_PART_PAYMENT = "lblPartPayment";
     String TAG_LANG_DUE_DATE = "lblDueDate";
+    String TAG_LANG_DB_UPDATE = "lblDBUpdate";
     //---------------------------------------------------------------------
     String TAG_TIMETABLEDATE = "TimeTableDate";
     String TAG_WS_TIMETABLE = "ws_timetable";
