@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lin_lay"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -13,14 +14,28 @@
         android:layout_centerVertical="true"
         android:src="@drawable/logo" />
 
-    <ProgressBar
+  <!--  <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/imgview_logo"
         android:layout_centerVertical="true"
         android:layout_marginTop="30dp"
-        android:indeterminateDrawable="@drawable/myprogress_style" />
+        android:indeterminateDrawable="@drawable/myprogress_style"
+        android:visibility="gone" />-->
+
+    <net.bohush.geometricprogressview.GeometricProgressView
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgview_logo"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        app:gp_color="@android:color/black"
+        app:gp_duration="800"
+        app:gp_figure_padding="3dp"
+        app:gp_number_of_angles="20"
+        app:gp_type="triangle" />
 
     <TextView
         android:layout_width="match_parent"
