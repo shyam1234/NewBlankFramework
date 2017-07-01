@@ -82,7 +82,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -193,19 +193,21 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     private void downloadPDFForForm16(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
-            new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
-                @Override
-                public void callBack() {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mPayslipAdapter.notifyDataSetChanged();
-                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
+            if(Utils.isInternetConnected(getContext())) {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                    @Override
+                    public void callBack() {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mPayslipAdapter.notifyDataSetChanged();
+                                FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf");
 
-                        }
-                    });
-                }
-            }).execute(WSContant.URL_PRINTTAXREPORT, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.userId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId);
+                            }
+                        });
+                    }
+                }).execute(WSContant.URL_PRINTTAXREPORT, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.userId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId);
+            }
         } else {
             showDownloadedForm16PDF(position);
         }
@@ -265,19 +267,21 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     private void downloadPDFForComputation(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
-            new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
-                @Override
-                public void callBack() {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mPayslipAdapter.notifyDataSetChanged();
-                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf");
+            if (Utils.isInternetConnected(getContext())) {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                    @Override
+                    public void callBack() {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mPayslipAdapter.notifyDataSetChanged();
+                                FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf");
 
-                        }
-                    });
-                }
-            }).execute(WSContant.URL_PRINTCOMPUTATIONSHEET, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.studentId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId + TAG_COMPUTATION);
+                            }
+                        });
+                    }
+                }).execute(WSContant.URL_PRINTCOMPUTATIONSHEET, WSContant.TAG_EMPLOYEEID + "=" + UserInfo.studentId + "&" + WSContant.TAG_FINANCIALYEARID + "=" + mFinancialYearId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearId + TAG_COMPUTATION);
+            }
         } else {
             showDownloadedComputation(position);
         }

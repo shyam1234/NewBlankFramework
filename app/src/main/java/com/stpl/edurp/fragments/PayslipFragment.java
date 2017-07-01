@@ -80,7 +80,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -97,10 +97,10 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
         //--header----------------------------------
         TextView mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
         mTextViewTitle.setText(R.string.title_payslip);
-        ImageView mImgProfile = (ImageView)  getView().findViewById(R.id.imageview_profile);
+        ImageView mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
         GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
-        ImageView mImgBack = (ImageView)  getView().findViewById(R.id.imageview_back);
+        ImageView mImgBack = (ImageView) getView().findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,20 +174,22 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
     private void downloadPDF(int position) {
         mFinancialYearMonthId = mPayslipDataModel.get(position).getFinancialYearMonthId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
-            new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
-                @Override
-                public void callBack() {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mPayslipAdapter.notifyDataSetChanged();
-                            FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf");
-                        }
-                    });
-                }
-                //?EmployeeId=319&financialyearmonthId=457&Language="B"
-            }).execute(WSContant.URL_PRINTEMPPAYSLIP, WSContant.TAG_eMPLOYEEID+"=" + UserInfo.studentId/*UserInfo.userId */+ "&"+WSContant.TAG_FINANCIALYEARMONTHID +"=" + mFinancialYearMonthId + "&"+WSContant.TAG_LANGUAGE+"=" + UserInfo.lang_pref, "" + mFinancialYearMonthId);
-        }else{
+            if (Utils.isInternetConnected(getActivity())) {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                    @Override
+                    public void callBack() {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mPayslipAdapter.notifyDataSetChanged();
+                                FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf");
+                            }
+                        });
+                    }
+                    //?EmployeeId=319&financialyearmonthId=457&Language="B"
+                }).execute(WSContant.URL_PRINTEMPPAYSLIP, WSContant.TAG_eMPLOYEEID + "=" + UserInfo.studentId/*UserInfo.userId */ + "&" + WSContant.TAG_FINANCIALYEARMONTHID + "=" + mFinancialYearMonthId + "&" + WSContant.TAG_LANGUAGE + "=" + UserInfo.lang_pref, "" + mFinancialYearMonthId);
+            }
+        } else {
             showDownloadedPDF(position);
         }
     }

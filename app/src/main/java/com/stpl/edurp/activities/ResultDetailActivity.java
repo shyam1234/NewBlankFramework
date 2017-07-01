@@ -148,22 +148,24 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.btn_results_download:
-                new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER, new ICallBack() {
-                    @Override
-                    public void callBack() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (mBtnDownload != null) {
-                                    mBtnDownload.setVisibility(View.GONE);
-                                    mBtnView.setVisibility(View.VISIBLE);
-                                    mBtnDelete.setVisibility(View.VISIBLE);
+                if(Utils.isInternetConnected(ResultDetailActivity.this)) {
+                    new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                        @Override
+                        public void callBack() {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (mBtnDownload != null) {
+                                        mBtnDownload.setVisibility(View.GONE);
+                                        mBtnView.setVisibility(View.VISIBLE);
+                                        mBtnDelete.setVisibility(View.VISIBLE);
+                                    }
                                 }
-                            }
-                        });
-                    }
-                //}).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
-                }).execute(WSContant.URL_PRINT_SEM_RESULTS, "StudentId=" + UserInfo.studentId+"&SSAssociationId="+mResultDataModel.getReferenceId()+"&Language="+UserInfo.lang_pref, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
+                            });
+                        }
+                        //}).execute(WSContant.URL_PRINT_OVERALL_RESULT, "" + UserInfo.studentId, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName());
+                    }).execute(WSContant.URL_PRINT_SEM_RESULTS, "StudentId=" + UserInfo.studentId + "&SSAssociationId=" + mResultDataModel.getReferenceId() + "&Language=" + UserInfo.lang_pref, "" + UserInfo.studentId + "-" + mResultDataModel.getSemesterName());
+                }
                 break;
             case R.id.btn_results_delete:
                 FileManager.deleteDownloadFile(this, WSContant.DOWNLOAD_FOLDER, "" + UserInfo.studentId+"-"+mResultDataModel.getSemesterName() + ".pdf", new ICallBack() {

@@ -145,18 +145,20 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                 final String sfAssociationId = ""+mFeeList.get(posi).getReferenceId();//"436";
 
                 if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER,sfAssociationId + ".pdf")) {
-                    new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
-                        @Override
-                        public void callBack() {
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, sfAssociationId + ".pdf");
-                                    mFeeAdapter.notifyDataSetChanged();
-                                }
-                            });
-                        }
-                    }).execute(WSContant.URL_PRINT_RECEIPT, "" + sfAssociationId);
+                    if(Utils.isInternetConnected(getActivity())) {
+                        new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                            @Override
+                            public void callBack() {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        FileManager.showDownloadFile(getActivity(), WSContant.DOWNLOAD_FOLDER, sfAssociationId + ".pdf");
+                                        mFeeAdapter.notifyDataSetChanged();
+                                    }
+                                });
+                            }
+                        }).execute(WSContant.URL_PRINT_RECEIPT, "" + sfAssociationId);
+                    }
                 }else{
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
