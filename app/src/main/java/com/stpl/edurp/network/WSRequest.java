@@ -134,15 +134,14 @@ public class WSRequest {
                     UserInfo.tokenExp = mapHeader.get(WSContant.TAG_TOKEN_EXP);
                     UserInfo.tokenIssue = mapHeader.get(WSContant.TAG_TOKEN_ISSUE);
                     //parseData(resp.data);
-
                     AppLog.networkLog(TAG, "--network -- response- - " + TAG + " --");
                     AppLog.networkLog("network statusCode", "" + resp.statusCode);
                     AppLog.networkLog("network networkTimeMs", "" + resp.networkTimeMs);
                     AppLog.networkLog("network headers", "" + mapHeader);
+                    AppLog.networkLog("UserInfo.tokenExp : ", "" + mapHeader.get(WSContant.TAG_TOKEN_EXP));
                     AppLog.networkLog("network notModified", "" + resp.notModified);
                     AppLog.networkLog(TAG, "------");
                 }
-
                 return super.parseNetworkResponse(resp);
             }
         };

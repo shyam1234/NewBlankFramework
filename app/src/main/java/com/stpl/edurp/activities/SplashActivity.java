@@ -7,7 +7,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -43,7 +42,7 @@ import static com.stpl.edurp.constant.Constant.DB_VERSION;
 /**
  * Created by Admin on 11-12-2016.
  */
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     private final String TAG = SplashActivity.class.getName();
     private static final long TIME_DELAY = 2000;
     private static Handler mHandler;
@@ -65,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
 
         // Utils.showProgressBar(100, mCircularProgressBar);
     }
+
 
     private void checkDPI() {
         /*

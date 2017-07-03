@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
+import com.stpl.edurp.application.MyApplication;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.LoginDataModel;
 import com.stpl.edurp.models.ModelFactory;
@@ -54,10 +55,10 @@ public class BaseActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    private void checkAuthTokenExpireThenRenew() {
+    public static void checkAuthTokenExpireThenRenew() {
         if (Utils.getTimeDiffFromCurrTime(UserInfo.tokenExp)) {
             //renew the authtoken
-            if (Utils.isInternetConnected(this)) {
+            if (Utils.isInternetConnected(MyApplication.getInstance().getApplicationContext())) {
                 Map<String, String> header = new HashMap<>();
                 header.put(WSContant.TAG_AUTHORIZATION, "Basic " + Utils.encodeToString(UserInfo.userId + ":" + UserInfo.authToken));
                 header.put(WSContant.TAG_LANGUAGE_VERSION_DATE, SharedPreferencesApp.getInstance().getLastLangSync());
@@ -74,7 +75,7 @@ public class BaseActivity extends AppCompatActivity {
                             LoginActivity.savedDataOnSharedPrefences(holder);
                             // SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
                         } else {
-                            Toast.makeText(BaseActivity.this, R.string.msg_invalide_credential, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_invalide_credential, Toast.LENGTH_SHORT).show();
                         }
                     }
 

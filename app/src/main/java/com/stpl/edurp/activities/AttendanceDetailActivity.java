@@ -83,7 +83,6 @@ public class AttendanceDetailActivity extends BaseActivity implements View.OnCli
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setSmoothScrollbarEnabled(true);
         mRecycleViewAttendance.setLayoutManager(manager);
-
         mAttendanceAdapter = new AttendanceDetailsActivityAdapter(AttendanceDetailActivity.this, mAttendanceDetailsList);
         mRecycleViewAttendance.setAdapter(mAttendanceAdapter);
 
