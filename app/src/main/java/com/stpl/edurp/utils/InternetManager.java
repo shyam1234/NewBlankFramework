@@ -29,9 +29,9 @@ public class InternetManager extends BroadcastReceiver {
         if (mConnectivityReceiverListener != null) {
             mConnectivityReceiverListener.onNetworkConnectionChanged(isConnected);
 //            if (isConnected)
-//                Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Internet Connected", Toast.LENGTH_SHORT).show();
 //            else
-//                Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Internet Not Connected", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Internet Not Connected", Toast.LENGTH_SHORT).show();
         }
     }
 

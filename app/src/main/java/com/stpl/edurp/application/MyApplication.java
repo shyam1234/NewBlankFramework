@@ -1,6 +1,7 @@
 package com.stpl.edurp.application;
 
 import android.app.Application;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.StrictMode;
@@ -42,6 +43,12 @@ public class MyApplication extends Application {
         mInstance = this;
         SharedPreferencesApp.getInstance();
         initOneSignalNotification();
+
+        //registering BroadcastReceiver dynamic--
+        IntentFilter filter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
+        InternetManager myReceiver = new InternetManager();
+        registerReceiver(myReceiver, filter);
+        //---------------------------------------
     }
 
     private void initOneSignalNotification() {
