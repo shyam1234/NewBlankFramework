@@ -63,6 +63,12 @@ public class SplashActivity extends BaseActivity {
         initView();
         checkDPI();
 
+//        MyApplication.getInstance().setConnectivityListener(new InternetManager.ConnectivityReceiverListener() {
+//            @Override
+//            public void onNetworkConnectionChanged(boolean isConnected) {
+//
+//            }
+//        });
         // Utils.showProgressBar(100, mCircularProgressBar);
     }
 
@@ -284,5 +290,7 @@ public class SplashActivity extends BaseActivity {
             }
         }
     }
+
+
 
 }

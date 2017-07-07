@@ -15,14 +15,10 @@ import com.stpl.edurp.R;
  */
 
 public class InternetManager extends BroadcastReceiver {
-    private ConnectivityReceiverListener mConnectivityReceiverListener;
+    public static ConnectivityReceiverListener mConnectivityReceiverListener;
 
     public InternetManager() {
         super();
-    }
-    public InternetManager(ConnectivityReceiverListener listner) {
-        super();
-        mConnectivityReceiverListener = listner;
     }
 
     @Override
@@ -52,6 +48,7 @@ public class InternetManager extends BroadcastReceiver {
         return activeNetwork != null
                 && activeNetwork.isConnectedOrConnecting();
     }
+
 
 
 }

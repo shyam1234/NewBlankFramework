@@ -82,6 +82,10 @@ public class MyApplication extends Application {
         }
     }
 
+    /**
+     * use for getting runtime network status
+     * @param listener
+     */
     public void setConnectivityListener(InternetManager.ConnectivityReceiverListener listener) {
         InternetManager.mConnectivityReceiverListener = listener;
     }
