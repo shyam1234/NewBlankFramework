@@ -32,6 +32,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -83,7 +84,7 @@ public class ResultFragment extends Fragment implements View.OnClickListener {
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -164,7 +165,7 @@ public class ResultFragment extends Fragment implements View.OnClickListener {
         mResultSummaryList = table.getData(UserInfo.menuCode, UserInfo.studentId);
         table.closeDB();
         //----------------------------------------------------------
-        if (Utils.isInternetConnected(getContext())) {
+        if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

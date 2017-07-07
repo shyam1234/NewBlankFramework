@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.net.ConnectivityManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,7 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
@@ -400,13 +398,6 @@ public class Utils {
     }
 
 
-    public static boolean isInternetConnected(Context pContext) {
-        ConnectivityManager cm = (ConnectivityManager) pContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (cm.getActiveNetworkInfo() == null) {
-            Toast.makeText(pContext, R.string.no_internet, Toast.LENGTH_SHORT).show();
-        }
-        return cm.getActiveNetworkInfo() != null;
-    }
 
     public static String getTimeInYYYYMMDD(String yyyyMMddHHmmss) {
         String time = "";

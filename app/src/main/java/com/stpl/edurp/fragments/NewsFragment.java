@@ -32,6 +32,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -153,7 +154,7 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
     private void fetchDataFromServer() {
 
         //----------------------------------------------------------
-        if (Utils.isInternetConnected(getContext())) {
+        if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

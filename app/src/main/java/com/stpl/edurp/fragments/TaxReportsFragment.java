@@ -30,6 +30,7 @@ import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
 import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -193,7 +194,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     private void downloadPDFForForm16(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
-            if(Utils.isInternetConnected(getContext())) {
+            if(InternetManager.isInternetConnected(getContext())) {
                 new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                     @Override
                     public void callBack() {
@@ -215,7 +216,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
 
 
     private void fetchDataFromServer() {
-        if (Utils.isInternetConnected(getContext())) {
+        if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);
@@ -267,7 +268,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     private void downloadPDFForComputation(int position) {
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
-            if (Utils.isInternetConnected(getContext())) {
+            if (InternetManager.isInternetConnected(getContext())) {
                 new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                     @Override
                     public void callBack() {

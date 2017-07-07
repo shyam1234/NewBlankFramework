@@ -33,6 +33,7 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -123,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Utils.animRightToLeft(LoginActivity.this);
                 break;
             case R.id.btnSignIn:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     mScrollView.setEnabled(false);
                     mEditTextUserName.setFocusable(false);
                     mEditTextPassword.setFocusable(false);
@@ -396,7 +397,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static void checkAuthTokenExpireThenRenew() {
         if (Utils.getTimeDiffFromCurrTime(UserInfo.tokenExp)) {
             //renew the authtoken
-            if (Utils.isInternetConnected(MyApplication.getInstance().getApplicationContext())) {
+            if (InternetManager.isInternetConnected(MyApplication.getInstance().getApplicationContext())) {
                 Map<String, String> header = new HashMap<>();
                 header.put(WSContant.TAG_AUTHORIZATION, "Basic " + Utils.encodeToString(UserInfo.userId + ":" + UserInfo.authToken));
                 header.put(WSContant.TAG_LANGUAGE_VERSION_DATE, SharedPreferencesApp.getInstance().getLastLangSync());

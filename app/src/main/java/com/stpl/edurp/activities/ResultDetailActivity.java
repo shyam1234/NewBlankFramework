@@ -27,6 +27,7 @@ import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.DownloadFileAsync;
 import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -148,7 +149,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.btn_results_download:
-                if(Utils.isInternetConnected(ResultDetailActivity.this)) {
+                if(InternetManager.isInternetConnected(ResultDetailActivity.this)) {
                     new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                         @Override
                         public void callBack() {
@@ -192,7 +193,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
         table.openDB(ResultDetailActivity.this);
         mMobileDetailsHolder = table.getValue((mResultDataModel != null ? mResultDataModel.getReferenceId() : 0));
         table.closeDB();
-        if (Utils.isInternetConnected(this)) {
+        if (InternetManager.isInternetConnected(this)) {
 
 
             //call to WS and validate given credential----

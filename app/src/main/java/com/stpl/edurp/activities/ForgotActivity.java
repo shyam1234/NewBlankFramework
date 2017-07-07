@@ -16,6 +16,7 @@ import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.utils.AppLog;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -60,7 +61,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                 onBackPressed();
                 break;
             case R.id.btnSubmit:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     doForgotPassword();
                 }
                 break;

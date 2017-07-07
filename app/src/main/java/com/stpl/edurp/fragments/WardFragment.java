@@ -23,6 +23,7 @@ import com.stpl.edurp.interfaces.ICallBack;
 import com.stpl.edurp.models.TableStudentDetailsDataModel;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -122,7 +123,7 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
         if (isClicked) {
             UserInfo.studentId = mListChildInfoHolder.get(position).getStudent_id();
-            if(Utils.isInternetConnected(getContext())) {
+            if(InternetManager.isInternetConnected(getContext())) {
                 Utils.showProgressBar(getContext());
                 Utils.getHomeFragmentItems(new ICallBack() {
                     @Override

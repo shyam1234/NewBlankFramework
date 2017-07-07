@@ -14,6 +14,7 @@ import com.stpl.edurp.models.ModelFactory;
 import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -58,7 +59,7 @@ public class BaseActivity extends AppCompatActivity {
     public static void checkAuthTokenExpireThenRenew() {
         if (Utils.getTimeDiffFromCurrTime(UserInfo.tokenExp)) {
             //renew the authtoken
-            if (Utils.isInternetConnected(MyApplication.getInstance().getApplicationContext())) {
+            if (InternetManager.isInternetConnected(MyApplication.getInstance().getApplicationContext())) {
                 Map<String, String> header = new HashMap<>();
                 header.put(WSContant.TAG_AUTHORIZATION, "Basic " + Utils.encodeToString(UserInfo.userId + ":" + UserInfo.authToken));
                 header.put(WSContant.TAG_LANGUAGE_VERSION_DATE, SharedPreferencesApp.getInstance().getLastLangSync());

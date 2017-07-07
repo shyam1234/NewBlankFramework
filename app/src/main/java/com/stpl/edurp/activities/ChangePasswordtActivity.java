@@ -14,6 +14,7 @@ import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.utils.AppLog;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.HashMap;
@@ -86,7 +87,7 @@ public class ChangePasswordtActivity extends AppCompatActivity implements View.O
                 onBackPressed();
                 break;
             case R.id.btnSubmit:
-                if(Utils.isInternetConnected(this)) {
+                if(InternetManager.isInternetConnected(this)) {
                     doChangePassword();
                 }
                 break;

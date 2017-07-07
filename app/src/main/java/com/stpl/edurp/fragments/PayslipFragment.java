@@ -30,6 +30,7 @@ import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.DownloadFileAsync;
 import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -174,7 +175,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
     private void downloadPDF(int position) {
         mFinancialYearMonthId = mPayslipDataModel.get(position).getFinancialYearMonthId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
-            if (Utils.isInternetConnected(getActivity())) {
+            if (InternetManager.isInternetConnected(getActivity())) {
                 new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                     @Override
                     public void callBack() {
@@ -196,7 +197,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
 
 
     private void fetchDataFromServer() {
-        if (Utils.isInternetConnected(getContext())) {
+        if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

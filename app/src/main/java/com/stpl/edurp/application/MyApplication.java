@@ -14,7 +14,7 @@ import com.android.volley.toolbox.Volley;
 import com.onesignal.OneSignal;
 import com.stpl.edurp.notification.EduRPNotificationOpenedHandler;
 import com.stpl.edurp.notification.EduRPNotificationReceivedHandler;
-import com.stpl.edurp.utils.ConnectivityReceiver;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 
 
@@ -82,8 +82,8 @@ public class MyApplication extends Application {
         }
     }
 
-    public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
-        ConnectivityReceiver.mConnectivityReceiverListener = listener;
+    public void setConnectivityListener(InternetManager.ConnectivityReceiverListener listener) {
+        InternetManager.mConnectivityReceiverListener = listener;
     }
 
 

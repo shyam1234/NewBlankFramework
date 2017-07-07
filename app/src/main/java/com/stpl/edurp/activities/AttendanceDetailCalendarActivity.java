@@ -21,6 +21,7 @@ import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.CalendarView;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -118,7 +119,7 @@ public class AttendanceDetailCalendarActivity extends BaseActivity implements Vi
                 mTableStudentAttendanceDetailListDataModel.getReferenceId());
         table.closeDB();
         //----------------------------------------------------------
-        if (Utils.isInternetConnected(this)) {
+        if (InternetManager.isInternetConnected(this)) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

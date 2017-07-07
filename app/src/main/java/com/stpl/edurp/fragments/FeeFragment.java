@@ -33,6 +33,7 @@ import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.DownloadFileAsync;
 import com.stpl.edurp.utils.FileManager;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -145,7 +146,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
                 final String sfAssociationId = ""+mFeeList.get(posi).getReferenceId();//"436";
 
                 if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER,sfAssociationId + ".pdf")) {
-                    if(Utils.isInternetConnected(getActivity())) {
+                    if(InternetManager.isInternetConnected(getActivity())) {
                         new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
                             @Override
                             public void callBack() {
@@ -183,7 +184,7 @@ public class FeeFragment extends Fragment implements View.OnClickListener {
         Collections.sort(mFeeList, Collections.<TableFeeMasterDataModel>reverseOrder());
         table.closeDB();
         //----------------------------------------------------------
-        if (Utils.isInternetConnected(getContext())) {
+        if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);

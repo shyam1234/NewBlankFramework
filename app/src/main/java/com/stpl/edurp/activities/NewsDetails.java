@@ -39,6 +39,7 @@ import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 import com.stpl.edurp.utils.ZoomOutPageTransformer;
@@ -95,7 +96,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         init();
         initView();
 
-        if (Utils.isInternetConnected(this)) {
+        if (InternetManager.isInternetConnected(this)) {
             fetchDataFromServer();
         } else {
             TableDocumentMaster table = new TableDocumentMaster();
@@ -384,29 +385,29 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
                 navigateToNextPage(posi);
                 break;
             case R.id.rel_inc_like_comment_like_holder:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     doLike(((TextView) v.findViewById(R.id.textview_inc_bottom_like)));
                 } else {
                     //Toast.makeText(this, getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.rel_inc_like_comment_comment_holder:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     viewComment();
                 }
                 break;
             case R.id.textview_comment_like_page_comment:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     getComments();
                 }
                 break;
             case R.id.textview_comment_like_page_like:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     getLikes();
                 }
                 break;
             case R.id.textview_send_comment_send:
-                if (Utils.isInternetConnected(this)) {
+                if (InternetManager.isInternetConnected(this)) {
                     doComment(((EditText) findViewById(R.id.edittext_send_comment_comment)));
                 } else {
                     // Toast.makeText(this, getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
@@ -440,7 +441,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     }
 
     private void fetchCommentDataFromServer(final int type) {
-        if (Utils.isInternetConnected(this)) {
+        if (InternetManager.isInternetConnected(this)) {
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
             header.put(WSContant.TAG_TOKEN, UserInfo.authToken);
