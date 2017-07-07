@@ -94,7 +94,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
-        <receiver android:name="com.stpl.edurp.utils.InternetManager" >
+        <receiver android:name=".utils.InternetManager" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

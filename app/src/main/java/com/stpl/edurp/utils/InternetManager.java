@@ -17,6 +17,9 @@ import com.stpl.edurp.R;
 public class InternetManager extends BroadcastReceiver {
     private ConnectivityReceiverListener mConnectivityReceiverListener;
 
+    public InternetManager() {
+        super();
+    }
     public InternetManager(ConnectivityReceiverListener listner) {
         super();
         mConnectivityReceiverListener = listner;
