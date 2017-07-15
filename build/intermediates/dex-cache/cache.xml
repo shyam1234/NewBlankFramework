@@ -156,6 +156,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\net.bohush.geometricprogressview\geometricprogressview\1.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a2f6f5f18070c2513bd90621781a90967707a671">
+        <dex dex="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\pre-dexed\debug\net.bohush.geometricprogressview-geometricprogressview-1.1.1_57ce3414c79bbb0ddb14fc4b4781996b798a4ed9.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\prafulla_malviya\edurp\workspace\NewBlankFramework\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"

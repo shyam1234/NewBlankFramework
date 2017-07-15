@@ -37,7 +37,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        checkAuthTokenExpireThenRenew();
+        //checkAuthTokenExpireThenRenew();
     }
 
 
@@ -79,7 +79,6 @@ public class BaseActivity extends AppCompatActivity {
                             Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_invalide_credential, Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onErrorResponse(VolleyError response) {
                     }

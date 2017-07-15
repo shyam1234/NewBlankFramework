@@ -88,7 +88,7 @@ public class WSRequest {
                         default:
                             if (error.networkResponse.statusCode == WSContant.TAG_UNAUTHORIZED_CODE) {
                                 Toast.makeText(MyApplication.getInstance().getApplicationContext(), MyApplication.getInstance().getApplicationContext().getResources().getString(R.string.msg_unauthorized), Toast.LENGTH_SHORT).show();
-                                UserInfo.logout(false);
+                                UserInfo.logout(R.string.msg_session_exp);
                             }
                     }
                 }

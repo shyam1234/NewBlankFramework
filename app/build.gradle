@@ -7,7 +7,7 @@ android {
         applicationId "com.stpl.edurp"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 6
+        versionCode 7
         versionName "1.0.0"
         manifestPlaceholders = [onesignal_app_id: "f8de0f17-378b-4535-a46c-5c867fd4c428",
                                 // Project number pulled from dashboard, local value is ignored.
@@ -38,7 +38,6 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.0.2'
     compile 'com.google.code.gson:gson:2.4'
     compile 'com.mikhaellopez:circularprogressbar:1.0.0'
-    compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:cardview-v7:25.0.1'
     compile project(':jiecaovideoplayer-5.5')
     // OneSignal SDK

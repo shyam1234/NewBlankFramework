@@ -23,9 +23,7 @@ public class SharedPreferencesApp {
                 //retrieve value from store
                 getAllStoreData();
             }
-
         }
-
         return mInstance;
     }
 

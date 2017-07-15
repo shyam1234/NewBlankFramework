@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.stpl.edurp.R;
 import com.stpl.edurp.activities.DashboardActivity;
 import com.stpl.edurp.activities.LoginActivity;
 import com.stpl.edurp.activities.SplashActivity;
@@ -55,7 +54,7 @@ public class UserInfo {
         currUserPhoneNumber = null;
     }
 
-    public static void logout(boolean isShowToastAndNavigateToLogin) {
+    public static void logout(int msg) {
         clearUSerInfo();
         SharedPreferencesApp.getInstance().removeAll();
         AppCompatActivity activity = null;
@@ -66,8 +65,8 @@ public class UserInfo {
         }
 
         if (activity != null) {
-            if (isShowToastAndNavigateToLogin) {
-                Toast.makeText(MyApplication.getInstance().getApplicationContext(), R.string.msg_logout, Toast.LENGTH_SHORT).show();
+            if (msg!=0) {
+                Toast.makeText(MyApplication.getInstance().getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 activity.startActivity(intent);

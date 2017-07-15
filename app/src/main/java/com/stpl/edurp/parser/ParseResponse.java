@@ -18,9 +18,7 @@ import com.stpl.edurp.models.TaxReportsDataModel;
 
 /**
  * Created by Admin on 30-12-2016.
- */
-
-public class ParseResponse {
+ */public class ParseResponse {
 
     private final String TAG = "ParseResponse";
     private final String mKey;
