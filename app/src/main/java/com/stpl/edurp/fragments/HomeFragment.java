@@ -35,41 +35,42 @@ import java.util.HashMap;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     public static final String TAG = "HomeFramgent";
-    public static HashMap<String, Integer > mMenuColor = new HashMap<>();
-    public static HashMap<String, Integer > mMenuImage = new HashMap<>();
+    public static HashMap<String, Integer> mMenuColor = new HashMap<>();
+    public static HashMap<String, Integer> mMenuImage = new HashMap<>();
+
     static {
-        mMenuColor.put(Constant.TAG_NOTICEBOARD,R.color.colorGreen);
-        mMenuColor.put(Constant.TAG_ATTENDANCE,R.color.colorGreen);
-        mMenuColor.put(Constant.TAG_HOMEWORK,R.color.colorDarkYellow);
-        mMenuColor.put(Constant.TAG_DIARY,R.color.colorLightVallet);
-        mMenuColor.put(Constant.TAG_MESSAGE,R.color.colorSkyBlue);
-        mMenuColor.put(Constant.TAG_EVENTS,R.color.colorDarkPink);
-        mMenuColor.put(Constant.TAG_GALLERY,R.color.colorLightOran);
-        mMenuColor.put(Constant.TAG_FEEDBACK,R.color.colorLeaf);
-        mMenuColor.put(Constant.TAG_FEE,R.color.colorBlue);
-        mMenuColor.put(Constant.TAG_NEWS,R.color.colorLighterMayrun);
-        mMenuColor.put(Constant.TAG_TIMETABLE,R.color.colorDarkPink);
-        mMenuColor.put(Constant.TAG_RESULT,R.color.colorLightParrot);
-        mMenuColor.put(Constant.TAG_TAX_REPORTS,R.color.colorDarkVal);
-        mMenuColor.put(Constant.TAG_PAYSLIP,R.color.colorSkyBlue);
-        mMenuColor.put(Constant.TAG_TRANSPORT,R.color.colorLightOran);
+        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.color.colorLightGreen);
+        mMenuColor.put(Constant.TAG_ATTENDANCE, R.color.colorGreen);
+        mMenuColor.put(Constant.TAG_HOMEWORK, R.color.colorLightParrot);
+        mMenuColor.put(Constant.TAG_DIARY, R.color.colorDarkYellow);
+        mMenuColor.put(Constant.TAG_MESSAGE, R.color.colorDarkVal);
+        mMenuColor.put(Constant.TAG_EVENTS, R.color.colorLightVallet);
+        mMenuColor.put(Constant.TAG_GALLERY, R.color.colorDarkblue);
+        mMenuColor.put(Constant.TAG_FEEDBACK, R.color.colorSkyBlue);
+        mMenuColor.put(Constant.TAG_FEE, R.color.colorDarkPink);
+        mMenuColor.put(Constant.TAG_NEWS, R.color.colorLightOran);
+        mMenuColor.put(Constant.TAG_TIMETABLE, R.color.colorDarkPink);
+        mMenuColor.put(Constant.TAG_RESULT, R.color.colorLightBlue);
+        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.color.colorDarkVal);
+        mMenuColor.put(Constant.TAG_PAYSLIP, R.color.colorSkyBlue);
+        mMenuColor.put(Constant.TAG_TRANSPORT, R.color.colorLighterMayrun);
 
         ///////////////////////////////////////////////////////////////////
-        mMenuImage.put(Constant.TAG_NOTICEBOARD,R.drawable.noticeboard);
-        mMenuImage.put(Constant.TAG_ATTENDANCE,R.drawable.attendance);
-        mMenuImage.put(Constant.TAG_HOMEWORK,R.drawable.homework);
-        mMenuImage.put(Constant.TAG_DIARY,R.drawable.diary);
-        mMenuImage.put(Constant.TAG_MESSAGE,R.drawable.messages);
-        mMenuImage.put(Constant.TAG_EVENTS,R.drawable.events);
-        mMenuImage.put(Constant.TAG_GALLERY,R.drawable.gallery);
-        mMenuImage.put(Constant.TAG_FEEDBACK,R.drawable.feedback);
-        mMenuImage.put(Constant.TAG_FEE,R.drawable.fee);
-        mMenuImage.put(Constant.TAG_NEWS,R.drawable.dashboard_news);
-        mMenuImage.put(Constant.TAG_TIMETABLE,R.drawable.dashboard_time_table);
-        mMenuImage.put(Constant.TAG_RESULT,R.drawable.dashboard_results);
-        mMenuImage.put(Constant.TAG_TAX_REPORTS,R.drawable.tax_reports);
-        mMenuImage.put(Constant.TAG_PAYSLIP,R.drawable.payslip);
-        mMenuImage.put(Constant.TAG_TRANSPORT,R.drawable.transport_manag);
+        mMenuImage.put(Constant.TAG_NOTICEBOARD, R.drawable.noticeboard);
+        mMenuImage.put(Constant.TAG_ATTENDANCE, R.drawable.attendance);
+        mMenuImage.put(Constant.TAG_HOMEWORK, R.drawable.homework);
+        mMenuImage.put(Constant.TAG_DIARY, R.drawable.diary);
+        mMenuImage.put(Constant.TAG_MESSAGE, R.drawable.messages);
+        mMenuImage.put(Constant.TAG_EVENTS, R.drawable.events);
+        mMenuImage.put(Constant.TAG_GALLERY, R.drawable.gallery);
+        mMenuImage.put(Constant.TAG_FEEDBACK, R.drawable.feedback);
+        mMenuImage.put(Constant.TAG_FEE, R.drawable.fee);
+        mMenuImage.put(Constant.TAG_NEWS, R.drawable.dashboard_news);
+        mMenuImage.put(Constant.TAG_TIMETABLE, R.drawable.dashboard_time_table);
+        mMenuImage.put(Constant.TAG_RESULT, R.drawable.dashboard_results);
+        mMenuImage.put(Constant.TAG_TAX_REPORTS, R.drawable.tax_reports);
+        mMenuImage.put(Constant.TAG_PAYSLIP, R.drawable.payslip);
+        mMenuImage.put(Constant.TAG_TRANSPORT, R.drawable.transport_manag);
     }
 
 //    public static int[] mMenuImage = new int[]{R.drawable.noticeboard, R.drawable.attendance, R.drawable.homework,
@@ -173,7 +174,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mTextViewTitle.setText(R.string.tab_home);
         mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
-        Utils.setBounceAni(getContext(),mImgProfile);
+        Utils.setBounceAni(getContext(), mImgProfile);
         //----------------------------------------------------------------------
         final TableParentStudentMenuDetails table = new TableParentStudentMenuDetails();
         table.openDB(getContext());
@@ -198,9 +199,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     public void setLangSelection() {
-        if(getContext()!=null){
-            mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_HOME, getString(R.string.tab_home),UserInfo.lang_pref));
-            ((TextView) getView().findViewById(R.id.textview_welcome_to)).setText(Utils.getLangConversion(WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to),UserInfo.lang_pref));
+        if (getContext() != null) {
+            mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_HOME, getString(R.string.tab_home), UserInfo.lang_pref));
+            ((TextView) getView().findViewById(R.id.textview_welcome_to)).setText(Utils.getLangConversion(WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to), UserInfo.lang_pref));
 
 //            Utils.langConversion(getContext(), mTextViewTitle, WSContant.TAG_LANG_HOME, getString(R.string.tab_home), UserInfo.lang_pref);
 //            Utils.langConversion(getContext(), ((TextView) getView().findViewById(R.id.textview_welcome_to)), WSContant.TAG_LANG_WELCOME, getString(R.string.welcome_to), UserInfo.lang_pref);
@@ -209,12 +210,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.rel_dashboard_cell_bg_holder:
                 String menu_code = (String) v.getTag();
                 AppLog.log("HomeFragment : onItemClick menu name: ", menu_code);
                 UserInfo.menuCode = menu_code.trim();
-                switch ( UserInfo.menuCode) {
+                switch (UserInfo.menuCode) {
                     case Constant.TAG_NOTICEBOARD:
                         Utils.navigateFragmentMenu(getFragmentManager(), new NoticeboardFragment(), NoticeboardFragment.TAG);
                         break;
@@ -235,8 +236,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                     case Constant.TAG_EVENTS:
-                       //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
-                       Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                        //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
+                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                         break;
                     case Constant.TAG_FEE:
                         Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);

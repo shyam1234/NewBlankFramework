@@ -8,22 +8,22 @@
     <color name="light_black">#88000000</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorGreen">#1ac594</color>
+    <color name="colorGreen">#159E76</color>
 
-    <color name="colorLightGreen">#2ECC71</color>
+    <color name="colorLightGreen">#7DBA55</color>
     <color name="colorLightYellow">#F1C40F</color>
     <color name="colorLightWallet">#8E44AD</color>
     <color name="colorDarkBlue">#2093CC</color>
-    <color name="colorSkyBlue">#58A2BD</color>
-    <color name="colorDarkYellow">#F39C12</color>
-    <color name="colorLightVallet">#9B59B6</color>
+    <color name="colorSkyBlue">#59A2BE</color>
+    <color name="colorDarkYellow">#FAA43F</color>
+    <color name="colorLightVallet">#AD62A7</color>
     <color name="colorLightRed">#C0392B</color>
     <color name="colorLightGray">#95A5A6</color>
     <color name="colorDarkPink">#F26463</color>
     <color name="colorHint">#000000</color>
     <color name="colorBlue">#4D8CFE</color>
     <color name="colorSignIn">#4990E2</color>
-    <color name="colorLightBlue">#B1B1B1</color>
+    <color name="colorLightBlue">#4D8CFF</color>
     <color name="colorGrayTransparent">#11000000</color>
     <color name="dashboardTextColor">#686868</color>
 
@@ -31,11 +31,11 @@
     <color name="backgroundProgressBarColor">#309f60</color>
     <color name="colorMargin">#d6d6d6</color>
     <color name="colorDarkblue">#2093CC</color>
-    <color name="colorLightParrot">#01BFA5</color>
+    <color name="colorLightParrot">#02BFA5</color>
     <color name="colorDarkVal">#9574CD</color>
-    <color name="colorLightOran">#F58458</color>
+    <color name="colorLightOran">#F5855A</color>
     <color name="colorLeaf">#7DB955</color>
-    <color name="colorLighterMayrun">#67A78C</color>
+    <color name="colorLighterMayrun">#6FA78C</color>
     <color name="colorTextHint">#ABAAB0</color>
 
     <color name="today">#4b82ff</color>
