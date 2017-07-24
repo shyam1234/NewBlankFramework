@@ -419,7 +419,8 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void getLikes() {
         mRelComment.setVisibility(View.GONE);
-        mTextViewLikeTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        //mTextViewLikeTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        mTextViewLikeTab.setBackgroundResource(R.drawable.filled_rect_white);
         mTextViewCommentTab.setBackgroundColor(Color.TRANSPARENT);
         mTextViewLikeTab.setTextColor(getResources().getColor(R.color.colorGreen));
         mTextViewCommentTab.setTextColor(getResources().getColor(R.color.colorWhite));
@@ -431,7 +432,8 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void getComments() {
         mRelComment.setVisibility(View.VISIBLE);
-        mTextViewCommentTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+       // mTextViewCommentTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        mTextViewCommentTab.setBackgroundResource(R.drawable.filled_rect_white);
         mTextViewLikeTab.setBackgroundColor(Color.TRANSPARENT);
         mTextViewCommentTab.setTextColor(getResources().getColor(R.color.colorGreen));
         mTextViewLikeTab.setTextColor(getResources().getColor(R.color.colorWhite));
