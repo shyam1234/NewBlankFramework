@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
+    android:background="@color/colorWhite"
     app:cardElevation="0.1dp"
     app:cardMaxElevation="1dp"
     app:cardUseCompatPadding="true">
@@ -20,7 +21,7 @@
             android:id="@+id/textview_attendance_row_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorTextHint"
+            android:background="@color/colorWhite"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -30,13 +31,28 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/textview_attendance_row_designation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="Designation"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorTextHint" />
+
+
+        <TextView
             android:id="@+id/textview_attendance_row_semester"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:text="Semester Number"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/black" />
+            android:textColor="@color/colorNaviBlue" />
 
         <LinearLayout
             android:layout_width="match_parent"

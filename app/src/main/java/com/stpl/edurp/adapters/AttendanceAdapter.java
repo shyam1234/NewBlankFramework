@@ -12,6 +12,7 @@ import com.stpl.edurp.R;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.TableCourseMasterDataModel;
 import com.stpl.edurp.utils.SharedPreferencesApp;
+import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
         //holder.textViewLastSyncDate.setText(Utils.getTimeInDayDateMonthYear(mList.get(position).getLastRetrieved()));
         holder.linearLayout.setOnClickListener(mListner);
         holder.linearLayout.setTag(position);
+        holder.textViewDesignation.setText(Utils.getLangConversion(WSContant.TAG_LANG_FACULTY,mContext.getResources().getString(R.string.faculty), UserInfo.lang_pref));
     }
 
 
@@ -58,6 +60,7 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        private final TextView textViewDesignation;
         public LinearLayout linearLayout;
         public TextView textViewSubject;
         public TextView textViewSemester;
@@ -69,6 +72,8 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
             textViewSubject = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject);
             textViewSemester = (TextView) itemView.findViewById(R.id.textview_attendance_row_semester);
             textViewLastSyncDate = (TextView) itemView.findViewById(R.id.textview_attendance_row_lastsync_value);
+            textViewDesignation = (TextView) itemView.findViewById(R.id.textview_attendance_row_designation);
+
         }
     }
 }

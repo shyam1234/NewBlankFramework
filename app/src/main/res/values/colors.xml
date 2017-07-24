@@ -12,11 +12,10 @@
 
     <color name="colorLightGreen">#7DBA55</color>
     <color name="colorLightYellow">#F1C40F</color>
-    <color name="colorLightWallet">#8E44AD</color>
+    <color name="colorLightViolet">#AD62A7</color>
     <color name="colorDarkBlue">#2093CC</color>
     <color name="colorSkyBlue">#59A2BE</color>
     <color name="colorDarkYellow">#FAA43F</color>
-    <color name="colorLightVallet">#AD62A7</color>
     <color name="colorLightRed">#C0392B</color>
     <color name="colorLightGray">#95A5A6</color>
     <color name="colorDarkPink">#F26463</color>
@@ -37,7 +36,7 @@
     <color name="colorLeaf">#7DB955</color>
     <color name="colorLighterMayrun">#6FA78C</color>
     <color name="colorTextHint">#ABAAB0</color>
-
+    <color name="colorNaviBlue">#371E94</color>
     <color name="today">#4b82ff</color>
     <color name="greyed_out">#c7c7c7</color>
     <color name="summer">#44eebd82</color>
