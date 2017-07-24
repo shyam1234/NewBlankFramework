@@ -10,6 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorLightPlatinum"
         android:padding="12dp">
 
         <LinearLayout
@@ -105,7 +106,7 @@
                     android:gravity="center"
                     android:text="0 days"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorNaviBlue"
                     android:textStyle="normal" />
             </LinearLayout>
 

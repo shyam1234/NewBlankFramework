@@ -28,7 +28,7 @@
             android:paddingTop="5dp"
             android:text="Subject"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/black" />
+            android:textColor="@color/colorDarkblue" />
 
         <TextView
             android:id="@+id/textview_attendance_row_designation"

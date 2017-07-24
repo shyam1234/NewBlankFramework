@@ -9,10 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></include>
 
+
+    <!--as per Karthik mail not require header-->
     <include
+        android:visibility="gone"
         layout="@layout/inc_attendance_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></include>
+    <!--as per Karthik mail not require header-->
 
     <com.stpl.edurp.utils.CalendarView
         android:id="@+id/calendar_view"
