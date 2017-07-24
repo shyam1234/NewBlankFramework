@@ -23,7 +23,7 @@
             android:id="@+id/imageview_news_row_thumbnil"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
              android:src="@android:drawable/ic_menu_gallery" />
 <!-- android:background="@drawable/rectangle_border_black_with_corners"
           -->

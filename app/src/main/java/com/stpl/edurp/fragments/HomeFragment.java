@@ -39,21 +39,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public static HashMap<String, Integer> mMenuImage = new HashMap<>();
 
     static {
-        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.color.colorLightGreen);
-        mMenuColor.put(Constant.TAG_ATTENDANCE, R.color.colorGreen);
-        mMenuColor.put(Constant.TAG_HOMEWORK, R.color.colorLightParrot);
-        mMenuColor.put(Constant.TAG_DIARY, R.color.colorDarkYellow);
-        mMenuColor.put(Constant.TAG_MESSAGE, R.color.colorDarkVal);
-        mMenuColor.put(Constant.TAG_EVENTS, R.color.colorLightVallet);
-        mMenuColor.put(Constant.TAG_GALLERY, R.color.colorDarkblue);
-        mMenuColor.put(Constant.TAG_FEEDBACK, R.color.colorSkyBlue);
-        mMenuColor.put(Constant.TAG_FEE, R.color.colorDarkPink);
-        mMenuColor.put(Constant.TAG_NEWS, R.color.colorLightOran);
-        mMenuColor.put(Constant.TAG_TIMETABLE, R.color.colorDarkPink);
-        mMenuColor.put(Constant.TAG_RESULT, R.color.colorLightBlue);
-        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.color.colorDarkVal);
-        mMenuColor.put(Constant.TAG_PAYSLIP, R.color.colorSkyBlue);
-        mMenuColor.put(Constant.TAG_TRANSPORT, R.color.colorLighterMayrun);
+        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_light_green);
+        mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_green);
+        mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_light_parrot);
+        mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_dark_yellow);
+        mMenuColor.put(Constant.TAG_MESSAGE, R.drawable.menu_dark_vallet);
+        mMenuColor.put(Constant.TAG_EVENTS, R.drawable.menu_light_vallet);
+        mMenuColor.put(Constant.TAG_GALLERY, R.drawable.menu_dark_blue);
+        mMenuColor.put(Constant.TAG_FEEDBACK, R.drawable.menu_sky_blue);
+        mMenuColor.put(Constant.TAG_FEE, R.drawable.menu_dark_pink);
+        mMenuColor.put(Constant.TAG_NEWS, R.drawable.menu_light_oran);
+        mMenuColor.put(Constant.TAG_TIMETABLE, R.drawable.menu_dark_pink);
+        mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_light_blue);
+        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_dark_vallet);
+        mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_sky_blue);
+        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_light_mayrun);
 
         ///////////////////////////////////////////////////////////////////
         mMenuImage.put(Constant.TAG_NOTICEBOARD, R.drawable.noticeboard);
