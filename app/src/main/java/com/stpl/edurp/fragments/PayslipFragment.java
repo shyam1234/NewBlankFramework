@@ -99,7 +99,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
         TextView mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
         mTextViewTitle.setText(R.string.title_payslip);
         ImageView mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
-        mImgProfile.setVisibility(View.VISIBLE);
+        mImgProfile.setVisibility(View.INVISIBLE);
         GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
         ImageView mImgBack = (ImageView) getView().findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);

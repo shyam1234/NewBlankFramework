@@ -12,22 +12,25 @@
         android:id="@+id/textview_taxreports_row_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGrayTransparent"
         android:paddingBottom="5dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:paddingTop="5dp"
         android:text="@string/financial_year"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Menu"
-        android:textColor="@color/colorHint" />
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorBlack" />
 
     <RelativeLayout
         android:id="@+id/rel_taxreports_row_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textview_taxreports_row_header"
+        android:layout_marginTop="12dp"
         android:gravity="center_vertical"
-        android:padding="12dp">
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
 
         <TextView
             android:id="@+id/textview_download_form_16"
@@ -37,19 +40,18 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/imgview_download_form_16"
-            android:text="@string/form_16"
+            android:text="@string/tax_report"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorBlack"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
 
         <ImageView
             android:id="@+id/imgview_download_form_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:padding="0dp"
             android:src="@drawable/download" />
 
@@ -57,28 +59,22 @@
             android:id="@+id/imgview_taxreports_form_downloaded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:padding="0dp"
             android:src="@android:drawable/ic_delete"
             android:visibility="gone" />
     </RelativeLayout>
 
-    <View
-        android:id="@+id/view_taxreports"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_below="@+id/rel_taxreports_row_1"
-        android:background="@color/colorBlack"></View>
-
     <RelativeLayout
         android:id="@+id/rel_taxreports_row_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view_taxreports"
+        android:layout_below="@+id/rel_taxreports_row_1"
+        android:layout_marginTop="2dp"
         android:gravity="center_vertical"
-        android:padding="12dp">
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
 
         <TextView
             android:id="@+id/textview_download_computationsheet"
@@ -88,19 +84,19 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/imgview_download_computationsheet"
-            android:text="@string/computation_sheet"
+            android:gravity="left"
+            android:text="@string/computation_report"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorBlack"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
 
         <ImageView
             android:id="@+id/imgview_download_computationsheet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:padding="0dp"
             android:src="@drawable/download" />
 
@@ -108,12 +104,19 @@
             android:id="@+id/imgview_taxreports_downloaded1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:padding="0dp"
             android:src="@android:drawable/ic_delete"
             android:visibility="gone" />
     </RelativeLayout>
+
+    <View
+        android:id="@+id/view_taxreports"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/rel_taxreports_row_2"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorBlack"></View>
 
 </RelativeLayout>

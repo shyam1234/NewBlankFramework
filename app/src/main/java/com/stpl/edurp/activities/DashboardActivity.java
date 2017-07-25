@@ -48,7 +48,11 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
 
     private void init() {
         mContext = this;
-        mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager());
+        if(UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)) {
+            mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 3);
+        }else{
+            mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 2);
+        }
         TableParentStudentAssociation table = new TableParentStudentAssociation();
         table.openDB(DashboardActivity.this);
         AppLog.log("ITC", "UserInfo.currUserType: " + UserInfo.currUserType);
@@ -70,7 +74,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
                     UserInfo.parentId = table.getParentIDWRTStudentId(UserInfo.studentId).getParent_id();
                     break;
             }
-        }else{
+        } else {
             Toast.makeText(mContext, "UserInfo.currUserType is null", Toast.LENGTH_SHORT).show();
             AppLog.log(TAG, "UserInfo.currUserType is: " + UserInfo.currUserType);
         }
@@ -81,7 +85,12 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
 
 
     private void initView() {
-        mBottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        if(UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)){
+            mBottomBar = (BottomBar) findViewById(R.id.bottomBarParent);
+        }else{
+            mBottomBar = (BottomBar) findViewById(R.id.bottomBarFaculty);
+        }
+        mBottomBar.setVisibility(View.VISIBLE);
         mViewPage = (ViewPager) findViewById(R.id.vpPager);
         mViewPage.addOnPageChangeListener(this);
 
@@ -99,7 +108,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
         switch (tabId) {
             case R.id.tab_home:
                 mViewPage.setCurrentItem(0);
-               // Utils.navigateFragmentMenu(getSupportFragmentManager(), new HomeFragment(), HomeFragment.TAG);
+                // Utils.navigateFragmentMenu(getSupportFragmentManager(), new HomeFragment(), HomeFragment.TAG);
                 // mTextViewTitle.setText(getResources().getString(R.string.tab_home));
              /*   if (mHandler != null)
                     mHandler.sendMessage(mHandler.obtainMessage(1, 0));*/
@@ -121,21 +130,22 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
 
 
     private int temp_posi = 0;
+
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         //Toast.makeText(DashboardActivity.this, "Selected page position: " + position, Toast.LENGTH_SHORT).show();
-        if(temp_posi!=position){
+        if (temp_posi != position) {
             temp_posi = position;
-            if(position==0)
-            Utils.navigateFragmentMenu(getSupportFragmentManager(),new HomeFragment(),HomeFragment.TAG);
+            if (position == 0)
+                Utils.navigateFragmentMenu(getSupportFragmentManager(), new HomeFragment(), HomeFragment.TAG);
         }
     }
 
     @Override
     public void onPageSelected(int position) {
         mBottomBar.selectTabAtPosition(position);
-        if(position==0){
-            Utils.navigateFragmentMenu(getSupportFragmentManager(),new HomeFragment(),HomeFragment.TAG);
+        if (position == 0) {
+            Utils.navigateFragmentMenu(getSupportFragmentManager(), new HomeFragment(), HomeFragment.TAG);
         }
     }
 
@@ -148,7 +158,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     public void onBackPressed() {
         try {
             String name11 = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
-            AppLog.log(TAG,"onBackPressed Navigation+++ "+name11+" mBottomBar.getCurrentTabPosition() "+mBottomBar.getCurrentTabPosition());
+            AppLog.log(TAG, "onBackPressed Navigation+++ " + name11 + " mBottomBar.getCurrentTabPosition() " + mBottomBar.getCurrentTabPosition());
             if (getSupportFragmentManager().getBackStackEntryCount() >= 1) {
                 String name = getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
                 switch (mBottomBar.getCurrentTabPosition()) {

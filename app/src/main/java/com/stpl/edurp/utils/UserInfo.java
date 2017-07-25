@@ -29,7 +29,6 @@ public class UserInfo {
     public static String timeTableRefDate = "2016-02-04 09:54:14";
     public static String lang_pref = WSContant.TAG_ENG;
     public static String currUserName;
-    public static String currUserLoc;
     public static String currUserEmail;
     public static String currUserPhoneNumber;
 
@@ -49,7 +48,6 @@ public class UserInfo {
         selectedStudentImageURL = "";
         menuCode = null;
         currUserName = null;
-        currUserLoc = null;
         currUserEmail = null;
         currUserPhoneNumber = null;
     }

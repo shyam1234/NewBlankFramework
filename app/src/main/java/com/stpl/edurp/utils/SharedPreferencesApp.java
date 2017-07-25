@@ -201,13 +201,20 @@ public class SharedPreferencesApp {
         }
     }*/
 //-----------------------------------------------------------------------------------
-    public void saveAuthToken(String authToken, int id, String currUserType) {
+    public void saveAuthToken(String authToken, int id, String currUserType,
+                              String parentName, String currUserName, String currUserEmail, String currUserPhoneNumber) {
         try {
             SharedPreferences sharePref = MyApplication.getInstance().getSharedPreferences(DEFAULT_SHAREPREF, Context.MODE_PRIVATE);
             SharedPreferences.Editor data = sharePref.edit();
             data.putString(WSContant.TAG_AUTHTOKEN, authToken);
             data.putInt(WSContant.TAG_SAVED_USERID, id);
             data.putString(WSContant.TAG_USER_TYPE, currUserType);
+
+            data.putString(WSContant.TAG_PARENT_NAME, parentName);
+            data.putString(WSContant.TAG_CURR_USER_NAME, currUserName);
+            data.putString(WSContant.TAG_USER_EMAIL, currUserEmail);
+            data.putString(WSContant.TAG_USER_PHONE_NUMBER, currUserPhoneNumber);
+
             data.commit();
             AppLog.log("sharePreferenceApp", "saveAuthToken: " + authToken);
         } catch (Exception e) {
@@ -219,17 +226,28 @@ public class SharedPreferencesApp {
         try {
             SharedPreferences sharePref = MyApplication.getInstance().getSharedPreferences(DEFAULT_SHAREPREF, Context.MODE_PRIVATE);
             if (sharePref != null) {
-                UserInfo.userId = sharePref.getInt(WSContant.TAG_SAVED_USERID, -1);
+                UserInfo.parentId = UserInfo.userId = sharePref.getInt(WSContant.TAG_SAVED_USERID, -1);
                 //UserInfo.studentId = sharePref.getInt(WSContant.TAG_DEFAULT_CHILD, -1);
                 UserInfo.authToken = sharePref.getString(WSContant.TAG_AUTHTOKEN, null);
                 UserInfo.lang_pref = sharePref.getString(WSContant.TAG_LANG, WSContant.TAG_ENG);
                 UserInfo.currUserType = sharePref.getString(WSContant.TAG_USER_TYPE, null);
-                UserInfo.parentId = UserInfo.userId;
+
+                UserInfo.parentName = sharePref.getString(WSContant.TAG_PARENT_NAME, null);
+                UserInfo.currUserName =sharePref.getString(WSContant.TAG_CURR_USER_NAME, null);
+                UserInfo.currUserEmail =sharePref.getString(WSContant.TAG_USER_EMAIL, null);
+                UserInfo.currUserPhoneNumber = sharePref.getString(WSContant.TAG_USER_PHONE_NUMBER, null);
+                //--------------------------------------------------------------------------------------
                 AppLog.log("getAllStoreData", " UserInfo.userId: " + UserInfo.userId);
                 AppLog.log("getAllStoreData", " UserInfo.authToken: " + UserInfo.authToken);
                 AppLog.log("getAllStoreData", " UserInfo.currUserType: " + UserInfo.currUserType);
                 AppLog.log("getAllStoreData", " UserInfo.parentId: " + UserInfo.parentId);
                 AppLog.log("getAllStoreData", " UserInfo.studentId: " + UserInfo.studentId);
+
+                AppLog.log("getAllStoreData", " UserInfo.parentName: " + UserInfo.parentName);
+                AppLog.log("getAllStoreData", " UserInfo.currUserName: " + UserInfo.currUserName);
+                AppLog.log("getAllStoreData", " UserInfo.currUserEmail: " + UserInfo.currUserEmail);
+                AppLog.log("getAllStoreData", " UserInfo.currUserPhoneNumber: " + UserInfo.currUserPhoneNumber);
+
             } else {
                 AppLog.log("getUserInfo", "there is not getAllStoreData ");
             }
@@ -241,7 +259,7 @@ public class SharedPreferencesApp {
 
     public void removeAuthToken() {
         try {
-            saveAuthToken(null, -1, null);
+            saveAuthToken(null, -1, null, UserInfo.parentName, UserInfo.currUserName, UserInfo.currUserEmail, UserInfo.currUserPhoneNumber);
         } catch (Exception e) {
             AppLog.errLog(" removeAuthToken", e.getMessage());
         }

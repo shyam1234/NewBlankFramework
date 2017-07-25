@@ -146,7 +146,10 @@ public interface WSContant {
     String TAG_FACULTY_ID = "FacultyId";
 
 
-
+    String TAG_PARENT_NAME = "parent_name";
+    String TAG_CURR_USER_NAME = "curr_user_name";
+    String TAG_USER_EMAIL = "curr_user_email";
+    String TAG_USER_PHONE_NUMBER = "curr_user_phone_number";
 }
 
 

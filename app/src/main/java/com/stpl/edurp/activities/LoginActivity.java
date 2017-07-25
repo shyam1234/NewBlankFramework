@@ -195,17 +195,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         AppLog.log(TAG, "parentName: " + holder.data.UserName);
         AppLog.log(TAG, "currUserType: " + holder.data.UserType);
         if (holder.data.UserType != null && holder.data.PhoneNumber != null && holder.data.UserName != null) {
-            UserInfo.userId = holder.data.UserId;
+            UserInfo.parentId = UserInfo.userId = holder.data.UserId;
             UserInfo.parentName = holder.data.UserName;
-            UserInfo.parentId = UserInfo.userId;
             UserInfo.currUserType = holder.data.UserType;
             //added new field for profile information
             UserInfo.currUserName = holder.data.UserName;
-            UserInfo.currUserLoc = holder.data.Address;
             UserInfo.currUserEmail = holder.data.EmailAddress;
             UserInfo.currUserPhoneNumber = holder.data.PhoneNumber;
             //---------------------------------------
-            SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType);
+            SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType
+            ,UserInfo.parentName, UserInfo.currUserName, UserInfo.currUserEmail,UserInfo.currUserPhoneNumber);
             SharedPreferencesApp.getInstance().saveLastLoginTime(Utils.getCurrTime());
             SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" + holder.data.UniversityId);
         }

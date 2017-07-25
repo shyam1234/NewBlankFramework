@@ -111,11 +111,11 @@
     <string name="subject">Subject</string>
     <string name="no_internet">No Internet</string>
     <string name="msg_exit">Do you want to exit from application?</string>
-    <string name="title_payslip">Payslip</string>
+    <string name="title_payslip">Payslips</string>
     <string name="percentage">Percentage</string>
-    <string name="title_taxreport">Tax Report</string>
-    <string name="form_16">Form 16</string>
-    <string name="computation_sheet">Computation Sheet</string>
+    <string name="title_tax">Tax</string>
+    <string name="tax_report">Tax Report</string>
+    <string name="computation_report">Computation Report</string>
     <string name="financial_year">Financial Year</string>
     <string name="results">Results</string>
     <string name="view">View</string>

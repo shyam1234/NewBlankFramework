@@ -42,7 +42,7 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
         mTextViewTitle.setText(getResources().getString(R.string.tab_profile));
         mImageViewBack.setVisibility(View.VISIBLE);
         mImageEdit = (ImageView) findViewById(R.id.imageView_edit);
-        mImageEdit.setVisibility(View.VISIBLE);
+        mImageEdit.setVisibility(View.GONE);
         mImageEdit.setOnClickListener(this);
         mImageViewBack.setOnClickListener(this);
         //--------------------------------------------
@@ -61,10 +61,22 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
         } else {
             mProfileName.setText(UserInfo.currUserName);
         }
-        if (UserInfo.currUserLoc == null) {
+        if (UserInfo.studentId == 0) {
             mProfileLocation.setVisibility(View.INVISIBLE);
         } else {
-            mProfileLocation.setText(UserInfo.currUserLoc);
+          /*  switch (UserInfo.currUserType){
+                case WSContant.TAG_USERTYPE_PARENT:
+                    mProfileLocation.setText("Parent");
+                    break;
+                case WSContant.TAG_USERTYPE_STUDENT:
+                    mProfileLocation.setText("Student");
+                    break;
+                default:
+                    mProfileLocation.setText(UserInfo.currUserType);
+                    break;
+            }*/
+            mProfileLocation.setText(""+UserInfo.studentId);
+
         }
         if (UserInfo.currUserPhoneNumber == null) {
             mProfilePhone.setText("");

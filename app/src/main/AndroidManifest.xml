@@ -88,17 +88,16 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
-
         <activity
             android:name="com.stpl.edurp.activities.ResultDetailActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
-       <!-- <receiver android:name=".utils.InternetManager" >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>-->
+        <!-- <receiver android:name=".utils.InternetManager" >
+             <intent-filter>
+                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+             </intent-filter>
+         </receiver>-->
 
     </application>
 

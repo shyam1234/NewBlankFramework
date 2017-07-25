@@ -14,8 +14,11 @@ import com.stpl.edurp.fragments.WardFragment;
 
 public class DashboardAdapter extends FragmentStatePagerAdapter {
 
-    public DashboardAdapter(FragmentManager supportFragmentManager) {
+    private final int mTotalPage;
+
+    public DashboardAdapter(FragmentManager supportFragmentManager, int pTotalPage) {
         super(supportFragmentManager);
+        mTotalPage = pTotalPage;
     }
 
     @Override
@@ -24,7 +27,11 @@ public class DashboardAdapter extends FragmentStatePagerAdapter {
             case 0: // Fragment # 0 - This will show FirstFragment
                 return new MainHomeFragment();
             case 1: // Fragment # 0 - This will show FirstFragment different title
-                return new WardFragment();
+                if (mTotalPage == 3) {
+                    return new WardFragment();
+                } else {
+                    return new OptionsFragment();
+                }
             case 2: // Fragment # 1 - This will show SecondFragment
                 return new OptionsFragment();
             default:
@@ -34,7 +41,7 @@ public class DashboardAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return mTotalPage;
     }
 
 

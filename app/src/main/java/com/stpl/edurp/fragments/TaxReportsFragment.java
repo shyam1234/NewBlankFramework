@@ -99,7 +99,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
     private void initView() {
         //--header----------------------------------
         TextView mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
-        mTextViewTitle.setText(R.string.title_taxreport);
+        mTextViewTitle.setText(R.string.title_tax);
         ImageView mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
         GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);

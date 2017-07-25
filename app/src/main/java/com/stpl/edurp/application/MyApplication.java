@@ -83,14 +83,35 @@ public class MyApplication extends Application {
         getRequestQueue().add(req);
     }
 
+
+    /**
+     * cancel given tag request
+     *
+     * @param tag
+     */
     public void cancelPendingRequests(Object tag) {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(tag);
         }
+
+    }
+
+    /**
+     * cancel all current standing requests
+     */
+    public void cancelAllRequests() {
+        if (mRequestQueue != null)
+            mRequestQueue.cancelAll(new RequestQueue.RequestFilter() {
+                @Override
+                public boolean apply(Request<?> request) {
+                    return true;
+                }
+            });
     }
 
     /**
      * use for getting runtime network status
+     *
      * @param listener
      */
     public void setConnectivityListener(InternetManager.ConnectivityReceiverListener listener) {

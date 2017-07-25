@@ -91,7 +91,7 @@
                     android:text="value"
                     android:textAlignment="gravity"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/dashboardTextColor" />
+                    android:textColor="@color/colorBlue" />
             </RelativeLayout>
 
             <View
@@ -128,7 +128,7 @@
                     android:text="value"
                     android:textAlignment="gravity"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/dashboardTextColor" />
+                    android:textColor="@color/colorBlue" />
             </RelativeLayout>
 
             <View
