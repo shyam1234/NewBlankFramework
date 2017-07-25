@@ -84,7 +84,7 @@ public class WardFragment extends Fragment implements View.OnClickListener {
         mTextViewTitle = (TextView) getView().findViewById(R.id.textview_title);
         mTextViewTitle.setText(R.string.tab_wards);
         mImageViewStudentTitleImg = (ImageView) getView().findViewById(R.id.imageview_profile);
-        mImageViewStudentTitleImg.setVisibility(View.VISIBLE);
+        mImageViewStudentTitleImg.setVisibility(View.INVISIBLE);
         //------------------------------------------------------
         mFramLayout = (FrameLayout) getView().findViewById(R.id.framelayout_holder);
         mProfileImage = (ImageView) getView().findViewById(R.id.imageview_profile_logo);
@@ -92,7 +92,7 @@ public class WardFragment extends Fragment implements View.OnClickListener {
         mProfileHeaderLocation = (TextView) getView().findViewById(R.id.textview_profile_header_location);
         mProfileEye = (ImageView) getView().findViewById(R.id.imageview_profile_eye);
         //mFloatingBtn = (FloatingActionButton)getView().findViewById(R.id.fab_edit);
-        mProfileEye.setVisibility(View.VISIBLE);
+        mProfileEye.setVisibility(View.GONE);
         mRecycleViewChildInfo = (RecyclerView) getView().findViewById(R.id.listview_frag_ward);
         mProfileEye.setOnClickListener(this);
         //mFloatingBtn.setOnClickListener(this);

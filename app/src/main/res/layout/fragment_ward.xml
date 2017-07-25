@@ -3,6 +3,7 @@
     android:id="@+id/lin_wardfragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGrayTransparent"
     android:orientation="vertical">
 
     <include
@@ -16,7 +17,7 @@
         android:id="@+id/rel_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/profile_bg"
+        android:background="@color/colorPrimary"
         android:padding="8dp">
 
         <ImageView
@@ -24,18 +25,21 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circle_white_shape"
+            android:padding="8dp"
             android:src="@drawable/avater" />
 
         <TextView
             android:id="@+id/textview_profile_header_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/imageview_profile_logo"
             android:layout_centerHorizontal="true"
             android:text="@string/user_name"
-            android:textColor="@color/colorWhite"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorWhite"
             android:textStyle="bold" />
 
         <TextView
@@ -45,8 +49,8 @@
             android:layout_below="@+id/textview_profile_header_name"
             android:layout_centerHorizontal="true"
             android:text="@string/location"
-            android:textColor="@color/colorWhite"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorWhite"
             android:textStyle="normal" />
 
         <ImageView
@@ -57,7 +61,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:src="@drawable/profile_view"
-            android:visibility="visible" />
+            android:visibility="gone" />
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
