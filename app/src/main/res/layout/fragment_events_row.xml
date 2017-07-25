@@ -100,7 +100,7 @@
                     android:layout_toRightOf="@+id/imageview_events_row_watch_holder"
                     android:text=""
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/colorBlack" />
 
 
                 <ImageView
@@ -121,7 +121,7 @@
                     android:layout_toRightOf="@+id/imageview_events_row_location_holder"
                     android:text=""
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/colorBlack" />
 
             </RelativeLayout>
         </RelativeLayout>
@@ -181,7 +181,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="@string/not_going"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/colorBlack" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

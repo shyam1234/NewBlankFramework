@@ -26,7 +26,7 @@
         android:padding="10dp"
         android:text=""
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black" />
+        android:textColor="@color/colorBlack" />
 
     <ImageButton
         android:id="@+id/imagebtn_right_arrow"

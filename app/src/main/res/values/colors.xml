@@ -4,7 +4,6 @@
     <color name="colorPrimaryDark">#0085f8</color>
     <color name="colorAccent">#fc6150</color>
 
-    <color name="black">#000000</color>
     <color name="light_black">#88000000</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
@@ -36,6 +35,7 @@
     <color name="colorLeaf">#7DB955</color>
     <color name="colorLighterMayrun">#6FA78C</color>
     <color name="colorTextHint">#ABAAB0</color>
+    <color name="colorLightBlack">#88000000</color>
     <color name="colorNaviBlue">#371E94</color>
     <color name="today">#4b82ff</color>
     <color name="greyed_out">#c7c7c7</color>

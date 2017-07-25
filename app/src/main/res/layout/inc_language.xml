@@ -12,7 +12,7 @@
         android:layout_centerVertical="true"
         android:text="@string/english"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black" />
+        android:textColor="@color/colorBlack" />
 
     <android.support.v7.widget.SwitchCompat
         android:id="@+id/switch_login_language"
@@ -33,5 +33,5 @@
         android:layout_toRightOf="@+id/switch_login_language"
         android:text="@string/bahasa"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black" />
+        android:textColor="@color/colorBlack" />
 </RelativeLayout>

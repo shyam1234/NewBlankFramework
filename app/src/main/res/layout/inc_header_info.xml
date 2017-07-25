@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="@string/name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/black"
+            android:textColor="@color/colorBlack"
             android:textStyle="normal" />
 
 

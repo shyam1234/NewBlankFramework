@@ -79,7 +79,7 @@
                         android:layout_toRightOf="@+id/textview_duedate"
                         android:text=""
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/colorBlack" />
                 </LinearLayout>
 
                 <LinearLayout

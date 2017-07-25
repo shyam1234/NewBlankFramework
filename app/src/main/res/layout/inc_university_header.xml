@@ -38,7 +38,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/textview_welcome_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
             android:text=""
             android:textAlignment="gravity"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
+            android:textColor="@color/colorBlack" />
 
         <TextView
             android:id="@+id/textview_uni_header_name"
@@ -60,6 +60,6 @@
             android:src="@drawable/logo"
             android:textAlignment="gravity"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/black" />
+            android:textColor="@color/colorBlack" />
     </LinearLayout>
 </RelativeLayout>

@@ -75,7 +75,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
 
     private void initView() {
         TextView mTextViewTitle = (TextView) findViewById(R.id.textview_title);
-        mTextViewTitle.setText(R.string.tab_result_details);
+        mTextViewTitle.setText(R.string.tab_result);
         ImageView mImgProfile = (ImageView) findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
         GetUILImage.getInstance().setCircleImage(this, UserInfo.selectedStudentImageURL, mImgProfile);

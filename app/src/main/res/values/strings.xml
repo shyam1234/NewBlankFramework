@@ -68,11 +68,11 @@
     <string name="value">value</string>
     <string name="tab_attendance">Attendance</string>
     <string name="total_score">Total Score</string>
-    <string name="achievement_index">Achievement Index</string>
+    <string name="achievement_index">Index</string>
     <string name="download">Download Result</string>
     <string name="grade">Grade</string>
     <string name="result">Result</string>
-    <string name="tab_result">Result</string>
+    <string name="tab_result">Results</string>
     <string name="tab_fee">Fee</string>
     <string name="msg_rp">Rp</string>
     <string name="due_date">Due Date : </string>
@@ -97,7 +97,6 @@
     <string name="attending">Attending</string>
     <string name="not_going">Not Going</string>
     <string name="subject_semester">Semester</string>
-    <string name="tab_result_details">Result Details</string>
     <string name="Credits">Credits</string>
     <string name="Major">Major</string>
     <string name="index">Index</string>
