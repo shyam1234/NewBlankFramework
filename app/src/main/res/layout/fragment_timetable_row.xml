@@ -2,9 +2,7 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp">
+    android:layout_margin="@dimen/comm_margin">
 
     <RelativeLayout
         android:id="@+id/rel_timetable_row"
@@ -15,11 +13,11 @@
         android:padding="14dp">
 
         <LinearLayout
+            android:id="@+id/lin_holder1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/lin_timetable"
-            android:layout_marginRight="5dp"
             android:layout_alignParentLeft="true"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -44,56 +42,80 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorBlack" />
 
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_holder_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin_holder1"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/textview_timetable_faculty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:text="@string/faculty"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorTextHint" />
 
             <TextView
                 android:id="@+id/textview_timetable_faculty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textview_timetable_faculty_title"
                 android:layout_gravity="left"
                 android:layout_marginTop="5dp"
-                android:text="Faculty"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@color/colorBlack" />
-        </LinearLayout>
+                android:layout_toLeftOf="@+id/lin_timetable"
+                android:text="@string/faculty"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorNaviBlue" />
 
-        <LinearLayout
-            android:id="@+id/lin_timetable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textview_timetable_NR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=""
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@color/colorTextHint"
-                android:visibility="gone" />
-
-            <ImageView
-                android:id="@+id/imageview_timetable"
+            <LinearLayout
+                android:id="@+id/lin_timetable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textview_timetable_room_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:paddingTop="5dp"
-                android:text="room"
-                android:textAlignment="gravity"
-                android:textColor="@color/colorBlue"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textview_timetable_NR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorTextHint"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageview_timetable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/textview_timetable_room_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:paddingTop="5dp"
+                    android:text="room"
+                    android:textAlignment="gravity"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorNaviBlue"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
     </RelativeLayout>
 </android.support.v7.widget.CardView>
 
