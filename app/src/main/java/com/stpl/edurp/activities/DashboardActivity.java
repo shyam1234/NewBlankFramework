@@ -48,11 +48,14 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
 
     private void init() {
         mContext = this;
+        //For bottom tab
         if(UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)) {
             mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 3);
         }else{
             mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 2);
         }
+        //For bottom tab
+
         TableParentStudentAssociation table = new TableParentStudentAssociation();
         table.openDB(DashboardActivity.this);
         AppLog.log("ITC", "UserInfo.currUserType: " + UserInfo.currUserType);

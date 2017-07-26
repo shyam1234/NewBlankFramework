@@ -275,7 +275,7 @@ public class SplashActivity extends BaseActivity {
                 }
 
                 AppLog.log("splash UserInfo.authToken  ", "" + UserInfo.authToken);
-                if (UserInfo.authToken != null && (UserInfo.parentId != -1 && UserInfo.studentId != -1)) {
+                if (UserInfo.currUserType != null && UserInfo.authToken != null && (UserInfo.parentId != -1 && UserInfo.studentId != -1)) {
                     Utils.getHomeFragmentItems(new ICallBack() {
                         @Override
                         public void callBack() {

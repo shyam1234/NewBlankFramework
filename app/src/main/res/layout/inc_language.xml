@@ -3,9 +3,15 @@
     android:id="@+id/rel_radio_btn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_with_corners"
     android:gravity="center_horizontal">
 
-    <TextView
+    <Spinner
+        android:id="@+id/spinner_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"></Spinner>
+    <!--<TextView
         android:id="@+id/textview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,5 +39,5 @@
         android:layout_toRightOf="@+id/switch_login_language"
         android:text="@string/bahasa"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorBlue" />
+        android:textColor="@color/colorBlue" />-->
 </RelativeLayout>

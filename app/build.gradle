@@ -7,7 +7,7 @@ android {
         applicationId "com.stpl.edurp"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 8
+        versionCode 9
         versionName "1.0.0"
         manifestPlaceholders = [onesignal_app_id: "f8de0f17-378b-4535-a46c-5c867fd4c428",
                                 // Project number pulled from dashboard, local value is ignored.

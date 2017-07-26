@@ -5,7 +5,7 @@ package com.stpl.edurp.constant;
  */
 public interface Constant {
     //make a note: please do not downgrade the DB version
-    int DB_VERSION = 4;
+    int DB_VERSION = 5;
     String TAG_NOTICEBOARD = "NOT";
     String TAG_ATTENDANCE = "ATT";
     String TAG_HOMEWORK = "HOM";

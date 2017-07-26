@@ -10,4 +10,5 @@
     <dimen name="comm_cell_padding">22dp</dimen>
     <dimen name="comm_cell_bottom_padding">5dp</dimen>
     <dimen name="padding_option">15dp</dimen>
+    <dimen name="spinner_language_min_h">30dp</dimen>
 </resources>

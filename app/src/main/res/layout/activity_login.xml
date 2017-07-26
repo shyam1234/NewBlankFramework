@@ -31,41 +31,75 @@
             <include
                 android:id="@+id/rel_radio_btn"
                 layout="@layout/inc_language"
-                android:layout_width="match_parent"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageview_logo"
-                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:gravity="center_horizontal">
 
 
             </include>
 
-
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/edittext_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/rel_radio_btn"
-                android:layout_marginTop="30dp"
-                android:alpha="0.8"
-                android:drawableLeft="@drawable/login_user"
-                android:drawablePadding="15dp"
-                android:hint="@string/username"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/filled_dark_blue"
+                android:gravity="center"
+                android:hint="@string/email"
+                android:maxLength="50"
                 android:maxLines="1"
-                android:paddingBottom="20dp"
-                android:paddingEnd="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="20dp"
-                android:singleLine="true"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Menu"
+                android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite"
-                android:theme="@style/Theme.App.Base"
-                android:visibility="visible" />
+                android:textColorHint="@color/colorWhite" />
 
-            <android.support.design.widget.TextInputEditText
+            <EditText
+                android:id="@+id/edittext_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edittext_email"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/filled_dark_blue"
+                android:gravity="center"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite" />
+
+            <!-- <android.support.design.widget.TextInputEditText
+                 android:id="@+id/edittext_email"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_below="@+id/rel_radio_btn"
+                 android:layout_marginTop="30dp"
+                 android:alpha="0.8"
+                 android:drawableLeft="@drawable/login_user"
+                 android:drawablePadding="15dp"
+                 android:hint="@string/username"
+                 android:maxLines="1"
+                 android:paddingBottom="20dp"
+                 android:paddingEnd="20dp"
+                 android:paddingRight="20dp"
+                 android:paddingTop="20dp"
+                 android:singleLine="true"
+                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Menu"
+                 android:textColor="@color/colorWhite"
+                 android:textColorHint="@color/colorWhite"
+                 android:theme="@style/Theme.App.Base"
+                 android:visibility="visible" />-->
+
+            <!--<android.support.design.widget.TextInputEditText
                 android:id="@+id/edittext_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,18 +122,17 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:theme="@style/Theme.App.Base"
-                android:visibility="visible" />
-
-
+                android:visibility="visible" />-->
             <Button
-                android:textColor="@color/colorBlue"
                 android:id="@+id/btnSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edittext_password"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/button_curve_border"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button" />
+                android:text="Login"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                android:textColor="@color/colorBlue" />
         </RelativeLayout>
     </ScrollView>
 

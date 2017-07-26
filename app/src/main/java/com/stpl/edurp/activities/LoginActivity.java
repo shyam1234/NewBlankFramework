@@ -3,13 +3,14 @@ package com.stpl.edurp.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,14 +46,15 @@ import java.util.Map;
  * Created by Admin on 03-12-2016.
  */
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, /*CompoundButton.OnCheckedChangeListener,*/ AdapterView.OnItemSelectedListener {
     private static final String TAG = LoginActivity.class.getName();
     private TextView mTextViewForgotPassword;
     private Button mButtonLogin;
-    private TextInputEditText mEditTextUserName;
-    private TextInputEditText mEditTextPassword;
-    private SwitchCompat mSwitchLang;
+    private EditText mEditTextUserName;
+    private EditText mEditTextPassword;
+    // private SwitchCompat mSwitchLang;
     private ScrollView mScrollView;
+    private Spinner mSpinner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,19 +72,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void initView() {
         mScrollView = (ScrollView) findViewById(R.id.scrollview);
-        mEditTextUserName = (TextInputEditText) findViewById(R.id.edittext_email);
-        mEditTextPassword = (TextInputEditText) findViewById(R.id.edittext_password);
+        mEditTextUserName = (EditText) findViewById(R.id.edittext_email);
+        mEditTextPassword = (EditText) findViewById(R.id.edittext_password);
         mTextViewForgotPassword = (TextView) findViewById(R.id.textview_forgot_password);
         mButtonLogin = (Button) findViewById(R.id.btnSignIn);
-        mSwitchLang = (SwitchCompat) findViewById(R.id.switch_login_language);
+        //mSwitchLang = (SwitchCompat) findViewById(R.id.switch_login_language);
+        mSpinner = (Spinner) findViewById(R.id.spinner_language);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.array_language, R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(adapter);
         //----------------------------------------------------
         mScrollView.setSmoothScrollingEnabled(true);
         if (UserInfo.lang_pref.equalsIgnoreCase(WSContant.TAG_ENG)) {
-            mSwitchLang.setChecked(false);
-            setLangSelection();
+            //mSwitchLang.setChecked(false);
+            mSpinner.setSelection(0);
+        } else if (UserInfo.lang_pref.equalsIgnoreCase(WSContant.TAG_BHASHA)) {
+            mSpinner.setSelection(1);
         } else {
-            mSwitchLang.setChecked(true);
-            setLangSelection();
+            mSpinner.setSelection(0);
         }
         //----------------------------------------------------
         setListner();
@@ -91,12 +99,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //mEditTextUserName.setText("divyaparent1@gmail.com");
         //mEditTextPassword.setText("login@123");
         /*For employee*/
-       // mEditTextUserName.setText("divyaemp1@gmail.com");
-       // mEditTextPassword.setText("89156");
-
-        mEditTextUserName.setText("divyaparent1@gmail.com");
-        mEditTextPassword.setText("login@123");
-
+         mEditTextUserName.setText("divyaemp1@gmail.com");
+         mEditTextPassword.setText("89156");
+//        mEditTextUserName.setText("divyaparent1@gmail.com");
+//        mEditTextPassword.setText("login@123");
 //        mEditTextUserName.setText("harshaparent@gmail.com");
 //        mEditTextPassword.setText("96968");
     }
@@ -105,7 +111,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void setListner() {
         mTextViewForgotPassword.setOnClickListener(this);
         mButtonLogin.setOnClickListener(this);
-        mSwitchLang.setOnCheckedChangeListener(this);
+        mSpinner.setOnItemSelectedListener(this);
+        //mSwitchLang.setOnCheckedChangeListener(this);
     }
 
     @Override
@@ -124,11 +131,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btnSignIn:
                 if (InternetManager.isInternetConnected(this)) {
+                    //if (mSpinner.getSelectedItemPosition() != 0) {
                     mScrollView.setEnabled(false);
                     mEditTextUserName.setFocusable(false);
                     mEditTextPassword.setFocusable(false);
                     mScrollView.setFocusable(false);
                     doLogin();
+//                    } else {
+//                        Toast.makeText(this, R.string.msg_select_lang, Toast.LENGTH_SHORT).show();
+//                    }
                 }
                 break;
         }
@@ -138,7 +149,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void doLogin() {
         if (Utils.validateUserName(mEditTextUserName) &&
                 Utils.validatePassword(mEditTextPassword)) {
-            mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_PROCESSDING,getString(R.string.proceeding),UserInfo.lang_pref));
+            mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_PROCESSDING, getString(R.string.proceeding), UserInfo.lang_pref));
             mButtonLogin.setEnabled(false);
             //call to WS and validate given credential----
             Map<String, String> header = new HashMap<>();
@@ -167,7 +178,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //--------------------------------------------------------------------
                         //mButtonLogin.setText(getResources().getString(R.string.success));
                         //Utils.langConversion(LoginActivity.this, mButtonLogin, WSContant.TAG_LANG_SUCCESS, getString(R.string.success), UserInfo.lang_pref);
-                        mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_SUCCESS,getString(R.string.success),UserInfo.lang_pref));
+                        mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_SUCCESS, getString(R.string.success), UserInfo.lang_pref));
                         mButtonLogin.setEnabled(false);
                         navigateToNextPage();
 
@@ -204,7 +215,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             UserInfo.currUserPhoneNumber = holder.data.PhoneNumber;
             //---------------------------------------
             SharedPreferencesApp.getInstance().saveAuthToken(UserInfo.authToken, UserInfo.userId, UserInfo.currUserType
-            ,UserInfo.parentName, UserInfo.currUserName, UserInfo.currUserEmail,UserInfo.currUserPhoneNumber);
+                    , UserInfo.parentName, UserInfo.currUserName, UserInfo.currUserEmail, UserInfo.currUserPhoneNumber);
             SharedPreferencesApp.getInstance().saveLastLoginTime(Utils.getCurrTime());
             SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" + holder.data.UniversityId);
         }
@@ -368,27 +379,47 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_BHASHA);
-        } else {
-            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_ENG);
-        }
-        setLangSelection();
-    }
+//    @Override
+//    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//        if (isChecked) {
+//            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_BHASHA);
+//        } else {
+//            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_ENG);
+//        }
+//        setLangSelection();
+//    }
 
 
     public void setLangSelection() {
-        mButtonLogin.setText(Utils.getLangConversion( WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref));
-        mEditTextUserName.setText(Utils.getLangConversion( WSContant.TAG_LANG_USERNAME, getString(R.string.user_name), UserInfo.lang_pref));
-        mEditTextPassword.setText(Utils.getLangConversion( WSContant.TAG_LANG_PASSWORD, getString(R.string.password), UserInfo.lang_pref));
-        mTextViewForgotPassword.setText(Utils.getLangConversion( WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref));
+        mButtonLogin.setText(Utils.getLangConversion(WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref));
+        if (mEditTextUserName.getText().toString().length() == 0) {
+            mEditTextUserName.setHint(Utils.getLangConversion(WSContant.TAG_LANG_USERNAME, getString(R.string.user_name), UserInfo.lang_pref));
+        }
+        if (mEditTextPassword.getText().toString().length() == 0) {
+            mEditTextPassword.setHint(Utils.getLangConversion(WSContant.TAG_LANG_PASSWORD, getString(R.string.password), UserInfo.lang_pref));
+        }
+        mTextViewForgotPassword.setText(Utils.getLangConversion(WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref));
 
        /* Utils.langConversion(this, mButtonLogin, WSContant.TAG_LANG_LOGIN, getString(R.string.sign_in), UserInfo.lang_pref);
         Utils.langConversion(this, mEditTextUserName, WSContant.TAG_LANG_USERNAME, getString(R.string.user_name), UserInfo.lang_pref);
         Utils.langConversion(this, mEditTextPassword, WSContant.TAG_LANG_PASSWORD, getString(R.string.password), UserInfo.lang_pref);
         Utils.langConversion(this, mTextViewForgotPassword, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);*/
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0) {
+            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_ENG);
+        } else if (position == 1) {
+            SharedPreferencesApp.getInstance().saveLangSelection(WSContant.TAG_BHASHA);
+        }
+        setLangSelection();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
 
