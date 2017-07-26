@@ -18,27 +18,27 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/inc_home_header"
         android:layout_gravity="center"
-        android:background="@color/colorWhite">
+        android:background="@color/colorGrayTransparent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/comm_padding"
-            android:paddingRight="@dimen/comm_padding">
+            android:orientation="vertical">
 
             <include
                 android:id="@+id/inc_fragment_home_header"
                 layout="@layout/inc_university_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/comm_padding"
+                android:paddingRight="@dimen/comm_padding"
                 android:visibility="visible"></include>
 
             <com.stpl.edurp.utils.ExpandableHeightGridView
                 android:id="@+id/gridview_dashboard"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:clipToPadding="true"
                 android:fitsSystemWindows="true"

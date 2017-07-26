@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imgview_uni_logo"
-        android:layout_width="74dp"
-        android:layout_height="74dp"
+        android:layout_width="@dimen/inc_university_header_wh"
+        android:layout_height="@dimen/inc_university_header_wh"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -38,7 +38,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:visibility="visible"
             android:id="@+id/textview_welcome_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +47,8 @@
             android:text=""
             android:textAlignment="gravity"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/textview_uni_header_name"

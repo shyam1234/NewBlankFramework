@@ -3,15 +3,15 @@
     android:id="@+id/rel_cell_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@drawable/rectangle_boarder_light_gray"
     android:gravity="center"
     android:padding="5dp">
 
     <RelativeLayout
-        android:elevation="1dp"
         android:id="@+id/rel_dashboard_cell_bg_holder"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:elevation="1dp"
         android:padding="2dp">
 
         <RelativeLayout
@@ -63,9 +63,9 @@
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="Text"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="10sp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

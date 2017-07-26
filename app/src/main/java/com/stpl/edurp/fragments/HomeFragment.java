@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public static HashMap<String, Integer> mMenuImage = new HashMap<>();
 
     static {
-        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_light_green);
+        /*mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_light_green);
         mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_green);
         mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_light_parrot);
         mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_dark_yellow);
@@ -53,7 +53,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_light_blue);
         mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_dark_vallet);
         mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_sky_blue);
-        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_light_mayrun);
+        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_light_mayrun);*/
+
+        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_MESSAGE, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_EVENTS, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_GALLERY, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_FEEDBACK, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_FEE, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_NEWS, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_TIMETABLE, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_transparent);
+        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_transparent);
 
         ///////////////////////////////////////////////////////////////////
         mMenuImage.put(Constant.TAG_NOTICEBOARD, R.drawable.noticeboard);
@@ -183,8 +199,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         AppLog.log("HomeFragment ", "mCellList mCellList " + mCellList.size());
         //----------------------------------------------------------------------
         mLinearHolder.setVisibility(View.GONE);
-        mAdapter = new HomeAdapter(getContext(), mCellList, this);
         mGridViewCell = (ExpandableHeightGridView) getView().findViewById(R.id.gridview_dashboard);
+        mAdapter = new HomeAdapter(getContext(), mCellList, this);
         mGridViewCell.setAdapter(mAdapter);
         mGridViewCell.setExpanded(true);
         mImageViewUnivercityLogo = (ImageView) getView().findViewById(R.id.imgview_uni_logo);

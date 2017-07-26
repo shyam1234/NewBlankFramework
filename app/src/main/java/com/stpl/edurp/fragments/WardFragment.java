@@ -136,8 +136,11 @@ public class WardFragment extends Fragment implements View.OnClickListener {
             UserInfo.studentId = mListChildInfoHolder.get(position).getStudent_id();
             AppLog.log("setDefaultStudentProfileInHeader   UserInfo.studentId222 ", ""+mListChildInfoHolder.get(position).getStudent_id());
         }
+
         SharedPreferencesApp.getInstance().savedDefaultChildSelection(UserInfo.studentId);
         SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" +mListChildInfoHolder.get(position).getUniversity_id());
+        UserInfo.selectedStudentImageURL = mListChildInfoHolder.get(position).getImageurl();
+        //AppLog.log("Student profile pic: "+ UserInfo.selectedStudentImageURL );
     }
 
     private void initRecycleAdapter() {

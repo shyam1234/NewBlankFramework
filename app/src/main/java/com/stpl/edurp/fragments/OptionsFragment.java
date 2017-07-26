@@ -15,6 +15,7 @@ import com.stpl.edurp.R;
 import com.stpl.edurp.activities.ProfileActivity;
 import com.stpl.edurp.activities.SettingActivity;
 import com.stpl.edurp.constant.WSContant;
+import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -72,6 +73,7 @@ public class OptionsFragment extends Fragment implements View.OnClickListener {
         mTextViewTitle.setText(R.string.tab_options);
         mImgProfile = (ImageView) getView().findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
+        GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
         //-----------------------------------------------------------
         relShareTab = (RelativeLayout) getView().findViewById(R.id.rel_options_share_app);
         relSettingTab = (RelativeLayout) getView().findViewById(R.id.rel_options_setting);
@@ -79,6 +81,14 @@ public class OptionsFragment extends Fragment implements View.OnClickListener {
         relMyProfileTab = (RelativeLayout) getView().findViewById(R.id.rel_options_profile);
         setListener();
         setLangSelection();
+
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        GetUILImage.getInstance().setCircleImage(getContext(), UserInfo.selectedStudentImageURL, mImgProfile);
     }
 
     private void setListener() {
