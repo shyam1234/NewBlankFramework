@@ -152,7 +152,6 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
 
 
     private void fetchDataFromServer() {
-
         //----------------------------------------------------------
         if (InternetManager.isInternetConnected(getContext())) {
             //call to WS and validate given credential----

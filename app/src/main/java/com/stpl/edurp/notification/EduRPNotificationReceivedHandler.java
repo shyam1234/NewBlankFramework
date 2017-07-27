@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.onesignal.OSNotification;
 import com.onesignal.OneSignal;
+import com.stpl.edurp.constant.WSContant;
+import com.stpl.edurp.utils.AppLog;
 
 import org.json.JSONObject;
 
@@ -12,6 +14,8 @@ import org.json.JSONObject;
  */
 
 public class EduRPNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
+    private static final java.lang.String TAG = EduRPNotificationReceivedHandler.class.getName();
+
     @Override
     public void notificationReceived(OSNotification notification) {
 
@@ -34,14 +38,34 @@ public class EduRPNotificationReceivedHandler implements OneSignal.NotificationR
 
         String customKey;
 
-        Log.i("OneSignalExample", "NotificationID received: " + notificationID);
+        Log.i("OneSignalExample", "NotificationID received: " + data.toString());
 
-        if (data != null) {
+        /*if (data != null) {
             customKey = data.optString("customkey", null);
             if (customKey != null)
                 Log.i("OneSignalExample", "customkey set with value: " + customKey);
+        }*/
+        //-----------------------------------------------------------------------------
+
+        pareseResp(data.toString());
+        //------------------------------------------------------------------------------
+    }
+
+    private void pareseResp(String s) {
+        try {
+            if (s != null && s.length() > 0) {
+                String resp = s;
+                switch (resp) {
+                    case WSContant.TAG_NEW:
+                       // Utils.navigateFragmentMenu(this, new NewsFragment(), NewsFragment.TAG);
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            AppLog.errLog(TAG, " notificationReceived " + e.getMessage());
         }
     }
+
 }
 
 
