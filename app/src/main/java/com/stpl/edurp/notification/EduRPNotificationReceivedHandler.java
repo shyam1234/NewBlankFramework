@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 public class EduRPNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
     private static final java.lang.String TAG = EduRPNotificationReceivedHandler.class.getName();
+    public static String NOTIFICATION_RECEIVED;//="NEW";
 
     @Override
     public void notificationReceived(OSNotification notification) {
@@ -46,20 +47,17 @@ public class EduRPNotificationReceivedHandler implements OneSignal.NotificationR
                 Log.i("OneSignalExample", "customkey set with value: " + customKey);
         }*/
         //-----------------------------------------------------------------------------
-
+        NOTIFICATION_RECEIVED = "NEW";
         pareseResp(data.toString());
         //------------------------------------------------------------------------------
     }
 
-    private void pareseResp(String s) {
+    private void pareseResp(String str) {
         try {
-            if (s != null && s.length() > 0) {
-                String resp = s;
-                switch (resp) {
-                    case WSContant.TAG_NEW:
-                       // Utils.navigateFragmentMenu(this, new NewsFragment(), NewsFragment.TAG);
-                        break;
-                }
+            if (str != null && str.length() > 0) {
+                JSONObject jsonObject = new JSONObject(str);
+                NOTIFICATION_RECEIVED = jsonObject.optString(WSContant.TAG_MENUCODE);
+                AppLog.log(TAG,"Arrived NOTIFICATION_RECEIVED++ "+NOTIFICATION_RECEIVED);
             }
         } catch (Exception e) {
             AppLog.errLog(TAG, " notificationReceived " + e.getMessage());

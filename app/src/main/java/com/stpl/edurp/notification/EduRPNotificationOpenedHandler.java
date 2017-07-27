@@ -1,10 +1,13 @@
 package com.stpl.edurp.notification;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
 import com.onesignal.OneSignal;
+import com.stpl.edurp.activities.SplashActivity;
+import com.stpl.edurp.application.MyApplication;
 
 import org.json.JSONObject;
 
@@ -43,6 +46,8 @@ public class EduRPNotificationOpenedHandler implements OneSignal.NotificationOpe
                 Log.i("OneSignalExample", "button id called: " + result.action.actionID);
             }
 
+            Intent intent = new Intent(MyApplication.getInstance().getApplicationContext(), SplashActivity.class);
+            MyApplication.getInstance().getApplicationContext().startActivity(intent);
         }
         // The following can be used to open an Activity of your choice.
         // Replace - getApplicationContext() - with any Android Context.

@@ -20,6 +20,7 @@ import com.stpl.edurp.constant.Constant;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.database.TableParentStudentMenuDetails;
 import com.stpl.edurp.models.DashboardCellDataModel;
+import com.stpl.edurp.notification.EduRPNotificationReceivedHandler;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.ExpandableHeightGridView;
 import com.stpl.edurp.utils.GetUILImage;
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public static HashMap<String, Integer> mMenuImage = new HashMap<>();
 
     static {
-        /*mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_light_green);
+        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_light_green);
         mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_green);
         mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_light_parrot);
         mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_dark_yellow);
@@ -53,23 +54,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_light_blue);
         mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_dark_vallet);
         mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_sky_blue);
-        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_light_mayrun);*/
+        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_light_mayrun);
 
-        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_MESSAGE, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_EVENTS, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_GALLERY, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_FEEDBACK, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_FEE, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_NEWS, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_TIMETABLE, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_transparent);
-        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_NOTICEBOARD, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_ATTENDANCE, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_HOMEWORK, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_DIARY, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_MESSAGE, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_EVENTS, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_GALLERY, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_FEEDBACK, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_FEE, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_NEWS, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_TIMETABLE, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_RESULT, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_TAX_REPORTS, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_PAYSLIP, R.drawable.menu_transparent);
+//        mMenuColor.put(Constant.TAG_TRANSPORT, R.drawable.menu_transparent);
 
         ///////////////////////////////////////////////////////////////////
         mMenuImage.put(Constant.TAG_NOTICEBOARD, R.drawable.noticeboard);
@@ -162,7 +163,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 return false;
             }
         });
-
+        if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null) {
+            UserInfo.menuCode= EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED;
+            navigateToRespModule(UserInfo.menuCode);
+            EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED = null;
+        }
     }
 
     private void fetchDataFromTable() {
@@ -231,62 +236,66 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 String menu_code = (String) v.getTag();
                 AppLog.log("HomeFragment : onItemClick menu name: ", menu_code);
                 UserInfo.menuCode = menu_code.trim();
-                switch (UserInfo.menuCode) {
-                    case Constant.TAG_NOTICEBOARD:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new NoticeboardFragment(), NoticeboardFragment.TAG);
-                        break;
-                    case Constant.TAG_ATTENDANCE:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new AttendanceFragment(), AttendanceFragment.TAG);
-                        break;
-                    case Constant.TAG_NEWS:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
-                        break;
-                    case Constant.TAG_TIMETABLE:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new TimeTableFragment(), TimeTableFragment.TAG);
-                        break;
-                    case Constant.TAG_RESULT:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
-                        break;
-                    case Constant.TAG_DIARY:
-                        //Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_EVENTS:
-                        //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_FEE:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);
-                        break;
-                    case Constant.TAG_GALLERY:
-                        //Utils.navigateFragmentMenu(getFragmentManager(), new GalleryFragment(), GalleryFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_FEEDBACK:
-                        //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_MESSAGE:
-                        //Utils.navigateFragmentMenu(getFragmentManager(), new MessageFragment(), MessageFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_HOMEWORK:
-                        //.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_PAYSLIP:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new PayslipFragment(), PayslipFragment.TAG);
-                        //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_TAX_REPORTS:
-                        Utils.navigateFragmentMenu(getFragmentManager(), new TaxReportsFragment(), FeedbackFragment.TAG);
-                        //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                    case Constant.TAG_TRANSPORT:
-                        //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
-                        Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+                navigateToRespModule(UserInfo.menuCode);
+                break;
+        }
+    }
+
+    private void navigateToRespModule(String menuCode) {
+        switch (menuCode) {
+            case Constant.TAG_NOTICEBOARD:
+                Utils.navigateFragmentMenu(getFragmentManager(), new NoticeboardFragment(), NoticeboardFragment.TAG);
+                break;
+            case Constant.TAG_ATTENDANCE:
+                Utils.navigateFragmentMenu(getFragmentManager(), new AttendanceFragment(), AttendanceFragment.TAG);
+                break;
+            case Constant.TAG_NEWS:
+                Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
+                break;
+            case Constant.TAG_TIMETABLE:
+                Utils.navigateFragmentMenu(getFragmentManager(), new TimeTableFragment(), TimeTableFragment.TAG);
+                break;
+            case Constant.TAG_RESULT:
+                Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
+                break;
+            case Constant.TAG_DIARY:
+                //Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_EVENTS:
+                //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_FEE:
+                Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);
+                break;
+            case Constant.TAG_GALLERY:
+                //Utils.navigateFragmentMenu(getFragmentManager(), new GalleryFragment(), GalleryFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_FEEDBACK:
+                //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_MESSAGE:
+                //Utils.navigateFragmentMenu(getFragmentManager(), new MessageFragment(), MessageFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_HOMEWORK:
+                //.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_PAYSLIP:
+                Utils.navigateFragmentMenu(getFragmentManager(), new PayslipFragment(), PayslipFragment.TAG);
+                //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_TAX_REPORTS:
+                Utils.navigateFragmentMenu(getFragmentManager(), new TaxReportsFragment(), FeedbackFragment.TAG);
+                //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_TRANSPORT:
+                //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

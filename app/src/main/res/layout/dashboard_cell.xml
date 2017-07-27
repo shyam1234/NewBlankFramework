@@ -3,9 +3,10 @@
     android:id="@+id/rel_cell_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rectangle_boarder_light_gray"
+
     android:gravity="center"
     android:padding="5dp">
+    <!--android:background="@drawable/rectangle_boarder_light_gray"-->
 
     <RelativeLayout
         android:id="@+id/rel_dashboard_cell_bg_holder"
@@ -63,7 +64,7 @@
                 android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="Text"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorWhite"
                 android:textSize="10sp"
                 android:textStyle="normal" />
         </RelativeLayout>
