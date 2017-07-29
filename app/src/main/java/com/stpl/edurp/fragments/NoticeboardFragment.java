@@ -162,6 +162,7 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
                 UserInfo.menuCode = Constant.TAG_FEE;
                 int position = (Integer) view.getTag();
                 Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);
+
                 break;
             case R.id.lin_noticeboard_row_fee_holder:
                 UserInfo.menuCode = Constant.TAG_FEE;
@@ -174,7 +175,9 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
                 Intent i = new Intent(getActivity(), NewsDetails.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 Bundle bundle = new Bundle();
-                bundle.putInt(Constant.TAG_HOLDER, ((TableNewsMasterDataModel)mCommonList.get(position2)).getReferenceId());
+                if(mCommonList.get(position2) instanceof TableNewsMasterDataModel){
+                    bundle.putInt(Constant.TAG_HOLDER, ((TableNewsMasterDataModel)mCommonList.get(position2)).getReferenceId());
+                }
                 i.putExtras(bundle);
                 startActivity(i);
                 //Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
@@ -193,7 +196,9 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
                 int position5 = (Integer) view.getTag();
                 Intent intent = new Intent(getContext(), ResultDetailActivity.class);
                 Bundle bundle1 = new Bundle();
-                bundle1.putSerializable(Constant.TAG_HOLDER, ((TableNewsMasterDataModel)mCommonList.get(position5)));
+                if(mCommonList.get(position5) instanceof TableResultMasterDataModel) {
+                    bundle1.putSerializable(Constant.TAG_HOLDER, ((TableResultMasterDataModel) mCommonList.get(position5)));
+                }
                 intent.putExtras(bundle1);
                 startActivity(intent);
                 //Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
