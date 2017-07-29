@@ -9,7 +9,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerVertical="true"
-        android:src="@drawable/avater" />
+        android:src="@drawable/male_profile_holder" />
 
 
     <LinearLayout

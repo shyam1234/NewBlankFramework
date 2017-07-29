@@ -3,8 +3,6 @@ package com.stpl.edurp.utils;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.squareup.picasso.NetworkPolicy;
-import com.squareup.picasso.Picasso;
 import com.stpl.edurp.R;
 
 /**
@@ -62,15 +60,15 @@ public class GetPicassoImage {
         try {
             AppLog.log("setCircleImage: Picasso ", url);
             if (url != null) {
-                 PicassoCache.getPicassoInstance(pContext).with(pContext)
+                PicassoCache.getPicassoInstance(pContext).with(pContext)
                         .load(url)
                         .fit()
-                        .error(R.drawable.avater)
-                        .placeholder(R.drawable.avater)
+                        .error(R.drawable.male_profile_holder)
+                        .placeholder(R.drawable.male_profile_holder)
                         .transform(new ImageTransform())
                         .into(imageView);
             } else {
-                imageView.setImageResource(R.drawable.avater);
+                imageView.setImageResource(R.drawable.male_profile_holder);
             }
         } catch (Exception e) {
             AppLog.errLog(TAG, "setCircleImage Picasso : " + e.getMessage());
@@ -88,7 +86,7 @@ public class GetPicassoImage {
         try {
             AppLog.log(" setSquareImage Picasso: ", imgURL);
             if (imgURL != null) {
-                 PicassoCache.getPicassoInstance(pContext).with(pContext)
+                PicassoCache.getPicassoInstance(pContext).with(pContext)
                         .load(imgURL)
                         .fit()
                         .transform(new SquareImageTransform())

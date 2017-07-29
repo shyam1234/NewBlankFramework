@@ -60,7 +60,10 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textViewDesignation;
+        public final TextView textViewDesignation;
+        //public final TextView textViewCourse;
+        //public final TextView textViewTerm;
+        //----------------------------------------
         public LinearLayout linearLayout;
         public TextView textViewSubject;
         public TextView textViewSemester;
@@ -69,10 +72,15 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
         public MyViewHolder(View itemView) {
             super(itemView);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.lin_holder);
-            textViewSubject = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject);
-            textViewSemester = (TextView) itemView.findViewById(R.id.textview_attendance_row_semester);
+            //textViewSubject = (TextView) itemView.findViewById(R.id.textview_attendance_row_subject);
+            //textViewSemester = (TextView) itemView.findViewById(R.id.textview_attendance_row_semester);
             textViewLastSyncDate = (TextView) itemView.findViewById(R.id.textview_attendance_row_lastsync_value);
             textViewDesignation = (TextView) itemView.findViewById(R.id.textview_attendance_row_designation);
+
+            //as per new design------------
+            textViewSubject = (TextView) itemView.findViewById(R.id.textview_attendance_course_value);
+            textViewSemester = (TextView) itemView.findViewById(R.id.textview_attendance_term_value);
+
 
         }
     }

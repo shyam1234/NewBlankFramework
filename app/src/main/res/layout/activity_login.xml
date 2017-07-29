@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/textview_forgot_password"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,22 +50,25 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/rel_radio_btn"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="62dp"
                 android:background="@drawable/filled_dark_blue"
                 android:gravity="center"
                 android:hint="@string/email"
-                android:maxLength="50"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite" />
+                android:textColorHint="#66ffffff" />
 
             <EditText
                 android:id="@+id/edittext_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_below="@+id/edittext_email"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/filled_dark_blue"
                 android:gravity="center"
                 android:hint="@string/password"
@@ -73,7 +77,7 @@
                 android:maxLines="1"
                 android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite" />
+                android:textColorHint="#66ffffff" />
 
             <!-- <android.support.design.widget.TextInputEditText
                  android:id="@+id/edittext_email"
@@ -128,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edittext_password"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="35dp"
                 android:background="@drawable/button_curve_border"
                 android:text="Login"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"

@@ -61,8 +61,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         holder.imageViewRhumbnil.setTag(position);
         //Utils.langConversion(mContext, holder.textViewTag, WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref);
         holder.textViewTag.setText(Utils.getLangConversion(WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref));
-
-        if (mList.get(position).getLikedByMe() == 1) {
+        AppLog.log("getLikedByMe ",""+mList.get(position).getLikedByMe());
+        if (mList.get(position).getLikedByMe() >= 1) {
             holder.imageViewLike.setImageResource(R.drawable.comments_like_icon_active);
         } else {
             holder.imageViewLike.setImageResource(R.drawable.comments_like_icon);

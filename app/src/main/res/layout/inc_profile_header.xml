@@ -17,9 +17,8 @@
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:background="@drawable/circle_white_shape"
             android:padding="8dp"
-            android:src="@drawable/avater" />
+            android:src="@drawable/male_profile_holder" />
 
         <TextView
             android:id="@+id/textview_profile_header_name"

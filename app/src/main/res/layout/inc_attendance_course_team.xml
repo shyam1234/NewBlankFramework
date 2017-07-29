@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+
+    android:padding="12dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/lin_attendance_holder_course_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/course"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorTextHint" />
+
+        <TextView
+            android:id="@+id/textview_attendance_course_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="value"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorBlue"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_attend"
+        class="com.stpl.edurp.utils.MyGridView"
+        android:layout_width="0.1dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/lin_attendance_holder_course_team"
+        android:layout_alignTop="@+id/lin_attendance_holder_course_team"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/lin_attendance_holder_course_team"
+        android:background="@color/colorMargin"></View>
+
+
+    <LinearLayout
+        android:id="@+id/lin_attendance_holder_course_team1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/view_attend"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_term"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/term"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorTextHint" />
+
+        <TextView
+            android:id="@+id/textview_attendance_term_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="value"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorNaviBlue"
+            android:textStyle="normal" />
+    </LinearLayout>
+</LinearLayout>

@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/imageview_bottom_like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="33dp"
+            android:layout_height="29dp"
             android:layout_centerVertical="true"
             android:src="@drawable/comments_like_icon" />
 
@@ -49,8 +49,8 @@
 
         <ImageView
             android:id="@+id/imageview_bottom_comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="33dp"
+            android:layout_height="29dp"
             android:layout_centerVertical="true"
             android:src="@drawable/comment_sm_icon" />
 
