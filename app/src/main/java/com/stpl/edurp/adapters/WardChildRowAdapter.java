@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.stpl.edurp.R;
+import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.models.TableStudentDetailsDataModel;
 import com.stpl.edurp.utils.GetUILImage;
 
@@ -24,6 +25,7 @@ public class WardChildRowAdapter extends RecyclerView.Adapter<WardChildRowAdapte
     private final Context mContext;
     private final View.OnClickListener mListener;
     private ArrayList<TableStudentDetailsDataModel> mListHolder;
+    private int defaultHolder;
 
 
     public WardChildRowAdapter(Context context, ArrayList<TableStudentDetailsDataModel> pListChildInfoHolder, View.OnClickListener pListener) {
@@ -43,7 +45,12 @@ public class WardChildRowAdapter extends RecyclerView.Adapter<WardChildRowAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.mTextViewName.setText(mListHolder.get(position).getFullName());
         holder.mTextViewAddress.setText(mListHolder.get(position).getUnversity_name());
-        GetUILImage.getInstance().setCircleImage(mContext,mListHolder.get(position).getImageurl(), holder.mImageViewChildIcon);
+        if (mListHolder.get(position).getGender()!=null && mListHolder.get(position).getGender().equalsIgnoreCase(WSContant.TAG_FEMALE)) {
+            defaultHolder = R.drawable.female_profile_holder;
+        } else {
+            defaultHolder = R.drawable.male_profile_holder;
+        }
+        GetUILImage.getInstance().setCircleImage(mContext,mListHolder.get(position).getImageurl(), holder.mImageViewChildIcon,defaultHolder);
         holder.mRelHolder.setOnClickListener(mListener);
         holder.mRelHolder.setTag(position);
     }

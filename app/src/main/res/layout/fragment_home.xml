@@ -37,7 +37,7 @@
 
             <com.stpl.edurp.utils.ExpandableHeightGridView
                 android:id="@+id/gridview_dashboard"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:clipToPadding="true"

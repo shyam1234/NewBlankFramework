@@ -57,9 +57,10 @@ public class ChildProfileActivity extends BaseActivity implements View.OnClickLi
     private void setDefaultStudentProfileInHeader() {
         if (mModelTableStudentDetailsDataModel != null) {
             ImageView childImage = (ImageView) findViewById(R.id.imageview_profile_logo);
-            ((ImageView) findViewById(R.id.imageview_profile_eye)).setVisibility(View.GONE);
+            findViewById(R.id.imageview_profile_eye).setVisibility(View.GONE);
             TextView childname = (TextView) findViewById(R.id.textview_profile_header_name);
             TextView childlocation = (TextView) findViewById(R.id.textview_profile_header_location);
+            UserInfo.selectedStudentGender = mModelTableStudentDetailsDataModel.getGender();
             GetUILImage.getInstance().setCircleImage(this, mModelTableStudentDetailsDataModel.getImageurl(), childImage);
             childname.setText(mModelTableStudentDetailsDataModel.getFullName());
             childlocation.setText(mModelTableStudentDetailsDataModel.getCourseCode());

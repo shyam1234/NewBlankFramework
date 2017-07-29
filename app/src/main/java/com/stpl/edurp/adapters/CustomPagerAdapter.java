@@ -44,7 +44,7 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view== ((RelativeLayout) object);
+        return view== object;
     }
 
 
@@ -56,13 +56,13 @@ public class CustomPagerAdapter extends PagerAdapter {
         imageView.setVisibility(View.GONE);
         video.setVisibility(View.GONE);
         if(mResources.get(position).getMediatype().equalsIgnoreCase(WSContant.TAG_VIDEO)) {
-            GetUILImage.getInstance().setImage(mContext, "", imageView);
+            GetUILImage.getInstance().setImage(mContext, "", imageView,R.drawable.image_placeholder);
             video.setVisibility(View.VISIBLE);
             video.setUp(mResources.get(position).getFileURL(), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,mResources.get(position).getDocumentname());
             //video.setUp(TEST_URL, JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,mResources.get(position).getDocumentname());
-            GetUILImage.getInstance().setImage(mContext,"http://steveladdmusic.com/wp-content/themes/americanaura/assets/images/default-video-thumbnail.jpg", video.thumbImageView);
+            GetUILImage.getInstance().setImage(mContext,"http://steveladdmusic.com/wp-content/themes/americanaura/assets/images/default-video-thumbnail.jpg", video.thumbImageView,R.drawable.image_placeholder);
         }else if(mResources.get(position).getMediatype().equalsIgnoreCase(WSContant.TAG_IMAGE)) {
-            GetUILImage.getInstance().setImage(mContext, mResources.get(position).getFileURL(), imageView);
+            GetUILImage.getInstance().setImage(mContext, mResources.get(position).getFileURL(), imageView,R.drawable.image_placeholder);
             imageView.setVisibility(View.VISIBLE);
         }
 

@@ -151,6 +151,8 @@ public interface WSContant {
     String TAG_USER_EMAIL = "curr_user_email";
     String TAG_USER_PHONE_NUMBER = "curr_user_phone_number";
     String TAG_NOTI_RESP = "notification_resp";
+    String TAG_MALE="Male ";
+    String TAG_FEMALE = "Female";
 }
 
 

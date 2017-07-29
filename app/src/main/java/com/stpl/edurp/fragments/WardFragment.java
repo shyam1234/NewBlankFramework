@@ -106,6 +106,7 @@ public class WardFragment extends Fragment implements View.OnClickListener {
             if(UserInfo.studentId==mListChildInfoHolder.get(index).getStudent_id()){
                 AppLog.log(TAG, "default match studentid "+UserInfo.studentId);
                 setDefaultStudentProfileInHeader(false, index);
+                UserInfo.selectedStudentGender = mListChildInfoHolder.get(index).getGender();
                 break;
             }
         }
@@ -113,11 +114,13 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
     private void setDefaultStudentProfileInHeader(boolean isClicked, final int position) {
         mPosition = position;
+        UserInfo.selectedStudentImageURL = mListChildInfoHolder.get(position).getImageurl();
+        UserInfo.selectedStudentGender = mListChildInfoHolder.get(position).getGender();
+        AppLog.log("Gender",UserInfo.selectedStudentGender);
         GetUILImage.getInstance().setCircleImage(getContext(), mListChildInfoHolder.get(position).getImageurl(), mProfileImage);
         mTextViewProfileHeaderName.setText(mListChildInfoHolder.get(position).getFullName());
         mProfileHeaderLocation.setText(mListChildInfoHolder.get(position).getUnversity_name());
         GetUILImage.getInstance().setCircleImage(getContext(), mListChildInfoHolder.get(position).getImageurl(), mImageViewStudentTitleImg);
-
         AppLog.log("setDefaultStudentProfileInHeader getFullName ", mListChildInfoHolder.get(position).getFullName());
         //save user default child selection
 

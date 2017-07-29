@@ -31,6 +31,7 @@ public class UserInfo {
     public static String currUserName;
     public static String currUserEmail;
     public static String currUserPhoneNumber;
+    public static String selectedStudentGender;
 
 
     public static void clearUSerInfo() {
@@ -39,6 +40,7 @@ public class UserInfo {
         parentName = null;
         parentId = -1;
         parentName = null;
+        selectedStudentGender = null;
         studentId = -1;
         authToken = null;
         univercityId = 0;

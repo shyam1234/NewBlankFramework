@@ -63,7 +63,7 @@ public class AttendanceDetailActivity extends BaseActivity implements View.OnCli
         mTextViewTitle.setText(R.string.tab_attendance);
         ImageView mImgProfile = (ImageView) findViewById(R.id.imageview_profile);
         mImgProfile.setVisibility(View.VISIBLE);
-        GetUILImage.getInstance().setCircleImage(AttendanceDetailActivity.this, UserInfo.selectedStudentImageURL, mImgProfile);
+        GetUILImage.getInstance().setCircleImage(AttendanceDetailActivity.this, UserInfo.selectedStudentImageURL, mImgProfile,R.drawable.female_profile_holder);
         ImageView mImgBack = (ImageView) findViewById(R.id.imageview_back);
         mImgBack.setVisibility(View.VISIBLE);
         mImgBack.setOnClickListener(this);

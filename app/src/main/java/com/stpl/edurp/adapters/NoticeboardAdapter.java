@@ -63,7 +63,7 @@ public class NoticeboardAdapter extends RecyclerView.Adapter<NoticeboardAdapter.
             TableNewsMaster newsTable = new TableNewsMaster();
             newsTable.openDB(mContext);
             //TableNewsMasterDataModel newsHolder = newsTable.getData(((TableNewsMasterDataModel) mList.get(position)).getMenuCode(), "" + ((TableNewsMasterDataModel) mList.get(position)).getReferenceId());
-            GetUILImage.getInstance().setGallaryImage(mContext, ((TableNewsMasterDataModel) mList.get(position)).getThumbNailPath(), holder.imageViewRhumbnil);
+            GetUILImage.getInstance().setGallaryImage(mContext, ((TableNewsMasterDataModel) mList.get(position)).getThumbNailPath(), holder.imageViewRhumbnil,R.drawable.image_placeholder);
             holder.imageViewRhumbnil.setVisibility(View.VISIBLE);
             holder.textViewLike.setVisibility(View.VISIBLE);
             holder.textViewComment.setVisibility(View.VISIBLE);

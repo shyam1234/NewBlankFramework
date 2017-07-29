@@ -131,7 +131,7 @@ public class FileManager {
     }
 
     public static File getPDFFile(Context mContext, String mFolderName, String mFileName) {
-        File f = FileManager.getAbsoluteFile(mFolderName,mContext);
+        File f = getAbsoluteFile(mFolderName,mContext);
         Log.d("getAbsoluteFile ","getAbsoluteFile ++ "+f.getAbsolutePath().toString());
         if (!f.exists()) {
             f.mkdirs();

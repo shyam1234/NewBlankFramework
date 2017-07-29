@@ -40,7 +40,7 @@ public class TestImageLoad extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
          switch (view.getId()){
              case R.id.btn_show1:
-                 GetUILImage.getInstance().setImage(TestImageLoad.this,url, imageHolder);
+                 GetUILImage.getInstance().setImage(TestImageLoad.this,url, imageHolder,R.drawable.image_placeholder);
                  break;
              case R.id.btn_show2:
                  GetUILImage.getInstance().setCircleImage(TestImageLoad.this,url, imageHolder);

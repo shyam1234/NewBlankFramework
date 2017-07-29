@@ -33,7 +33,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         mContext = context;
         mList = pList;
         mListener = pListener;
-        AppLog.log(TAG," +++ NewsAdapter +pList.size()+++ "+pList.size());
+        AppLog.log(TAG, " +++ NewsAdapter +pList.size()+++ " + pList.size());
     }
 
     @Override
@@ -45,14 +45,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        AppLog.log(TAG," +++ onBindViewHolder ++++ ");
+        AppLog.log(TAG, " +++ onBindViewHolder ++++ ");
         //String url ="https://edurpstorage.blob.core.windows.net/edurpcontainer/DEV/1/61/103?sv=2015-12-11&sr=b&sig=kPNs9zkQw0v1bqiNnvBkpjRY40ve6qm0%2BDak3zl26Xk%3D&se=2017-03-04T14%3A27%3A34Z&sp=rwl&rscd=attachment%3B%20filename%3Dimages.jpg";
-       // GetPicassoImage.setImage(mContext,url,holder.imageViewRhumbnil);
-        GetUILImage.getInstance().setGallaryImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
+        // GetPicassoImage.setImage(mContext,url,holder.imageViewRhumbnil);
+        GetUILImage.getInstance().setGallaryImage(mContext, mList.get(position).getThumbNailPath(), holder.imageViewRhumbnil, R.drawable.image_placeholder);
         holder.textViewPublishBy.setText(mList.get(position).getPublishedBy());
         holder.textViewRefTitle.setText(mList.get(position).getReferenceTitle());
         holder.textViewPublishedTime.setText(mList.get(position).getPublishedOn());
-        holder.webviewShortBody.loadData(mList.get(position).getShortBody(),"text/html; charset=utf-8", "utf-8");
+        holder.webviewShortBody.loadData(mList.get(position).getShortBody(), "text/html; charset=utf-8", "utf-8");
         //holder.textViewTag.setText(mList.get(position).getMenuCode());
         holder.textViewLike.setText(mList.get(position).getTotalLikes());
         holder.textViewComment.setText(mList.get(position).getTotalComments());
@@ -60,11 +60,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         holder.imageViewRhumbnil.setOnClickListener(mListener);
         holder.imageViewRhumbnil.setTag(position);
         //Utils.langConversion(mContext, holder.textViewTag, WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref);
-        holder.textViewTag.setText(Utils.getLangConversion(WSContant.TAG_LANG_NEWS,  mList.get(position).getMenuCode(),UserInfo.lang_pref));
+        holder.textViewTag.setText(Utils.getLangConversion(WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref));
 
-        if(mList.get(position).getLikedByMe()==1){
+        if (mList.get(position).getLikedByMe() == 1) {
             holder.imageViewLike.setImageResource(R.drawable.comments_like_icon_active);
-        }else{
+        } else {
             holder.imageViewLike.setImageResource(R.drawable.comments_like_icon);
         }
     }
