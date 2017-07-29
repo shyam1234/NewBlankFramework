@@ -57,6 +57,7 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
     private NoticeboardAdapter mNoticeboardAdapter;
     private ArrayList<Object> mCommonList;
     private TextView mTextViewTitle;
+    private String mNotificationResp;
 
     public NoticeboardFragment() {
         AppLog.log(TAG, "NoticeboardFragment");
@@ -79,6 +80,9 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
     private void init() {
         //mNoticeboardList = new ArrayList<TableNoticeBoardDataModel>();
         mCommonList = new ArrayList<Object>();
+        if(getArguments()!=null){
+            mNotificationResp = (String)getArguments().getSerializable(WSContant.TAG_NOTI_RESP);
+        }
     }
 
     @Nullable
@@ -95,21 +99,28 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
         super.onActivityCreated(savedInstanceState);
         //AppLog.log(TAG, "onActivityCreated");
         initView();
-        fetchDataFromServer();
-        DashboardActivity.mHandler = new Handler(new Handler.Callback() {
-            @Override
-            public boolean handleMessage(Message msg) {
-                switch (msg.what) {
-                    case 1:
-                      //  Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
-                        DashboardActivity.mHandler.removeMessages(1);
-                        initView();
-                        fetchDataFromServer();
-                        return true;
-                }
-                return false;
-            }
-        });
+        if(mNotificationResp!=null){
+            AppLog.log(TAG,"bindResponse ");
+            bindResponse(mNotificationResp);
+        }else{
+            AppLog.log(TAG,"fetchDataFromServer ");
+            fetchDataFromServer();
+        }
+
+//        DashboardActivity.mHandler = new Handler(new Handler.Callback() {
+//            @Override
+//            public boolean handleMessage(Message msg) {
+//                switch (msg.what) {
+//                    case 1:
+//                      //  Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
+//                        DashboardActivity.mHandler.removeMessages(1);
+//                        initView();
+//                        fetchDataFromServer();
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
     }
 
     private void initView() {
@@ -252,11 +263,7 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
             WSRequest.getInstance().requestWithParam(WSRequest.POST, WSContant.URL_GETMOBILEMENU, header, body, WSContant.TAG_NEWS, new IWSRequest() {
                 @Override
                 public void onResponse(String response) {
-                    ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_GETMOBILEMENU);
-                    GetMobileMenuDataModel holder = ((GetMobileMenuDataModel) obj.getModel());
-                    bindData(holder);
-                    Utils.dismissProgressBar();
-                    AppLog.log(TAG, "fetchDataFromServe1r3333 " + mCommonList.size());
+                   bindResponse(response);
                 }
 
 
@@ -270,6 +277,14 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
             initRecyclerView();
         }
 
+    }
+
+    private void bindResponse(String response) {
+        ParseResponse obj = new ParseResponse(response, LoginDataModel.class, ModelFactory.MODEL_GETMOBILEMENU);
+        GetMobileMenuDataModel holder = ((GetMobileMenuDataModel) obj.getModel());
+        bindData(holder);
+        Utils.dismissProgressBar();
+        AppLog.log(TAG, "fetchDataFromServe1r3333 " + mCommonList.size());
     }
 
 

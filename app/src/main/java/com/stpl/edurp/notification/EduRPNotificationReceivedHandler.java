@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.onesignal.OSNotification;
 import com.onesignal.OneSignal;
-import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.utils.AppLog;
 
 import org.json.JSONObject;
@@ -47,7 +46,6 @@ public class EduRPNotificationReceivedHandler implements OneSignal.NotificationR
                 Log.i("OneSignalExample", "customkey set with value: " + customKey);
         }*/
         //-----------------------------------------------------------------------------
-        NOTIFICATION_RECEIVED = "NEW";
         pareseResp(data.toString());
         //------------------------------------------------------------------------------
     }
@@ -55,9 +53,10 @@ public class EduRPNotificationReceivedHandler implements OneSignal.NotificationR
     private void pareseResp(String str) {
         try {
             if (str != null && str.length() > 0) {
-                JSONObject jsonObject = new JSONObject(str);
-                NOTIFICATION_RECEIVED = jsonObject.optString(WSContant.TAG_MENUCODE);
-                AppLog.log(TAG,"Arrived NOTIFICATION_RECEIVED++ "+NOTIFICATION_RECEIVED);
+                NOTIFICATION_RECEIVED = str;
+//                JSONObject jsonObject = new JSONObject(str);
+//                NOTIFICATION_RECEIVED = jsonObject.optString(WSContant.TAG_MENUCODE);
+                AppLog.log(TAG, "Arrived NOTIFICATION_RECEIVED++ " + NOTIFICATION_RECEIVED);
             }
         } catch (Exception e) {
             AppLog.errLog(TAG, " notificationReceived " + e.getMessage());

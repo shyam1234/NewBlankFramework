@@ -27,6 +27,9 @@ import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -163,8 +166,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 return false;
             }
         });
-        if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null) {
-            UserInfo.menuCode= EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED;
+        if (EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED != null) {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                UserInfo.menuCode = jsonObject.optString(WSContant.TAG_MENUCODE);
+            } catch (JSONException e) {
+                AppLog.networkLog(TAG, "onActivityCreated " + e.getMessage());
+            }
             navigateToRespModule(UserInfo.menuCode);
             EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED = null;
         }
@@ -242,21 +251,47 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void navigateToRespModule(String menuCode) {
+        Bundle bundle = null;
         switch (menuCode) {
             case Constant.TAG_NOTICEBOARD:
-                Utils.navigateFragmentMenu(getFragmentManager(), new NoticeboardFragment(), NoticeboardFragment.TAG);
+                NoticeboardFragment fragment = new NoticeboardFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                fragment.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment, NoticeboardFragment.TAG);
                 break;
             case Constant.TAG_ATTENDANCE:
-                Utils.navigateFragmentMenu(getFragmentManager(), new AttendanceFragment(), AttendanceFragment.TAG);
+                AttendanceFragment fragment1 = new AttendanceFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment1.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment1, AttendanceFragment.TAG);
                 break;
             case Constant.TAG_NEWS:
-                Utils.navigateFragmentMenu(getFragmentManager(), new NewsFragment(), NewsFragment.TAG);
+                NewsFragment fragment2 = new NewsFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment2.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment2, NewsFragment.TAG);
                 break;
             case Constant.TAG_TIMETABLE:
-                Utils.navigateFragmentMenu(getFragmentManager(), new TimeTableFragment(), TimeTableFragment.TAG);
+                TimeTableFragment fragment3 = new TimeTableFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment3.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(),fragment3, TimeTableFragment.TAG);
                 break;
             case Constant.TAG_RESULT:
-                Utils.navigateFragmentMenu(getFragmentManager(), new ResultFragment(), ResultFragment.TAG);
+                ResultFragment fragment4 = new ResultFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment4.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment4, ResultFragment.TAG);
                 break;
             case Constant.TAG_DIARY:
                 //Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
@@ -267,7 +302,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_FEE:
-                Utils.navigateFragmentMenu(getFragmentManager(), new FeeFragment(), FeeFragment.TAG);
+                FeeFragment fragment5 = new FeeFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment5.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment5, FeeFragment.TAG);
                 break;
             case Constant.TAG_GALLERY:
                 //Utils.navigateFragmentMenu(getFragmentManager(), new GalleryFragment(), GalleryFragment.TAG);
@@ -286,11 +326,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_PAYSLIP:
-                Utils.navigateFragmentMenu(getFragmentManager(), new PayslipFragment(), PayslipFragment.TAG);
+                PayslipFragment fragment6 = new PayslipFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment6.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(), fragment6, PayslipFragment.TAG);
                 //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_TAX_REPORTS:
-                Utils.navigateFragmentMenu(getFragmentManager(), new TaxReportsFragment(), FeedbackFragment.TAG);
+                TaxReportsFragment fragment7 = new TaxReportsFragment();
+                bundle = new Bundle();
+                bundle.putString(WSContant.TAG_NOTI_RESP,EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED);
+                if(EduRPNotificationReceivedHandler.NOTIFICATION_RECEIVED!=null)
+                    fragment7.setArguments(bundle);
+                Utils.navigateFragmentMenu(getFragmentManager(),fragment7, FeedbackFragment.TAG);
                 //Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_TRANSPORT:
