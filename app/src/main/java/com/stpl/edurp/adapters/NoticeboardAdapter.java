@@ -70,6 +70,11 @@ public class NoticeboardAdapter extends RecyclerView.Adapter<NoticeboardAdapter.
             holder.imageViewTag.setVisibility(View.VISIBLE);
             holder.imageViewComment.setVisibility(View.VISIBLE);
             holder.imageViewLike.setVisibility(View.VISIBLE);
+            if (((TableNewsMasterDataModel) mList.get(position)).getLikedByMe() >= 1) {
+                holder.imageViewLike.setImageResource(R.drawable.comments_like_icon_active);
+            } else {
+                holder.imageViewLike.setImageResource(R.drawable.comments_like_icon);
+            }
             holder.textViewPublishBy.setText(((TableNewsMasterDataModel) mList.get(position)).getPublishedBy());
             holder.textViewRefTitle.setText(((TableNewsMasterDataModel) mList.get(position)).getReferenceTitle());
             //holder.textViewPublishedTime.setText(newsHolder.getPublishedOn());
