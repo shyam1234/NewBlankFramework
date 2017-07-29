@@ -2,8 +2,6 @@ package com.stpl.edurp.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +15,6 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
-import com.stpl.edurp.activities.DashboardActivity;
 import com.stpl.edurp.activities.NewsDetails;
 import com.stpl.edurp.activities.ResultDetailActivity;
 import com.stpl.edurp.adapters.NoticeboardAdapter;
@@ -299,6 +296,7 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
         } else {
             Toast.makeText(getContext(), R.string.msg_network_prob, Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private void readFromTable() {
