@@ -54,7 +54,13 @@ public class DownloadFileAsync extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... strings) {
         String mFileName = "";
-        String fileUrl = strings[0] + strings[1];   // -> http://maven.apache.org/maven-1.x/maven.pdf
+        String fileUrl = null;
+        if (strings[1].equalsIgnoreCase("")) {
+            fileUrl = strings[0];
+        } else {
+            fileUrl = strings[0] + strings[1];   // -> http://maven.apache.org/maven-1.x/maven.pdf
+        }
+
         AppLog.networkLog(TAG, "fileUrl: " + fileUrl);
         if (strings.length < 3) {
             mFileName = strings[1] + ".pdf";  // -> maven.pdf

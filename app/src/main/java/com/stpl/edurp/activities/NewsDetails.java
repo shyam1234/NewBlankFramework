@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.stpl.edurp.R;
 import com.stpl.edurp.adapters.CustomPagerAdapter;
+import com.stpl.edurp.adapters.NewsDetailsAttachmentAdapter;
 import com.stpl.edurp.adapters.NewsDetailsCommentAdapter;
 import com.stpl.edurp.adapters.NewsDetailsLikeAdapter;
 import com.stpl.edurp.constant.Constant;
@@ -88,6 +89,11 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     private ArrayList<TableDocumentMasterDataModel> mTableDocumentMesgList;
     private int mReferenceId;
     private ImageView mImageview_bottom_like;
+    //  private LinearLayout mLinAttachmentHolder;
+    // private TextView mTextViewAttachmentFileName;
+    private ArrayList<TableDocumentMasterDataModel> mAttchmentList;
+    private RecyclerView mRecycleViewAttachment;
+    private NewsDetailsAttachmentAdapter mNewsDetailsAttachmentAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -111,11 +117,12 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void init() {
         mNewsDetailsCommentLikeDataModel = new NewsDetailsCommentLikeDataModel();
+        mAttchmentList = new ArrayList<>();
         mTableDocumentMesgList = new ArrayList<>();
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             mReferenceId = (int) bundle.getSerializable(Constant.TAG_HOLDER);
-            AppLog.log(TAG,"getReferenceId: "+mReferenceId);
+            AppLog.log(TAG, "getReferenceId: " + mReferenceId);
         }
         mNewsMasterDataModel = getNewsMasterDataModel();
     }
@@ -134,6 +141,12 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         mTextViewRefTitle = (TextView) findViewById(R.id.textview_news_details_reference_title);
         mTextViewPublishedBy = (TextView) findViewById(R.id.textview_news_details_published_by);
         mTextViewTime = (TextView) findViewById(R.id.textview_news_details_published_time);
+
+
+//        mLinAttachmentHolder = (LinearLayout) findViewById(R.id.lin_news_details_attachment);
+//        mLinAttachmentHolder.setVisibility(View.GONE);
+//        mTextViewAttachmentFileName = (TextView) findViewById(R.id.textview_attachment);
+//        mLinAttachmentHolder.setOnClickListener(this);
         //--------------------------------
         mViewPagerNewsImages = (ViewPager) findViewById(R.id.viewpager_news_details);
         mWebViewNewsBody = (WebView) findViewById(R.id.webview_news_row_body);
@@ -141,7 +154,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         mViewPagerNewsImages.addOnPageChangeListener(this);
         mViewPagerNewsImages.setPageTransformer(true, new ZoomOutPageTransformer());
 
-        mImageview_bottom_like = (ImageView)findViewById(R.id.imageview_bottom_like);
+        mImageview_bottom_like = (ImageView) findViewById(R.id.imageview_bottom_like);
         TextView textView = (((TextView) findViewById(R.id.textview_inc_bottom_like)));
         if (mNewsMasterDataModel.getLikedByMe() == 1) {
             textView.setText(getResources().getString(R.string.unlike));
@@ -200,9 +213,24 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
             mWebViewNewsBody.loadData(mNewsMasterDataModel.getNewsBody(), "text/html; charset=utf-8", "utf-8");
             //--------------------------------------------
             if (mTableDocumentMesgList != null) {
-                mCustomPagerAdapter = new CustomPagerAdapter(this, mTableDocumentMesgList, this);
+                ArrayList<TableDocumentMasterDataModel> videoImageList = new ArrayList<>();
+                mAttchmentList.clear();
+                for (TableDocumentMasterDataModel holder : mTableDocumentMesgList) {
+                    if (!holder.getMediatype().equalsIgnoreCase(WSContant.TAG_MEDIA_TYPE_DOC)) {
+                        videoImageList.add(holder);
+                    } else {
+                        mAttchmentList.add(holder);
+                    }
+                }
+                //for video and images carouser (as banner)
+                mCustomPagerAdapter = new CustomPagerAdapter(this, videoImageList, this);
                 mViewPagerNewsImages.setAdapter(mCustomPagerAdapter);
                 mViewPagerNewsImages.setCurrentItem(0);
+
+                //for attachment (at bottom)
+                mNewsDetailsAttachmentAdapter = new NewsDetailsAttachmentAdapter(NewsDetails.this, mAttchmentList);
+                mRecycleViewAttachment.setAdapter(mNewsDetailsAttachmentAdapter);
+                mNewsDetailsAttachmentAdapter.notifyDataSetChanged();
             }
             setUiPageViewController();
         }
@@ -361,6 +389,10 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         manager.setSmoothScrollbarEnabled(true);
         mRecycleViewCommentLike.setLayoutManager(manager);
 
+        //for attachment
+        mRecycleViewAttachment = (RecyclerView) findViewById(R.id.recyclerview_news_details);
+        mRecycleViewAttachment.setHasFixedSize(true);
+        mRecycleViewAttachment.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
@@ -432,7 +464,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void getComments() {
         mRelComment.setVisibility(View.VISIBLE);
-       // mTextViewCommentTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        // mTextViewCommentTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
         mTextViewCommentTab.setBackgroundResource(R.drawable.filled_rect_white);
         mTextViewLikeTab.setBackgroundColor(Color.TRANSPARENT);
         mTextViewCommentTab.setTextColor(getResources().getColor(R.color.colorGreen));
@@ -464,7 +496,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
                     if ((type == 2) && mNewsDetailsCommentAdapter != null) {
                         getComments();
                         mRecycleViewCommentLike.setAdapter(mNewsDetailsCommentAdapter);
-                      //  mRecycleViewCommentLike.smoothScrollToPosition(mNewsDetailsCommentLikeDataModel.getCommentMaster().size() - 1);
+                        //  mRecycleViewCommentLike.smoothScrollToPosition(mNewsDetailsCommentLikeDataModel.getCommentMaster().size() - 1);
                         mRecycleViewCommentLike.smoothScrollToPosition(0);
                     } else if ((type == 1) && mNewsDetailsLikeAdapter != null) {
                         getLikes();
@@ -545,8 +577,6 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     }
 
 
-
-
     private void doComment(final EditText editText) {
         if (editText.getText().toString().trim().length() > 0) {
             Map<String, String> header = new HashMap<>();
@@ -597,7 +627,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     public void setLangSelection() {
         Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
-       //Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_NEWS, WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
+        //Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_NEWS, WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
         //Utils.langConversion(NewsDetails.this, ((TextView) findViewById(R.id.textview_inc_bottom_like)), new String[]{WSContant.TAG_LANG_LIKE}, getString(R.string.like), UserInfo.lang_pref);
         Utils.langConversion(NewsDetails.this, findViewById(R.id.textview_inc_bottom_comment), new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
 
@@ -633,4 +663,6 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
             AppLog.errLog(TAG, e.getMessage());
         }
     }
+
+
 }

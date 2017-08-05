@@ -32,7 +32,7 @@ public interface WSContant {
     String URL_PRINTCOMPUTATIONSHEET = URL_BASE + "/HR/TaxReport/PrintComputationSheet?";
     //String URL_REGISTRATION = URL_BASE + "/Account/Register";
     //-------------------------------------------------------------------------------------
-    String DOWNLOAD_FOLDER = "Edurp_results";
+    String DOWNLOAD_FOLDER = "Edurp_download";
     String TAG_LOGIN = "login";
     String TAG_LANG = "lang";
     String TAG_GETMOBILEHOME = "mobilehome";
@@ -136,7 +136,9 @@ public interface WSContant {
     String TAG_USER_PHONE_NUMBER = "curr_user_phone_number";
     String TAG_NOTI_RESP = "notification_resp";
     String TAG_FEMALE = "Female";
-
+    String TAG_MEDIA_TYPE_IMAGE = "I";
+    String TAG_MEDIA_TYPE_VIDEO = "V";
+    String TAG_MEDIA_TYPE_DOC = "D";
     //Unused variables------------------------------------------------------------------------------------
     String TAG_COURSE = "Course";
     String TAG_SEMESTER = "Semester";
@@ -153,6 +155,7 @@ public interface WSContant {
     String TAG_CONTENT_TYPE = "Content-Type";
     String TAG_SHAREDPREF_NAME = "edurp_sharepref";
     String TAG_LANG_RETRIVE_TIME = "lan_retriev_time";
+
     //Unused variables------------------------------------------------------------------------------------
 }
 
