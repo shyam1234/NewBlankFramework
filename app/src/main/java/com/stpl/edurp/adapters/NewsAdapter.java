@@ -67,6 +67,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         } else {
             holder.imageViewLike.setImageResource(R.drawable.comments_like_icon);
         }
+
+        //add attachment icon if News has
+
+        holder.textViewRefTitle.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.attachment, 0);
     }
 
 
