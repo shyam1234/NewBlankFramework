@@ -17,7 +17,6 @@ public interface WSContant {
 
     String URL_SAVELIKENCOMMENT = URL_BASE + "/mobile/SaveLikeNComment";
     String URL_GETMOBILECOMMENTSNLIKES = URL_BASE + "/mobile/GetMobileCommentsnLikes";
-    String URL_PRINT_OVERALL_RESULT = URL_BASE + "/StudentPortal/OverallResult/PrintOverallResult?StudentId=";
     String URL_PRINT_SEM_RESULTS = URL_BASE +"/StudentSemesterResult/PrintSemesterResult?";
     String URL_PRINT_RECEIPT = URL_BASE + "/Fee/FeeCollection/PrintReceipt?sfAssociationId=";
 
@@ -27,7 +26,7 @@ public interface WSContant {
 
     String URL_GETPAYSLIPMONTHS = URL_BASE + "/mobile/GetPayslipMonths";
     String URL_PRINTEMPPAYSLIP = URL_BASE + "/HR/PayrollDetails/PrintEmpPayslip?";//employeeId=319&financialyearmonthId=466&Language=B
-    String URL_UPDATEPREFERENCE = URL_BASE + "/account/updatepreference";
+
     String URL_GETTAXFINANCIALYEAR = URL_BASE + "/mobile/GetTaxFinancialYear";
     String URL_PRINTTAXREPORT = URL_BASE + "/HR/TaxReport/PrintTaxReport?";
     String URL_PRINTCOMPUTATIONSHEET = URL_BASE + "/HR/TaxReport/PrintComputationSheet?";
@@ -48,14 +47,11 @@ public interface WSContant {
     String TAG_TOKEN = "Token";
     String TAG_TOKEN_EXP = "TokenExpiresOn";
     String TAG_TOKEN_ISSUE = "TokenIssuedOn";
-    String TAG_CONTENT_TYPE = "Content-Type";
     String TAG_DATELASTRETRIEVED = "DateLastRetrieved";
     String TAG_NEW = "NEW";
-    String TAG_SHAREDPREF_NAME = "edurp_sharepref";
     String TAG_SHAREDPREF_GET_LAST_TIME = "get_last_time";
     String TAG_STUDENTID = "StudentId";
     String TAG_ISMOBILE = "isMobile";
-    String TAG_LANG_RETRIVE_TIME = "lan_retriev_time";
     String TAG_LAST_LOGIN_TIME = "last_login_time";
     String TAG_AUTHTOKEN = "auth_token";
     String TAG_SAVED_USERID = "saved_userid";
@@ -74,20 +70,14 @@ public interface WSContant {
     String TAG_ISLIKE = "IsLike";
     String TAG_ISDELETE = "IsDelete";
     String TAG_REFERENCEID = "ReferenceId";
-    String TAG_MESSAGEBODYHTML = "MessageBodyHTML";
-    String TAG_PRINT_OVERALL_RESULT = "print_overall_result";
-    String TAG_PRINT_RECEIPT = "print_receipt";
     String TAG_NEWS_GET_LAST_TIME = "get_news_last_time";
     String TAG_NEWS = "news";
     String TAG_OK = "OK";
     String TAG_GETMOBILEDETAILS = "getmobiledetails_ws";
-    String TAG_NEWSBODY = "NewsBody";
     String TAG_IMAGE = "I";
     String TAG_VIDEO = "V";
-
     String TAG_SAVELIKECOMMENT = "SaveLikeNComment";
     String TAG_MESSAGERESULT = "MessageResult";
-    String TAG_MOBILENOTICEBOARD = "GetMobileNoticeBoard";
     String TAG_REFERENCEDATE = "ReferenceDate";
     String TAG_VALUE_NOT_PAID = "Not Paid";
     String TAG_ENG = "E";//"eng";
@@ -127,14 +117,10 @@ public interface WSContant {
     //---------------------------------------------------------------------
     String TAG_TIMETABLEDATE = "TimeTableDate";
     String TAG_WS_TIMETABLE = "ws_timetable";
-    String TAG_NR = "NR";
     String TAG_PRESENT = "Present";
     String TAG_ABSENT = "Absent";
     String TAG_MOBILEATTENDANCEDETAIL = "ws_GetMobileAttendanceDetail";
     String TAG_MOBILEATTENDANCE_ABSENT = "ws_GetMobileAttendanceAbsent";
-    String TAG_COURSE = "Course";
-    String TAG_SEMESTER = "Semester";
-    String TAG_SUBJECTNAME = "SubjectName";
     String TAG_SUBJECTID = "SubjectId";
     String TAG_EMPLOYEEID = "EmployeeId";
     String TAG_eMPLOYEEID = "employeeId";
@@ -144,15 +130,30 @@ public interface WSContant {
     String TAG_FINANCIALYEARMONTHID ="financialyearmonthId";
     String TAG_LANGUAGE="Language";
     String TAG_FACULTY_ID = "FacultyId";
-
-
     String TAG_PARENT_NAME = "parent_name";
     String TAG_CURR_USER_NAME = "curr_user_name";
     String TAG_USER_EMAIL = "curr_user_email";
     String TAG_USER_PHONE_NUMBER = "curr_user_phone_number";
     String TAG_NOTI_RESP = "notification_resp";
-    String TAG_MALE="Male ";
     String TAG_FEMALE = "Female";
+
+    //Unused variables------------------------------------------------------------------------------------
+    String TAG_COURSE = "Course";
+    String TAG_SEMESTER = "Semester";
+    String TAG_SUBJECTNAME = "SubjectName";
+    String TAG_MALE="Male ";
+    String TAG_MOBILENOTICEBOARD = "GetMobileNoticeBoard";
+    String TAG_NEWSBODY = "NewsBody";
+    String TAG_MESSAGEBODYHTML = "MessageBodyHTML";
+    String TAG_PRINT_OVERALL_RESULT = "print_overall_result";
+    String TAG_PRINT_RECEIPT = "print_receipt";
+    String URL_UPDATEPREFERENCE = URL_BASE + "/account/updatepreference";
+    String URL_PRINT_OVERALL_RESULT = URL_BASE + "/StudentPortal/OverallResult/PrintOverallResult?StudentId=";
+    String TAG_NR = "NR";
+    String TAG_CONTENT_TYPE = "Content-Type";
+    String TAG_SHAREDPREF_NAME = "edurp_sharepref";
+    String TAG_LANG_RETRIVE_TIME = "lan_retriev_time";
+    //Unused variables------------------------------------------------------------------------------------
 }
 
 
