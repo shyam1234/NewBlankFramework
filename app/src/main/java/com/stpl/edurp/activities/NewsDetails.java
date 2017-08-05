@@ -94,6 +94,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
     private ArrayList<TableDocumentMasterDataModel> mAttchmentList;
     private RecyclerView mRecycleViewAttachment;
     private NewsDetailsAttachmentAdapter mNewsDetailsAttachmentAdapter;
+    private ArrayList<TableDocumentMasterDataModel> mVideoImageList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,6 +118,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void init() {
         mNewsDetailsCommentLikeDataModel = new NewsDetailsCommentLikeDataModel();
+        mVideoImageList = new ArrayList<TableDocumentMasterDataModel>();
         mAttchmentList = new ArrayList<>();
         mTableDocumentMesgList = new ArrayList<>();
         Bundle bundle = getIntent().getExtras();
@@ -213,17 +215,17 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
             mWebViewNewsBody.loadData(mNewsMasterDataModel.getNewsBody(), "text/html; charset=utf-8", "utf-8");
             //--------------------------------------------
             if (mTableDocumentMesgList != null) {
-                ArrayList<TableDocumentMasterDataModel> videoImageList = new ArrayList<>();
+                mVideoImageList.clear();
                 mAttchmentList.clear();
                 for (TableDocumentMasterDataModel holder : mTableDocumentMesgList) {
                     if (!holder.getMediatype().equalsIgnoreCase(WSContant.TAG_MEDIA_TYPE_DOC)) {
-                        videoImageList.add(holder);
+                        mVideoImageList.add(holder);
                     } else {
                         mAttchmentList.add(holder);
                     }
                 }
                 //for video and images carouser (as banner)
-                mCustomPagerAdapter = new CustomPagerAdapter(this, videoImageList, this);
+                mCustomPagerAdapter = new CustomPagerAdapter(this, mVideoImageList, this);
                 mViewPagerNewsImages.setAdapter(mCustomPagerAdapter);
                 mViewPagerNewsImages.setCurrentItem(0);
 
@@ -320,8 +322,8 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         Intent i = new Intent(this, NewsScreenSliderPagerActivity.class);
         //i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         Bundle bundle = new Bundle();
-        if (mTableDocumentMesgList != null) {
-            bundle.putSerializable(Constant.TAG_HOLDER, mTableDocumentMesgList);
+        if (mVideoImageList != null) {
+            bundle.putSerializable(Constant.TAG_HOLDER, mVideoImageList);
         }
         bundle.putInt(Constant.TAG_POSITION, posi);
         i.putExtras(bundle);
