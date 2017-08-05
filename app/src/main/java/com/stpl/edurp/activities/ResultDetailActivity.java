@@ -142,12 +142,12 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
             case R.id.imageview_back:
                 onBackPressed();
                 break;
-            case R.id.imageview_resultlist_row_selection:
+         /*   case R.id.imageview_resultlist_row_selection:
                 int position = (Integer) v.getTag();
                 ((ImageView) (v.findViewById(R.id.imageview_resultlist_row_selection))).setImageResource(R.drawable.selected);
                 //ResultFragment.selected_sem = mResultDetailList.get(position).getSemester();
                 finish();
-                break;
+                break;*/
             case R.id.btn_results_download:
                 if(InternetManager.isInternetConnected(ResultDetailActivity.this)) {
                     new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER, new ICallBack() {

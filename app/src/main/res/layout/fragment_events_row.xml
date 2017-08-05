@@ -110,7 +110,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/textview_events_row_time"
-                    android:src="@drawable/design_logo" />
+                    android:src="@drawable/tag_red" />
 
                 <TextView
                     android:id="@+id/textview_events_row_location"
