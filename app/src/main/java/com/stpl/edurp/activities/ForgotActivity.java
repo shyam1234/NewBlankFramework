@@ -138,7 +138,7 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
     public void setLangSelection() {
         mTextViewTitle.setText(Utils.getLangConversion(WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref));
         ((TextView) findViewById(R.id.textview1)).setText(Utils.getLangConversion(WSContant.TAG_LANG_FORGOTPASSWORDTITLE, getString(R.string.title_forgot_password), UserInfo.lang_pref));
-        mEditTextUserName.setText(Utils.getLangConversion(WSContant.TAG_LANG_EMAIL, getString(R.string.email), UserInfo.lang_pref));
+        mEditTextUserName.setHint(Utils.getLangConversion(WSContant.TAG_LANG_EMAIL, getString(R.string.email), UserInfo.lang_pref));
         mBtnSubmit.setText(Utils.getLangConversion(WSContant.TAG_LANG_SUBMIT, getString(R.string.btn_submit), UserInfo.lang_pref));
 
 //        Utils.langConversion(ForgotActivity.this, mTextViewTitle, WSContant.TAG_LANG_FORGOTPASSWORD, getString(R.string.forgot_password), UserInfo.lang_pref);
