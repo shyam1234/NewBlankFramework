@@ -76,7 +76,7 @@ public class NewsDetailsAttachmentAdapter extends RecyclerView.Adapter<NewsDetai
             holder.mHolder.mProgressBar.setVisibility(View.VISIBLE);
             if (!FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, documentId + ".pdf")) {
                 if (InternetManager.isInternetConnected(mContext)) {
-                    new DownloadFileAsync((Activity) mContext, WSContant.DOWNLOAD_FOLDER, false, new ICallBack() {
+                    new DownloadFileAsync((Activity) mContext, WSContant.DOWNLOAD_FOLDER, true, new ICallBack() {
                         @Override
                         public void callBack() {
                             ((Activity) mContext).runOnUiThread(new Runnable() {
