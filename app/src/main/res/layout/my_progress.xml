@@ -17,9 +17,9 @@
         android:id="@+id/progressBar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:gp_color="@android:color/black"
-        app:gp_duration="800"
+        app:gp_color="@color/colorPrimaryDark"
+        app:gp_duration="500"
         app:gp_figure_padding="3dp"
-        app:gp_number_of_angles="20"
+        app:gp_number_of_angles="30"
         app:gp_type="triangle" />
 </RelativeLayout>

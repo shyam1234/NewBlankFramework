@@ -176,7 +176,7 @@ public class PayslipFragment extends Fragment implements View.OnClickListener {
         mFinancialYearMonthId = mPayslipDataModel.get(position).getFinancialYearMonthId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearMonthId + ".pdf")) {
             if (InternetManager.isInternetConnected(getActivity())) {
-                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, true, new ICallBack() {
                     @Override
                     public void callBack() {
                         getActivity().runOnUiThread(new Runnable() {

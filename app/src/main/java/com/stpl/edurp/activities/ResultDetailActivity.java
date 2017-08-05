@@ -150,7 +150,7 @@ public class ResultDetailActivity extends BaseActivity implements View.OnClickLi
                 break;*/
             case R.id.btn_results_download:
                 if(InternetManager.isInternetConnected(ResultDetailActivity.this)) {
-                    new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                    new DownloadFileAsync(ResultDetailActivity.this, WSContant.DOWNLOAD_FOLDER,true, new ICallBack() {
                         @Override
                         public void callBack() {
                             runOnUiThread(new Runnable() {

@@ -361,6 +361,7 @@ public class Utils {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setIndeterminate(true);
         dialog.setCancelable(false);
+        dialog.setMax(100);
         dialog.show();
         dialog.setContentView(R.layout.my_progress);
 
@@ -396,7 +397,6 @@ public class Utils {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
-
 
 
     public static String getTimeInYYYYMMDD(String yyyyMMddHHmmss) {
@@ -438,6 +438,7 @@ public class Utils {
 
     /**
      * dd-MM-yyyy HH:mm:ss
+     *
      * @param yyyyMMddHHmmss
      * @return
      */
@@ -485,16 +486,7 @@ public class Utils {
     }
 
 
-    /**
-     * * this method takes single conversion code and append in signle String
-     *
-     * @param pContext
-     * @param obj
-     * @param pConversionCode
-     * @param defaultString
-     * @param langPref
-     */
-//    public static void langConversion(Context pContext, Object obj, String pConversionCode, String defaultString, String langPref) {
+    //    public static void langConversion(Context pContext, Object obj, String pConversionCode, String defaultString, String langPref) {
 //        TableLanguage holder = new TableLanguage();
 //        try {
 //            AppLog.log(TAG, "Lang pref " + langPref);
@@ -526,8 +518,6 @@ public class Utils {
 //            holder.closeDB();
 //        }
 //    }
-
-
     public static String getLangConversion(String pConversionCode, String defaultString, String langPref) {
         TableLanguage holder = new TableLanguage();
         try {
@@ -536,7 +526,7 @@ public class Utils {
             langPref = (langPref != null ? langPref : WSContant.TAG_ENG);
             switch (langPref) {
                 case WSContant.TAG_ENG:
-                    return (( holder.getValue(pConversionCode).getEnglishVersion() != null )? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
+                    return ((holder.getValue(pConversionCode).getEnglishVersion() != null) ? holder.getValue(pConversionCode).getEnglishVersion() : defaultString);
 
                 case WSContant.TAG_BHASHA:
                     return (holder.getValue(pConversionCode).getBahasaVersion() != null ? holder.getValue(pConversionCode).getBahasaVersion() : defaultString);
@@ -615,7 +605,6 @@ public class Utils {
     }
 
 
-
     public static String getCurrTimeYYYYMMDD(String string) {
         String time = "";
         try {
@@ -635,7 +624,7 @@ public class Utils {
 
 
     //2017-05-27T08:36:19
-    public static boolean getTimeDiffFromCurrTime( String TokenExpiresOn ) {
+    public static boolean getTimeDiffFromCurrTime(String TokenExpiresOn) {
         long timeDiff = 1;
         try {
             if (TokenExpiresOn != null) {
@@ -694,16 +683,17 @@ public class Utils {
 
     /**
      * yyyyMMddHHmmss
+     *
      * @return yyyyMMddHHmmss
      */
     public static String getCurrTimeYYYYMMDDOOOOOO() {
         String time = "";
         try {
-                SimpleDateFormat formatter1 = new SimpleDateFormat("yyyyMMddHHmmss");
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                Date date = formatter.parse(getCurrTime());
-                time = formatter1.format(date);
-                AppLog.log("Time: " + time);
+            SimpleDateFormat formatter1 = new SimpleDateFormat("yyyyMMddHHmmss");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = formatter.parse(getCurrTime());
+            time = formatter1.format(date);
+            AppLog.log("Time: " + time);
         } catch (Exception e) {
             AppLog.errLog("getCurrTimeYYYYMMDDOOOOOO from Utils", e.getMessage());
         } finally {

@@ -123,6 +123,7 @@
     <string name="db_updated">Database Updated</string>
     <string name="faculty">Faculty</string>
     <string name="msg_select_lang">Please Select Language</string>
+    <string name="msg_downloading_file">Downloading file. Please wait...</string>
 
     <string-array name="array_language">
         <!--<item>@string/select_lang</item>-->

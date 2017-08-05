@@ -195,7 +195,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + ".pdf")) {
             if(InternetManager.isInternetConnected(getContext())) {
-                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER,true,  new ICallBack() {
                     @Override
                     public void callBack() {
                         getActivity().runOnUiThread(new Runnable() {
@@ -269,7 +269,7 @@ public class TaxReportsFragment extends Fragment implements View.OnClickListener
         mFinancialYearId = mTaxReportDataModel.get(position).getFinancialYearId();
         if (!FileManager.isFileDownloaded(getActivity(), WSContant.DOWNLOAD_FOLDER, mFinancialYearId + TAG_COMPUTATION + ".pdf")) {
             if (InternetManager.isInternetConnected(getContext())) {
-                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, new ICallBack() {
+                new DownloadFileAsync(getActivity(), WSContant.DOWNLOAD_FOLDER, true, new ICallBack() {
                     @Override
                     public void callBack() {
                         getActivity().runOnUiThread(new Runnable() {
