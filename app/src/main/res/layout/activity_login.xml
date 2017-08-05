@@ -10,9 +10,8 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnSignIn"
+        android:layout_above="@+id/textview_forgot_password"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="15dp"
         android:layout_marginTop="20dp"
         android:scrollbars="none">
 
@@ -80,19 +79,19 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="#66ffffff" />
 
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edittext_password"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/button_curve_border"
+                android:text="Login"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                android:textColor="@color/colorBlue" />
         </RelativeLayout>
     </ScrollView>
 
-
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textview_forgot_password"
-        android:background="@drawable/button_curve_border"
-        android:text="Login"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
-        android:textColor="@color/colorBlue" />
 
     <TextView
         android:id="@+id/textview_forgot_password"
@@ -101,7 +100,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|fill_horizontal"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:text="@string/title_forgot_password"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
