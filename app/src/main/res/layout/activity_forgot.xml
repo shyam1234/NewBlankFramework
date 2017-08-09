@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical">
 
     <include
+        android:id="@+id/header"
         layout="@layout/inc_inner_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></include>
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
         android:padding="@dimen/comm_padding">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
@@ -52,15 +54,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageview_logo"
                 android:layout_marginTop="80dp"
+                android:background="@drawable/filled_dark_blue"
                 android:drawableLeft="@drawable/email"
                 android:drawablePadding="20dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:padding="20dp"
+                android:padding="10dp"
                 android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite"
+                android:textColorHint="#66ffffff"
                 android:visibility="visible" />
+
 
             <!--    <Button
                     android:id="@+id/btnSubmit"
@@ -85,4 +89,4 @@
                 android:text="@string/Submit" />
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

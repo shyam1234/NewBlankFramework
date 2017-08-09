@@ -301,7 +301,6 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
         } else {
             Toast.makeText(getContext(), R.string.msg_network_prob, Toast.LENGTH_SHORT).show();
         }
-
     }
 
     private void readFromTable() {
