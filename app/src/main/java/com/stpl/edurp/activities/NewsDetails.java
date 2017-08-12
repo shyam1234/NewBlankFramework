@@ -534,7 +534,8 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
         body.put(WSContant.TAG_USERID, "" + UserInfo.userId);
         body.put(WSContant.TAG_COMMENT, "");
         if (mNewsMasterDataModel.getLikedByMe() == 1) {
-            body.put(WSContant.TAG_ISLIKE, "0");
+            //as discussed with Krishana: isLike should be 1 also incase of delete
+            body.put(WSContant.TAG_ISLIKE, "1");
             body.put(WSContant.TAG_ISDELETE, "1");
         } else {
             body.put(WSContant.TAG_ISLIKE, "1");
