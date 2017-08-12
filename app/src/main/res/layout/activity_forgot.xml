@@ -86,6 +86,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edittext_email"
                 android:layout_marginTop="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                android:textColor="@color/colorBlue"
+                android:background="@drawable/button_curve_border"
                 android:text="@string/Submit" />
         </LinearLayout>
     </ScrollView>
