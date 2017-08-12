@@ -38,7 +38,7 @@
     <color name="colorLightBlack">#88000000</color>
     <color name="colorNaviBlue">#371E94</color>
     <color name="today">#4b82ff</color>
-    <color name="greyed_out">#c7c7c7</color>
+    <color name="greyed_out">#99000000</color>
     <color name="summer">#44eebd82</color>
     <color name="fall">#44d8d27e</color>
     <color name="winter">#44a1c1da</color>

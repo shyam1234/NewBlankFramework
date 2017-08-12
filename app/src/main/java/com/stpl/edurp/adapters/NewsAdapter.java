@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -108,6 +109,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             textViewTag = (TextView) itemView.findViewById(R.id.textview_inc_bottom_tag);
             textViewLike = (TextView) itemView.findViewById(R.id.textview_inc_bottom_like);
             textViewComment = (TextView) itemView.findViewById(R.id.textview_inc_bottom_comment);
+
+            webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         }
     }
 }

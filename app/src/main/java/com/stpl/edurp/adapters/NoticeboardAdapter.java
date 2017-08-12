@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -220,6 +221,9 @@ public class NoticeboardAdapter extends RecyclerView.Adapter<NoticeboardAdapter.
             textViewPublishBy = (TextView) itemView.findViewById(R.id.textview_news_row_published_by);
             textViewPublishedTime = (TextView) itemView.findViewById(R.id.textview_news_row_published_time);
             webviewShortBody = (WebView) itemView.findViewById(R.id.webview_news_row_shortbody);
+            webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
             imageViewTag = (ImageView) itemView.findViewById(imageview_bottom_tag);
             imageViewLike = (ImageView) itemView.findViewById(R.id.imageview_bottom_like);
             imageViewComment = (ImageView) itemView.findViewById(imageview_bottom_comment);

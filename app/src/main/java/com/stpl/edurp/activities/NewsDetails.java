@@ -635,7 +635,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
         Utils.langConversion(NewsDetails.this, mTextViewCommentTab, new String[]{WSContant.TAG_LANG_COMMENTS}, getString(R.string.comment), UserInfo.lang_pref);
         Utils.langConversion(NewsDetails.this, mTextViewLikeTab, new String[]{WSContant.TAG_LANG_LIKE}, getString(R.string.like), UserInfo.lang_pref);
-        Utils.langConversion(NewsDetails.this, mEditTextComment, new String[]{WSContant.TAG_LANG_TYPE, WSContant.TAG_LANG_COMMENTS}, getString(R.string.type_comment), UserInfo.lang_pref);
+        Utils.langConversion(NewsDetails.this, mEditTextComment, new String[]{WSContant.TAG_LANG_TYPE}, getString(R.string.type_comment), UserInfo.lang_pref);
         Utils.langConversion(NewsDetails.this, mTextViewSend, new String[]{WSContant.TAG_LANG_SEND}, getString(R.string.send), UserInfo.lang_pref);
 
     }

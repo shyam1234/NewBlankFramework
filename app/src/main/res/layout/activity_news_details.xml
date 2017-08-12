@@ -97,7 +97,7 @@
                     <WebView
                         android:id="@+id/webview_news_row_body"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/rel_news_details"
                         tools:ignore="WebViewLayout"></WebView>
                 </RelativeLayout>
