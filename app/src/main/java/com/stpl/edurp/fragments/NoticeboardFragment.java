@@ -150,7 +150,11 @@ public class NoticeboardFragment extends Fragment implements View.OnClickListene
     public void onResume() {
         super.onResume();
         UserInfo.menuCode = Constant.TAG_NOTICEBOARD;
+        readFromTable();
+        initRecyclerView();
     }
+
+
 
     @Override
     public void onClick(View view) {
