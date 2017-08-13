@@ -60,18 +60,26 @@ public class FeeAdapter extends RecyclerView.Adapter<FeeAdapter.MyViewHolder> {
             holder.noticeboard_row_activity_fee_row_holder.setVisibility(View.VISIBLE);
             holder.noticeboard_row_fee_holder.setVisibility(View.GONE);
             holder.textViewDate.setText(Utils.getTimeInYYYYMMDD(mList.get(position).getDueDate()));
-            holder.textViewPaymentValue.setText(mList.get(position).getTotalDue());
-            holder.btnViewDetails1.setOnClickListener(mListener);
-            holder.btnViewDetails1.setTag(position);
-            holder.btnViewDetails1.setText(Utils.getLangConversion(WSContant.TAG_LANG_DOWNLOAD_RECEIPT, mContext.getString(R.string.download_receipt), UserInfo.lang_pref));
-            if (FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER,mList.get(position).getReferenceId() + ".pdf")) {
-                holder.btnViewDetails1.setText(Utils.getLangConversion(WSContant.TAG_LANG_VIEW, mContext.getString(R.string.view), UserInfo.lang_pref));
-            }
-            holder.textViewLabelPayment.setText(Utils.getLangConversion(WSContant.TAG_LANG_PART_PAYMENT, mContext.getString(R.string.part_payment), UserInfo.lang_pref));
-            holder.noticeboard_row_activity_fee_row_holder.setOnClickListener(mListener);
-            holder.noticeboard_row_activity_fee_row_holder.setTag(position);
+            if (mList.get(position).getTotalDue() != null
+                    && mList.get(position).getTotalDue().length() > 0){
+                String number = mList.get(position).getTotalDue().replace("Rp",""); //Rp 0.00
+                if (Double.parseDouble(number.trim()) == 0) {
+                    holder.textViewPaymentLabel.setVisibility(View.GONE);
+                    holder.textViewPaymentValue.setVisibility(View.GONE);
+                }
         }
+        holder.textViewPaymentValue.setText(mList.get(position).getTotalDue());
+        holder.btnViewDetails1.setOnClickListener(mListener);
+        holder.btnViewDetails1.setTag(position);
+        holder.btnViewDetails1.setText(Utils.getLangConversion(WSContant.TAG_LANG_DOWNLOAD_RECEIPT, mContext.getString(R.string.download_receipt), UserInfo.lang_pref));
+        if (FileManager.isFileDownloaded(mContext, WSContant.DOWNLOAD_FOLDER, mList.get(position).getReferenceId() + ".pdf")) {
+            holder.btnViewDetails1.setText(Utils.getLangConversion(WSContant.TAG_LANG_VIEW, mContext.getString(R.string.view), UserInfo.lang_pref));
+        }
+        holder.textViewLabelPayment.setText(Utils.getLangConversion(WSContant.TAG_LANG_PART_PAYMENT, mContext.getString(R.string.part_payment), UserInfo.lang_pref));
+        holder.noticeboard_row_activity_fee_row_holder.setOnClickListener(mListener);
+        holder.noticeboard_row_activity_fee_row_holder.setTag(position);
     }
+}
 
 
     @Override
@@ -80,38 +88,41 @@ public class FeeAdapter extends RecyclerView.Adapter<FeeAdapter.MyViewHolder> {
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        private final Button btnViewDetails1;
-        private final TextView textViewLabelPayment;
-        private final TextView mTextViewDueDateLabel;
-        public TextView textViewDate;
-        public TextView textViewPaymentValue;
-        public Button btnViewDetails;
+public class MyViewHolder extends RecyclerView.ViewHolder {
+    private final Button btnViewDetails1;
+    private final TextView textViewLabelPayment;
+    private final TextView mTextViewDueDateLabel;
+    private final TextView textViewPaymentLabel;
+    public TextView textViewDate;
+    public TextView textViewPaymentValue;
+    public Button btnViewDetails;
 
-        private TextView mTextViewRPValue;
-        private TextView mTextViewDueDate;
-        //private Button mButtonViewDetails;
-        private TextView mButtonPayNow;
-        private LinearLayout noticeboard_row_fee_holder;
-        private LinearLayout noticeboard_row_activity_fee_row_holder;
+    private TextView mTextViewRPValue;
+    private TextView mTextViewDueDate;
+    //private Button mButtonViewDetails;
+    private TextView mButtonPayNow;
+    private LinearLayout noticeboard_row_fee_holder;
+    private LinearLayout noticeboard_row_activity_fee_row_holder;
 
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            textViewLabelPayment = (TextView)itemView.findViewById(R.id.textview_fee_row_part_payment);
-            textViewDate = (TextView) itemView.findViewById(R.id.textview_fee_row_date_vaule);
-            textViewPaymentValue = (TextView) itemView.findViewById(R.id.textview_fee_row_part_payment_value);
-            btnViewDetails = (Button) itemView.findViewById(R.id.btn_download_details);//for download
-            btnViewDetails1 = (Button) itemView.findViewById(R.id.btn_download_details1);//for download
-            noticeboard_row_activity_fee_row_holder = (LinearLayout) itemView.findViewById(R.id.lin_noticeboard_row_activity_fee_row_holder);
+    public MyViewHolder(View itemView) {
+        super(itemView);
+        textViewLabelPayment = (TextView) itemView.findViewById(R.id.textview_fee_row_part_payment);
+        textViewDate = (TextView) itemView.findViewById(R.id.textview_fee_row_date_vaule);
+        textViewPaymentValue = (TextView) itemView.findViewById(R.id.textview_fee_row_part_payment_value);
+        textViewPaymentLabel = (TextView) itemView.findViewById(R.id.textview_fee_row_part_payment);
 
-            //------------------------------------
-            mTextViewRPValue = (TextView) itemView.findViewById(R.id.textview_fee_rp_value);
-            mTextViewDueDate = (TextView) itemView.findViewById(R.id.textview_duedate_value);
-            mTextViewDueDateLabel = (TextView) itemView.findViewById(R.id.textview_duedate);
-            mButtonPayNow = (TextView) itemView.findViewById(R.id.btn_view_pay_now);
-            noticeboard_row_fee_holder = (LinearLayout) itemView.findViewById(R.id.lin_noticeboard_row_fee_holder);
+        btnViewDetails = (Button) itemView.findViewById(R.id.btn_download_details);//for download
+        btnViewDetails1 = (Button) itemView.findViewById(R.id.btn_download_details1);//for download
+        noticeboard_row_activity_fee_row_holder = (LinearLayout) itemView.findViewById(R.id.lin_noticeboard_row_activity_fee_row_holder);
 
-        }
+        //------------------------------------
+        mTextViewRPValue = (TextView) itemView.findViewById(R.id.textview_fee_rp_value);
+        mTextViewDueDate = (TextView) itemView.findViewById(R.id.textview_duedate_value);
+        mTextViewDueDateLabel = (TextView) itemView.findViewById(R.id.textview_duedate);
+        mButtonPayNow = (TextView) itemView.findViewById(R.id.btn_view_pay_now);
+        noticeboard_row_fee_holder = (LinearLayout) itemView.findViewById(R.id.lin_noticeboard_row_fee_holder);
+
     }
+}
 }
