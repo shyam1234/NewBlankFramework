@@ -156,7 +156,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.textview_timetable_date:
                 showPopupCalender(getContext());
-                fetchDataFromServer();
+                //fetchDataFromServer();
                 break;
         }
 
@@ -173,6 +173,7 @@ public class TimeTableFragment extends Fragment implements View.OnClickListener 
                         .append(" ").toString());
                 AppLog.log("Time::: " + str);
                 mTextViewDate.setText(str);
+                fetchDataFromServer();
             }
         }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
     }
