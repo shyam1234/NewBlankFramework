@@ -609,6 +609,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
                                 editText.setText("");
                                 Toast.makeText(NewsDetails.this, R.string.msg_success_msg_post, Toast.LENGTH_SHORT).show();
                                 fetchCommentDataFromServer(2);
+                                updateDBForCommentsCount();
                             } else {
                                 Toast.makeText(NewsDetails.this, R.string.msg_network_prob, Toast.LENGTH_SHORT).show();
                             }
@@ -627,6 +628,7 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
             Toast.makeText(NewsDetails.this, R.string.msg_validate_comment, Toast.LENGTH_SHORT).show();
         }
     }
+
 
     public void setLangSelection() {
         Utils.langConversion(NewsDetails.this, mTextViewTitle, new String[]{WSContant.TAG_LANG_DETAILS}, getString(R.string.tab_news), UserInfo.lang_pref);
@@ -657,15 +659,37 @@ public class NewsDetails extends BaseActivity implements View.OnClickListener, V
 
     private void saveLikeIntoDB(int value) {
         try {
-            TableNewsMaster table = new TableNewsMaster();
-            table.openDB(this);
-            table.updateLikedByMe(value, UserInfo.studentId, mReferenceId);
-            table.closeDB();
-            mNewsMasterDataModel.setLikedByMe(value);
+            if (mNewsMasterDataModel.getTotalComments() != null && mNewsMasterDataModel.getTotalComments().length() > 0) {
+                TableNewsMaster table = new TableNewsMaster();
+                table.openDB(this);
+                table.updateLikedByMe(value, UserInfo.studentId, mReferenceId);
+                if (value == 1) {
+                    //liked
+                    table.setTotalLikes(mReferenceId, Integer.parseInt(mNewsMasterDataModel.getTotalLikes()) + 1);
+                } else {
+                    //unliked
+                    table.setTotalLikes(mReferenceId, Integer.parseInt(mNewsMasterDataModel.getTotalLikes()) - 1);
+                }
+                table.closeDB();
+                mNewsMasterDataModel.setLikedByMe(value);
+            }
         } catch (Exception e) {
             AppLog.errLog(TAG, e.getMessage());
         }
     }
 
+
+    private void updateDBForCommentsCount() {
+        try {
+            if (mNewsMasterDataModel.getTotalComments() != null && mNewsMasterDataModel.getTotalComments().length() > 0) {
+                TableNewsMaster table = new TableNewsMaster();
+                table.openDB(this);
+                table.setTotalComments(mReferenceId, Integer.parseInt(mNewsMasterDataModel.getTotalComments()) + 1);
+                table.closeDB();
+            }
+        } catch (Exception e) {
+            AppLog.errLog(TAG, e.getMessage());
+        }
+    }
 
 }

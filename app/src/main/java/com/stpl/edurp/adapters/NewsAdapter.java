@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.stpl.edurp.R;
@@ -59,8 +60,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         holder.textViewLike.setText(mList.get(position).getTotalLikes());
         holder.textViewComment.setText(mList.get(position).getTotalComments());
         //--------------------------------------------------------------
-        holder.imageViewRhumbnil.setOnClickListener(mListener);
-        holder.imageViewRhumbnil.setTag(position);
+        holder.lin_holder.setOnClickListener(mListener);
+        holder.lin_holder.setTag(position);
         //Utils.langConversion(mContext, holder.textViewTag, WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref);
         holder.textViewTag.setText(Utils.getLangConversion(WSContant.TAG_LANG_NEWS, mList.get(position).getMenuCode(), UserInfo.lang_pref));
         AppLog.log("getLikedByMe ",""+mList.get(position).getLikedByMe());
@@ -83,17 +84,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView textViewRefTitle;
-        public TextView textViewPublishBy;
-        public TextView textViewPublishedTime;
-        public ImageView imageViewRhumbnil;
-        public WebView webviewShortBody;
-        public ImageView imageViewTag;
-        public ImageView imageViewLike;
-        public ImageView imageViewComment;
-        public TextView textViewTag;
-        public TextView textViewLike;
-        public TextView textViewComment;
+        private final LinearLayout lin_holder;
+        private final TextView textViewRefTitle;
+        private final TextView textViewPublishBy;
+        private final TextView textViewPublishedTime;
+        private final ImageView imageViewRhumbnil;
+        private final WebView webviewShortBody;
+        private final ImageView imageViewTag;
+        private final ImageView imageViewLike;
+        private final ImageView imageViewComment;
+        private final TextView textViewTag;
+        private final TextView textViewLike;
+        private final TextView textViewComment;
 
 
         public MyViewHolder(View itemView) {
@@ -114,6 +116,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
             webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+
+            lin_holder = (LinearLayout)itemView.findViewById(R.id.lin_news_row_holder);
         }
     }
 }

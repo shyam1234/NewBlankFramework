@@ -142,7 +142,7 @@ public class NewsFragment extends Fragment implements View.OnClickListener {
             case R.id.imageview_back:
                 getActivity().onBackPressed();
                 break;
-            case R.id.imageview_news_row_thumbnil:
+            case R.id.lin_news_row_holder:
                 int position = (Integer) view.getTag();
                 //on banner click redirect to detail page
                 navigateToNextPage(position);

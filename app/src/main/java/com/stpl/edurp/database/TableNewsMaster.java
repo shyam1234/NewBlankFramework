@@ -73,12 +73,12 @@ public class TableNewsMaster {
     //  + " FOREIGN KEY ("+TASK_CAT+") REFERENCES "+CAT_TABLE+"("+CAT_ID+"));";
 
 
-    public synchronized  void openDB(Context pContext) {
+    public synchronized void openDB(Context pContext) {
         DatabaseHelper helper = DatabaseHelper.getInstance(pContext);
         mDB = helper.getWritableDatabase();
     }
 
-    public  synchronized void closeDB() {
+    public synchronized void closeDB() {
         if (mDB != null) {
             mDB = null;
         }
@@ -86,7 +86,7 @@ public class TableNewsMaster {
 
     //--------------------------------------------------------------------------------------------------------------------
 
-    public synchronized  void dropTable() {
+    public synchronized void dropTable() {
         try {
             if (mDB != null) {
                 mDB.execSQL(DROP_TABLE);
@@ -98,7 +98,7 @@ public class TableNewsMaster {
         }
     }
 
-    public  synchronized void reset() {
+    public synchronized void reset() {
         try {
             if (mDB != null) {
                 mDB.execSQL(TRUNCATE_TABLE);
@@ -112,7 +112,7 @@ public class TableNewsMaster {
 
     //---------------------------------------------------------------------------------------
 
-    public  synchronized void insert(ArrayList<TableNewsMasterDataModel> list) {
+    public synchronized void insert(ArrayList<TableNewsMasterDataModel> list) {
         try {
             if (mDB != null) {
                 for (TableNewsMasterDataModel holder : list) {
@@ -150,7 +150,7 @@ public class TableNewsMaster {
     }
 
 
-    public  synchronized boolean isExists(TableNewsMasterDataModel model) {
+    public synchronized boolean isExists(TableNewsMasterDataModel model) {
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "
                     + COL_MENUCODE + " = '" + model.getMenuCode() + "' and "
@@ -171,7 +171,7 @@ public class TableNewsMaster {
         return false;
     }
 
-    public  synchronized boolean deleteRecord(TableNewsMasterDataModel holder) {
+    public synchronized boolean deleteRecord(TableNewsMasterDataModel holder) {
         try {
             if (mDB != null) {
                 long row = mDB.delete(TABLE_NAME, /*COL_PUBLISHEDON + "=? and " +*/ COL_MENUCODE + "=? and " + COL_PARENTID + "=? and " + COL_STUDENTID + "=? and " + COL_REFERENCEID + "=?", new String[]{/*"" + holder.getPublishedOn(),*/ "" + holder.getMenuCode(), "" + holder.getParentId(), "" + holder.getStudentId(), "" + holder.getReferenceId()});
@@ -187,12 +187,12 @@ public class TableNewsMaster {
     }
 
 
-    public  synchronized boolean insertMessageBody(String pRefId, String pMessageBody) {
+    public synchronized boolean insertMessageBody(String pRefId, String pMessageBody) {
         try {
             if (mDB != null) {
                 ContentValues value = new ContentValues();
                 value.put(COL_NEWSBODY, pMessageBody);
-                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and "+COL_STUDENTID+ "=?", new String[]{""+pRefId,""+ UserInfo.studentId});
+                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and " + COL_STUDENTID + "=?", new String[]{"" + pRefId, "" + UserInfo.studentId});
                 AppLog.log(TAG, "insertMessageBody row " + row);
                 return true;
             } else {
@@ -206,12 +206,12 @@ public class TableNewsMaster {
     }
 
 
-    public  synchronized ArrayList<TableNewsMasterDataModel> getDataByStudent(int pStudent) {
+    public synchronized ArrayList<TableNewsMasterDataModel> getDataByStudent(int pStudent) {
         ArrayList<TableNewsMasterDataModel> mNewsList = new ArrayList<>();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_STUDENTID + " = '" + pStudent
                     + "' and " + COL_EXPIRYDATE + " >= '" + Utils.getCurrTimeYYYYMMDDOOOOOO() + "'";
-            AppLog.log(TAG,"getDataByStudent selectQuery: "+selectQuery);
+            AppLog.log(TAG, "getDataByStudent selectQuery: " + selectQuery);
             Cursor cursor = mDB.rawQuery(selectQuery, null);
             if (cursor.moveToFirst()) {
                 do {
@@ -246,14 +246,14 @@ public class TableNewsMaster {
         return mNewsList;
     }
 
-    public  synchronized TableNewsMasterDataModel getNews(int pStudent, int pReferenceId) {
+    public synchronized TableNewsMasterDataModel getNews(int pStudent, int pReferenceId) {
         TableNewsMasterDataModel holder = new TableNewsMasterDataModel();
         try {
             String selectQuery = "SELECT * FROM " + TABLE_NAME + " WHERE "
                     + COL_STUDENTID + " = '" + pStudent
                     + "' and " + COL_REFERENCEID + " = '" + pReferenceId
                     + "' and " + COL_EXPIRYDATE + " >= '" + Utils.getCurrTimeYYYYMMDDOOOOOO() + "'";
-            AppLog.log(TAG,"getNews selectQuery: "+selectQuery);
+            AppLog.log(TAG, "getNews selectQuery: " + selectQuery);
             Cursor cursor = mDB.rawQuery(selectQuery, null);
             if (cursor.moveToFirst()) {
                 do {
@@ -286,12 +286,13 @@ public class TableNewsMaster {
         return holder;
     }
 
-    public  synchronized void updateLikedByMe(int pLikeValue, int studentId, int mReferenceId) {
+
+    public synchronized void updateLikedByMe(int pLikeValue, int studentId, int mReferenceId) {
         try {
             if (mDB != null) {
                 ContentValues value = new ContentValues();
                 value.put(COL_LIKEDBYME, pLikeValue);
-                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and "+COL_STUDENTID+ "=?", new String[]{""+mReferenceId,""+studentId});
+                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and " + COL_STUDENTID + "=?", new String[]{"" + mReferenceId, "" + studentId});
                 AppLog.log(TAG, "insertMessageBody row " + row);
             } else {
                 Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Need to open DB", Toast.LENGTH_SHORT).show();
@@ -300,6 +301,39 @@ public class TableNewsMaster {
             AppLog.errLog(TAG, "insertMessageBody from TableNewsMaster" + e.getMessage());
         }
     }
+
+
+    public synchronized void setTotalComments(int pRefId, int pTotalComments) {
+        try {
+            if (mDB != null) {
+                ContentValues value = new ContentValues();
+                value.put(COL_TOTALCOMMENTS, pTotalComments);
+                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and " + COL_STUDENTID + "=?", new String[]{"" + pRefId, "" + UserInfo.studentId});
+                AppLog.log(TAG, "setTotalComments row " + row);
+            } else {
+                Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Need to open DB", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setTotalComments from TableNewsMaster" + e.getMessage());
+        }
+    }
+
+
+    public synchronized void setTotalLikes(int pRefId, int pTotalLikes) {
+        try {
+            if (mDB != null) {
+                ContentValues value = new ContentValues();
+                value.put(COL_TOTALLIKES, pTotalLikes);
+                long row = mDB.update(TABLE_NAME, value, COL_REFERENCEID + "=? and " + COL_STUDENTID + "=?", new String[]{"" + pRefId, "" + UserInfo.studentId});
+                AppLog.log(TAG, "setTotalLikes row " + row);
+            } else {
+                Toast.makeText(MyApplication.getInstance().getApplicationContext(), "Need to open DB", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            AppLog.errLog(TAG, "setTotalLikes from TableNewsMaster" + e.getMessage());
+        }
+    }
+
 }
 
 
