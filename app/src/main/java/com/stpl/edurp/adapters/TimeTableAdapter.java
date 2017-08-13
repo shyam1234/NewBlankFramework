@@ -45,14 +45,16 @@ public class TimeTableAdapter extends RecyclerView.Adapter<TimeTableAdapter.MyVi
             holder.imageviewTimetableIcon.setImageResource(R.drawable.attended);
             holder.textViewRoomNR.setVisibility(View.GONE);
             holder.imageviewTimetableIcon.setVisibility(View.VISIBLE);
-        } else if (mList.get(position).getIsPresent().equalsIgnoreCase(WSContant.TAG_ABSENT)) {
+        } else if (mList.get(position).getIsPresent()!=null && mList.get(position).getIsPresent().equalsIgnoreCase(WSContant.TAG_ABSENT)) {
             holder.imageviewTimetableIcon.setImageResource(R.drawable.absent);
             holder.textViewRoomNR.setVisibility(View.GONE);
             holder.imageviewTimetableIcon.setVisibility(View.VISIBLE);
         } else {
-            holder.textViewRoomNR.setText(mList.get(position).getIsPresent());
-            holder.textViewRoomNR.setVisibility(View.VISIBLE);
-            holder.imageviewTimetableIcon.setVisibility(View.GONE);
+            if(mList.get(position).getIsPresent()!=null ) {
+                holder.textViewRoomNR.setText(mList.get(position).getIsPresent());
+                holder.textViewRoomNR.setVisibility(View.VISIBLE);
+                holder.imageviewTimetableIcon.setVisibility(View.GONE);
+            }
         }
     }
 
