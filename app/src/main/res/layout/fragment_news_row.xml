@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorWhite"
     android:layout_margin="@dimen/comm_margin"
+    android:background="@color/colorWhite"
     app:cardElevation="0.1dp"
     app:cardMaxElevation="1dp"
     app:cardUseCompatPadding="true">
@@ -14,16 +14,19 @@
         android:id="@+id/lin_news_row_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/comm_margin"
+        android:layout_marginTop="@dimen/comm_margin"
         android:background="@color/colorWhite"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="0dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageview_news_row_thumbnil"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginLeft="@dimen/comm_margin"
+            android:layout_marginRight="@dimen/comm_margin"
             android:scaleType="centerCrop"
             android:src="@drawable/image_placeholder" />
         <!-- android:background="@drawable/rectangle_border_black_with_corners"
@@ -32,6 +35,8 @@
             android:id="@+id/textview_news_row_reference_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/comm_margin"
+            android:layout_marginRight="@dimen/comm_margin"
             android:layout_marginTop="5dp"
             android:text="Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -39,7 +44,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/comm_margin"
+            android:layout_marginRight="@dimen/comm_margin">
 
             <TextView
                 android:id="@+id/textview_news_row_published_time"
@@ -68,6 +75,8 @@
             android:id="@+id/webview_news_row_shortbody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_marginTop="5dp"
             tools:ignore="WebViewLayout"></WebView>
 

@@ -7,9 +7,9 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
+        android:background="@color/colorWhite"
         android:orientation="vertical">
 
         <include
@@ -93,24 +93,23 @@
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
                             android:textColor="@color/colorLightGray" />
                     </RelativeLayout>
-
-                    <WebView
-                        android:id="@+id/webview_news_row_body"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/rel_news_details"
-                        tools:ignore="WebViewLayout"></WebView>
                 </RelativeLayout>
 
+                <WebView
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:id="@+id/webview_news_row_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="WebViewLayout"></WebView>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview_news_details"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </android.support.v7.widget.RecyclerView>
+                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView >
+        </android.support.v4.widget.NestedScrollView>
 
 
         <LinearLayout

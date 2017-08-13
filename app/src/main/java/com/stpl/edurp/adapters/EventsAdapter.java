@@ -96,6 +96,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
             webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            webviewShortBody.getSettings().setJavaScriptEnabled(true);
             webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         }
     }
