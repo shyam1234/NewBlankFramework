@@ -124,6 +124,8 @@
     <string name="faculty">Faculty</string>
     <string name="msg_select_lang">Please Select Language</string>
     <string name="msg_downloading_file">Downloading file. Please wait...</string>
+    <string name="assign_by">Assign by</string>
+    <string name="accept">Accept</string>
 
     <string-array name="array_language">
         <!--<item>@string/select_lang</item>-->

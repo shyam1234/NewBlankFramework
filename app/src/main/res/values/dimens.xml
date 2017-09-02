@@ -12,4 +12,5 @@
     <dimen name="padding_option">15dp</dimen>
     <dimen name="spinner_language_min_h">30dp</dimen>
     <dimen name="inc_university_header_wh">54dp</dimen>
+    <dimen name="comm_card_padding">12dp</dimen>
 </resources>

@@ -13,7 +13,7 @@ android {
                                 // Project number pulled from dashboard, local value is ignored.
                                 onesignal_google_project_number: "REMOTE"]
         //"56691156-d5c3-475b-ab8b-fe1b479f70d5"
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        //testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -46,10 +46,5 @@ dependencies {
     // Required for OneSignal, even if you have added FCM.
     compile 'com.google.android.gms:play-services-gcm:10.2.4'
     compile 'net.bohush.geometricprogressview:geometricprogressview:1.1.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'design'
-        exclude group: 'com.android.support', module: 'recyclerview-v7'
-    }
+
 }

@@ -293,14 +293,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     fragment4.setArguments(bundle);
                 Utils.navigateFragmentMenu(getFragmentManager(), fragment4, ResultFragment.TAG);
                 break;
-            case Constant.TAG_DIARY:
-                //Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
-                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                break;
-            case Constant.TAG_EVENTS:
-                //running Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
-                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                break;
             case Constant.TAG_FEE:
                 FeeFragment fragment5 = new FeeFragment();
                 bundle = new Bundle();
@@ -319,10 +311,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case Constant.TAG_MESSAGE:
                 //Utils.navigateFragmentMenu(getFragmentManager(), new MessageFragment(), MessageFragment.TAG);
-                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-                break;
-            case Constant.TAG_HOMEWORK:
-                //.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
                 Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_PAYSLIP:
@@ -346,6 +334,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case Constant.TAG_TRANSPORT:
                 //Utils.navigateFragmentMenu(getFragmentManager(), new FeedbackFragment(), FeedbackFragment.TAG);
                 Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_HOMEWORK:
+                //did not get design
+                Utils.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
+                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_DIARY:
+                Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
+                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                break;
+            case Constant.TAG_EVENTS:
+                 Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
+                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -46,6 +46,9 @@
     <color name="darkOrange">#BC6919</color>
     <color name="colorLightPlatinum">#33E5E4E2</color>
     <color name="colorDrakBlue">#003A63</color>
-
+    <color name="colorDivider">#E4E4E4</color>
+    <color name="colorDiaryText">#A0A0A0</color>
+    <color name="colorLighterGrayForCurve">#EDEDED</color>
+    <color name="colorBGForDiary">#F7F5F5</color>
 
 </resources>

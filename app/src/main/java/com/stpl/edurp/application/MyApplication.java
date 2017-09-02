@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.StrictMode;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -15,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.onesignal.OneSignal;
 import com.stpl.edurp.notification.EduRPNotificationOpenedHandler;
 import com.stpl.edurp.notification.EduRPNotificationReceivedHandler;
+import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 
@@ -26,6 +29,8 @@ import com.stpl.edurp.utils.SharedPreferencesApp;
 public class MyApplication extends Application {
     static final String TAG = MyApplication.class.getSimpleName();
     private static final int MY_SOCKET_TIMEOUT_MS = 20000;//20000;
+    public static int HEIGHT = 0;
+    public static int WIDTH = 0;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     private static MyApplication mInstance;
@@ -33,6 +38,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        init();
         //--for solving android.os.FileUriExposedException: file download and open
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
@@ -49,6 +55,16 @@ public class MyApplication extends Application {
         InternetManager myReceiver = new InternetManager();
         registerReceiver(myReceiver, filter);
         //---------------------------------------
+    }
+
+    private void init() {
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        final DisplayMetrics displayMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(displayMetrics);
+        HEIGHT = displayMetrics.heightPixels;
+        WIDTH = displayMetrics.widthPixels;
+        AppLog.log("Device WIDTH+++ "+WIDTH);
+        AppLog.log("Device HEIGHT+++ "+HEIGHT);
     }
 
     private void initOneSignalNotification() {
