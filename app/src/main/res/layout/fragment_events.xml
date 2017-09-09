@@ -12,14 +12,63 @@
         android:layout_height="wrap_content"
         android:visibility="visible"></include>
 
-    <include layout="@layout/inc_tabs" />
+    <RelativeLayout
+        android:id="@+id/rel_comment_like_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/lin_comment_like_page"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectangle_with_corners"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/textview_fragment_events_upcoming"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/upcoming"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorGreen" />
+
+
+            <TextView
+                android:id="@+id/textview_fragment_events_past"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/past"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/lin_comment_like_page_holder"
+        android:layout_below="@+id/rel_comment_like_page"
         android:background="@color/colorGrayTransparent"
-        android:padding="0dp"></android.support.v7.widget.RecyclerView>
-
+        android:padding="12dp"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

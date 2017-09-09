@@ -1,6 +1,7 @@
 package com.stpl.edurp.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,7 @@ import com.stpl.edurp.activities.DashboardActivity;
 import com.stpl.edurp.adapters.EventsAdapter;
 import com.stpl.edurp.models.TableNewsMasterDataModel;
 import com.stpl.edurp.utils.GetUILImage;
+import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
 
@@ -33,6 +35,9 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
     private RecyclerView mRecycleViewNews;
     private ArrayList<TableNewsMasterDataModel> mNewsList;
     private EventsAdapter mNewsAdapter;
+    private TextView mTextViewUpcomingTab;
+    private TextView mTextViewPastTab;
+    private Object comments;
 
     public EventsFragment() {
 
@@ -65,7 +70,7 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
         DashboardActivity.mHandler = new Handler(new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                switch ((Integer) msg.what) {
+                switch (msg.what) {
                     case 1:
                         //Toast.makeText(getContext(), "student id : " + UserInfo.studentId, Toast.LENGTH_SHORT).show();
                         DashboardActivity.mHandler.removeMessages(1);
@@ -94,6 +99,8 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
         //------------------------------------
         setListener();
         initRecyclerView();
+        //default selection of tab
+        getUpcoming();
     }
 
 
@@ -103,8 +110,12 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setSmoothScrollbarEnabled(true);
         mRecycleViewNews.setLayoutManager(manager);
-        mNewsAdapter = new EventsAdapter(getContext(), mNewsList, this);
-        mRecycleViewNews.setAdapter(mNewsAdapter);
+        //----------------------------------------------
+        mTextViewUpcomingTab = (TextView) getView().findViewById(R.id.textview_fragment_events_upcoming);
+        mTextViewPastTab = (TextView) getView().findViewById(R.id.textview_fragment_events_past);
+        mTextViewUpcomingTab.setOnClickListener(this);
+        mTextViewPastTab.setOnClickListener(this);
+        //-----------------------------------
     }
 
     private void setListener() {
@@ -118,6 +129,16 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
             case R.id.imageview_back:
                 getActivity().onBackPressed();
                 break;
+            case R.id.textview_fragment_events_upcoming:
+                if (InternetManager.isInternetConnected(getContext())) {
+                    getUpcoming();
+                }
+                break;
+            case R.id.textview_fragment_events_past:
+                if (InternetManager.isInternetConnected(getContext())) {
+                    getPast();
+                }
+                break;
         }
     }
 
@@ -130,4 +151,23 @@ public class EventsFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    private void getPast() {
+        mTextViewPastTab.setBackgroundResource(R.drawable.filled_rect_white);
+        mTextViewUpcomingTab.setBackgroundColor(Color.TRANSPARENT);
+        mTextViewPastTab.setTextColor(getResources().getColor(R.color.colorGreen));
+        mTextViewUpcomingTab.setTextColor(getResources().getColor(R.color.colorWhite));
+        mNewsAdapter = new EventsAdapter(getContext(), mNewsList, this);
+        mRecycleViewNews.setAdapter(mNewsAdapter);
+
+    }
+
+    private void getUpcoming() {
+        // mTextViewUpcomingTab.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        mTextViewUpcomingTab.setBackgroundResource(R.drawable.filled_rect_white);
+        mTextViewPastTab.setBackgroundColor(Color.TRANSPARENT);
+        mTextViewUpcomingTab.setTextColor(getResources().getColor(R.color.colorGreen));
+        mTextViewPastTab.setTextColor(getResources().getColor(R.color.colorWhite));
+        mNewsAdapter = new EventsAdapter(getContext(), mNewsList, this);
+        mRecycleViewNews.setAdapter(mNewsAdapter);
+    }
 }
