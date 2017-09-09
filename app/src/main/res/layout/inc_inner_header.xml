@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"
         android:src="@drawable/back" />
 
-    <TextView
+    <com.stpl.edurp.utils.FontTextView
         android:id="@+id/textview_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

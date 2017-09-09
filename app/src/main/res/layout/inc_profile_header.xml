@@ -20,7 +20,7 @@
             android:padding="8dp"
             android:src="@drawable/male_profile_holder" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_profile_header_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             android:textColor="@color/colorWhite"
             android:textStyle="bold" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_profile_header_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

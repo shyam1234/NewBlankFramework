@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             android:textColor="@color/colorBlue"
             android:textStyle="normal" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_result_row_admin_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -52,7 +52,7 @@
                 android:gravity="left"
                 android:orientation="vertical">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_row_subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                     android:textColor="@color/colorTextHint"
                     android:textStyle="normal" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_results_sem_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_row_grade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
                     android:textColor="@color/colorTextHint"
                     android:textStyle="normal" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_row_grade_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
                 android:gravity="right"
                 android:orientation="vertical">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_row_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                     android:textColor="@color/colorTextHint"
                     android:textStyle="normal" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_row_result_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/tag_red" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_result_row_tag_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

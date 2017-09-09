@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_fee_row_date_vaule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_fee_row_part_payment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorBlack" />
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_fee_row_part_payment_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

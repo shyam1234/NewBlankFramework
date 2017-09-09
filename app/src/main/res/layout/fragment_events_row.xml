@@ -38,7 +38,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_frag_events_row_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                     android:textColor="@color/colorBlack"
                     android:textStyle="bold" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_frag_events_row_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_frag_events_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/attachment" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_frag_events_row_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/attachment" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_frag_events_row_event"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/share" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_attending"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/share" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_not_going"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

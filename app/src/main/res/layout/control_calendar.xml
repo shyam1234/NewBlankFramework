@@ -25,7 +25,7 @@
 			android:src="@drawable/previous_icon"/>
 
 		<!-- date title -->
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:id="@+id/calendar_date_display"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
 		android:gravity="center_vertical"
 		android:orientation="horizontal">
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -63,7 +63,7 @@
 			android:textColor="#222222"
 			android:text="SUN"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -71,7 +71,7 @@
 			android:textColor="#222222"
 			android:text="MON"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -79,7 +79,7 @@
 			android:textColor="#222222"
 			android:text="TUE"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -87,7 +87,7 @@
 			android:textColor="#222222"
 			android:text="WED"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -95,7 +95,7 @@
 			android:textColor="#222222"
 			android:text="THU"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
@@ -103,7 +103,7 @@
 			android:textColor="#222222"
 			android:text="FRI"/>
 
-		<TextView
+		<com.stpl.edurp.utils.FontTextView
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"

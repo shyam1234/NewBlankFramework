@@ -31,7 +31,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/share" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_options_share_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/setting" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_options_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/setting" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_options_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/logout" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_options_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

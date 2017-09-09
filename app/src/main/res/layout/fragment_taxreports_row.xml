@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
+    <com.stpl.edurp.utils.FontTextView
         android:id="@+id/textview_taxreports_row_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:paddingLeft="12dp"
         android:paddingRight="12dp">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_download_form_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         android:paddingLeft="12dp"
         android:paddingRight="12dp">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_download_computationsheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

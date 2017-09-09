@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/comments_like_icon" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:layout_marginLeft="8dp"
             android:id="@+id/textview_inc_bottom_like"
             android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/comment_sm_icon" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:layout_marginLeft="8dp"
             android:id="@+id/textview_inc_bottom_comment"
             android:layout_width="wrap_content"

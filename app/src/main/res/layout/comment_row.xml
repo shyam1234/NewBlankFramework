@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_comment_like_row_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

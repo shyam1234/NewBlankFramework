@@ -20,7 +20,7 @@
             android:layout_marginRight="5dp"
             android:orientation="vertical">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_timetable_time_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:textSize="16sp"
                 android:textStyle="normal" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_timetable_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:layout_below="@+id/lin_holder1"
             android:layout_centerVertical="true">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_timetable_faculty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorTextHint" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_timetable_faculty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:orientation="vertical">
 
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_timetable_NR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_timetable_room_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

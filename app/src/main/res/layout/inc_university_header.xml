@@ -38,7 +38,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_welcome_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:textColor="@color/colorBlack"
             android:visibility="visible" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_uni_header_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

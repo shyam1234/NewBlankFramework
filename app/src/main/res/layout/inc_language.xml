@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="0dp"></Spinner>
-    <!--<TextView
+    <!--<com.stpl.edurp.utils.FontTextView
         android:id="@+id/textview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:layout_toRightOf="@+id/textview1"
         android:gravity="center_horizontal" />
 
-    <TextView
+    <com.stpl.edurp.utils.FontTextView
         android:id="@+id/textview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

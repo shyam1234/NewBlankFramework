@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorWhite">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_result_del_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/colorTextHint" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_result_del_sem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                 android:layout_weight="0.5"
                 android:gravity="center">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/colorTextHint" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_details_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                 android:layout_weight="0.5"
                 android:gravity="center">
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/colorTextHint" />
 
-                <TextView
+                <com.stpl.edurp.utils.FontTextView
                     android:id="@+id/textview_result_details_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

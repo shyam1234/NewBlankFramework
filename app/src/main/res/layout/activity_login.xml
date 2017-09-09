@@ -93,7 +93,7 @@
     </ScrollView>
 
 
-    <TextView
+    <com.stpl.edurp.utils.FontTextView
         android:id="@+id/textview_forgot_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

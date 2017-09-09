@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:padding="@dimen/comm_padding">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorWhite" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

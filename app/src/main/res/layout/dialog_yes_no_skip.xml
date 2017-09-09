@@ -25,7 +25,7 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:layout_marginTop="45dp"
                 android:id="@+id/textview_message"
                 android:layout_width="match_parent"

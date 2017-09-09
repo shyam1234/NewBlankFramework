@@ -22,7 +22,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_name_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/dashboardTextColor" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_name_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_email_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/dashboardTextColor" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_email_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_phone_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/dashboardTextColor" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_lang_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

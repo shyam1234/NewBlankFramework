@@ -34,7 +34,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_fee_rp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorBlue" />
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_fee_rp_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_duedate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                         android:textColor="@color/colorLightGray" />
 
 
-                    <TextView
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_duedate_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

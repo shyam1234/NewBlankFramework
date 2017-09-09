@@ -18,7 +18,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="@color/colorTextHint" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_attendance_course_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_term"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="@color/colorTextHint" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_attendance_term_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

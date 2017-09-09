@@ -27,7 +27,7 @@
             android:weightSum="1">
 
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_comment_like_page_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
                 android:textColor="@color/colorGreen" />
 
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_comment_like_page_like"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

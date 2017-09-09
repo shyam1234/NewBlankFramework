@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"
         android:src="@drawable/previous_icon" />
 
-    <TextView
+    <com.stpl.edurp.utils.FontTextView
         android:gravity="center"
         android:id="@+id/textview_timetable_date"
         android:layout_width="match_parent"

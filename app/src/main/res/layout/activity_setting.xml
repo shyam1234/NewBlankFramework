@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_setting_download_offline_coontent_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_setting_download_wifi_connect_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_setting_allow_puch_notification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/comm_card_padding">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_diary_row_holder_1_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
                 android:textColor="@color/colorBlue"
                 android:textStyle="normal" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_diary_row_holder_1_subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             android:paddingRight="@dimen/comm_card_padding"
             android:paddingTop="4dp">
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_diary_row_assign_by"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                 android:textColor="@color/colorDiaryText" />
 
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_diary_row_assign_by_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                 android:textColor="@color/colorDiaryText"
                 android:textStyle="bold" />
 
-            <TextView
+            <com.stpl.edurp.utils.FontTextView
                 android:id="@+id/textview_diary_row_due_today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

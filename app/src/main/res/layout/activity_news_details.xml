@@ -57,8 +57,7 @@
                         android:gravity="center"
                         android:orientation="horizontal" />
 
-                    <TextView
-
+                    <com.stpl.edurp.utils.FontTextView
                         android:id="@+id/textview_news_details_reference_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -74,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textview_news_details_reference_title">
 
-                        <TextView
+                        <com.stpl.edurp.utils.FontTextView
                             android:id="@+id/textview_news_details_published_by"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -82,7 +81,7 @@
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                             android:textColor="@color/colorLightGray" />
 
-                        <TextView
+                        <com.stpl.edurp.utils.FontTextView
                             android:id="@+id/textview_news_details_published_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

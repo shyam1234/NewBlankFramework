@@ -27,7 +27,7 @@
         android:orientation="vertical"
         android:paddingBottom="5dp">
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_ward_row_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:textColor="@color/colorBlack"
             android:textAppearance="@android:style/TextAppearance.Small" />
 
-        <TextView
+        <com.stpl.edurp.utils.FontTextView
             android:id="@+id/textview_ward_row_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
