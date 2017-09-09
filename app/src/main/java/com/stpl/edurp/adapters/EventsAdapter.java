@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.models.TableNewsMasterDataModel;
@@ -26,7 +28,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         mContext = context;
         mList = pList;
         mListener = pListener;
-        AppLog.log(TAG," +++ EventsAdapter +pList.size()+++ "+pList.size());
+        AppLog.log(TAG, " +++ EventsAdapter +pList.size()+++ " + pList.size());
     }
 
     @Override
@@ -38,7 +40,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        AppLog.log(TAG," +++ onBindViewHolder ++++ ");
+        AppLog.log(TAG, " +++ onBindViewHolder ++++ ");
 //        //String url ="https://edurpstorage.blob.core.windows.net/edurpcontainer/DEV/1/61/103?sv=2015-12-11&sr=b&sig=kPNs9zkQw0v1bqiNnvBkpjRY40ve6qm0%2BDak3zl26Xk%3D&se=2017-03-04T14%3A27%3A34Z&sp=rwl&rscd=attachment%3B%20filename%3Dimages.jpg";
 //       // GetPicassoImage.setImage(mContext,url,holder.imageViewRhumbnil);
 //        GetPicassoImage.setImage(mContext,mList.get(position).getThumbNailPath(),holder.imageViewRhumbnil);
@@ -58,42 +60,30 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
     @Override
     public int getItemCount() {
         //return mList.size();
-        return 10;
+        return 5;
     }
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-//        public TextView textViewRefTitle;
-//        public TextView textViewPublishBy;
-//        public TextView textViewPublishedTime;
-//        public ImageView imageViewRhumbnil;
-//       // public WebView webviewShortBody;
-//        public ImageView imageViewTag;
-//        public ImageView imageViewLike;
-//        public ImageView imageViewComment;
-//        public TextView textViewTag;
-//        public TextView textViewLike;
-//        public TextView textViewComment;
-
+        private final ImageView imageview_banner;
+        private final TextView textview_month;
+        private final TextView textview_date;
+        private final TextView textview_time;
+        private final TextView textview_venue;
+        private final TextView textview_description;
+        private final TextView textview_attending;
+        private final TextView textview_not_going;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-           /* imageViewRhumbnil = (ImageView) itemView.findViewById(R.id.imageview_news_row_thumbnil);
-            textViewRefTitle = (TextView) itemView.findViewById(R.id.textview_news_row_reference_title);
-            textViewPublishBy = (TextView) itemView.findViewById(R.id.textview_news_row_published_by);
-            textViewPublishedTime = (TextView) itemView.findViewById(R.id.textview_news_row_published_time);
-            webviewShortBody = (WebView) itemView.findViewById(R.id.c);
-            imageViewTag = (ImageView) itemView.findViewById(R.id.imageview_bottom_tag);
-            imageViewLike = (ImageView) itemView.findViewById(R.id.imageview_bottom_like);
-            imageViewComment = (ImageView) itemView.findViewById(R.id.imageview_bottom_comment);
-            textViewTag = (TextView) itemView.findViewById(R.id.textview_inc_bottom_tag);
-            textViewLike = (TextView) itemView.findViewById(R.id.textview_inc_bottom_like);
-            textViewComment = (TextView) itemView.findViewById(R.id.textview_inc_bottom_comment);
-
-            webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-            webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-            webviewShortBody.getSettings().setJavaScriptEnabled(true);
-            webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);*/
+            imageview_banner = (ImageView) itemView.findViewById(R.id.image_events_row_banner);
+            textview_month = (TextView) itemView.findViewById(R.id.textview_frag_events_row_month);
+            textview_date = (TextView) itemView.findViewById(R.id.textview_frag_events_row_date);
+            textview_description = (TextView) itemView.findViewById(R.id.textview_frag_events_description);
+            textview_time = (TextView) itemView.findViewById(R.id.textview_frag_events_row_time);
+            textview_venue = (TextView) itemView.findViewById(R.id.textview_frag_events_row_event);
+            textview_attending = (TextView) itemView.findViewById(R.id.textview_attending);
+            textview_not_going = (TextView) itemView.findViewById(R.id.textview_not_going);
         }
     }
 }

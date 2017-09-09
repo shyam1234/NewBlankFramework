@@ -96,7 +96,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
             @Override
             public void run() {
                 AppLog.log("mCalendarView.getHeight() " + mCalendarView.getHeight());
-                mBottomSheetBehavior1.setPeekHeight(mCalendarView.getHeight() - 190);
+                mBottomSheetBehavior1.setPeekHeight(mCalendarView.getHeight() - 195);
             }
         });
 
