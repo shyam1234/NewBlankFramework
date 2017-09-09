@@ -12,9 +12,7 @@
 
         <include
             android:id="@+id/inc_news"
-            layout="@layout/fragment_news_row"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></include>
+            layout="@layout/fragment_news_row"></include>
 
     </LinearLayout>
 
@@ -26,9 +24,7 @@
 
         <include
             android:id="@+id/inc_fee"
-            layout="@layout/fragment_fee"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></include>
+            layout="@layout/fragment_fee"></include>
 
     </LinearLayout>
 
@@ -40,9 +36,7 @@
 
         <include
             android:id="@+id/inc_activity_fee_row"
-            layout="@layout/activity_fee_row"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></include>
+            layout="@layout/activity_fee_row"></include>
 
     </LinearLayout>
 
@@ -55,9 +49,7 @@
 
         <include
             android:id="@+id/inc_result_row"
-            layout="@layout/result_row"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></include>
+            layout="@layout/result_row"></include>
 
     </LinearLayout>
 

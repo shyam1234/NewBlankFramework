@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorGrayTransparent"
     android:orientation="vertical">
-
-
     <include
         android:id="@+id/inc_results"
         layout="@layout/inc_main_header"

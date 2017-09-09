@@ -4,9 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorWhite"
+    app:cardCornerRadius="10dp"
+    android:layout_marginLeft="@dimen/comm_margin"
+    android:layout_marginRight="@dimen/comm_margin"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
     app:cardElevation="0.1dp"
-    app:cardMaxElevation="1dp"
-    app:cardUseCompatPadding="true">
+    app:cardMaxElevation="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"

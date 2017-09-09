@@ -63,7 +63,7 @@ public class FeeAdapter extends RecyclerView.Adapter<FeeAdapter.MyViewHolder> {
             if (mList.get(position).getTotalDue() != null
                     && mList.get(position).getTotalDue().length() > 0){
                 String number = mList.get(position).getTotalDue().replace("Rp",""); //Rp 0.00
-                if (Double.parseDouble(number.trim()) == 0) {
+                if (number.equalsIgnoreCase("")) {
                     holder.textViewPaymentLabel.setVisibility(View.GONE);
                     holder.textViewPaymentValue.setVisibility(View.GONE);
                 }
