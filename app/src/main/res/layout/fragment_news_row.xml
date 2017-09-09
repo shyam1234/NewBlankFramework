@@ -9,7 +9,7 @@
     android:layout_marginRight="@dimen/comm_margin"
     android:layout_marginTop="4dp"
     android:background="@color/colorWhite"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="1dp"
     app:cardMaxElevation="1dp">
 
@@ -17,8 +17,6 @@
         android:id="@+id/lin_news_row_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/comm_margin"
-        android:layout_marginTop="@dimen/comm_margin"
         android:background="@color/colorWhite"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
@@ -27,9 +25,7 @@
         <ImageView
             android:id="@+id/imageview_news_row_thumbnil"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="@dimen/comm_margin"
-            android:layout_marginRight="@dimen/comm_margin"
+            android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:src="@drawable/image_placeholder" />
         <!-- android:background="@drawable/rectangle_border_black_with_corners"
@@ -82,6 +78,11 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             tools:ignore="WebViewLayout"></WebView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/colorLightGray"></View>
 
         <include layout="@layout/inc_bottom_tag_comment_like"></include>
     </LinearLayout>

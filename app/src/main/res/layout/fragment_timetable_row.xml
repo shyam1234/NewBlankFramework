@@ -7,7 +7,7 @@
     android:layout_marginLeft="@dimen/comm_margin"
     android:layout_marginRight="@dimen/comm_margin"
     android:layout_marginTop="4dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="@dimen/card_corner_radius">
 
     <RelativeLayout
         android:id="@+id/rel_timetable_row"

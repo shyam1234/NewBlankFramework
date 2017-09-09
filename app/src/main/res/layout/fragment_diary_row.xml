@@ -4,7 +4,7 @@
     android:id="@+id/cardview_diary_row_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="@dimen/card_corner_radius"
     android:layout_marginLeft="@dimen/comm_margin"
     android:layout_marginRight="@dimen/comm_margin"
     android:layout_marginTop="4dp"

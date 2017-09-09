@@ -3,13 +3,13 @@
     android:id="@+id/lin_bottom_tag"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/comm_margin"
-    android:layout_marginRight="@dimen/comm_margin"
     android:background="@color/colorWhite"
     android:gravity="center_horizontal"
     android:orientation="horizontal"
-    android:paddingBottom="8dp"
-    android:paddingTop="8dp"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:weightSum="3">
 
 

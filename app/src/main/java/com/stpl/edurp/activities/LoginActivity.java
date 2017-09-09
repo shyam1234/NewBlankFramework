@@ -94,10 +94,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         //----------------------------------------------------
         setListner();
-        //cheat code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ++
-        /*For parent*/
-        mEditTextUserName.setText("divyaparent1@gmail.com");
-        mEditTextPassword.setText("login@123");
+        //cheat code
+        if (AppLog.FLAG_LOG) {
+            /*For parent*/
+            mEditTextUserName.setText("divyaparent1@gmail.com");
+            mEditTextPassword.setText("login@123");
         /*For employee*/
 //        mEditTextUserName.setText("divyaemp1@gmail.com");
 //        mEditTextPassword.setText("89156");
@@ -105,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        mEditTextPassword.setText("login@123");
 //        mEditTextUserName.setText("harshaparent@gmail.com");
 //        mEditTextPassword.setText("96968");
+        }
     }
 
 
