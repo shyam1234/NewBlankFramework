@@ -1,22 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_diary_row_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="4dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:layout_marginLeft="@dimen/comm_margin"
+    android:layout_marginRight="@dimen/comm_margin"
     android:layout_marginTop="4dp"
-    android:elevation="1dp"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="0dp">
+    app:cardCornerRadius="10dp">
 
     <RelativeLayout
+        android:id="@+id/rel_diary_row_holder_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorWhite">
+        android:layout_height="wrap_content">
 
-        <include layout="@layout/inc_diary_fragment_row_attachment"></include>
+        <RelativeLayout
+            android:id="@+id/rel_diary_row_holder_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/comm_card_padding">
 
+            <TextView
+                android:id="@+id/textview_diary_row_holder_1_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlue"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textview_diary_row_holder_1_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_diary_row_holder_1_title"
+                android:layout_marginTop="5dp"
+                android:text="SubTitle"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_diary_row_holder_1_subtitle"
+                android:layout_marginTop="10dp">
+
+                <com.stpl.edurp.utils.ExpandableHeightGridView
+                    android:id="@+id/gridview_diary_row_attachment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="3"
+                    android:visibility="gone"></com.stpl.edurp.utils.ExpandableHeightGridView>
+
+                <Button
+                    android:id="@+id/btn_diary_row_accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_curve_with_gray_fill_color"
+                    android:text="@string/accept"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:visibility="visible" />
+
+
+                <EditText
+                    android:id="@+id/edittext_diary_row_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/btn_curve_with_gray_fill_color"
+                    android:gravity="top"
+                    android:hint="Type"
+                    android:padding="12dp"
+                    android:textAlignment="gravity"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColorHint="@color/colorLightGray"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_diary_row_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edittext_diary_row_comment"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/filled_rect_red"
+                    android:text="@string/accept"
+                    android:textColor="@color/colorWhite"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_below="@+id/rel_diary_row_holder_2"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorDivider"></View>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_divider_1"
+            android:paddingBottom="4dp"
+            android:paddingLeft="@dimen/comm_card_padding"
+            android:paddingRight="@dimen/comm_card_padding"
+            android:paddingTop="4dp">
+
+            <TextView
+                android:id="@+id/textview_diary_row_assign_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/assign_by"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorDiaryText" />
+
+
+            <TextView
+                android:id="@+id/textview_diary_row_assign_by_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textview_diary_row_assign_by"
+                android:text="@string/name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorDiaryText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_diary_row_due_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textview_diary_row_assign_by_value"
+                android:gravity="right"
+                android:text="Due Today"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorLightRed"
+                android:textStyle="normal" />
+        </RelativeLayout>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

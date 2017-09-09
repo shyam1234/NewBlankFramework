@@ -6,11 +6,25 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <com.stpl.edurp.utils.CalendarView
-        android:id="@+id/calendar_diary"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.stpl.edurp.utils.CalendarView>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/inc_home_header"
+            layout="@layout/inc_main_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"></include>
+
+        <com.stpl.edurp.utils.CalendarView
+            android:id="@+id/calendar_diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.stpl.edurp.utils.CalendarView>
+
+    </LinearLayout>
 
     <include layout="@layout/inc_diary_bottomsheet"></include>
-
 </android.support.design.widget.CoordinatorLayout>

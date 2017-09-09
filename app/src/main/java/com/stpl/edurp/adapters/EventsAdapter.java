@@ -5,10 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.models.TableNewsMasterDataModel;
@@ -67,26 +63,26 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView textViewRefTitle;
-        public TextView textViewPublishBy;
-        public TextView textViewPublishedTime;
-        public ImageView imageViewRhumbnil;
-        public WebView webviewShortBody;
-        public ImageView imageViewTag;
-        public ImageView imageViewLike;
-        public ImageView imageViewComment;
-        public TextView textViewTag;
-        public TextView textViewLike;
-        public TextView textViewComment;
+//        public TextView textViewRefTitle;
+//        public TextView textViewPublishBy;
+//        public TextView textViewPublishedTime;
+//        public ImageView imageViewRhumbnil;
+//       // public WebView webviewShortBody;
+//        public ImageView imageViewTag;
+//        public ImageView imageViewLike;
+//        public ImageView imageViewComment;
+//        public TextView textViewTag;
+//        public TextView textViewLike;
+//        public TextView textViewComment;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            imageViewRhumbnil = (ImageView) itemView.findViewById(R.id.imageview_news_row_thumbnil);
+           /* imageViewRhumbnil = (ImageView) itemView.findViewById(R.id.imageview_news_row_thumbnil);
             textViewRefTitle = (TextView) itemView.findViewById(R.id.textview_news_row_reference_title);
             textViewPublishBy = (TextView) itemView.findViewById(R.id.textview_news_row_published_by);
             textViewPublishedTime = (TextView) itemView.findViewById(R.id.textview_news_row_published_time);
-            webviewShortBody = (WebView) itemView.findViewById(R.id.webview_news_row_shortbody);
+            webviewShortBody = (WebView) itemView.findViewById(R.id.c);
             imageViewTag = (ImageView) itemView.findViewById(R.id.imageview_bottom_tag);
             imageViewLike = (ImageView) itemView.findViewById(R.id.imageview_bottom_like);
             imageViewComment = (ImageView) itemView.findViewById(R.id.imageview_bottom_comment);
@@ -97,7 +93,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
             webviewShortBody.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             webviewShortBody.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
             webviewShortBody.getSettings().setJavaScriptEnabled(true);
-            webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+            webviewShortBody.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);*/
         }
     }
 }
