@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.stpl.edurp.R;
 import com.stpl.edurp.activities.ProfileActivity;
 import com.stpl.edurp.activities.SettingActivity;
+import com.stpl.edurp.application.MyApplication;
 import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.utils.GetUILImage;
 import com.stpl.edurp.utils.UserInfo;
@@ -82,6 +83,8 @@ public class OptionsFragment extends Fragment implements View.OnClickListener {
         setListener();
         setLangSelection();
 
+        TextView version_number = (TextView) getView().findViewById(R.id.textview_versionnumber);
+        version_number.setText("version name: "+MyApplication.getInstance().versionName+" version code: "+MyApplication.getInstance().versionCode);
     }
 
 

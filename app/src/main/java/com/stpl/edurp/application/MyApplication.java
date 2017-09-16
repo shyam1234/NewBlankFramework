@@ -2,6 +2,7 @@ package com.stpl.edurp.application;
 
 import android.app.Application;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.StrictMode;
@@ -34,6 +35,8 @@ public class MyApplication extends Application {
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     private static MyApplication mInstance;
+    public String versionCode;
+    public String versionName;
 
     @Override
     public void onCreate() {
@@ -63,8 +66,18 @@ public class MyApplication extends Application {
         wm.getDefaultDisplay().getMetrics(displayMetrics);
         HEIGHT = displayMetrics.heightPixels;
         WIDTH = displayMetrics.widthPixels;
-        AppLog.log("Device WIDTH+++ "+WIDTH);
-        AppLog.log("Device HEIGHT+++ "+HEIGHT);
+        AppLog.log("Device WIDTH+++ " + WIDTH);
+        AppLog.log("Device HEIGHT+++ " + HEIGHT);
+        getVersionCode();
+    }
+
+    private void getVersionCode() {
+        try {
+            versionName = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionName;
+            versionCode = Integer.toString(getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionCode);
+        } catch (PackageManager.NameNotFoundException e) {
+            AppLog.errLog(TAG, e.getMessage());
+        }
     }
 
     private void initOneSignalNotification() {

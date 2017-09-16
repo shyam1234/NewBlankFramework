@@ -7,8 +7,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
+import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -28,7 +29,6 @@ import com.stpl.edurp.network.IWSRequest;
 import com.stpl.edurp.network.WSRequest;
 import com.stpl.edurp.parser.ParseResponse;
 import com.stpl.edurp.utils.AppLog;
-import com.stpl.edurp.utils.CustomDialogbox;
 import com.stpl.edurp.utils.InternetManager;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
@@ -83,8 +83,8 @@ public class SplashActivity extends BaseActivity {
             4.0 - xxxhdpi
         */
         AppLog.log(TAG, "density+++ " + getResources().getDisplayMetrics().density);
-        if(AppLog.FLAG_LOG)
-        Toast.makeText(mContext, "dpi: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
+        if (AppLog.FLAG_LOG)
+            Toast.makeText(mContext, "dpi: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -176,31 +176,57 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void showErrorDialog() {
-        try {
-            final CustomDialogbox dilog = new CustomDialogbox(SplashActivity.this, CustomDialogbox.TYPE_OK);
-            dilog.setTitle(getResources().getString(R.string.msg_network_prob));
-            dilog.show();
-            dilog.setOnKeyListener(new DialogInterface.OnKeyListener() {
-                @Override
-                public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
-                    // TODO Auto-generated method stub
-                    if (keyCode == KeyEvent.KEYCODE_BACK) {
-                        arg0.dismiss();
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.Theme_AppCompat_Light_Dialog))
+                .setTitle(R.string.app_name)
+                .setIcon(R.mipmap.ic_launcher)
+                .setMessage(R.string.msg_network_prob)
+                .setCancelable(false)
+                .setOnKeyListener(new DialogInterface.OnKeyListener() {
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        if (keyCode == KeyEvent.KEYCODE_BACK) {
+                            dialog.dismiss();
+                            return true;
+                        }
+                        return false;
+                    }
+                })
+                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
                         finish();
                     }
-                    return true;
-                }
-            });
-            dilog.getBtnOK().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dilog.dismiss();
-                    finish();
-                }
-            });
-        } catch (Exception e) {
-            AppLog.errLog("SplashActivity onErrorResponse", e.getMessage());
-        }
+                })
+                .show();
+
+
+//        try {
+//            final CustomDialogbox dilog = new CustomDialogbox(SplashActivity.this, CustomDialogbox.TYPE_OK);
+//            dilog.setTitle(getResources().getString(R.string.msg_network_prob));
+//            dilog.show();
+//            dilog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+//                @Override
+//                public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
+//                    // TODO Auto-generated method stub
+//                    if (keyCode == KeyEvent.KEYCODE_BACK) {
+//                        arg0.dismiss();
+//                        finish();
+//                    }
+//                    return true;
+//                }
+//            });
+//            dilog.getBtnOK().setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    dilog.dismiss();
+//                    finish();
+//                }
+//            });
+//        } catch (Exception e) {
+//            AppLog.errLog("SplashActivity onErrorResponse", e.getMessage());
+//        }
+
     }
 
 
@@ -290,7 +316,6 @@ public class SplashActivity extends BaseActivity {
             }
         }
     }
-
 
 
 }

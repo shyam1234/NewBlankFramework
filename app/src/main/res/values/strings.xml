@@ -126,6 +126,9 @@
     <string name="msg_downloading_file">Downloading file. Please wait...</string>
     <string name="assign_by">Assign by</string>
     <string name="accept">Accept</string>
+    <string name="exit">Exit</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
 
     <string-array name="array_language">
         <!--<item>@string/select_lang</item>-->

@@ -141,5 +141,15 @@
                 android:textColor="@color/colorBlack" />
         </RelativeLayout>
 
+        <!--For only debug mode, please commit before live -->
+        <com.stpl.edurp.utils.FontTextView
+            android:text="fdsf"
+            android:id="@+id/textview_versionnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorLightGray" />
     </LinearLayout>
 </ScrollView>

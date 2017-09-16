@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -18,7 +20,6 @@ import com.stpl.edurp.constant.WSContant;
 import com.stpl.edurp.database.TableParentStudentAssociation;
 import com.stpl.edurp.fragments.HomeFragment;
 import com.stpl.edurp.utils.AppLog;
-import com.stpl.edurp.utils.CustomDialogbox;
 import com.stpl.edurp.utils.SharedPreferencesApp;
 import com.stpl.edurp.utils.UserInfo;
 import com.stpl.edurp.utils.Utils;
@@ -49,9 +50,9 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     private void init() {
         mContext = this;
         //For bottom tab
-        if(UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)) {
+        if (UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)) {
             mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 3);
-        }else{
+        } else {
             mAdapterViewPager = new DashboardAdapter(getSupportFragmentManager(), 2);
         }
         //For bottom tab
@@ -88,9 +89,9 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
 
 
     private void initView() {
-        if(UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)){
+        if (UserInfo.currUserType.equalsIgnoreCase(WSContant.TAG_USERTYPE_PARENT)) {
             mBottomBar = (BottomBar) findViewById(R.id.bottomBarParent);
-        }else{
+        } else {
             mBottomBar = (BottomBar) findViewById(R.id.bottomBarFaculty);
         }
         mBottomBar.setVisibility(View.VISIBLE);
@@ -199,7 +200,38 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
      */
     private void popupCloseAppAcknowledge() {
         // getSupportFragmentManager().popBackStack(HomeFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        final CustomDialogbox dialogbox = new CustomDialogbox(this, CustomDialogbox.TYPE_YES_NO);
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.Theme_AppCompat_Light_Dialog))
+                .setTitle(R.string.app_name)
+                .setIcon(R.mipmap.ic_launcher)
+                .setMessage(R.string.msg_exit)
+                .setCancelable(false)
+                .setOnKeyListener(new DialogInterface.OnKeyListener() {
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        if (keyCode == KeyEvent.KEYCODE_BACK) {
+                            dialog.dismiss();
+                            return true;
+                        }
+                        return false;
+                    }
+                })
+                .setPositiveButton(getResources().getString(R.string.exit), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        Utils.animLeftToRight(DashboardActivity.this);
+                    }
+                })
+                .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+
+
+       /* final CustomDialogbox dialogbox = new CustomDialogbox(this, CustomDialogbox.TYPE_YES_NO);
         dialogbox.setTitle(getResources().getString(R.string.msg_exit));
         dialogbox.show();
         dialogbox.getBtnYes().setOnClickListener(new View.OnClickListener() {
@@ -217,14 +249,14 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
         });
         dialogbox.setOnKeyListener(new DialogInterface.OnKeyListener() {
             @Override
-            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+            public boolean onKey(DialogInterface mDialog, int keyCode, KeyEvent event) {
                 // TODO Auto-generated method stub
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    dialog.dismiss();
+                    mDialog.dismiss();
                 }
                 return true;
             }
-        });
+        });*/
     }
 
 
