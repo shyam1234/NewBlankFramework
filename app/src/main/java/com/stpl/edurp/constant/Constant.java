@@ -23,6 +23,7 @@ public interface Constant {
     String TAG_TRANSPORT = "TMS";
     String TAG_HOLDER = "holder";
     String TAG_POSITION = "position";
+    int DIARY_LIST_MARGIN_HEIGHT= 250;
 
     //Karthik: Not require
     //String TAG_LANG = "LAN";

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.adapters.DiaryFragmentAdapter;
+import com.stpl.edurp.constant.Constant;
 import com.stpl.edurp.models.DiaryDataModel;
 import com.stpl.edurp.utils.AppLog;
 import com.stpl.edurp.utils.CalendarView;
@@ -96,7 +97,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
             @Override
             public void run() {
                 AppLog.log("mCalendarView.getHeight() " + mCalendarView.getHeight());
-                mBottomSheetBehavior1.setPeekHeight(mCalendarView.getHeight() - 200);
+                mBottomSheetBehavior1.setPeekHeight(mCalendarView.getHeight() - Constant.DIARY_LIST_MARGIN_HEIGHT);
             }
         });
 
