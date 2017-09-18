@@ -337,16 +337,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case Constant.TAG_HOMEWORK:
                 //did not get design
-                Utils.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
-                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                //Utils.navigateFragmentMenu(getFragmentManager(), new HomeworkFragment(), HomeworkFragment.TAG);
+                //Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_DIARY:
-                Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
-                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+               // Utils.navigateFragmentMenu(getFragmentManager(), new DiaryFragment(), DiaryFragment.TAG);
+               // Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
             case Constant.TAG_EVENTS:
-                 Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
-                Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+               //  Utils.navigateFragmentMenu(getFragmentManager(), new EventsFragment(), EventsFragment.TAG);
+               // Toast.makeText(getContext(), "Working on it...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

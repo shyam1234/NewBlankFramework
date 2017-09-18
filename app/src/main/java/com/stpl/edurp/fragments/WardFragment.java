@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.stpl.edurp.R;
 import com.stpl.edurp.activities.ChildProfileActivity;
+import com.stpl.edurp.activities.DashboardActivity;
 import com.stpl.edurp.adapters.WardChildRowAdapter;
 import com.stpl.edurp.database.CommonInfo;
 import com.stpl.edurp.interfaces.ICallBack;
@@ -102,9 +103,9 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
 
     private void setDefaultStudent() {
-        for(int index = 0 ; index < mListChildInfoHolder.size() ;index++){
-            if(UserInfo.studentId==mListChildInfoHolder.get(index).getStudent_id()){
-                AppLog.log(TAG, "default match studentid "+UserInfo.studentId);
+        for (int index = 0; index < mListChildInfoHolder.size(); index++) {
+            if (UserInfo.studentId == mListChildInfoHolder.get(index).getStudent_id()) {
+                AppLog.log(TAG, "default match studentid " + UserInfo.studentId);
                 setDefaultStudentProfileInHeader(false, index);
                 UserInfo.selectedStudentGender = mListChildInfoHolder.get(index).getGender();
                 break;
@@ -116,7 +117,7 @@ public class WardFragment extends Fragment implements View.OnClickListener {
         mPosition = position;
         UserInfo.selectedStudentImageURL = mListChildInfoHolder.get(position).getImageurl();
         UserInfo.selectedStudentGender = mListChildInfoHolder.get(position).getGender();
-        AppLog.log("Gender",UserInfo.selectedStudentGender);
+        AppLog.log("Gender", UserInfo.selectedStudentGender);
         GetUILImage.getInstance().setCircleImage(getContext(), mListChildInfoHolder.get(position).getImageurl(), mProfileImage);
         mTextViewProfileHeaderName.setText(mListChildInfoHolder.get(position).getFullName());
         mProfileHeaderLocation.setText(mListChildInfoHolder.get(position).getUnversity_name());
@@ -126,25 +127,32 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
         if (isClicked) {
             UserInfo.studentId = mListChildInfoHolder.get(position).getStudent_id();
-            if(InternetManager.isInternetConnected(getContext())) {
+            if (InternetManager.isInternetConnected(getContext())) {
                 Utils.showProgressBar(getContext());
                 Utils.getHomeFragmentItems(new ICallBack() {
                     @Override
                     public void callBack() {
                         Utils.dismissProgressBar();
+                        //as per new implementation: Given by Amar--
+                        redirectToHome();
+                        //-------------------------------------------
                     }
                 });
             }
-        }else{
+        } else {
             UserInfo.studentId = mListChildInfoHolder.get(position).getStudent_id();
-            AppLog.log("setDefaultStudentProfileInHeader   UserInfo.studentId222 ", ""+mListChildInfoHolder.get(position).getStudent_id());
+            AppLog.log("setDefaultStudentProfileInHeader   UserInfo.studentId222 ", "" + mListChildInfoHolder.get(position).getStudent_id());
         }
-
         SharedPreferencesApp.getInstance().savedDefaultChildSelection(UserInfo.studentId);
-        SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" +mListChildInfoHolder.get(position).getUniversity_id());
+        SharedPreferencesApp.getInstance().saveLastSavedUniversityID("" + mListChildInfoHolder.get(position).getUniversity_id());
         UserInfo.selectedStudentImageURL = mListChildInfoHolder.get(position).getImageurl();
         //AppLog.log("Student profile pic: "+ UserInfo.selectedStudentImageURL );
+        if(!InternetManager.isInternetConnected(getContext()))
+        {
+            redirectToHome();
+        }
     }
+
 
     private void initRecycleAdapter() {
         RecyclerView.LayoutManager linear = new LinearLayoutManager(getContext());
@@ -192,13 +200,20 @@ public class WardFragment extends Fragment implements View.OnClickListener {
 
     private void navigateToNextPage(Class<?> activity) {
         Intent intent = new Intent(getContext(), activity);
-        if(activity == ChildProfileActivity.class ) {
+        if (activity == ChildProfileActivity.class) {
             Bundle bundle = new Bundle();
             bundle.putSerializable("list", mListChildInfoHolder.get(mPosition));
             intent.putExtras(bundle);
         }
         startActivity(intent);
         Utils.animRightToLeft(getActivity());
+    }
+
+
+    private void redirectToHome() {
+        if(DashboardActivity.mViewPage!=null) {
+            DashboardActivity.mViewPage.setCurrentItem(0);
+        }
     }
 }
 

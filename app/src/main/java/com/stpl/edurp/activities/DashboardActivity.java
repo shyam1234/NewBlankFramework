@@ -35,7 +35,7 @@ public class DashboardActivity extends BaseActivity implements OnTabSelectListen
     public static Handler mHandler;
     public static DashboardActivity mContext;
     private BottomBar mBottomBar;
-    private ViewPager mViewPage;
+    public static ViewPager mViewPage;
     private DashboardAdapter mAdapterViewPager;
 
     @Override
